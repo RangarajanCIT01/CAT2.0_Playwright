@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
+      <br/>
+      <span class="top-banner-font-1">1 suite</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
+          <img src="collapseall.gif" class="collapse-all-icon">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" panel-name="suite-Default_suite" class="navigator-link">
+              <span class="suite-name border-passed">Default suite</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
+                    <span>C:\Users\raja.k\AppData\Local\Temp\testng-eclipse-1917053089\testng-customsuite.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="testlist-Default_suite" class="navigator-link ">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="group-Default_suite" class="navigator-link ">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="times-Default_suite" class="navigator-link ">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="reporter-Default_suite" class="navigator-link ">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="ignored-methods-Default_suite" class="navigator-link ">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="chronological-Default_suite" class="navigator-link ">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">11 methods,   11 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods passed suite-Default_suite"> (hide)</a> <!-- hide-methods passed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods passed suite-Default_suite"> (show)</a> <!-- show-methods passed suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content passed suite-Default_suite">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.test.Search_Test" class="method navigator-link" hash-for-method="VerifyAuthorSearch">VerifyAuthorSearch</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.test.Search_Test" class="method navigator-link" hash-for-method="VerifyNarratorSearch">VerifyNarratorSearch</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.test.Search_Test" class="method navigator-link" hash-for-method="VerifyQuickSearchByAuthor">VerifyQuickSearchByAuthor</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.test.Search_Test" class="method navigator-link" hash-for-method="VerifyQuickSearchByISBN">VerifyQuickSearchByISBN</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.test.Search_Test" class="method navigator-link" hash-for-method="VerifyQuickSearchByTitle">VerifyQuickSearchByTitle</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.test.Search_Test" class="method navigator-link" hash-for-method="VerifySearchByIsbn">VerifySearchByIsbn</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.test.Search_Test" class="method navigator-link" hash-for-method="VerifySeriesSearch">VerifySeriesSearch</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.test.Search_Test" class="method navigator-link" hash-for-method="verifyKeywordFieldsDisabled">verifyKeywordFieldsDisabled</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.test.Search_Test" class="method navigator-link" hash-for-method="verifyMultipleTitlesAdvSearch">verifyMultipleTitlesAdvSearch</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.test.Search_Test" class="method navigator-link" hash-for-method="verifyMultipleTitlesLeftPanel">verifyMultipleTitlesLeftPanel</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.test.Search_Test" class="method navigator-link" hash-for-method="verifySpecificTitleLeftPanel">verifySpecificTitleLeftPanel</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Default_suite -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-Default_suite" class="panel Default_suite">
+          <div class="suite-Default_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.test.Search_Test</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="VerifyAuthorSearch">
+                  </a> <!-- VerifyAuthorSearch -->
+                  <span class="method-name">VerifyAuthorSearch</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="VerifyNarratorSearch">
+                  </a> <!-- VerifyNarratorSearch -->
+                  <span class="method-name">VerifyNarratorSearch</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="VerifyQuickSearchByAuthor">
+                  </a> <!-- VerifyQuickSearchByAuthor -->
+                  <span class="method-name">VerifyQuickSearchByAuthor</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="VerifyQuickSearchByISBN">
+                  </a> <!-- VerifyQuickSearchByISBN -->
+                  <span class="method-name">VerifyQuickSearchByISBN</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="VerifyQuickSearchByTitle">
+                  </a> <!-- VerifyQuickSearchByTitle -->
+                  <span class="method-name">VerifyQuickSearchByTitle</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="VerifySearchByIsbn">
+                  </a> <!-- VerifySearchByIsbn -->
+                  <span class="method-name">VerifySearchByIsbn</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="VerifySeriesSearch">
+                  </a> <!-- VerifySeriesSearch -->
+                  <span class="method-name">VerifySeriesSearch</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyKeywordFieldsDisabled">
+                  </a> <!-- verifyKeywordFieldsDisabled -->
+                  <span class="method-name">verifyKeywordFieldsDisabled</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyMultipleTitlesAdvSearch">
+                  </a> <!-- verifyMultipleTitlesAdvSearch -->
+                  <span class="method-name">verifyMultipleTitlesAdvSearch</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyMultipleTitlesLeftPanel">
+                  </a> <!-- verifyMultipleTitlesLeftPanel -->
+                  <span class="method-name">verifyMultipleTitlesLeftPanel</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifySpecificTitleLeftPanel">
+                  </a> <!-- verifySpecificTitleLeftPanel -->
+                  <span class="method-name">verifySpecificTitleLeftPanel</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-passed -->
+        </div> <!-- panel Default_suite -->
+        <div panel-name="test-xml-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">C:\Users\raja.k\AppData\Local\Temp\testng-eclipse-1917053089\testng-customsuite.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.test.Search_Test&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Default test --&gt;
+&lt;/suite&gt; &lt;!-- Default suite --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for Default suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Default test (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for Default suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for Default suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_Default_suite');
+function tableData_Default_suite() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(11);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'verifySpecificTitleLeftPanel')
+data.setCell(0, 2, 'com.test.Search_Test')
+data.setCell(0, 3, 71233);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'VerifySearchByIsbn')
+data.setCell(1, 2, 'com.test.Search_Test')
+data.setCell(1, 3, 67580);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'VerifySeriesSearch')
+data.setCell(2, 2, 'com.test.Search_Test')
+data.setCell(2, 3, 58745);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'VerifyAuthorSearch')
+data.setCell(3, 2, 'com.test.Search_Test')
+data.setCell(3, 3, 54903);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'VerifyNarratorSearch')
+data.setCell(4, 2, 'com.test.Search_Test')
+data.setCell(4, 3, 51740);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'verifyMultipleTitlesLeftPanel')
+data.setCell(5, 2, 'com.test.Search_Test')
+data.setCell(5, 3, 48293);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'verifyMultipleTitlesAdvSearch')
+data.setCell(6, 2, 'com.test.Search_Test')
+data.setCell(6, 3, 44830);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'verifyKeywordFieldsDisabled')
+data.setCell(7, 2, 'com.test.Search_Test')
+data.setCell(7, 3, 27617);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'VerifyQuickSearchByAuthor')
+data.setCell(8, 2, 'com.test.Search_Test')
+data.setCell(8, 3, 26150);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'VerifyQuickSearchByTitle')
+data.setCell(9, 2, 'com.test.Search_Test')
+data.setCell(9, 3, 25706);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'VerifyQuickSearchByISBN')
+data.setCell(10, 2, 'com.test.Search_Test')
+data.setCell(10, 3, 21280);
+window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 8 minutes</span>
+              <div id="times-div-Default_suite">
+              </div> <!-- times-div-Default_suite -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for Default suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.test.Search_Test</div> <!-- chronological-class-name -->
+              <div class="configuration-suite before">
+                <span class="method-name">setup</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-suite before -->
+              <div class="configuration-class before">
+                <span class="method-name">startReporter</span>
+                <span class="method-start">21988 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-class before">
+                <span class="method-name">setupBefore</span>
+                <span class="method-start">22817 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-method before">
+                <span class="method-name">setReport([TestResult name={null} status=CREATED method=Search_Test.VerifyAuthorSearch()[pri:0, instance:com.t...)</span>
+                <span class="method-start">57324 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">VerifyAuthorSearch</span>
+                <span class="method-start">57340 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">addResult([TestResult name=VerifyAuthorSearch status=SUCCESS method=Search_Test.VerifyAuthorSearch()[pri:0, in...)</span>
+                <span class="method-start">112258 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setReport([TestResult name={null} status=CREATED method=Search_Test.VerifyNarratorSearch()[pri:0, instance:com...)</span>
+                <span class="method-start">112288 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">VerifyNarratorSearch</span>
+                <span class="method-start">112289 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">addResult([TestResult name=VerifyNarratorSearch status=SUCCESS method=Search_Test.VerifyNarratorSearch()[pri:0...)</span>
+                <span class="method-start">164029 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">VerifyQuickSearchByAuthor</span>
+                <span class="method-start">164029 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setReport([TestResult name={null} status=CREATED method=Search_Test.VerifyQuickSearchByAuthor()[pri:0, instanc...)</span>
+                <span class="method-start">164029 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method after">
+                <span class="method-name">addResult([TestResult name=VerifyQuickSearchByAuthor status=SUCCESS method=Search_Test.VerifyQuickSearchByAuth...)</span>
+                <span class="method-start">190179 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setReport([TestResult name={null} status=CREATED method=Search_Test.VerifyQuickSearchByISBN()[pri:0, instance:...)</span>
+                <span class="method-start">190211 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">VerifyQuickSearchByISBN</span>
+                <span class="method-start">190211 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">addResult([TestResult name=VerifyQuickSearchByISBN status=SUCCESS method=Search_Test.VerifyQuickSearchByISBN()...)</span>
+                <span class="method-start">211491 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setReport([TestResult name={null} status=CREATED method=Search_Test.VerifyQuickSearchByTitle()[pri:0, instance...)</span>
+                <span class="method-start">211491 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">VerifyQuickSearchByTitle</span>
+                <span class="method-start">211491 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setReport([TestResult name={null} status=CREATED method=Search_Test.VerifySearchByIsbn()[pri:0, instance:com.t...)</span>
+                <span class="method-start">237197 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">VerifySearchByIsbn</span>
+                <span class="method-start">237197 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">addResult([TestResult name=VerifyQuickSearchByTitle status=SUCCESS method=Search_Test.VerifyQuickSearchByTitle...)</span>
+                <span class="method-start">237197 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method after">
+                <span class="method-name">addResult([TestResult name=VerifySearchByIsbn status=SUCCESS method=Search_Test.VerifySearchByIsbn()[pri:0, in...)</span>
+                <span class="method-start">304793 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">VerifySeriesSearch</span>
+                <span class="method-start">304793 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setReport([TestResult name={null} status=CREATED method=Search_Test.VerifySeriesSearch()[pri:0, instance:com.t...)</span>
+                <span class="method-start">304793 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method after">
+                <span class="method-name">addResult([TestResult name=VerifySeriesSearch status=SUCCESS method=Search_Test.VerifySeriesSearch()[pri:0, in...)</span>
+                <span class="method-start">363538 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setReport([TestResult name={null} status=CREATED method=Search_Test.verifyKeywordFieldsDisabled()[pri:0, insta...)</span>
+                <span class="method-start">363545 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyKeywordFieldsDisabled</span>
+                <span class="method-start">363545 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">addResult([TestResult name=verifyKeywordFieldsDisabled status=SUCCESS method=Search_Test.verifyKeywordFieldsDi...)</span>
+                <span class="method-start">391162 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setReport([TestResult name={null} status=CREATED method=Search_Test.verifyMultipleTitlesAdvSearch()[pri:0, ins...)</span>
+                <span class="method-start">391162 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyMultipleTitlesAdvSearch</span>
+                <span class="method-start">391162 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setReport([TestResult name={null} status=CREATED method=Search_Test.verifyMultipleTitlesLeftPanel()[pri:0, ins...)</span>
+                <span class="method-start">435992 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method after">
+                <span class="method-name">addResult([TestResult name=verifyMultipleTitlesAdvSearch status=SUCCESS method=Search_Test.verifyMultipleTitle...)</span>
+                <span class="method-start">435992 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">verifyMultipleTitlesLeftPanel</span>
+                <span class="method-start">435992 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">addResult([TestResult name=verifyMultipleTitlesLeftPanel status=SUCCESS method=Search_Test.verifyMultipleTitle...)</span>
+                <span class="method-start">484285 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setReport([TestResult name={null} status=CREATED method=Search_Test.verifySpecificTitleLeftPanel()[pri:0, inst...)</span>
+                <span class="method-start">484285 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifySpecificTitleLeftPanel</span>
+                <span class="method-start">484285 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">addResult([TestResult name=verifySpecificTitleLeftPanel status=SUCCESS method=Search_Test.verifySpecificTitleL...)</span>
+                <span class="method-start">555520 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-suite after">
+                <span class="method-name">afterSuiteMethod</span>
+                <span class="method-start">555646 ms</span>
+              </div> <!-- configuration-suite after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
+</html>

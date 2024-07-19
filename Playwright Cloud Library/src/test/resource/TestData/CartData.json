@@ -1,0 +1,15 @@
+{
+	"cartdetails":{
+		"CartName":"AddBooksCart",
+		"CartDesciption":"This is AddBooks Cart.",
+		"SuccessMessage":"CartAdded",
+		"CartAdded":"Cart created successfully.",
+		"CartDeleted":"Cart deleted successfully.",
+		"MoveBetweenCart":"Moved successfully.",
+		"CartAddtoMessage":"Added successfully.",
+		"CartBookTitleCount":"1-10 of 10 Titles",
+		"MoveBetweenCarttitle":"AddDetailsCart",
+		"MoveBetweenCart":"Moved successfully."	
+	}
+	
+}

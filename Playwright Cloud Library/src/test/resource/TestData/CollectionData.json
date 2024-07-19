@@ -1,0 +1,26 @@
+{
+	"collectiondetails":{
+		"Book_Keyword":"",
+		"Book_Title":"Evidence",
+		"Book_Author":"Grafton, Sue",
+		"Book_Narrator":"Peiffer, Mary",
+		"Book_Series":"Kinsey Millhone Series",
+		"Book_Ratio":"0",
+		"Book_Presales":"Include Pre-Sale Titles",
+		"Book_MinAmount":"51",
+		"Book_MaxAmount":"52",
+		"Book_Publisher":"Penguin Random House",
+		"Book_ContentProvider":"findaway",
+		"Book_Format":"EPUB",
+		"Book_SpecificISBN": "9780739330333",
+ 		"Book_Audience":"Adult and Not Categorized",
+		"Book_Language":"English",
+		"Book_Category":"",
+		"Book_TitleCount":"1-10 of 10 Titles",
+		"Book_PageSize":"10",
+		"Book_SortBy":"Title",
+		
+		"CartAddtoMessage":"Added successfully.",
+		"Book_TitleOption" : ""
+	}
+}

@@ -1,0 +1,15 @@
+1. Add the titles to a cart from the Spotlight page
+2. Add the titles to a cart from the Curated Lists page
+3. Create a new Cart and verify
+4. Purchase the titles using 'Purchase Selected' option    
+5. Purchase the titles using 'Purchase Cart' option
+6. Move the titles between the cart 
+7. Remove the titles from the cart
+8. Settings on Auto Cart page
+9. Search using the keywords on 'Search'& 'My Collection' pages
+10. Save a new search using 'Save Search' option
+11. Upload a .csv file with list of ISBN's and verify with the results
+12. Search with ISBN's on Search and My Collection pages
+13. Create a new Manual and Automated shelf
+14. Navigate to 'Reports' and verify
+15. Search using the quick search text field
