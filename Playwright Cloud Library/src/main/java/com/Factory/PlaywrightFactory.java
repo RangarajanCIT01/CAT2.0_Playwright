@@ -21,9 +21,9 @@ import org.apache.log4j.PropertyConfigurator;
 
 import org.apache.logging.log4j.LogManager;
 //import org.testng.log4testng.Logger;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
+//import org.openqa.selenium.JavascriptExecutor;
+//import org.openqa.selenium.WebElement;
+//import org.openqa.selenium.interactions.Actions;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -144,7 +144,7 @@ public class PlaywrightFactory {
 		}
 	}
 
-	public void clickElementIfExists(String locator) {
+	/*public void clickElementIfExists(String locator) {
 		List<WebElement> dynamicElement = (List<WebElement>) page.locator(locator);
 		if (dynamicElement.size() != 0) {
 			// If list size is non-zero, element is present
@@ -153,7 +153,7 @@ public class PlaywrightFactory {
 			// Else if size is 0, then element is not present
 			System.out.println("Element not present");
 		}
-	}
+	}*/
 
 	public String createRandomName() {
 		String name = "AddBooksCart";

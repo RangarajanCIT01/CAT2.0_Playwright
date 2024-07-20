@@ -95,11 +95,7 @@
 			<scope>test</scope>
 		</dependency>
 
-		<dependency>
-			<groupId>com.mavenlearn</groupId>
-			<artifactId>mavenproject</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
+	
 
 		<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
 		<dependency>

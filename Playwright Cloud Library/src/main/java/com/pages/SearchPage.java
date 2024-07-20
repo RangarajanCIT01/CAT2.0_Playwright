@@ -9,7 +9,6 @@ import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import com.Factory.PlaywrightFactory;
@@ -411,13 +410,13 @@ public class SearchPage extends PlaywrightFactory{
 	
 	}
 	
-	public boolean isDisplayed(WebElement element) {
+	/*public boolean isDisplayed(WebElement element) {
         try {
             return element.isDisplayed();
         } catch (NoSuchElementException e) {
             return false;
         }
-    }
+    }*/
 	
 	public void editorDropdown(String pageSizeOption) throws Exception 
 	{				

@@ -26,7 +26,7 @@ public class TestFile extends BaseTest{
 	
 		searchpage.clickSearchButton();
 		searchpage.editorDropdown(testData.get("Book_PageSize"));	
-		searchpage.clickElementIfExists(searchpage.leftPnlClse);
+		//searchpage.clickElementIfExists(searchpage.leftPnlClse);
 		//searchpage.clickElement(searchpage.leftPnlClse);
 		searchpage.navigateToCartAndSearchPage();
 	}

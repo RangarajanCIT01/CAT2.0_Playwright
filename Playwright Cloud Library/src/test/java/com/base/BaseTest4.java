@@ -3,7 +3,6 @@ package com.base;
 
 import java.util.Properties;
 
-import org.openqa.selenium.devtools.v111.browser.Browser;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeSuite;
