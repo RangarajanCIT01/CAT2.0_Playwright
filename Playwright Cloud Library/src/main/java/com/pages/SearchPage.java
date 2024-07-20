@@ -108,31 +108,25 @@ public class SearchPage extends PlaywrightFactory{
 	{
 		waitForVisibilityOf(Search);
 		clickElement(Search);
-		Thread.sleep(2000);
 
 	}
 	
 	// Enter Book Keyword
 	public void enterBookKeyword(String data) throws Exception 
 	{
-		Thread.sleep(2000);
-		
-		fillText(Keyword,data);	
+			fillText(Keyword,data);	
 	}
 	
 		
 	public void enterBookTitle(String data) throws Exception 
 	{	
-		Thread.sleep(1000);
 		//Map<String, String> testData = readJsonElement("SearchData.json", "searchdetails");
 		fillText(TitleAdvSearch,data);
-		Thread.sleep(1000);
 	}
 	
 	// Enter Book Author 
 	public void enterBookAuthor(String data) throws Exception 
 	{
-		Thread.sleep(1000);
 		//Map<String, String> testData = readJsonElement("SearchData.json", "searchdetails");
 		fillText(Author,data);
 	}
@@ -140,23 +134,18 @@ public class SearchPage extends PlaywrightFactory{
 	// Enter Book Narrator 
 	public void enterBookNarrator(String data) throws Exception 
 	{
-		Thread.sleep(1000);
-		//Map<String, String> testData = readJsonElement("SearchData.json", "searchdetails");
 		fillText(Narrator,data);
 	}
 	
 	// Enter Book Series 
 	public void enterBookSeries(String data) throws Exception 
 	{
-		Thread.sleep(1000);
-		//Map<String, String> testData = readJsonElement("SearchData.json", "searchdetails");
 		fillText(Series,data);
 	}
 	
 	// Enter Book preSaleTitles 
 	public void preSaleTitles() throws Exception 
 	{
-		Thread.sleep(2000);
 		//Map<String, String> testData = readJsonElement("SearchData.json", "searchdetails");
 		
 		String Elementlist="//div[@class='rc-virtual-list']//div[@class='ant-select-item-option-content']";
@@ -168,14 +157,12 @@ public class SearchPage extends PlaywrightFactory{
 	// Enter HoldRatio
 	public void enterBookHoldRatio(String data) throws Exception
 	{
-		Thread.sleep(1000);
 		//Map<String, String> testData = readJsonElement("SearchData.json", "searchdetails");
 		fillText(HoldRatio,data);
 	}
 	
 	public void catergoryAndSubject(String data) throws Exception 
 	{
-		Thread.sleep(1000);
 		//Map<String, String> testData = readJsonElement("SearchData.json","searchdetails");
 		String categoryOption=data;
 		     
@@ -186,7 +173,7 @@ public class SearchPage extends PlaywrightFactory{
 		
 	
 		page.getByText("Category and Subject").click();
-	}   //thread remove
+	}   
 	
 	public void keyboardEnter() {
 		
@@ -208,7 +195,6 @@ public class SearchPage extends PlaywrightFactory{
 	
 	public void audience(String data) throws Exception
 	{    
-		Thread.sleep(1000);
 		//Map<String, String> testData = readJsonElement("SearchData.json","searchdetails");
 		String audience=data; 
 		
@@ -220,7 +206,6 @@ public class SearchPage extends PlaywrightFactory{
 	
 	public void enterPrice(String data1, String data2) throws Exception 
 	{	
-		Thread.sleep(1000);
 		//Map<String, String> testData = readJsonElement("SearchData.json","searchdetails");
 		//String min=testData.get("Book_MinAmount");
 		//String max=testData.get("Book_MaxAmount");
@@ -229,25 +214,21 @@ public class SearchPage extends PlaywrightFactory{
 		
 		fillText(PricingMinAmount,min);
 		fillText(PricingMaxAmount,max);
-		Thread.sleep(1000);
 	}
 	
 	public void publishedWithin() throws InterruptedException
 	{
-		Thread.sleep(1000);
 		selectDropdown(PublishedWithin,2);
 		
 	}
 	
 	public void dateAddedToCloudLibrary() throws InterruptedException
 	{
-		Thread.sleep(1000);
 		selectDropdown(DateAdded,3);
 	}
 	
 	public void languages(String data) throws Exception
 	{
-		Thread.sleep(1000);
 		//Map<String, String> testData = readJsonElement("SearchData.json","searchdetails");
 		String language =data;    
 		
@@ -260,7 +241,6 @@ public class SearchPage extends PlaywrightFactory{
 	
 	public void publisher(String data) throws Exception
 	{
-		Thread.sleep(2000);
 		//Map<String, String> testData = readJsonElement("SearchData.json","searchdetails");
 		String publisherOption=data;
 		
@@ -274,14 +254,12 @@ public class SearchPage extends PlaywrightFactory{
 	
 	public void contentProviders(String data) throws Exception
 	{
-		Thread.sleep(1000);
 		//Map<String, String> testData = readJsonElement("SearchData.json", "searchdetails");
 		String providerOption=data;
 		
 		clickElement(ContentProviders);
 		fillText(ContentProviders,providerOption);
 		page.keyboard().down("ArrowDown");
-		Thread.sleep(1000);
 		page.keyboard().press("Enter");
 		
 		//selectDropdownByScrolling(ContentProviders,providerOption,publisherElementList);
@@ -289,7 +267,6 @@ public class SearchPage extends PlaywrightFactory{
 	
 	public void bookFormats(String data) throws Exception
 	{
-		Thread.sleep(1000);
 		page.locator(FormatText).scrollIntoViewIfNeeded();
 		
 		//Map<String, String> testData = readJsonElement("SearchData.json", "searchdetails");
@@ -311,32 +288,32 @@ public class SearchPage extends PlaywrightFactory{
 	public void bookFilters() throws InterruptedException
 	{
 		clickElement(FilterSelfPublished);
-		Thread.sleep(1000);
+		
 	}
 	
 	public void clickSearchButton() throws InterruptedException 
 	{
-		Thread.sleep(1000);
+		
 		clickElement(SearchButton);
-		Thread.sleep(8000);
+		
 	}
 	
 	public void SearchButtonLftPnl() throws InterruptedException 
 	{
-		Thread.sleep(1000);
+		
 		clickElement(SearchButtonLftPnl);
-		Thread.sleep(8000);
+		
 	}
 	
 	public void advanceSearch() throws InterruptedException 
 	{
-		Thread.sleep(1000);
+		
 		clickElement(SearchAdvance);
 	}
 	
 	public  void verifybookSearchByTitleCount() throws Exception
 	{
-		Thread.sleep(4000);
+		
 		Map<String, String> testData = readJsonElement("SearchData.json", "searchdetails");
 	
 		boolean result = false;
@@ -399,13 +376,11 @@ public class SearchPage extends PlaywrightFactory{
 	
 	public void clickClearButton() throws InterruptedException 
 	{
-		Thread.sleep(3000);
 		clickElement(ClearButton);
 	}
 	
 	public void ClearButtonLftPnl() throws InterruptedException 
 	{
-		Thread.sleep(3000);
 		clickElement(ClearButtonLftPnl);
 	}
 	
@@ -414,9 +389,7 @@ public class SearchPage extends PlaywrightFactory{
 		Locator element1 = page.locator(TitleCount);
 		String oldTitleCount=element1.textContent();
 		
-		Thread.sleep(3000);
 		clickElement(AdvanceSearchButton);
-		Thread.sleep(3000);
 			
 		Locator element2 = page.locator(TitleCount);
 		String newTitleCount=element2.textContent();
@@ -465,13 +438,11 @@ public class SearchPage extends PlaywrightFactory{
 		//String carttitleoption=testData.get("CartName");
 
 		selectDropdownByScrolling(AddToCartDropdown,cartname,Elementlist);
-		Thread.sleep(4000);
 			
 	}
 		
 	public boolean verifyAddToCartSuccessfully() throws Exception
 	{
-		Thread.sleep(2000);
 		Map<String, String> testData = readJsonElement("SearchData.json", "searchdetails");
 		String actualMessage=testData.get("CartAddtoMessage");
 
@@ -490,7 +461,6 @@ public class SearchPage extends PlaywrightFactory{
 	public void clickSortDropdown() throws Exception
 	{
 		clickElement(SortDropdown);
-		Thread.sleep(2000);
 	}
 	
 	
@@ -508,7 +478,6 @@ public class SearchPage extends PlaywrightFactory{
 	
 	public void verifySort() throws Exception
 	{
-		Thread.sleep(10000);
 		List<String> book_title = new ArrayList<>();
 		book_title.add("Horrible Harry Takes the Cake");
 		book_title.add("Horrible Harry on the Ropes");
@@ -548,28 +517,25 @@ public class SearchPage extends PlaywrightFactory{
 	
 	public void enterIsbn() throws Exception 
 	{
-		Thread.sleep(1000);
+
 		Map<String, String> testData = readJsonElement("SearchData.json", "searchByIsbn");
 		fillText(IsbnList,testData.get("Book_Isbn"));	
 	}
 	
 	public void quickSearchByISBN() throws Exception 
 	{
-		Thread.sleep(1000);
 		Map<String, String> testData = readJsonElement("SearchData.json", "quickSearchByISBN");
 		fillText(quickSearch,testData.get("Book_SearchISBN"));	
 	}
 	
 	public void quickSearchByAuthor() throws Exception 
 	{
-		Thread.sleep(1000);
 		Map<String, String> testData = readJsonElement("SearchData.json", "quickSearchByAuthor");
 		fillText(quickSearch,testData.get("Book_AuthorName"));	
 	}
 	
 	public void quickSearchByTitle() throws Exception 
 	{
-		Thread.sleep(1000);
 		Map<String, String> testData = readJsonElement("SearchData.json", "quickSearchByTitle");
 		fillText(quickSearch,testData.get("Book_TitleName"));	
 	}
@@ -582,7 +548,6 @@ public class SearchPage extends PlaywrightFactory{
 	
 	public void verifyTitleCount_Isbn() throws Exception
 	{
-		Thread.sleep(5000);
 		Map<String, String> testData = readJsonElement("SearchData.json", "searchByIsbn");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();
@@ -595,7 +560,6 @@ public class SearchPage extends PlaywrightFactory{
 	
 	public void verifyTitleCount_QuickSearchIsbn() throws Exception
 	{
-		Thread.sleep(5000);
 		Map<String, String> testData = readJsonElement("SearchData.json", "quickSearchByISBN");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();
@@ -603,25 +567,19 @@ public class SearchPage extends PlaywrightFactory{
 		actualData.add(page.locator(TitleCount).textContent());
 		expectedData.add(testData.get("Book_TitleCount_Isbn"));	
 		Assert.assertEquals(expectedData, actualData);
-		
-		Thread.sleep(3000);
-	
+			
 	}
 	
 	public void clickOnBackButton() throws Exception 
 	{
-		Thread.sleep(3000);
 		clickElement(Back);
-		Thread.sleep(5000);
 	}
 	
 	public void uploadIsbnFile() throws Exception 
 	{	
-		Thread.sleep(6000);
 		//page.setInputFiles("input#react-csv-reader-input",Paths.get("C:\\Users\\tejashree.k\\eclipse-workspace\\CloudLibrary_Playwright\\Isbn.csv"));
 		page.setInputFiles("input#react-csv-reader-input",Paths.get("D:\\CloudLibrary_CAT 2.0\\Isbn.csv"));
 		//Scanner sc = new Scanner(new File("F:\\CSVDemo.csv"));  
-		Thread.sleep(5000);
 	}
 	
 	public void verifyNotMatchedIsbnCount() throws Exception 
@@ -650,7 +608,6 @@ public class SearchPage extends PlaywrightFactory{
 	
 	public void verifyMatchedIsbnCount() throws Exception
 	{
-		Thread.sleep(3000);
 		Map<String, String> testData = readJsonElement("SearchData.json", "searchdetails");
 	
 		boolean result = false;
@@ -712,7 +669,6 @@ public class SearchPage extends PlaywrightFactory{
 		Locator ElementHandle = page.locator(value);
 		
 		ElementHandle.scrollIntoViewIfNeeded();
-		Thread.sleep(3000);
 		ElementHandle.click();
 	}
 	

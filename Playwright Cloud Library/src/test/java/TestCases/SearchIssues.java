@@ -1,4 +1,4 @@
-package com.test;
+package TestCases;
 
 import com.base.BaseTest5;
 

@@ -1,4 +1,4 @@
-package com.test;
+package TestCases;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -62,13 +62,11 @@ public class SavedSearch extends BaseTest{
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();
 	
-		searchpage.waitForElement(5);
 		searchpage.savedTab();
 		searchpage.click(1);
 		//searchpage.scroll(searchpage.editSavedSearch);
 		searchpage.scrollAndClick(searchpage.editSavedSearch);
 		
-		searchpage.waitForElement(5);
 		actualData.add(page.locator(searchpage.TitleCount).textContent());
 		expectedData.add(testData.get("Book_TitleCount"));	
 		Assert.assertEquals(expectedData, actualData);
@@ -84,10 +82,10 @@ public class SavedSearch extends BaseTest{
 		searchpage.clickElement(searchpage.btnsaveSearch);
 		
 		actualData.add(page.locator(searchpage.searchSavedSuccessfully).textContent());
-		expectedData.add(testData.get("Book_SavedSearchMessage"));	
+		expectedData.add(testData.get("Book_SavedSearchMessage"));
+		
 		Assert.assertEquals(expectedData, actualData);
 				
-		searchpage.waitForElement(5);
 		actualData.add(page.locator(searchpage.TitleCount).textContent());
 		expectedData.add(testData.get("Book_UpdatedTitleCount"));	
 		Assert.assertEquals(expectedData, actualData);

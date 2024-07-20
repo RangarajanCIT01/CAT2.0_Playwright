@@ -1,4 +1,4 @@
-package com.test;
+package TestCases;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -44,8 +44,7 @@ public class Search_Test extends BaseTest{
 		searchpage.quickSearchByAuthor();
 		searchpage.keyboardEnter();
 		
-		//page.waitForLoadState();
-		searchpage.waitForElement(10);
+
 		actualData.add(page.locator(searchpage.TitleCount).textContent());
 		expectedData.add(testData.get("Book_TitleCount"));	
 		Assert.assertEquals(expectedData, actualData);
@@ -70,7 +69,6 @@ public class Search_Test extends BaseTest{
 		extentTest.log(Status.INFO, "Searching and verifying the Results");
 		searchpage.keyboardEnter();
 		
-		searchpage.waitForElement(10);
 		actualData.add(page.locator(searchpage.TitleCount).textContent());
 		expectedData.add(testData.get("Book_TitleCount"));	
 		Assert.assertEquals(expectedData, actualData);
@@ -191,7 +189,6 @@ public class Search_Test extends BaseTest{
 		
 		//searchpage.verifyTitleCountAdvanceSearch();
 		
-		searchpage.waitForElement(10);
 		actualData.add(page.locator(searchpage.TitleCount).textContent());
 		expectedData.add(testData.get("Book_TitleCount"));	
 		Assert.assertEquals(expectedData, actualData);
@@ -234,7 +231,6 @@ public class Search_Test extends BaseTest{
 		//searchpage.bookFilters();
 		//searchpage.verifyTitleCountAdvanceSearch();
 		
-		searchpage.waitForElement(10);
 		actualData.add(page.locator(searchpage.TitleCount).textContent());
 		expectedData.add(testData.get("Book_TitleCount"));	
 		Assert.assertEquals(expectedData, actualData);
@@ -264,7 +260,7 @@ public class Search_Test extends BaseTest{
 		searchpage.clickOnIsbnSearchButton();
 		searchpage.verifyTitleCount_Isbn();
 		
-		searchpage.waitForElement(3);
+	
 		actualData.add(page.locator(searchpage.SearchISBN).textContent());
 		expectedData.add(testData.get("Book_SearchISBN"));	
 		Assert.assertEquals(expectedData, actualData);
@@ -285,7 +281,6 @@ public class Search_Test extends BaseTest{
 		searchpage.quickSearchByISBN();
 		searchpage.keyboardEnter();
 		
-		searchpage.waitForElement(6);
 		actualData.add(page.locator(searchpage.TitleCount).textContent());
 		expectedData.add(testData.get("Book_TitleCount"));	
 		Assert.assertEquals(expectedData, actualData);
@@ -368,7 +363,7 @@ public class Search_Test extends BaseTest{
 		searchpage.clickSearchButton();
 		
 		extentTest.log(Status.INFO, "Entering Series Details on Adv Search");
-		searchpage.waitForElement(6);
+		
 		actualData.add(page.locator(searchpage.TitleCount).textContent());
 		expectedData.add(testData.get("Book_TitleCount"));	
 		Assert.assertEquals(expectedData, actualData);
@@ -377,7 +372,7 @@ public class Search_Test extends BaseTest{
 		searchpage.enterBookSeries(testData.get("SeriesName"));
 		searchpage.SearchButtonLftPnl();
 		
-		searchpage.waitForElement(7);
+		
 		actualData.add(page.locator(searchpage.TitleCount).textContent());
 		expectedData.add(testData.get("Book_TitleCount"));	
 		Assert.assertEquals(expectedData, actualData);
@@ -417,6 +412,15 @@ public class Search_Test extends BaseTest{
 			searchpage.selectSortByOption(testData.get("Book_SortBy"));
 			searchpage.verifySort();
 		}
+	
+	
+	public void verifySortTest() throws Exception
+	{
+		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "verifySort");
+		
+		searchpage.selectSortByOption(testData.get("Book_SortBy"));
+		searchpage.verifySort();
+	}
 	
 	//@Test
 	public void VerifySearchByUploadIsbn() throws Exception

@@ -1,4 +1,4 @@
-package com.test;
+package TestCases;
 
 import java.util.ArrayList;
 import java.util.Map;
