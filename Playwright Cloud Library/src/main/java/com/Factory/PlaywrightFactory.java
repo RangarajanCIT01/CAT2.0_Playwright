@@ -15,6 +15,9 @@ import java.util.Properties;
 import java.util.Random;
 
 import java.util.regex.Pattern;
+
+import javax.print.attribute.SetOfIntegerSyntax;
+
 import java.util.Map.Entry;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
@@ -44,6 +47,7 @@ import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 import com.microsoft.playwright.Tracing;
+import com.microsoft.playwright.options.AriaRole;
 import com.microsoft.playwright.options.LoadState;
 import com.microsoft.playwright.options.WaitForSelectorState;
 import com.pages.LoginPage;
@@ -144,16 +148,6 @@ public class PlaywrightFactory {
 		}
 	}
 
-	/*public void clickElementIfExists(String locator) {
-		List<WebElement> dynamicElement = (List<WebElement>) page.locator(locator);
-		if (dynamicElement.size() != 0) {
-			// If list size is non-zero, element is present
-			System.out.println("Element present");
-		} else {
-			// Else if size is 0, then element is not present
-			System.out.println("Element not present");
-		}
-	}*/
 
 	public String createRandomName() {
 		String name = "AddBooksCart";
@@ -202,9 +196,18 @@ public class PlaywrightFactory {
 		page.keyboard().type(key);
 	}
 
-	public void waitForVisibilityOf(String locator) {
-		untilDomContentLoads();		
+	public void waitForVisibilityOf(String locator) {		
 		page.waitForSelector(locator, new Page.WaitForSelectorOptions().setState(WaitForSelectorState.VISIBLE));
+	}
+	
+	public void waitForVisibilityOfHidden(String locator) {
+		untilDomContentLoads();		
+		page.waitForSelector(locator, new Page.WaitForSelectorOptions().setState(WaitForSelectorState.HIDDEN));
+	}
+	
+	public void waitForVisibilityOfTimeout(String locator, int value) {
+		//untilDomContentLoads();		
+		page.waitForSelector(locator, new Page.WaitForSelectorOptions().setTimeout(value));
 	}
 	
 	private Locator waitForElement(Locator locator, boolean isVisible) {
@@ -512,6 +515,20 @@ public class PlaywrightFactory {
 		}
 		return result;
 	}
+	
+	public void clickIfExists()
+	{
+		Locator leftPnlCls = page.locator(SearchPage.leftPnlClse);
+		if( leftPnlCls.isVisible()) {
+		
+			leftPnlCls.click();
+			
+		} else{
+			System.out.println("");
+		}
+			
+	}
+		
 
 	public static boolean verifyAssertMessage(String expectedMessage, String actualMessage) {
 		boolean result = false;

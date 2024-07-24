@@ -6,6 +6,7 @@ import java.util.Map;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import com.Factory.PlaywrightFactory;
 import com.aventstack.extentreports.Status;
@@ -14,6 +15,7 @@ import com.base.BaseTest;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.options.AriaRole;
 import com.pages.SearchPage;
+import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
 import Helper.ExtentTestManager;
 
@@ -28,9 +30,7 @@ public class Search_Test extends BaseTest{
 	
 		searchpage.clickSearchButton();
 		searchpage.editorDropdown(testData.get("Book_PageSize"));	
-		//searchpage.clickElementIfExists(searchpage.leftPnlClse);
-		searchpage.clickElement(searchpage.leftPnlClse);
-		searchpage.navigateToCartAndSearchPage();
+		searchpage.clseLftPnlIfExists();
 	}
 	
 	@Test
@@ -40,19 +40,19 @@ public class Search_Test extends BaseTest{
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
+		searchpage.clseLftPnlIfExists();
+		searchpage.navigateToCartAndSearchPage();
 		extentTest.log(Status.INFO, "Entering Author Details");
-		searchpage.quickSearchByAuthor();
-		searchpage.keyboardEnter();
 		
-
-		actualData.add(page.locator(searchpage.TitleCount).textContent());
+		searchpage.quickSearchByAuthor();
+		searchpage.loadResult();
+		actualData.add(searchpage.actualVerify(searchpage.TitleCount));
 		expectedData.add(testData.get("Book_TitleCount"));	
 		Assert.assertEquals(expectedData, actualData);
-		extentTest.log(Status.INFO, "Verified the details of Author results");
 		
-		//searchpage.clickElementIfExists(searchpage.leftPnlClse);
-		searchpage.clickElement(searchpage.leftPnlClse);
-		searchpage.navigateToCartAndSearchPage();
+		extentTest.log(Status.INFO, "Verified the details of Author results");
+
+		searchpage.clseLftPnlIfExists();
 		
 	}
 	
@@ -63,39 +63,40 @@ public class Search_Test extends BaseTest{
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
+		searchpage.clseLftPnlIfExists();
+		searchpage.navigateToCartAndSearchPage();
 		extentTest.log(Status.INFO, "Entering the Title ISBN on Quick Search Field ");
 		searchpage.quickSearchByTitle();
 		
 		extentTest.log(Status.INFO, "Searching and verifying the Results");
-		searchpage.keyboardEnter();
 		
-		actualData.add(page.locator(searchpage.TitleCount).textContent());
+		searchpage.loadResult();
+		actualData.add(searchpage.actualVerify(searchpage.TitleCount));
 		expectedData.add(testData.get("Book_TitleCount"));	
 		Assert.assertEquals(expectedData, actualData);
 		
 		extentTest.log(Status.INFO, "Titles Count has been Verified");
 		
-		searchpage.clickElement(searchpage.leftPnlClse);
-		searchpage.navigateToCartAndSearchPage();
+		searchpage.clseLftPnlIfExists();
 
 	}
 	
-	//@Test 
+	@Test 
 	public void verifySpecificTitleSearch() throws Exception
 	{		
 		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "verifySpecificTitleSearch");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();
 
-		searchpage.clickOnSearch();
+		searchpage.clseLftPnlIfExists();
+		searchpage.navigateToCartAndSearchPage();
+		
 		extentTest.log(Status.INFO, "Entering the Search criteria for a particular title");
+		
 		searchpage.enterBookTitle(testData.get("Book_Title"));
 		searchpage.enterBookAuthor(testData.get("Book_Author"));
 		searchpage.enterBookSeries(testData.get("Book_Series"));
 		searchpage.enterBookNarrator(testData.get("Book_Narrator"));
-		
-		//searchpage.enterBookHoldRatio(testData.get("Book_HoldRatio"));
-		//searchpage.catergoryAndSubject(testData.get("));
 		searchpage.audience(testData.get("Book_Audience"));
 		searchpage.enterPrice(testData.get("Book_MinAmount"),testData.get("Book_MaxAmount"));
 		searchpage.languages(testData.get("Book_Language"));
@@ -105,16 +106,13 @@ public class Search_Test extends BaseTest{
 		searchpage.clickSearchButton();
 		
 		extentTest.log(Status.INFO, "Search with search criteria");
-		System.out.println(page.locator(searchpage.SpecificISBN).textContent());
-		
-		actualData.add(page.locator(searchpage.SpecificISBN).textContent());
+		searchpage.loadResult();
+		actualData.add(searchpage.actualVerify(searchpage.SpecificISBN));
 		expectedData.add(testData.get("Book_SpecificISBN"));	
 		Assert.assertEquals(expectedData, actualData);
 		extentTest.log(Status.INFO, "Titles Count has been Verified");
-		
-		ExtentTestManager.getTest().info("Verify Login is successfull - " + ExtentTestManager.getTest().getStatus());
-		searchpage.clickElement(searchpage.leftPnlClse);
-		searchpage.navigateToCartAndSearchPage();
+
+		searchpage.clseLftPnlIfExists();
 	
 	}
 	
@@ -125,6 +123,8 @@ public class Search_Test extends BaseTest{
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();
 		
+		searchpage.clseLftPnlIfExists();
+		searchpage.navigateToCartAndSearchPage();
 		searchpage.clickClearButton();
 		searchpage.clickSearchButton();
 		searchpage.ClearButtonLftPnl();
@@ -145,14 +145,13 @@ public class Search_Test extends BaseTest{
 		searchpage.SearchButtonLftPnl();
 		extentTest.log(Status.INFO, "Search with search criteria");
 		
-		
-		actualData.add(page.locator(searchpage.SpecificISBN).textContent());
+		searchpage.loadResult();
+		actualData.add(searchpage.actualVerify(searchpage.SpecificISBN));
 		expectedData.add(testData.get("Book_SpecificISBN"));	
 		Assert.assertEquals(expectedData, actualData);
 		extentTest.log(Status.INFO, "Titles Count has been Verified");
 		
-		searchpage.clickElement(searchpage.leftPnlClse);
-		searchpage.navigateToCartAndSearchPage();
+		searchpage.clseLftPnlIfExists();
 	}
 
 	@Test
@@ -162,8 +161,11 @@ public class Search_Test extends BaseTest{
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();
 		
+		searchpage.clseLftPnlIfExists();
+		searchpage.navigateToCartAndSearchPage();
+		
 		extentTest.log(Status.INFO, "Entering the Search criteria for a filtering multiple titles");
-		//searchpage.enterBookKeyword(testData.get("Book_Keyword"));
+
 		searchpage.enterBookTitle(testData.get("Book_Title"));
 		searchpage.enterBookAuthor(testData.get("Book_Author"));
 		searchpage.enterBookSeries(testData.get("Book_Series"));
@@ -184,18 +186,16 @@ public class Search_Test extends BaseTest{
 		
 		//searchpage.publishedWithin();
 		//searchpage.dateAddedToCloudLibrary();
-	
-		//searchpage.bookFilters();
-		
+		//searchpage.bookFilters();		
 		//searchpage.verifyTitleCountAdvanceSearch();
 		
-		actualData.add(page.locator(searchpage.TitleCount).textContent());
+		searchpage.loadResult();
+		actualData.add(searchpage.actualVerify(searchpage.TitleCount));
 		expectedData.add(testData.get("Book_TitleCount"));	
 		Assert.assertEquals(expectedData, actualData);
 		extentTest.log(Status.INFO, "Titles Count has been Verified");
 		
-		searchpage.clickElement(searchpage.leftPnlClse);
-		searchpage.navigateToCartAndSearchPage();
+		searchpage.clseLftPnlIfExists();
 	}
 	
 	@Test
@@ -205,10 +205,14 @@ public class Search_Test extends BaseTest{
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();
 			
+		searchpage.clseLftPnlIfExists();
+
+		searchpage.navigateToCartAndSearchPage();
 		extentTest.log(Status.INFO, "Entering the Search criteria on left panel for a filtering multiple titles");
-		//searchpage.enterBookKeyword(testData.get("Book_Keyword"));
 		
-		searchpage.clickElement(searchpage.SearchButton);		
+		searchpage.clickElement(searchpage.SearchButton);	
+		searchpage.loadResult();
+		searchpage.ClearButtonLftPnl();
 		searchpage.enterBookTitle(testData.get("Book_Title"));
 		searchpage.enterBookAuthor(testData.get("Book_Author"));
 		searchpage.enterBookSeries(testData.get("Book_Series"));
@@ -231,13 +235,13 @@ public class Search_Test extends BaseTest{
 		//searchpage.bookFilters();
 		//searchpage.verifyTitleCountAdvanceSearch();
 		
-		actualData.add(page.locator(searchpage.TitleCount).textContent());
+		searchpage.loadResult();
+		actualData.add(searchpage.actualVerify(searchpage.TitleCount));
 		expectedData.add(testData.get("Book_TitleCount"));	
 		Assert.assertEquals(expectedData, actualData);
 		extentTest.log(Status.INFO, "Titles Count has been Verified");
 		
-		searchpage.clickElement(searchpage.leftPnlClse);
-		searchpage.navigateToCartAndSearchPage();
+		searchpage.clseLftPnlIfExists();
 		
 		//searchpage.verifyTitle();
 		//actualData.add(page.locator(searchpage.SpecificISBN).textContent());
@@ -252,22 +256,20 @@ public class Search_Test extends BaseTest{
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();
 		
-		extentTest.log(Status.INFO, "Entering the Search criteria on left panel for a filtering multiple titles");
-		searchpage.clickElement(searchpage.leftPnlClse);
+		searchpage.clseLftPnlIfExists();
 		searchpage.navigateToCartAndSearchPage();
-		searchpage.clickOnIsbnTab();
-		searchpage.enterIsbn();
+		searchpage.clickElement(searchpage.IsbnTab);
+		extentTest.log(Status.INFO, "Entering the Search criteria on left panel for a filtering multiple titles");
+		searchpage.enterIsbn(testData.get("Book_Isbn"));
 		searchpage.clickOnIsbnSearchButton();
-		searchpage.verifyTitleCount_Isbn();
 		
-	
-		actualData.add(page.locator(searchpage.SearchISBN).textContent());
+		searchpage.loadResult();
+		actualData.add(searchpage.actualVerify(searchpage.SearchISBN));
 		expectedData.add(testData.get("Book_SearchISBN"));	
 		Assert.assertEquals(expectedData, actualData);
 		extentTest.log(Status.INFO, "Titles Count has been Verified");
 	
-		searchpage.clickElement(searchpage.leftPnlClse);
-		searchpage.navigateToCartAndSearchPage();
+		searchpage.clseLftPnlIfExists();
 	}
 	
 	@Test
@@ -277,17 +279,19 @@ public class Search_Test extends BaseTest{
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
+		searchpage.clseLftPnlIfExists();
+		searchpage.navigateToCartAndSearchPage();
+		
 		extentTest.log(Status.INFO, "Enter ISBN number on the Quick Search Field");
 		searchpage.quickSearchByISBN();
-		searchpage.keyboardEnter();
-		
-		actualData.add(page.locator(searchpage.TitleCount).textContent());
+
+		searchpage.loadResult();
+		actualData.add(searchpage.actualVerify(searchpage.TitleCount));
 		expectedData.add(testData.get("Book_TitleCount"));	
 		Assert.assertEquals(expectedData, actualData);
 		extentTest.log(Status.INFO, "Titles Count has been Verified");
 		
-		searchpage.clickElement(searchpage.leftPnlClse);
-		searchpage.navigateToCartAndSearchPage();
+		searchpage.clseLftPnlIfExists();
 	}
 	
 	@Test
@@ -297,29 +301,37 @@ public class Search_Test extends BaseTest{
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 
+		searchpage.clseLftPnlIfExists();
+		searchpage.navigateToCartAndSearchPage();
+		
 		extentTest.log(Status.INFO, "Entering Author Details on Adv Search");
-		//ExtentTestManager.getTest().assignCategory("CAT");
 		searchpage.clickOnSearch();
 		searchpage.clickClearButton();
 		searchpage.enterBookAuthor(testData.get("AuthorName"));
 		searchpage.clickSearchButton();
-
-		actualData.add(page.locator(searchpage.TitleCount).textContent());
-		expectedData.add(testData.get("Book_TitleCount"));	
+		
+		searchpage.loadResult();
+		actualData.add(searchpage.actualVerify(searchpage.TitleCount));
+		expectedData.add(testData.get("Book_TitleCount"));		
 		Assert.assertEquals(expectedData, actualData);
+	
+		searchpage.clickElement(searchpage.TitleCount);
 				
 		searchpage.ClearButtonLftPnl();
 		searchpage.enterBookAuthor(testData.get("AuthorName"));
 		searchpage.SearchButtonLftPnl();
 		
-		actualData.add(page.locator(searchpage.TitleCount).textContent());
+		searchpage.loadResult();	
+		actualData.add(searchpage.actualVerify(searchpage.TitleCount));
 		expectedData.add(testData.get("Book_TitleCount"));	
 		Assert.assertEquals(expectedData, actualData);
+		
+		searchpage.clickElement(searchpage.TitleCount);		
 		extentTest.log(Status.INFO, "Titles Count has been Verified");
 		
-		searchpage.clickElement(searchpage.leftPnlClse);
-		searchpage.navigateToCartAndSearchPage();
+		searchpage.clseLftPnlIfExists();
 	}
+	
 	
 	@Test
 	public void VerifyNarratorSearch() throws Exception
@@ -328,13 +340,15 @@ public class Search_Test extends BaseTest{
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
-		searchpage.clickClearButton();
+		searchpage.clseLftPnlIfExists();
+		searchpage.navigateToCartAndSearchPage();
 		
 		extentTest.log(Status.INFO, "Entering Narrator Details on Adv Search");
 		searchpage.enterBookNarrator(testData.get("NarratorName"));
 		searchpage.clickSearchButton();
 	
-		actualData.add(page.locator(searchpage.TitleCount).textContent());
+		searchpage.loadResult();
+		actualData.add(searchpage.actualVerify(searchpage.TitleCount));
 		expectedData.add(testData.get("Book_TitleCount"));	
 		Assert.assertEquals(expectedData, actualData);
 				
@@ -342,14 +356,13 @@ public class Search_Test extends BaseTest{
 		searchpage.enterBookNarrator(testData.get("NarratorName"));
 		searchpage.SearchButtonLftPnl();
 		
-		actualData.add(page.locator(searchpage.TitleCount).textContent());
+		searchpage.loadResult();
+		actualData.add(searchpage.actualVerify(searchpage.TitleCount));
 		expectedData.add(testData.get("Book_TitleCount"));	
 		Assert.assertEquals(expectedData, actualData);
 		extentTest.log(Status.INFO, "Titles Count has been Verified");
 		
-		searchpage.clickElement(searchpage.leftPnlClse);
-		searchpage.navigateToCartAndSearchPage();
-		
+		searchpage.clseLftPnlIfExists();
 	}
 	
 	@Test
@@ -359,12 +372,16 @@ public class Search_Test extends BaseTest{
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
+		searchpage.clseLftPnlIfExists();
+		searchpage.navigateToCartAndSearchPage();
+		
 		searchpage.enterBookSeries(testData.get("SeriesName"));
 		searchpage.clickSearchButton();
 		
 		extentTest.log(Status.INFO, "Entering Series Details on Adv Search");
 		
-		actualData.add(page.locator(searchpage.TitleCount).textContent());
+		searchpage.loadResult();
+		actualData.add(searchpage.actualVerify(searchpage.TitleCount));
 		expectedData.add(testData.get("Book_TitleCount"));	
 		Assert.assertEquals(expectedData, actualData);
 				
@@ -372,14 +389,13 @@ public class Search_Test extends BaseTest{
 		searchpage.enterBookSeries(testData.get("SeriesName"));
 		searchpage.SearchButtonLftPnl();
 		
-		
-		actualData.add(page.locator(searchpage.TitleCount).textContent());
+		searchpage.loadResult();
+		actualData.add(searchpage.actualVerify(searchpage.TitleCount));
 		expectedData.add(testData.get("Book_TitleCount"));	
 		Assert.assertEquals(expectedData, actualData);
 		extentTest.log(Status.INFO, "Titles Count has been Verified");
 		
-		searchpage.clickElement(searchpage.leftPnlClse);
-		searchpage.navigateToCartAndSearchPage();
+		searchpage.clseLftPnlIfExists();
 	}
 	
 	@Test
@@ -389,6 +405,9 @@ public class Search_Test extends BaseTest{
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
+		searchpage.clseLftPnlIfExists();
+		searchpage.navigateToCartAndSearchPage();
+		
 		extentTest.log(Status.INFO, "Entering Keyword on the keyword field");
 		searchpage.enterBookKeyword(testData.get("Book_Keyword"));
 		searchpage.verifyDisabled(searchpage.keywordTitle);
@@ -400,8 +419,7 @@ public class Search_Test extends BaseTest{
 		searchpage.verifyDisabled(searchpage.Series);
 		extentTest.log(Status.INFO, "Title, Author and Series Fields are Disabled");
 		
-		searchpage.clickElement(searchpage.leftPnlClse);
-		searchpage.navigateToCartAndSearchPage();
+		searchpage.clseLftPnlIfExists();
 	}
 	
 	//@Test
@@ -414,14 +432,6 @@ public class Search_Test extends BaseTest{
 		}
 	
 	
-	public void verifySortTest() throws Exception
-	{
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "verifySort");
-		
-		searchpage.selectSortByOption(testData.get("Book_SortBy"));
-		searchpage.verifySort();
-	}
-	
 	//@Test
 	public void VerifySearchByUploadIsbn() throws Exception
 	{		
@@ -429,19 +439,22 @@ public class Search_Test extends BaseTest{
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();
 		
+		searchpage.clseLftPnlIfExists();
 		searchpage.clickOnSearch();
 		searchpage.clickOnIsbnTab();
 		searchpage.uploadIsbnFile();
 		
-		actualData.add(page.locator(searchpage.TotalNotMatched).textContent());
+		searchpage.loadResult();
+		actualData.add(searchpage.actualVerify(searchpage.TotalNotMatched));
 		expectedData.add(testData.get("Book_NotMatched"));	
 		Assert.assertEquals(expectedData, actualData);
 		
-		actualData.add(page.locator(searchpage.TitleCount).textContent());
+		searchpage.loadResult();
+		actualData.add(searchpage.actualVerify(searchpage.TitleCount));
 		expectedData.add(testData.get("Book_Matched_Isbn"));	
 		Assert.assertEquals(expectedData, actualData);
 		
-		searchpage.clickElement(searchpage.leftPnlClse);
+		searchpage.clickElement(SearchPage.leftPnlClse);
 		searchpage.navigateToCartAndSearchPage();
 		
 		//searchpage.verifyNotMatchedIsbnCount();

@@ -3,19 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.test.Search_Test">
+      <class name="TestCases.Search_Test">
         <methods>
           <include name="setReport"/>
-          <include name="VerifySeriesSearch"/>
+          <include name="verifySpecificTitleLeftPanel"/>
           <include name="setup"/>
           <include name="addResult"/>
-          <include name="setupBefore"/>
-          <include name="VerifySearchByIsbn"/>
           <include name="afterSuiteMethod"/>
-          <include name="VerifyQuickSearchByTitle"/>
+          <include name="setupBefore"/>
           <include name="startReporter"/>
         </methods>
-      </class> <!-- com.test.Search_Test -->
+      </class> <!-- TestCases.Search_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
