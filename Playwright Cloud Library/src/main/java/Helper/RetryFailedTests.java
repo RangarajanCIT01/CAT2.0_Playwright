@@ -5,12 +5,9 @@ import org.testng.ITestResult;
 
 public class RetryFailedTests implements IRetryAnalyzer {
  
-	    private int retryCnt = 0;
-	    // You could mentioned maxRetryCnt (Maximiun Retry Count) as per your requirement. 
+	    private int retryCnt = 0; 
 	    private int maxRetryCnt = 1;
 	    
-	    // This method will be called everytime a test fails. It will return TRUE if a test fails and need to be retried, 
-	    // else it returns FALSE
 	    @Override
 		public boolean retry(ITestResult result) {
 	        if (retryCnt < maxRetryCnt) {

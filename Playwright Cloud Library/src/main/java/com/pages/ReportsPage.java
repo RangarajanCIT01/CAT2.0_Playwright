@@ -11,10 +11,8 @@ import com.microsoft.playwright.Page;
 
 public class ReportsPage extends PlaywrightFactory{
 	
-	// References
 	private Page page;
 	
-	// String Locators -Object Repository -OR
 	private String Reports="//span[contains(text(),'Reports')]";
 	private String ReportsTab="//div[@role='tab' and contains(text(),'Reports')]";
 	private String Welcome="//div[@id='logindisplay']";
@@ -25,12 +23,10 @@ public class ReportsPage extends PlaywrightFactory{
 		this.page=page;
 	}
 	
-	// Page actions /methods
 	public void clickOnReports() throws Exception 
 	{
 		waitForVisibilityOf(Reports);
 		clickElement(Reports);
-		Thread.sleep(2000);
 
 	}
 	
@@ -38,7 +34,6 @@ public class ReportsPage extends PlaywrightFactory{
 	{		
 		page.click(ReportsTab);
 		System.out.println(page.url());
-		Thread.sleep(3000);
 		
 		Map<String, String> testData = readJsonElement("SettingsData.json", "settingdetails");
 		String text=testData.get("ReportText");

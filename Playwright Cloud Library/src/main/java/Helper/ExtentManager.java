@@ -23,17 +23,13 @@ public class ExtentManager {
         return extent;
     }
  
-    //Create an extent report instance
     public static ExtentReports createInstance() {
         String fileName = getReportPath(reportFilepath);
                        
-       // ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(fileName);
         ExtentSparkReporter htmlReporter = new ExtentSparkReporter(fileName);
-//      Initialize report
         extent = new ExtentReports();
         extent.attachReporter(htmlReporter);
-        
-        // Set environment details
+ 
         try {
 			Properties prop = new Efficacies().loadPropertiesFromResources("config.properties");
 			extent.setSystemInfo("Server", prop.getProperty("Environment"));
@@ -45,18 +41,14 @@ public class ExtentManager {
 			e.printStackTrace();
 		}
 	
-        //add content, manage tests etc
-     //   htmlReporter.config().setChartVisibilityOnOpen(true);
         htmlReporter.config().setDocumentTitle("CloudLibrary Automation");
         htmlReporter.config().setReportName("CloudLibrary Automation");
-      //  htmlReporter.config().setTestViewChartLocation(ChartLocation.TOP);
         htmlReporter.config().setTheme(Theme.STANDARD);
         htmlReporter.config().setTimeStampFormat("EEEE, MMMM dd, yyyy, hh:mm a '('zzz')'");
 		 
         return extent;
     }
-     
-    //Create the report path
+
     private static String getReportPath (String path) {
     	File testDirectory = new File(path);
         if (!testDirectory.exists()) {

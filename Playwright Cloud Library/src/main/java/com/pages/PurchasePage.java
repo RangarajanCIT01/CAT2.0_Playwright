@@ -7,28 +7,19 @@ import com.microsoft.playwright.Page;
 
 public class PurchasePage extends PlaywrightFactory{
 	
-	
-	// References
 	private Page page;
 	
-	// String Locators -Object Repository -OR
 	private String Purchases="//span[contains(text(),'Purchases')]";
 	private String WithinDays="//span[@class='ant-select-selection-item']//span[contains(text(),'Within 30 days')]";
 	private String BuyersName="//span[@class='ant-select-selection-item']//span[contains(text(),'All buyers')]";
-	//private String Purchases="//span[contains(text(),'Purchases')]";
-
-
 	
-	// Page Constructor
 	public PurchasePage(Page page)
 	{
 		this.page=page;
 	}
-			
-	// Page actions /methods
+	
 	public void clickOnPurchases() throws Exception 
 	{
-		
 		clickElement(Purchases);
 	}
 

@@ -13,7 +13,6 @@ import com.aventstack.extentreports.Status;
 
 public class TestListener implements ITestListener, IRetryAnalyzer {
 
-    
 	static String suite_name = "";
 	static String file_name = "";
 
@@ -26,18 +25,15 @@ public class TestListener implements ITestListener, IRetryAnalyzer {
 		try {
 			ExtentTestManager.endTest();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+		
 			e.printStackTrace();
 		}
 		ExtentManager.getInstance().flush();
 	}
 	
 	private int retryCnt = 0;
-    // You could mentioned maxRetryCnt (Maximiun Retry Count) as per your requirement. 
     private int maxRetryCnt = 1;
     
-    // This method will be called everytime a test fails. It will return TRUE if a test fails and need to be retried, 
-    // else it returns FALSE
     @Override
 	public boolean retry(ITestResult result) {
         if (retryCnt < maxRetryCnt) {
@@ -73,8 +69,7 @@ public class TestListener implements ITestListener, IRetryAnalyzer {
 	}
 	
 	public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites, String outputDirectory) {
-		// TODO Auto-generated method stub
-	
+		
 	 }
 
 

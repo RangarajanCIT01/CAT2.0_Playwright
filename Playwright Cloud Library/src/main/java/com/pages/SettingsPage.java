@@ -53,20 +53,14 @@ public class SettingsPage extends PlaywrightFactory {
 	private String EmailList="//div[@class='ant-select-item-option-content']";
 	private String POReference="//input[@name='PORefNumber']";
 	
-	// Pay per Use-  Audio
-
-	
-	
-	// Page Constructor
 	public SettingsPage(Page page)
 	{
 		this.page=page;
 	}
-			
-	// Page actions /methods
+		
 	public void clickOnSettings() throws Exception 
 	{
-		Thread.sleep(1000);
+		
 		clickElement(Settings);
 	}
 	
@@ -82,7 +76,7 @@ public class SettingsPage extends PlaywrightFactory {
 		String support_email=testData.get("Support_Email");
 
 		fillText(EnterSupportEmail,support_email);
-		Thread.sleep(2000);
+		
 	}
 	
 	public void clickOnSaveButton() throws Exception 
@@ -104,7 +98,7 @@ public class SettingsPage extends PlaywrightFactory {
 		String library_website=testData.get("Library_Website");
 
 		fillText(EnterLibraryWebsite,library_website);
-		Thread.sleep(2000);
+		
 
 	}
 	
@@ -137,7 +131,7 @@ public class SettingsPage extends PlaywrightFactory {
 		String patron_checkouts=testData.get("Patron_Checkouts");
 
 		fillText(CheckoutsPerPatron,patron_checkouts);
-		Thread.sleep(1000);
+		
 	}
 	
 	public void enterHoldsPerPatron() throws Exception
@@ -146,7 +140,7 @@ public class SettingsPage extends PlaywrightFactory {
 		String patron_holds=testData.get("Patron_HoldsPer");
 
 		fillText(HoldsPerPatron,patron_holds);
-		Thread.sleep(1000);
+		
 	}
 	
 	public void enterMonthlySuggestionsPerPatron() throws Exception
@@ -155,7 +149,7 @@ public class SettingsPage extends PlaywrightFactory {
 		String patron_monthlySuggestion=testData.get("Patron_MonthlySuggestions");
 
 		fillText(MonthlySuggestions,patron_monthlySuggestion);
-		Thread.sleep(1000);
+		
 	}
 	
 	public void enterHoldQueueReservations() throws Exception
@@ -164,7 +158,7 @@ public class SettingsPage extends PlaywrightFactory {
 		String patron_holdqueue=testData.get("Patron_HoldQueue");
 
 		fillText(HoldQueueReservations,patron_holdqueue);
-		Thread.sleep(1000);
+		
 	}
 	
 	public void enterDefaultLoanPeriod() throws Exception
@@ -173,23 +167,19 @@ public class SettingsPage extends PlaywrightFactory {
 		String patron_loanperiod=testData.get("Patron_Loan");
 
 		fillText(DefaultLoanPeriod,patron_loanperiod);
-		//Thread.sleep(1000);
 	}
 	
 	
 	public void clickNo() throws Exception 
 	{	
-		//Thread.sleep(1000);
 		clickElement(NoButton);
 	}
 	
 	public void clickUpdate() throws Exception 
 	{	
-		//Thread.sleep(1000);
 		clickElement(Update);
 	}
 	
-	// Library Staff
 	public void clickOnLibraryStaff() throws Exception 
 	{
 		clickElement(LibraryStaff);
@@ -206,7 +196,7 @@ public class SettingsPage extends PlaywrightFactory {
 		String user_email=testData.get("User_Email");
 
 		fillText(EmailAddress,user_email);
-		Thread.sleep(1000);
+		
 	}
 	
 	public void enterFirstName() throws Exception
@@ -215,7 +205,7 @@ public class SettingsPage extends PlaywrightFactory {
 		String user_firstname=testData.get("User_FirstName");
 
 		fillText(FirstName,user_firstname);
-		Thread.sleep(1000);
+		
 	}
 	
 	public void enterLastName() throws Exception
@@ -224,9 +214,8 @@ public class SettingsPage extends PlaywrightFactory {
 		String user_lastname=testData.get("User_LastName");
 
 		fillText(LastName,user_lastname);
-		Thread.sleep(1000);
+		
 	}
-	
 	
 	public void selectLibraryManager() throws Exception
 	{
@@ -250,7 +239,7 @@ public class SettingsPage extends PlaywrightFactory {
 	
 	public void clickOnPayPerUse() throws Exception 
 	{
-		Thread.sleep(1000);
+		
 		clickElement(PayPerUseTab);
 	}
 	
@@ -260,7 +249,7 @@ public class SettingsPage extends PlaywrightFactory {
 		String monthly_budget=testData.get("Ebook_MonthlyBudget");
 		
 		page.locator(MonthlyBudget).first().fill(monthly_budget);
-		Thread.sleep(2000);
+		
 	}
 	
 	public void enterMaxTitlePrice() throws Exception
@@ -269,7 +258,7 @@ public class SettingsPage extends PlaywrightFactory {
 		String max_titleprice=testData.get("Ebook_MaxTitlePrice");
 		
 		page.locator(MaxTitlePrice).first().fill(max_titleprice);
-		Thread.sleep(1000);
+		
 	}
 	
 	public void enterMaxPatronLimit() throws Exception
@@ -278,7 +267,7 @@ public class SettingsPage extends PlaywrightFactory {
 		String max_patronlimit=testData.get("Ebook_MaxPatronLimit");
 		
 		page.locator(MaxPatronLimit).first().fill(max_patronlimit);
-		Thread.sleep(1000);
+		
 	}
 	
 	public void selectBuyer() throws Exception
@@ -289,7 +278,7 @@ public class SettingsPage extends PlaywrightFactory {
 		page.locator(BuyerDropdown).first().click();
 
 		selectDropdownByScrollingCustom(max_patronlimit,BuyerList);
-		Thread.sleep(1000);
+		
 	}
 	
 	public void selectEmailNotification() throws Exception
@@ -300,7 +289,7 @@ public class SettingsPage extends PlaywrightFactory {
 		page.locator(EmailNotificationDropdown).first().click();
 		
 		selectDropdownByScrollingCustom(email,EmailList);
-		Thread.sleep(1000);
+		
 	}
 	
 	public void enterPOReference() throws Exception
@@ -309,10 +298,8 @@ public class SettingsPage extends PlaywrightFactory {
 		String reference=testData.get("Ebook_POReference");
 		
 		page.locator(POReference).first().fill(reference);
-		Thread.sleep(1000);
+		
 	}
-	
-	// Pay per use-Audio
 	
 	public void enterAudioMonthlyBudget() throws Exception
 	{
@@ -320,7 +307,7 @@ public class SettingsPage extends PlaywrightFactory {
 		String monthly_budget=testData.get("Audio_MonthlyBudget");
 		
 		page.locator(MonthlyBudget).nth(-1).fill(monthly_budget);
-		Thread.sleep(2000);
+		
 	}
 	
 	public void enterAudioMaxTitlePrice() throws Exception
@@ -329,7 +316,7 @@ public class SettingsPage extends PlaywrightFactory {
 		String max_titleprice=testData.get("Audio_MaxTitlePrice");
 		
 		page.locator(MaxTitlePrice).nth(-1).fill(max_titleprice);
-		Thread.sleep(1000);
+		
 	}
 	
 	public void enterAudioMaxPatronLimit() throws Exception
@@ -338,7 +325,7 @@ public class SettingsPage extends PlaywrightFactory {
 		String max_patronlimit=testData.get("Audio_MaxPatronLimit");
 		
 		page.locator(MaxPatronLimit).nth(-1).fill(max_patronlimit);
-		Thread.sleep(1000);
+		
 	}
 	
 	public void selectAudioBuyer() throws Exception
@@ -349,7 +336,7 @@ public class SettingsPage extends PlaywrightFactory {
 		page.locator(BuyerDropdown).nth(-1).click();
 
 		selectDropdownByScrollingCustom(max_patronlimit,BuyerList);
-		Thread.sleep(1000);
+		
 	}
 	
 	public void selectAudioEmailNotification() throws Exception
@@ -360,7 +347,7 @@ public class SettingsPage extends PlaywrightFactory {
 		page.locator(EmailNotificationDropdown).nth(-1).click();
 		
 		selectDropdownByScrollingCustom(email,EmailList);
-		Thread.sleep(1000);
+		
 	}
 	
 	public void enterAudioPOReference() throws Exception
@@ -369,6 +356,6 @@ public class SettingsPage extends PlaywrightFactory {
 		String reference=testData.get("Audio_POReference");
 		
 		page.locator(POReference).nth(-1).fill(reference);
-		Thread.sleep(1000);
+		
 	}
 }

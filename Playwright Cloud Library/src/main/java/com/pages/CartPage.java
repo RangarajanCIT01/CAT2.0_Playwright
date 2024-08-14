@@ -15,16 +15,13 @@ import com.microsoft.playwright.Page;
 
 
 public class CartPage extends PlaywrightFactory{
-	
-	// References
+
 	private Page page;
 	public static ExtentTest test;
 	public static ExtentReports extent;
 	static ExtentTest logger;
 	protected SearchPage searchpage = new SearchPage(page);
 
-	
-	// String Locators -Object Repository -OR
 	private String newCart="//button[@class='primary new-cart']";
 	private String cartName="//input[@name='cartName']";
 	private String cartDescription="//*[@id='description']";
@@ -51,13 +48,12 @@ public class CartPage extends PlaywrightFactory{
 	private String removeSelected="//button[@class='smallRed mark-ready-button']";
 	private String yesButton="//button[@class='primary confirm-button']";
 	
-	// Page Constructor
+
 	public CartPage(Page page)
 	{
 		this.page=page;
 	}
-		
-	// Page actions /methods
+
 	public void navigateCartPage() throws InterruptedException
 	{
 		waitForVisibilityOf(cart);
@@ -95,7 +91,6 @@ public class CartPage extends PlaywrightFactory{
 	{		
 		waitForVisibilityOf(cartDescription);
 		Map<String, String> testData = readJsonElement("CartData.json", "cartdetails");
-		
 		fillText(cartDescription, testData.get("CartDesciption"));
 	}
 	
@@ -103,8 +98,6 @@ public class CartPage extends PlaywrightFactory{
 	public void enterDescription(String value) throws Exception 
 	{		
 		waitForVisibilityOf(cartDescription);
-		//Map<String, String> testData = readJsonElement("CartData.json", "cartdetails");
-		
 		fillText(cartDescription, value);
 	}
 	
@@ -113,10 +106,8 @@ public class CartPage extends PlaywrightFactory{
 	{
 		waitForVisibilityOf(createCartButton);
 		clickElement(createCartButton);
-		waitForElement(2);
 	}
 	
-	// Verify if Cart added successfully
 	public boolean verifyCartAddedSuccessfully() throws Exception
 	{
 		waitForVisibilityOf(cartAddedSuccessfully);
@@ -127,15 +118,11 @@ public class CartPage extends PlaywrightFactory{
 		
 		boolean val=verifyAssertMessage(expectedMessage,actualMessage);
 		return val;
-		//Assert.assertTrue(val);
-		//Assert.assertEquals(actualMessage, expectedMessage);
 		
 	}
 	
-	//Verify Cart Title
 	public boolean verifyCartTitle() throws Exception
 	{
-	
 		Map<String, String> testData = readJsonElement("CartData.json", "cartdetails");
 		String cartName=testData.get("CartName");
 			
@@ -144,11 +131,8 @@ public class CartPage extends PlaywrightFactory{
 		
 	}
 	
-	// Delete Cart
 	public void clickOnDeleteCart() throws Exception 
 	{
-		waitForElement(1);
-
 		deleteFromList(cartTitleList,cartDeleteButtonList,cartname,cartDeleteButton);
 	}
 	
@@ -162,26 +146,20 @@ public class CartPage extends PlaywrightFactory{
 		return val;	
 	}
 	
-	
-	
 	public void clickOnBackButton() throws Exception 
 	{
-		waitForElement(1);
 		clickElement(backButton);
 	}
 	
 	public void clickOnCartTitle() throws Exception 
 	{
-		waitForElement(2);
 		String Titlelist="//span[@class='cart-title']";
-		
 		clickFromList(Titlelist,cartname);
-		waitForElement(5);
 	}
 	
 	public void clickOnSecondCartTitle() throws Exception 
 	{
-		waitForElement(2);
+	
 		String Titlelist="//span[@class='cart-title']";
 	
 		clickFromList(Titlelist,cartname2);
@@ -189,7 +167,7 @@ public class CartPage extends PlaywrightFactory{
 	
 	public void clickOnSpotlightCartTitle() throws Exception 
 	{
-		waitForElement(2);
+	
 		Map<String, String> testData = readJsonElement("SpotlightData.json", "spotlightdetails");
 		String Titlelist="//span[@class='cart-title']";
 
@@ -200,7 +178,6 @@ public class CartPage extends PlaywrightFactory{
 	
 	public void verifySportLightCartTitleCount() throws Exception
 	{
-		waitForElement(2);
 		Map<String, String> testData = readJsonElement("CartData.json", "cartdetails");
 		String CartBookCount=testData.get("CartBookTitleCount");
 		
@@ -210,12 +187,11 @@ public class CartPage extends PlaywrightFactory{
 		boolean val=verifyAssertMessage(expectedMessage,CartBookCount);
 	
 		Assert.assertTrue(val);
-		waitForElement(1);
+	
 	}	
 		
-	public void verifyCartTitleCount() throws Exception
-	{
-		waitForElement(2);
+	public void verifyCartTitleCount() throws Exception{
+	
 		Map<String, String> testData = readJsonElement("CartData.json", "cartdetails");
 		String CartBookCount2=testData.get("CartBookTitleCount");
 		
@@ -224,40 +200,32 @@ public class CartPage extends PlaywrightFactory{
 		
 		boolean val=verifyAssertMessage(expectedMessage,CartBookCount2);
 		
-		
-		
 		System.out.println("String : "+CartBookCount2+" locator val : "+expectedMessage);
 		
 		Assert.assertTrue(val);
-		waitForElement(1);
+	
 	}	
-	
-	
 	
 	public void selectBookCheckbox() throws Exception 
 	{
 		page.locator(bookCheckbox).first().dispatchEvent("click");
-		waitForElement(1);
+
 	}
-		
-	//Click On Move Between Carts
+	
 	public void clickMoveBetweenCarts() throws Exception 
 	{
 		Map<String, String> testData = readJsonElement("CartData.json", "cartdetails");
 		String Elementlist="//li[@class='ant-dropdown-menu-item']";
 		
 		selectDropdownByScrolling(moveBetweenCartsDropdown,cartname2,Elementlist);
-		waitForElement(3);
+
 	}
-		
-	// Continue button
+	
 	public void clickOnContinue() throws Exception 
 	{
 		clickElement(clickContinue);
-		waitForElement(3);
 	}
 	
-	// Verify Move between cart message
 	public void verifyCartMovedSuccessfully() throws Exception
 	{
 		Map<String, String> testData = readJsonElement("CartData.json", "cartdetails");
@@ -267,7 +235,6 @@ public class CartPage extends PlaywrightFactory{
 		String expectedMessage=element1.textContent();
 		
 		boolean val=verifyAssertMessage(expectedMessage,actualMessage);
-		//return val;
 		Assert.assertTrue(val);
 	}
 	
@@ -275,33 +242,19 @@ public class CartPage extends PlaywrightFactory{
 	{
 		clickElement(cartBack);
 	}
-	
-	/*public void clickOnSecondCartTitle() throws Exception 
-	{
-		Thread.sleep(2000);
-		Map<String, String> testData = readJsonElement("CartData.json", "cartdetails");
-		String Titlelist="//span[@class='cart-title']";
-
-		String carttitle=testData.get("MoveBetweenCarttitle");
 		
-		clickFromList(Titlelist,carttitle);
-	}*/
-	
 	public void verifyTotalAmountPurchaseCart() throws Exception 
 	{	
 		Locator element1 = page.locator(totalAmount);
 		String totalAMount=element1.textContent();
 		
 		page.locator(purchaseCart).first().dispatchEvent("click");
-		
-		waitForElement(2);
+	
 		Locator element2 = page.locator(purchaseTotalAmount);
 		String totalAmount2=element2.textContent();
 		
 		boolean val=verifyAssertMessage(totalAMount,totalAmount2);
-		waitForElement(2);
 		clickElement(closePurchaseSelected);
-		waitForElement(2);
 	}
 	
 	public void verifyTotalPurchaseSelected() throws Exception 
@@ -314,28 +267,19 @@ public class CartPage extends PlaywrightFactory{
 		page.locator(selectBooks).first().dispatchEvent("click");
 		page.locator(purchaseSelected).first().dispatchEvent("click");
 
-		
-		waitForElement(6);
 		Locator element2 = page.locator(purchaseSelected).first();
 		String totalAmount2=element2.textContent();
 		
 		boolean val=verifyAssertMessage(totalAMount,totalAmount2);
 		
-		waitForElement(3);
 		clickElement(closePurchaseSelected);	
-		waitForElement(2);
 	}
 	
 	public void verifyRemoveSelected() throws Exception 
 	{
 		page.locator(selectBooks).first().dispatchEvent("click");
-		waitForElement(2);
-		
-		page.locator(removeSelected).first().click();
-		waitForElement(2);
-		
+		page.locator(removeSelected).first().click();		
 		page.locator(yesButton).first().click();
-		
 		clickElement(closePurchaseSelected);		
 	}
 	

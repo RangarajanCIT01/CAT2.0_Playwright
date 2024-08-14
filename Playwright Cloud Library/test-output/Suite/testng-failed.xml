@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Search Scenarios(failed)">
+    <classes>
+      <class name="TestCases.SavedSearch_Test">
+        <methods>
+          <include name="VerifyUpdateSearchTitles"/>
+          <include name="VerifySearchKeywordsVisibility"/>
+          <include name="setReport"/>
+          <include name="VerifydeleteSavedSearch"/>
+          <include name="setup"/>
+          <include name="addResult"/>
+          <include name="setupBefore"/>
+          <include name="VerifyCreateSavedSearchSingleTitle"/>
+          <include name="afterSuiteMethod"/>
+          <include name="startReporter"/>
+        </methods>
+      </class> <!-- TestCases.SavedSearch_Test -->
+    </classes>
+  </test> <!-- Search Scenarios(failed) -->
+</suite> <!-- Failed suite [Suite] -->

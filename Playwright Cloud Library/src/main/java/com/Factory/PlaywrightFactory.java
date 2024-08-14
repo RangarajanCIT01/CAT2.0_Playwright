@@ -27,6 +27,7 @@ import org.apache.logging.log4j.LogManager;
 //import org.openqa.selenium.JavascriptExecutor;
 //import org.openqa.selenium.WebElement;
 //import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -55,20 +56,17 @@ import com.pages.SearchPage;
 
 public class PlaywrightFactory {
 
-	// References
 	Playwright playwright;
 	Browser browser;
 	BrowserContext browserContext;
 	public static Page page;
 	Properties prop;
-	// public static ExtentHtmlReporter htmlReporter;
-	// public static ExtentReports extent;
-	// public static ExtentTest test;
-	// public static org.apache.logging.log4j.Logger log;
+
 	public static Logger log;
 	public static String cartname;
 	public static String cartname2;
 	protected LoginPage loginpage;
+	
 
 	public PlaywrightFactory() {
 
@@ -76,6 +74,7 @@ public class PlaywrightFactory {
 
 	public Page initBrowser(Properties prop) throws Exception {
 		loginpage = new LoginPage(page);
+		
 		String browserName = prop.getProperty("browser").trim();
 
 		playwright = Playwright.create();
@@ -111,9 +110,10 @@ public class PlaywrightFactory {
 		page = browserContext.newPage();
 
 		page.navigate(prop.getProperty("url"));
+		Thread.sleep(4000);
 		page.waitForLoadState();
 		loginpage.enterUserName(prop.getProperty("username"));
-		loginpage.enterPassword(prop.getProperty("password"));
+		loginpage.enterPassword(prop.getProperty("password"));	
 		loginpage.clickLogin();
 
 		return page;
@@ -142,12 +142,18 @@ public class PlaywrightFactory {
 	public void clickElement(String locator) {
 		try {
 			page.locator(locator).click();
-			// log.info("'" + locator + "' is clicked");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-
+	
+	public void PressTabKey(int n) {
+		
+		for(int i=0; i<=n; i++) {
+		 page.keyboard().press("Tab");
+		}
+		
+	}
 
 	public String createRandomName() {
 		String name = "AddBooksCart";
@@ -159,7 +165,7 @@ public class PlaywrightFactory {
 		return cartname;
 	}
 
-	public void fillText(String locator, String text) {
+	public void fillText(String locator, String text) throws InterruptedException {
 		try {
 			page.locator(locator).fill(text);
 		} catch (Exception e) {
@@ -196,24 +202,24 @@ public class PlaywrightFactory {
 		page.keyboard().type(key);
 	}
 
-	public void waitForVisibilityOf(String locator) {		
+	public void waitForVisibilityOf(String locator) {
 		page.waitForSelector(locator, new Page.WaitForSelectorOptions().setState(WaitForSelectorState.VISIBLE));
 	}
-	
+
 	public void waitForVisibilityOfHidden(String locator) {
-		untilDomContentLoads();		
+		untilDomContentLoads();
 		page.waitForSelector(locator, new Page.WaitForSelectorOptions().setState(WaitForSelectorState.HIDDEN));
 	}
-	
+
 	public void waitForVisibilityOfTimeout(String locator, int value) {
-		//untilDomContentLoads();		
+		// untilDomContentLoads();
 		page.waitForSelector(locator, new Page.WaitForSelectorOptions().setTimeout(value));
 	}
-	
+
 	private Locator waitForElement(Locator locator, boolean isVisible) {
-	    WaitForSelectorState visibilityName = isVisible ? WaitForSelectorState.VISIBLE : WaitForSelectorState.HIDDEN;
-	    locator.waitFor(new Locator.WaitForOptions().setState(visibilityName));
-	    return locator;
+		WaitForSelectorState visibilityName = isVisible ? WaitForSelectorState.VISIBLE : WaitForSelectorState.HIDDEN;
+		locator.waitFor(new Locator.WaitForOptions().setState(visibilityName));
+		return locator;
 	}
 
 	public void untilElementHidden(Locator locator) {
@@ -238,12 +244,10 @@ public class PlaywrightFactory {
 
 	public void clickFromList(String elementList1, String title) throws InterruptedException {
 
-		Thread.sleep(3000);
 		try {
 			Locator elements = page.locator(elementList1);
 
-			int i;
-			for (i = 0; i < elements.count(); i++) {
+			for (int i = 0; i < elements.count(); i++) {
 				if (elements.nth(i).textContent().equals(title)) {
 					elements.nth(i).click();
 					break;
@@ -252,6 +256,48 @@ public class PlaywrightFactory {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public String clickFromListContains(String elementList1, String title) throws InterruptedException {
+		
+		try {
+			String loc;
+			Locator elements = page.locator(elementList1);
+
+			for (int i = 0; i < elements.count(); i++) {
+				if (elements.nth(i).textContent().contains(title)) {
+					String loc1 = elements.nth(i).textContent();
+					break;
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		String loc = null;
+		return loc;
+	
+	}
+	
+	public boolean containsVerify(String value, String exp) {
+		String loc = page.locator(value).innerText();
+		
+		boolean flag = loc.contains(exp);
+	
+		if (!flag) {
+			Assert.fail();
+			}
+		return flag;  
+	}
+	
+	public boolean containsVerifyIgnoreCase(String value, String exp) {
+		String loc = page.locator(value).innerText();
+		
+		boolean flag = loc.equalsIgnoreCase(exp);
+	
+		if (!flag) {
+			Assert.fail();
+			}
+		return flag;  
 	}
 
 	public void navigateBackToSearch(String elementList) throws InterruptedException {
@@ -321,14 +367,17 @@ public class PlaywrightFactory {
 		return result;
 	}
 
+	/******** USE THE BELOW 3 *****/
+	
 	public void selectDropdownByScrolling(String Element, String option, String elementList)
 			throws InterruptedException {
-		Thread.sleep(2000);
+
 		try {
 
 			page.locator(Element).click();
-
+			
 			Locator elementlist = page.locator(elementList);
+
 			for (int i = 0; i < elementlist.count(); i++) {
 				if (elementlist.nth(i).textContent().contains(option)) {
 					elementlist.nth(i).click();
@@ -340,15 +389,29 @@ public class PlaywrightFactory {
 		}
 	}
 
-	public void selectDropdownSpecificSearch(String Element, String option, String elementList)
+	public void selectDropdownSpecificSearch(String option, String elementList)
 			throws InterruptedException {
 		try {
-
-			page.locator(Element).click();
-
 			Locator elementlist = page.locator(elementList);
 			for (int i = 0; i < elementlist.count(); i++) {
 				if (elementlist.nth(i).textContent().contains(option)) {
+					elementlist.nth(i).click();
+					break;
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void selectDropdownSpecificSearchEquals(String option, String elementList)
+			throws InterruptedException {
+		try {
+			Locator elementlist = page.locator(elementList);
+			
+			
+			for (int i = 0; i < elementlist.count(); i++) {
+				if (elementlist.nth(i).textContent().equals(option)) {
 					elementlist.nth(i).click();
 					break;
 				}
@@ -399,6 +462,15 @@ public class PlaywrightFactory {
 		}
 	}
 
+	/*public static returnText(String data) {
+		
+		Locator listEle = page.locator(data);
+
+        List<String> allTextContents = listEle.allTextContents();
+
+        return 
+	}*/
+
 	public static void selectDropdownForOtherElements(String Element, String option, String elementList) {
 		try {
 
@@ -422,11 +494,30 @@ public class PlaywrightFactory {
 		}
 	}
 
-	public static void selectDropdownByScrollingCustom(String option, String elementList) {
+	public  void selectDropdownByScrollingCustom(String option, String elementList) {
+		try {
+		
+			Locator elementlist = page.locator(elementList);
+
+			for (int i = 0; i < elementlist.count(); i++) {
+				if (elementlist.nth(i).textContent().contains(option)) {
+					
+					elementlist.nth(i).click();
+					break;
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+	
+	public  void selectdrpdwnByScrollingCustomEquals(String option, String elementList) {
 		try {
 			Locator elementlist = page.locator(elementList);
 			for (int i = 0; i < elementlist.count(); i++) {
-				if (elementlist.nth(i).textContent().contains(option)) {
+				if (elementlist.nth(i).textContent().equals(option)) {
 					elementlist.nth(i).click();
 					break;
 				}
@@ -475,9 +566,23 @@ public class PlaywrightFactory {
 		}
 		return result;
 	}
+	
+	public boolean verifyTitleFromListContains(String elementList1, String title) throws InterruptedException {
+		Thread.sleep(1000);
+		Locator elements = page.locator(elementList1);
+		boolean result = false;
+
+		for (int i = 0; i < elements.count(); i++) {
+			if (elements.nth(i).textContent().contains(title)) {
+				elements.nth(i);
+				result = true;
+				break;
+			}
+		}
+		return result;
+	}
 
 	public static boolean compareList(String elementList1, List<String> elementList2) {
-		Locator elements = page.locator(elementList1);
 
 		// Create a locator for the element list
 		Locator locator = page.locator(elementList1);
@@ -496,39 +601,52 @@ public class PlaywrightFactory {
 
 	}
 
-	public static boolean compare(String elementList1, List<String> elementList2) {
-		boolean result = false;
-		Locator elements = page.locator(elementList1);
+	public static boolean compare(String elementList, String data) {
 
-		Locator locator = page.locator(elementList1);
+		Locator locator = page.locator(elementList);
 
-		List<String> elementList = locator.allTextContents();
+		List<String> elementListAll = locator.allTextContents();
 
-		System.out.println("elementList-------------" + elementList);
-		System.out.println("elementList2-------------" + elementList2);
-
-		for (Locator element : locator.all()) {
-			String value = element.textContent();
-			System.out.println("Value " + value);
-
-			result = elementList2.contains(value);
+		for (int i = 0; i < elementListAll.size(); i++) {
+			if (elementListAll.contains(data)) {
+				elementListAll.get(i);
+				break;
+			}
 		}
+		boolean result = false;
 		return result;
+		
 	}
 	
-	public void clickIfExists()
-	{
-		Locator leftPnlCls = page.locator(SearchPage.leftPnlClse);
-		if( leftPnlCls.isVisible()) {
+	public static String compare2(String elementList, String data, String elementList2) {
+
+		Locator locator = page.locator(elementList).locator(elementList2);
+
+		List<String> elementListAll = locator.allTextContents();
+
+		for (int i = 0; i < elementListAll.size(); i++) {
+			if (elementListAll.contains(data)) {
+				elementListAll.get(i);
+				break;
+			}
+		}
+		String result = "";
+		return result;
 		
+		
+	}
+
+	public void clickIfExists() {
+		Locator leftPnlCls = page.locator(SearchPage.leftPnlClse);
+		if (leftPnlCls.isVisible()) {
+
 			leftPnlCls.click();
-			
-		} else{
+
+		} else {
 			System.out.println("");
 		}
-			
+
 	}
-		
 
 	public static boolean verifyAssertMessage(String expectedMessage, String actualMessage) {
 		boolean result = false;

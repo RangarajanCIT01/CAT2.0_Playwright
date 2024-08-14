@@ -2,9 +2,9 @@ package TestCases;
 
 import org.testng.annotations.Test;
 
-import com.base.BaseTest5;
+import com.base.BaseTest;
 
-public class Settings_Test extends BaseTest5{
+public class Settings_Test extends BaseTest{
 
 	
 	@Test
@@ -24,12 +24,9 @@ public class Settings_Test extends BaseTest5{
 		settings.clickOnSaveButton();
 	}
 	
-	
-
 	@Test(dependsOnMethods="verifyLibrarySettings")
 	public void verifyPatronSettings() throws Exception
 	{		
-		//settings.clickOnSettings();
 		settings.clickOnPatron();
 		settings.enterCheckoutsPerPatron();
 		settings.enterHoldsPerPatron();
@@ -65,7 +62,6 @@ public class Settings_Test extends BaseTest5{
 		settings.selectBuyer();
 		settings.selectEmailNotification();
 		settings.enterPOReference();
-		
 		
 		settings.enterAudioMonthlyBudget();
 		settings.enterAudioMaxTitlePrice();

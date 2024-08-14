@@ -1,15 +1,11 @@
 package Helper;
 
-import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
-
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.Markup;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
@@ -18,9 +14,9 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 
 public class TestExtentReports {
 	
-	public ExtentSparkReporter htmlReporter; // Create HTML file and add configuration
-	public ExtentReports extent; //Attaching Report, Crating test cases and other system configuration
-	public ExtentTest test; //maintaining the test cases, adding logs status
+	public ExtentSparkReporter htmlReporter; 
+	public ExtentReports extent;
+	public ExtentTest test;
 	
 	@BeforeTest
 	public void setReport() {
@@ -42,33 +38,6 @@ public class TestExtentReports {
 	@AfterTest
 	public void endReport() {
 		extent.flush();
-	}
-	
-	//@Test
-	public void passTest() {
-			
-		System.out.println("Test");
-		test = extent.createTest("Login Test");
-		test.log(Status.INFO, "Entering Username");
-		test.log(Status.INFO, "Entering Password");
-		test.pass("Test Case Pass");
-	  }
-	
-	//@Test
-	public void skipTest()
-	{
-		test = extent.createTest("Skip Test");
-		test.log(Status.INFO, "Entering Some Data");
-		test.skip("Skipping the test");		
-	}
-	
-	//@Test
-	public void failTest()
-	{
-		test = extent.createTest("Fail Test");
-		test.log(Status.INFO, "Test Case Failed");
-		
-		Assert.fail();
 	}
 	
 	@AfterMethod

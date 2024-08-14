@@ -152,7 +152,6 @@ public class ExtentTestManager {
 	        message.setFrom(new InternetAddress(from));
 	        InternetAddress[] toAddress = new InternetAddress[to.length];
 
-	        // To get the array of addresses
 	        for( int i = 0; i < to.length; i++ ) {
 	            toAddress[i] = new InternetAddress(to[i]);
 	        }
@@ -196,11 +195,9 @@ public class ExtentTestManager {
 	 */
 	
 	public static void recursiveDelete(File file) {
-	     // to end the recursive loop
 	     if (!file.exists())
 	         return;
 	     
-	     // if directory, go inside and call recursively
 	     if (file.isDirectory()) {
 	         for (File f : file.listFiles()) {
 	             // call recursively
@@ -208,7 +205,6 @@ public class ExtentTestManager {
 	         }
 	     }
 	     
-	     // delete files and empty directory
 	     file.delete();
 	     System.out.println("Deleted file/folder: "+file.getAbsolutePath());
 	 }

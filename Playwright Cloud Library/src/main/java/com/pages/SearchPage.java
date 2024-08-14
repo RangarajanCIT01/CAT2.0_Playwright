@@ -1,27 +1,35 @@
 package com.pages;
 
+import java.io.File;
+import java.io.FileReader;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
+import java.util.Map.Entry;
 
 import org.testng.Assert;
 
 import com.Factory.PlaywrightFactory;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import com.microsoft.playwright.ElementHandle;
 import com.microsoft.playwright.FileChooser;
 import com.microsoft.playwright.Locator;
+import com.microsoft.playwright.Locator.ScrollIntoViewIfNeededOptions;
 import com.microsoft.playwright.Page;
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
+import static org.testng.Assert.assertTrue;
 
 public class SearchPage extends PlaywrightFactory {
 
-	// References
 	public Page page;
 
-	// String Locators -Object Repository -OR
 	public String Search = "//span[contains(text(),'Search')]";
 	private String cart = "//span[contains(text(),'Carts')]";
 	public String Keyword = "//*[@name='keyword']";
@@ -30,13 +38,23 @@ public class SearchPage extends PlaywrightFactory {
 	public String Author = "//input[@name='AuthorSearch']";
 	public String Narrator = "//input[@name='Narrator']";
 	public String Series = "//input[@name='series']";
-	public String PresalesTitles = "//div[@class='ant-select-selector']//span[contains(@class,'ant-select-selection-item')]";
+	public String PresaleDropdown = "//input[@id='PresaleTitles']";
+	public String drpdwnIncludeTitles = "//span[@title='Include Pre-Sale Titles']";
+	public String drpdwnExcludeTitles = "//span[@title='Exclude Pre-Sale Titles']";
+	public String drpdwnOnlyIncludeTitles = "//span[@title='Only Include Pre-Sale Titles']";
 	public String HoldRatio = "//input[@name='HoldRatio']";
 	public String Category = "//span[text()='Category and Subjects']/..//input";
 	public String Audience = "//span[text()='All Audiences']/..//input";
+	//public String Audience = "//span[text()='All Audiences']";
+	//public String AudienceList = "//div[@class='rc-virtual-list-holder-inner']";
+	public String AudienceList = "//div[@class='rc-virtual-list-holder']";
+	//public String AllElements = "//div[@class='ant-row book-details-container ']//p";
+	public String AllElements = "//div[@class='ant-row book-details-container ']";
+	public String AllMultipleElements = "//div[@class='ReactVirtualized__Grid ReactVirtualized__List scrollStyle']";
 	public String PricingMinAmount = "//*[@name='MinimumPriceAmount']";
 	public String PricingMaxAmount = "//*[@name='MaximumPriceAmount']";
 	public String Publishers = "//span[text()='Publishers']/..//input";
+	public String lblContentProvider = "//span[text()='Content Providers']/parent::div";
 	public String ContentProviders = "//span[text()='Content Providers']/..//input";
 	public String PublishedWithin = "//div[@class='searchbyDateSelect'][1]//div[@class='ant-select-selector']";
 	public String DateAdded = "//div[@class='searchbyDateSelect'][2]//div[@class='ant-select-selector']";
@@ -46,12 +64,17 @@ public class SearchPage extends PlaywrightFactory {
 	public String FilterSelfPublished = "//span[@class='ant-checkbox']//input[@name='ExcludeSelfPublished']";
 	public String FormatText = "//div[@class='ant-row']//div[@class='ant-col ant-col-24']//div[@class='ant-card-body']//p[@class='card-title' and contains(text(),'Formats')]";
 	public String SearchButton = "//div[@class='ant-row ant-row-end search-top']//button[@class='primary']";
+	public String DatePurchased = "//p[text()='Dates and Languages']/following::span[1]";
+	public String DatePurchasedDateRange = "//span[text()='Custom Date Range']";
+	public String DatePurchasedStartDate= "//span[text()='Custom Date Range']/following::input[1]";
+	public String DatePurchasedEndDate = "//input[@placeholder='Custom Date Range']/following::input[1]";
+	
+	
+	
 	public String SearchButtonLftPnl = "//button[text()='SEARCH']";
 	public String titleList = "//span[@class='book-title']";
 	public String TitleCount = "//span[@class='title-count']";
-	public String SpecificISBN = "//p[text()='9780739330050']";
-	public String SearchISBN = "//p[text()='9781478956655']";
-	public String quickSearchISBN = "//span[text()='Harry']";
+	
 	public String resetButton = "//button[@class='resetBtn']";
 	public static String leftPnlClse = "//span[text()='x']";
 	public String quickSearch = "//input[@placeholder='Quick Search by Title, Author or ISBN']";
@@ -68,6 +91,8 @@ public class SearchPage extends PlaywrightFactory {
 	public String IsbnSearchButton = "//button[@id='isbn-search-btn']";
 	public String Back = "//button[@class='back-button']";
 	public String TotalNotMatched = "//span[@class='total_not_matched']";
+	
+	/*********** Saved Search *********/
 	public String SaveSearch = "//input[@class='Search_Save_btn' and @type='button']";
 	public String savedSearch = "//span[text()='Saved Search']";
 	public String savedDropdown = "//div[@class='rc-virtual-list-holder']";
@@ -75,38 +100,120 @@ public class SearchPage extends PlaywrightFactory {
 	public String SearchDesc = "//input[@name='SearchSaveDescription']";
 	public String SaveButton = "//button[@class='primary searchSave']";
 	public String SavedTab = "//div[@role='tab' and contains(text(),'Saved')]";
+	public String SavedList = "//div[@class='rc-virtual-list-holder-inner']/..//span";
 	public String ManagePopup = "//div[@style='display: flex; flex-direction: column; justify-content: center;']";
-	// public String ManageEditIcon = "//p[text()='376257 TEST']/following::img[1]";
-	// public String ManageEditIcon = "//p[text()='Search details for book named
-	// Harry']/following::img[1]";
 	public String ManageEditIcon = "//p[text()='FirstSave']/following::img[1]";
 	public String editSavedSearch = "//span[text()='FirstSave']";
 	public String deleteSavedSeach = "//p[text()='FirstSave']/following::img[2]";
 	public String btnsaveSearch = "//button[text()='Save Search']";
 	public String lnkdeleteSavedSearch = "//span[text()='Delete Saved Search']";
 	public String btnDone = "//button[text()='Done']";
+	public String dltCnfrm = "//span[text()='Delete Saved Search']";
 	public String SavedSearchDropdwn = "//span[text()='Saved Search']";
 	public String SavedSearchList = "//div[@role='listbox']//ancestor::div[@class='ant-select-dropdown dropdown ant-select-dropdown-placement-bottomLeft  ant-select-dropdown-hidden']";
 	public String searchSavedSuccessfully = "//span[contains(text(),'Search Saved Successfully')]";
 	public String TitleAdvSearch = "//input[@placeholder='Title']";
 	public String lnkManage = "//button[text()='Manage']";
 	public String SearchAdvance = "//button[@id='advanced-search-btn' and contains(text(),'SEARCH')]";
+	public String AdvSearchTab = "//div[text()='Advanced Search']";
+	public String SavedFormat = "//div[@class='rc-virtual-list-holder-inner']//span[text()='Format']";
+	public String SavedFormatAll = "//div[@class='rc-virtual-list-holder-inner']//span[text()='All']";
+	public String SavedFormatEPUB = "//div[@class='rc-virtual-list-holder-inner']//span[text()='EPUB']";
+	public String SavedFormatPDF = "//div[@class='rc-virtual-list-holder-inner']//span[text()='PDF']";
+	public String SavedFormatMP3 = "//div[@class='rc-virtual-list-holder-inner']//span[text()='MP3']";
+	
+	
+	/*********** Search page ***********/
 	// button[@id='advanced-search-btn' and contains(text(),'SEARCH')]
 	// input[@class='ant-input card-input' and @id='Title']
 	public String Elementlist = "//span[@class='ant-dropdown-menu-title-content']";
+	public String ElementList2 = "//div[@class='rc-virtual-list']";
 	public String loadingSpinner = "//span[@aria-label='loading']";
-	public String loadingSpinnerText = "//div[@text()='Loading...']";
-
-	// Page Constructor
+	public String loadingSpinnerSaved = "//div[@class='spinner-container']";
+	public String resultContainer = "//div[@class='ant-row book-details-container ']";
+	public String PresaleList = "//div[@class='rc-virtual-list-holder-inner']/..//span";
+	public String chkbxEPUB = "//input[@name='1']";
+	public String chkbxPDF = "//input[@name='2']";
+	public String chkbxMP3 = "//input[@name='3']";
+	public String txtFormat = "//p[text()='Formats']";
+	public String PPUFilterList = "//div[@class='rc-virtual-list-holder-inner']/..//span";
+	public String ExcludePPUTitles = "//span[text()='Exclude PPU Titles']";
+	public String IncludePPUTitles = "//span[text()='Include PPU Titles']";
+	public String OnlyIncludePPUTitles = "//span[text()='Search Only PPU titles']";	
+	public String CustomPubDateRange = "//span[text()='Custom published date range']";
+	public String drpdwnpublishedWithin = "//p[text()='Dates and Languages']/following::span[1]";
+	public String drpdwnColpublishedWithin = "//p[text()='Dates and Languages']/following::span[4]";
+	public String drpdwnAddedToCAT = "//p[text()='Dates and Languages']/following::div[5]";
+	public String drpdwnColAddedToCAT = "//p[text()='Dates and Languages']/following::div[7]";
+	public String drpdwnDatePurchased = "//p[text()='Dates and Languages']/following::span[1]";
+	public String publicationList = "//div[@class='rc-virtual-list-holder-inner']//span";
+	public String CustomDateRangeEndDate = "//div[@class='ant-picker-input']";
+	public String CustomDateRangeStartDate = "//input[@placeholder='Custom Date Range']";
+	public String publishedDateList = "//span[text()='Published within']";
+	public String lblFilters = "//p[text()='Filters']";
+	public String pubList = "//p[text()='Dates and Languages']/..//div[@class='searchbyDateSelect']/..//span[text()='Published Within']";
+	public String publisherdrpdwnList = "//div[@class='ant-select-tree-list']"; 
+	public String lstContentProvider = "//div[@class='ant-select-dropdown ant-tree-select-dropdown ant-select-dropdown-placement-bottomLeft ']";
+	public String lastContentProvider = "//span[text()='Young Test ']";
+	
 	public SearchPage(Page page) {
 		this.page = page;
 	}
+	
+	public Map<String, String> readJsonElement(String fileName, String elementName) throws Exception {
+		String filePath = null;
 
-	// Page actions /methods
+		filePath = System.getProperty("user.dir") + File.separator + "src" + File.separator + "test" + File.separator
+				+ "resource" + File.separator + "TestData" + File.separator + fileName;
+
+		JsonElement root = (new JsonParser()).parse(new FileReader(filePath));
+		JsonObject jsonObject = root.getAsJsonObject();
+		JsonElement some = jsonObject.get(elementName);
+		JsonObject testData = some.getAsJsonObject();
+		Map<String, String> testDataMap = new HashMap();
+		Iterator var = testData.entrySet().iterator();
+
+		while (var.hasNext()) {
+			Entry<String, JsonElement> entry = (Entry) var.next();
+			testDataMap.put(((String) entry.getKey()).toString(), ((JsonElement) entry.getValue()).getAsString());
+		}
+
+		return testDataMap;
+	}
+
+	public String titlenamelist() throws Exception {
+		
+		Map<String, String> testData = readJsonElement("SavedSearch.json", "VerifyCreateSavedSearchSingleTitle");
+		String TitleName = testData.get("Book_SearchName");
+		
+		return TitleName;
+	}
+	
+	public void editSavedSearch() throws Exception {
+		Map<String, String> testData = readJsonElement("SavedSearch.json", "VerifyCreateSavedSearchSingleTitle");
+		String TitleName = testData.get("Book_SearchName");
+		String xp = "//p[text()='"+ TitleName +"']/parent::div/following-sibling::div[1]/img";
+		clickElement(xp);
+	}
+	
+	public void deleteSavedSearch() throws Exception {
+		Map<String, String> testData = readJsonElement("SavedSearch.json", "VerifydeleteSavedSearch");
+		String TitleName = testData.get("Book_DeleteSavedSearch");
+		String xp = "//p[text()='"+ TitleName +"']/parent::div/following-sibling::div[2]/img";
+		clickElement(xp);
+	}
+	
+	public String titlenamelist1() throws Exception {
+		
+		Map<String, String> testData = readJsonElement("SavedSearch.json", "VerifyCreateSavedSearchSingleTitle");
+		String TitleName = testData.get("Book_SearchName");
+		
+		return TitleName;
+	}
+	
 	public void clickOnSearch() throws Exception {
 		waitForVisibilityOf(Search);
 		clickElement(Search);
-
 	}
 
 	public void enterBookKeyword(String data) throws Exception {
@@ -130,33 +237,57 @@ public class SearchPage extends PlaywrightFactory {
 		fillText(Series, data);
 	}
 
-	public void preSaleTitles() throws Exception {
+	public void preSaleIncludeTitles(String data) throws Exception {
 
-		String Elementlist = "//div[@class='rc-virtual-list']//div[@class='ant-select-item-option-content']";
-		// String presalesOption=testData.get("Book_Presales");
+		selectDropdownByScrolling(drpdwnOnlyIncludeTitles,data,PresaleList);
+	}
+	
+	public void preSaleExcludeTitles(String data) throws Exception {
 
-		// selectDropdownByScrolling(PresalesTitles,presalesOption,Elementlist);
+		selectDropdownByScrolling(drpdwnIncludeTitles,data,PresaleList);
+	}
+	
+	public void preSaleOnlyIncludeTitles(String data) throws Exception {
+
+		selectDropdownByScrolling(drpdwnIncludeTitles,data,PresaleList);
 	}
 
+	public void ExcludePPUTitles(String data) throws Exception {
+
+		selectDropdownByScrolling(IncludePPUTitles,data,PPUFilterList);
+	}
+	
+	public void ExcludeColPPUTitles(String data) throws Exception {
+
+		selectDropdownByScrolling(OnlyIncludePPUTitles,data,PPUFilterList);
+	}
+	
+	public void IncludePPUTitles(String data) throws Exception {
+
+		selectDropdownByScrolling(IncludePPUTitles,data,PPUFilterList);
+	}
+	
+	public void OnlyIncludePPUTitles(String data) throws Exception {
+
+		selectDropdownByScrolling(IncludePPUTitles,data,PPUFilterList);
+	}
+	
+		
 	public void enterBookHoldRatio(String data) throws Exception {
 		fillText(HoldRatio, data);
 	}
 
 	public void catergoryAndSubject(String data) throws Exception {
-		String categoryOption = data;
 
 		clickElement(Category);
-		fillText(Category, categoryOption);
+		fillText(Category, data);
 		page.keyboard().down("ArrowDown");
 		page.keyboard().press("Enter");
-
 		page.getByText("Category and Subject").click();
 	}
 
 	public void keyboardEnter() {
-
 		page.keyboard().press("Enter");
-
 	}
 
 	public void keyboardBackspace() {
@@ -172,31 +303,45 @@ public class SearchPage extends PlaywrightFactory {
 	}
 
 	public void audience(String data) throws Exception {
-		// Map<String, String> testData =
-		// readJsonElement("SearchData.json","searchdetails");
+	
 		String audience = data;
-
 		clickElement(Audience);
 		fillText(Audience, audience);
 		page.keyboard().down("ArrowDown");
 		page.keyboard().press("Enter");
 	}
+	
+	public void uncheckEPUBAndPDF(){
+		waitForVisibilityOf(txtFormat);
+		clickElement(chkbxEPUB);
+		clickElement(chkbxPDF);
+	}
+	
+	public void uncheckEPUBAndMP3(){
+		waitForVisibilityOf(txtFormat);
+		clickElement(chkbxMP3);
+		clickElement(chkbxPDF);
+	}
+	
+	public void uncheckPDFAndMP3(){
+		waitForVisibilityOf(txtFormat);
+		clickElement(chkbxPDF);
+		clickElement(chkbxEPUB);	
+	}
+	
+	public void SelectElement() throws Exception {
+		
+		page.keyboard().down("ArrowDown");
+		page.keyboard().press("Enter");
+	}
 
-	public void enterPrice(String data1, String data2) throws Exception {
-		// Map<String, String> testData =
-		// readJsonElement("SearchData.json","searchdetails");
-		// String min=testData.get("Book_MinAmount");
-		// String max=testData.get("Book_MaxAmount");
-		String min = data1;
-		String max = data2;
-
+	public void enterPrice(String min, String max) throws Exception {
 		fillText(PricingMinAmount, min);
 		fillText(PricingMaxAmount, max);
 	}
 
 	public void publishedWithin() throws InterruptedException {
 		selectDropdown(PublishedWithin, 2);
-
 	}
 
 	public void dateAddedToCloudLibrary() throws InterruptedException {
@@ -204,77 +349,79 @@ public class SearchPage extends PlaywrightFactory {
 	}
 
 	public void languages(String data) throws Exception {
-		// Map<String, String> testData =
-		// readJsonElement("SearchData.json","searchdetails");
-		String language = data;
-
 		clickElement(Languages);
-		fillText(Languages, language);
+		fillText(Languages, data);
 		page.keyboard().down("ArrowDown");
 		page.keyboard().press("Enter");
 	}
 
 	public void publisher(String data) throws Exception {
-		// Map<String, String> testData =
-		// readJsonElement("SearchData.json","searchdetails");
-		String publisherOption = data;
-
+		
 		clickElement(Publishers);
-		fillText(Publishers, publisherOption);
+		fillText(Publishers, data);
 		page.keyboard().down("ArrowDown");
 		page.keyboard().press("Enter");
-
-		// selectDropdownByScrolling(Publishers,publisherOption,publisherElementList);
 	}
 
 	public void contentProviders(String data) throws Exception {
-		// Map<String, String> testData = readJsonElement("SearchData.json",
-		// "searchdetails");
+		
 		String providerOption = data;
-
 		clickElement(ContentProviders);
 		fillText(ContentProviders, providerOption);
 		page.keyboard().down("ArrowDown");
 		page.keyboard().press("Enter");
-
-		// selectDropdownByScrolling(ContentProviders,providerOption,publisherElementList);
 	}
 
 	public void bookFormats(String data) throws Exception {
 		page.locator(FormatText).scrollIntoViewIfNeeded();
-
-		// Map<String, String> testData = readJsonElement("SearchData.json",
-		// "searchdetails");
-		String format = data;
-
-		SelectCheckbox(FormatsList, format);
-		// SelectCheckbox(FormatsList2,formatOption);
+		SelectCheckbox(FormatsList, data);
 	}
 
 	public void navigateToCartAndSearchPage() throws InterruptedException {
 		waitForVisibilityOf(cart);
 		clickElement(cart);
-
 		waitForVisibilityOf(Search);
 		clickElement(Search);
 	}
 
 	public void bookFilters() throws InterruptedException {
 		clickElement(FilterSelfPublished);
-
 	}
 
 	public void clickSearchButton() throws InterruptedException {
 		clickElement(SearchButton);
 		waitForVisibilityOfHidden(loadingSpinner);
-		untilDomContentLoads();
-		untilDefaultLoadStateCompletes();
 	}
 
 	public void loadResult() {
 		waitForVisibilityOfHidden(loadingSpinner);
 		untilDomContentLoads();
 		untilDefaultLoadStateCompletes();
+	}
+	
+	public void verifyElementNotDisplayed() {
+		boolean isElementVisible = page.isVisible("your-element-selector");
+        if (!isElementVisible) {
+            System.out.println("The element is not visible.");
+        } else {
+            System.out.println("The element is visible.");
+        }
+		
+	}
+	
+	public void scrollToBottom(String data) {
+	 Locator dropDown = page.locator(data);
+     dropDown.scrollIntoViewIfNeeded();
+	}
+	
+	public void loadResultSaved() {
+		waitForVisibilityOfHidden(loadingSpinnerSaved);
+		untilDomContentLoads();
+		untilDefaultLoadStateCompletes();
+	}
+	
+	public void VerifyScroll1(String data) {		
+		page.locator(data).scrollIntoViewIfNeeded();
 	}
 
 	public String actualVerify(String loc) {
@@ -283,18 +430,14 @@ public class SearchPage extends PlaywrightFactory {
 	}
 
 	public void SearchButtonLftPnl() throws InterruptedException {
-
 		clickElement(SearchButtonLftPnl);
-
 	}
 
 	public void advanceSearch() throws InterruptedException {
-
 		clickElement(SearchAdvance);
 	}
 
 	public void verifybookSearchByTitleCount() throws Exception {
-
 		Map<String, String> testData = readJsonElement("SearchData.json", "searchdetails");
 
 		boolean result = false;
@@ -307,52 +450,7 @@ public class SearchPage extends PlaywrightFactory {
 		}
 		Assert.assertTrue(result);
 	}
-
-	public void verifyTitle2() throws InterruptedException {
-		List<String> book_title = new ArrayList<>();
-		book_title.add("Harry the Poisonous Centipede’s Big Adventure");
-		book_title.add("Harry Hill's Whopping Great Joke Book");
-		book_title.add("Harry Hill's Bumper Book of Bloopers");
-		book_title.add("An A–Z of Harry Potter");
-		book_title.add("See You at Harry's");
-		book_title.add("Horrible Harry Bugs the Three Bears");
-		book_title.add("Horrible Harry and the Dungeon");
-		book_title.add("Horrible Harry Moves up to the Third Grade");
-		book_title.add("Horrible Harry at Halloween");
-		book_title.add("Horrible Harry on the Ropes");
-
-		// boolean res=compareList(titleList,book_title);
-
-		boolean res = compare(titleList, book_title);
-
-		Assert.assertTrue(res);
-	}
-
-	public void verifyTitle() throws InterruptedException {
-		List<String> book_title = new ArrayList<>();
-		book_title.add("Horrible Harry and the Christmas Surprise");
-		book_title.add("Horrible Harry and the Dead Letters");
-		book_title.add("Horrible Harry and the Dragon War");
-		book_title.add("Horrible Harry and the Goog");
-		book_title.add("Horrible Harry and the Holidaze");
-		book_title.add("Horrible Harry and the June Box");
-		book_title.add("Horrible Harry and the Locked Closet");
-		book_title.add("Horrible Harry and the Missing Diamond");
-		book_title.add("Horrible Harry and the Scarlet Scissors");
-		book_title.add("Horrible Harry and the Stolen Cookie");
-		book_title.add("Horrible Harry and the Triple Revenge");
-		book_title.add("Horrible Harry Bugs the Three Bears");
-		book_title.add("Horrible Harry Goes Cuckoo");
-
-		book_title.add("Horrible Harry Takes the Cake");
-		book_title.add("Horrible Harry on the Ropes");
-		// boolean res=compareList(titleList,book_title);
-
-		boolean res = compare(titleList, book_title);
-
-		Assert.assertTrue(res);
-	}
-
+	
 	public void clickClearButton() throws InterruptedException {
 		clickElement(ClearButton);
 	}
@@ -371,25 +469,87 @@ public class SearchPage extends PlaywrightFactory {
 		String newTitleCount = element2.textContent();
 
 		Assert.assertEquals(oldTitleCount, newTitleCount);
-
 	}
 
 	public void verifyDisabled(String data) {
 		assertThat(page.locator(data)).isDisabled();
 	}
-
+	
+	public void verifyHidden(String data) {
+		assertThat(page.locator(data)).isHidden();
+	}
+	
 	public void verifyVisibility(String data) {
 
 		assertThat(page.locator(data)).isVisible();
-		// assertThat(page.locator(data)).not().isVisible();
-
 	}
+	
+	public void verifyIsChecked(String data) {
 
-	/*
-	 * public boolean isDisplayed(WebElement element) { try { return
-	 * element.isDisplayed(); } catch (NoSuchElementException e) { return false; } }
-	 */
+		assertThat(page.locator(data)).isChecked();
+	}
+	
+	public void verifyNonVisibile(String data) {
 
+		assertThat(page.locator(data)).isEmpty();
+	}
+	
+	public void verifyTitleVisibility() throws Exception {
+		Map<String, String> testData = readJsonElement("SavedSearch.json", "VerifyCreatedSavedSearch");
+		String titleVisible = "//input[@value='"+testData.get("Book_Title")+"']";
+		verifyVisibility(titleVisible);
+	}
+	
+	public void verifyAuthorVisibility() throws Exception {
+		Map<String, String> testData = readJsonElement("SavedSearch.json", "VerifyCreatedSavedSearch");
+		String authorVisible = "//input[@value='"+testData.get("Book_Author")+"']";
+		verifyVisibility(authorVisible);
+	}
+	
+	public void verifyContentProviderVisibility() throws Exception {
+		Map<String, String> testData = readJsonElement("SavedSearch.json", "VerifyCreatedSavedSearch");
+		String cpVisible = "//span[text()='"+testData.get("Book_ContentProvider")+"']";
+		verifyVisibility(cpVisible);
+	}
+	
+	public void verifyPublisherVisibility() throws Exception {
+		Map<String, String> testData = readJsonElement("SavedSearch.json", "VerifyCreatedSavedSearch");
+		String pubVisible = "//span[text()='"+testData.get("Book_Publisher")+"']";
+		verifyVisibility(pubVisible);
+	}
+	
+	public void verifyFormatVisibility() throws Exception {
+		Map<String, String> testData = readJsonElement("SavedSearch.json", "VerifyCreatedSavedSearch");
+		String formatVisible = "//input[@name='"+testData.get("Book_Format")+"']";
+		verifyIsChecked(formatVisible);
+	}
+	
+	public void verifyAudienceVisibility() throws Exception {
+		Map<String, String> testData = readJsonElement("SavedSearch.json", "VerifyCreatedSavedSearch");
+		String audienceVisible = "//span[text()='"+testData.get("Book_Audience")+"']";
+		verifyVisibility(audienceVisible);
+	}
+	
+	public void verifyPricingVisibility() throws Exception {
+		Map<String, String> testData = readJsonElement("SavedSearch.json", "VerifyCreatedSavedSearch");
+		String minPriceVisible = "//input[@name='MinimumPriceAmount' and @value='"+testData.get("Book_MinPrice")+"']";
+		String maxPriceVisible = "//input[@name='MaximumPriceAmount' and @value='"+testData.get("Book_MaxPrice")+"']";
+		verifyVisibility(minPriceVisible);
+		verifyVisibility(maxPriceVisible);
+	}
+	
+	public void verifyLanguageVisibility() throws Exception {
+		Map<String, String> testData = readJsonElement("SavedSearch.json", "VerifyCreatedSavedSearch");
+		String LanguageVisible = "//span[text()='"+testData.get("Book_Language")+"']";
+		verifyVisibility(LanguageVisible);
+	}
+	
+	public void verifySearchNotVisibile() throws Exception {
+		Map<String, String> testData = readJsonElement("SavedSearch.json", "VerifydeleteSavedSearch");
+		String titleNotVisible = "//p[text()='"+testData.get("SearchNotVisible")+"']";
+		verifyHidden(titleNotVisible);
+	}
+	
 	public void editorDropdown(String pageSizeOption) throws Exception {
 		selectDropdownByScrolling(EditorDropdown, pageSizeOption, Elementlist);
 	}
@@ -398,15 +558,13 @@ public class SearchPage extends PlaywrightFactory {
 		clickElement(SelectAll);
 	}
 
-	// Add a book to cart
+	
 	public void addToCart() throws Exception {
 		// Map<String, String> testData = readJsonElement("CartData.json",
 		// "cartdetails");
 		String Elementlist = "//li[@class='ant-dropdown-menu-item']";
 		// String carttitleoption=testData.get("CartName");
-
 		selectDropdownByScrolling(AddToCartDropdown, cartname, Elementlist);
-
 	}
 
 	public boolean verifyAddToCartSuccessfully() throws Exception {
@@ -422,7 +580,6 @@ public class SearchPage extends PlaywrightFactory {
 			result = true;
 		}
 		return result;
-		// Assert-playwright factory
 	}
 
 	public void clickSortDropdown() throws Exception {
@@ -430,17 +587,27 @@ public class SearchPage extends PlaywrightFactory {
 	}
 
 	public void selectSortByOption(String data) throws Exception {
-
-		// Map<String, String> testData = readJsonElement("SearchData.json",
-		// "searchdetails");
 		String titleOption = data;
-		// testData.get("Book_TitleOption")
-
 		String Elementlist = "//div[@class='ant-select-item-option-content']";
-
 		selectDropdownByScrolling(SortDropdown, titleOption, Elementlist);
 	}
+	
+	public void checkList() throws Exception {
 
+		List<String> Elementlist1 = page.locator(publisherdrpdwnList).allInnerTexts();
+		List<Locator> Elementlist2 = page.locator(publisherdrpdwnList).all();
+		List<String> Elementlist3 = page.locator(publisherdrpdwnList).allTextContents();
+		String Elementlist4 = page.locator(publisherdrpdwnList).innerText();
+		String Elementlist5 = page.locator(publisherdrpdwnList).textContent();
+		int Elementlist6 = page.locator(publisherdrpdwnList).count();
+		System.out.println("Below are the details of " +Elementlist1 );
+		System.out.println("Below are the details of " +  Elementlist2);
+		System.out.println("Below are the details of " + Elementlist3);
+		System.out.println("Below are the details of " + Elementlist4);
+		System.out.println("Below are the details of " + Elementlist5);
+		System.out.println("Below are the details of " + Elementlist6);		
+	}
+	
 	public void verifySort() throws Exception {
 		List<String> book_title = new ArrayList<>();
 		book_title.add("Horrible Harry Takes the Cake");
@@ -474,9 +641,6 @@ public class SearchPage extends PlaywrightFactory {
 		} else{
 			System.out.println("");
 		}
-	
-		//navigateToCartAndSearchPage();
-	
 	}
 
 	public void clickOnIsbnTab() throws Exception {
@@ -485,9 +649,13 @@ public class SearchPage extends PlaywrightFactory {
 	}
 
 	public String getSuccessMessage() {
-
 		String msg = page.locator(searchSavedSuccessfully).textContent();
-
+		return msg;
+	}
+	
+	public String getAllElements() {
+		String msg = page.locator(AllElements).textContent();
+		System.out.println(msg);
 		return msg;
 	}
 
@@ -526,7 +694,6 @@ public class SearchPage extends PlaywrightFactory {
 		actualData.add(page.locator(TitleCount).textContent());
 		expectedData.add(testData.get("Book_TitleCount_Isbn"));
 		Assert.assertEquals(expectedData, actualData);
-
 	}
 
 	public void verifyTitleCount_QuickSearchIsbn() throws Exception {
@@ -537,7 +704,6 @@ public class SearchPage extends PlaywrightFactory {
 		actualData.add(page.locator(TitleCount).textContent());
 		expectedData.add(testData.get("Book_TitleCount_Isbn"));
 		Assert.assertEquals(expectedData, actualData);
-
 	}
 
 	public void clickOnBackButton() throws Exception {
@@ -588,7 +754,7 @@ public class SearchPage extends PlaywrightFactory {
 
 	}
 
-	public void clickOnSaveSearch() {
+	public void clickSaveSearchbtn() {
 		page.locator(SaveSearch).first().click();
 	}
 
@@ -612,14 +778,13 @@ public class SearchPage extends PlaywrightFactory {
 	public void manageLnk() throws Exception {
 		clickElement(lnkManage);
 	}
-
+	
 	public void scroll(String value) throws Exception {
 		Locator ElementHandle = page.locator(value);
 
 		ElementHandle.scrollIntoViewIfNeeded();
-
 	}
-
+	
 	public void scrollAndClick(String value) throws Exception {
 		Locator ElementHandle = page.locator(value);
 
@@ -627,11 +792,16 @@ public class SearchPage extends PlaywrightFactory {
 		ElementHandle.click();
 	}
 
-	public void click(int n) throws Exception {
+	public void drpdwnSavedSelect(int n) throws Exception {
 		for (int i = 0; i <= n; i++) {
 			page.keyboard().press("Tab");
 		}
 		page.keyboard().press("ArrowDown");
+	}
+	
+	public void pressTab() throws Exception {
+			page.keyboard().press("Tab");
+			page.keyboard().press("ArrowDown");
 	}
 
 	public void verifysearchSavedSuccessfully() throws Exception {
@@ -645,5 +815,6 @@ public class SearchPage extends PlaywrightFactory {
 
 		Assert.assertTrue(val);
 	}
+	
 
 	}

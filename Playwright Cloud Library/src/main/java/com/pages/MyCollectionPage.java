@@ -7,15 +7,14 @@ import org.testng.Assert;
 import com.Factory.PlaywrightFactory;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
+import com.microsoft.playwright.options.WaitForSelectorState;
 
 public class MyCollectionPage extends PlaywrightFactory{
-	
-	// References
+
 		private Page page;
-		
-		// String Locators -Object Repository -OR
+	
 		private String MyCollection="//span[contains(text(),'My Collection')]";
-		
+		private String cart = "//span[contains(text(),'Carts')]";
 		private String Keyword="//*[@name='keyword']";
 		private String Title="//input[@placeholder='Title']";
 		private String Author="//input[@name='AuthorSearch']";
@@ -44,91 +43,74 @@ public class MyCollectionPage extends PlaywrightFactory{
 		private String IsbnSearchButton="//button[@id='isbn-search-btn']";
 		private String Back="//button[@class='back-button']";
 		private String TotalNotMatched="//span[@class='total_not_matched']";
-		
 		private String SelectAll="//button[@class='secondary']";
-
 		private String AddToShelfDropdown="//button[@class='cart-tomain-dropdown ']//img[contains(@src,'/static/media/downIcon.b7f4ea24.svg')]";
-
 		private String addToShelfSuccessfully="//span[contains(text(),'Added successfully.')]";
 
-		//private String TotalNotMatched="//span[@class='total_not_matched']";
-	
-		//Constructor
 		public MyCollectionPage(Page page)
 		{
 			this.page=page;
 		}
 		
-		// Page actions /methods
 		public void clickOnMyCollection() throws Exception 
 		{
 			clickElement(MyCollection);
 		}
 		
+		public void navigateToCartAndCollectionPage() throws InterruptedException {
+			waitForVisibilityOf(cart);
+			clickElement(cart);
+
+			waitForVisibilityOf(MyCollection);
+			clickElement(MyCollection);
+		}
+		
 		public void enterBookKeyword() throws Exception 
 		{
-			Thread.sleep(1000);
 			Map<String, String> testData = readJsonElement("CollectionData.json", "collectiondetails");
 			fillText(Keyword,testData.get("Book_Keyword"));	
 		}
 		
 		// Enter Book Title 
-		public void enterBookTitle() throws Exception 
+		public void enterBookTitle(String data) throws Exception 
 		{	
-			Thread.sleep(1000);
-			Map<String, String> testData = readJsonElement("CollectionData.json", "collectiondetails");
-			fillText(Title,testData.get("Book_Title"));
+			fillText(Title,data);
 		}
 		
-		// Enter Book Author 
-		public void enterBookAuthor() throws Exception 
+		public void enterBookAuthor(String data) throws Exception 
 		{
-			Map<String, String> testData = readJsonElement("CollectionData.json", "collectiondetails");
-			fillText(Author,testData.get("Book_Author"));
+			fillText(Author,data);
 		}
 		
-		// Enter Book Narrator 
-		public void enterBookNarrator() throws Exception 
+		public void enterBookNarrator(String data) throws Exception 
 		{
-			Map<String, String> testData = readJsonElement("CollectionData.json", "collectiondetails");
-			fillText(Narrator,testData.get("Book_Narrator"));
+			fillText(Narrator,data);
 		}
 		
-		public void enterBookSeries() throws Exception 
+		public void enterBookSeries(String data) throws Exception 
 		{
-			Map<String, String> testData = readJsonElement("CollectionData.json", "collectiondetails");
-			fillText(Series,testData.get("Book_Series"));
+			fillText(Series,data);
 		}
 		
-		public void enterBookHoldRatio() throws Exception
+		public void enterBookHoldRatio(String data) throws Exception
 		{
-		
-			Map<String, String> testData = readJsonElement("CollectionData.json", "collectiondetails");
-			fillText(HoldRatio,testData.get("Book_Ratio"));
+			fillText(HoldRatio,data);
 		}
 		
-		public void catergoryAndSubject(Page page) throws Exception 
+		public void catergoryAndSubject(String data) throws Exception 
 		{
-			Thread.sleep(1000);
-			Map<String, String> testData = readJsonElement("CollectionData.json","collectiondetails");
-			String categoryOption=testData.get("Book_Category");
+			String categoryOption=data;
 			     
 			clickElement(Category);
 			fillText(Category,categoryOption);
 			page.keyboard().down("ArrowDown");
 			page.keyboard().press("Enter");
-			
-		
+
 			page.getByText("Category and Subject").click();
 		} 
 		
 		public void enterPrice(String min, String max) throws Exception 
 		{	
-			Thread.sleep(1000);
-			Map<String, String> testData = readJsonElement("CollectionData.json", "collectiondetails");
-			
-			//fillText(PricingMinAmount,testData.get("Book_MinAmount"));
-			//fillText(PricingMaxAmount,testData.get("Book_MaxAmount"));
 			fillText(PricingMaxAmount,min);
 			fillText(PricingMaxAmount,max);
 		
@@ -137,7 +119,6 @@ public class MyCollectionPage extends PlaywrightFactory{
 		public void publishedWithin() throws InterruptedException
 		{
 			selectDropdown(PublishedWithin,2);
-			Thread.sleep(1000);
 		}
 		
 		public void dateAddedToCloudLibrary() throws InterruptedException
@@ -146,20 +127,15 @@ public class MyCollectionPage extends PlaywrightFactory{
 		}
 		
 		public void audience(String data) throws Exception
-		{    
-			Thread.sleep(1000);
-			//Map<String, String> testData = readJsonElement("SearchData.json","searchdetails");
-			String audience=data; 
-			
+		{   
 		    clickElement(Audience);
-			fillText(Audience,audience);
+			fillText(Audience,data);
 			page.keyboard().down("ArrowDown");
 			page.keyboard().press("Enter");   
 		}
 		
 		public void languages() throws Exception
 		{
-			Thread.sleep(1000);
 			Map<String, String> testData = readJsonElement("CollectionData.json","collectiondetails");
 			String languageOption=testData.get("Book_Language");
 			     
@@ -169,58 +145,38 @@ public class MyCollectionPage extends PlaywrightFactory{
 			page.keyboard().press("Enter");
 		}
 		
-		public void publisher() throws Exception
+		public void publisher(String data) throws Exception
 		{
-			Thread.sleep(2000);
-			Map<String, String> testData = readJsonElement("CollectionData.json","collectiondetails");
-			String publisherOption=testData.get("Book_Publisher");
-			
 			clickElement(Publishers);
-			fillText(Publishers,publisherOption);
+			fillText(Publishers,data);
 			page.keyboard().down("ArrowDown");
-			page.keyboard().press("Enter");
-			
-			//selectDropdownByScrolling(Publishers,publisherOption,publisherElementList); 	
+			page.keyboard().press("Enter"); 	
 		}
 		
-		public void contentProviders() throws Exception
+		public void contentProviders(String data) throws Exception
 		{
-			Thread.sleep(1000);
-			Map<String, String> testData = readJsonElement("CollectionData.json", "collectiondetails");
-			String providerOption=testData.get("Book_ContentProvider");
-			
 			clickElement(ContentProviders);
-			fillText(ContentProviders,providerOption);
+			fillText(ContentProviders,data);
 			page.keyboard().down("ArrowDown");
-			Thread.sleep(1000);
 			page.keyboard().press("Enter");
-			
-			//selectDropdownByScrolling(ContentProviders,providerOption,publisherElementList);
 		}
 		
 		public void bookFormats() throws Exception
 		{
-			Thread.sleep(1000);
 			page.locator(FormatText).scrollIntoViewIfNeeded();
 			
 			Map<String, String> testData = readJsonElement("CollectionData.json", "collectiondetails");
 			String formatOption=testData.get("Book_Format");
-			//String formatOption2=testData.get("Book_Format2");
-			
-			
 			SelectCheckbox(FormatsList,formatOption);
-		//	SelectCheckbox(FormatsList2,formatOption2);
 		}
 		
 		public void clickSearchButton() throws InterruptedException 
 		{
-			Thread.sleep(1000);
 			clickElement(SearchButton);
 		}
 		
 		public void verifybookSearchByTitleCount() throws Exception
 		{
-			Thread.sleep(5000);
 			Map<String, String> testData = readJsonElement("CollectionData.json", "collectiondetails");
 		
 			boolean result = false;
@@ -240,21 +196,21 @@ public class MyCollectionPage extends PlaywrightFactory{
 			clickElement(IsbnTab);
 		}
 		
-		public void enterIsbn() throws Exception 
+		public void enterIsbn(String data) throws Exception 
 		{
-			Thread.sleep(1000);
-			Map<String, String> testData = readJsonElement("CollectionData.json", "collectiondetails");
-			fillText(IsbnList,testData.get("Book_Isbn"));	
+			waitForElement(3);
+			fillText(IsbnList,data);	
 		}
 		
 		public void clickOnIsbnSearchButton() throws Exception 
 		{
+			Thread.sleep(1000);
 			clickElement(IsbnSearchButton);
 		}
 		
 		public void verifyTitleCount_Isbn() throws Exception
 		{
-			Thread.sleep(3000);
+	
 			Map<String, String> testData = readJsonElement("CollectionData.json", "collectiondetails");
 		
 			boolean result = false;
@@ -272,15 +228,16 @@ public class MyCollectionPage extends PlaywrightFactory{
 		public void clickOnBackButton() throws Exception 
 		{
 			clickElement(Back);
-			Thread.sleep(3000);
 		}
-		
-		
 		
 		public void uploadIsbnFile() throws Exception 
 		{	
-			page.setInputFiles("input#react-csv-reader-input",Paths.get("C:\\Users\\tejashree.k\\eclipse-workspace\\CloudLibrary_Playwright\\Isbn.csv"));
-			Thread.sleep(5000);
+			waitForElement(6);
+			page.waitForSelector("input[type='file']", new Page.WaitForSelectorOptions().setState(WaitForSelectorState.VISIBLE));
+			page.locator("#react-csv-reader-input").setInputFiles(Paths.get("./src/test/resource/TestData/Isbn.csv"));
+			//page.setInputFiles("//input[@id='react-csv-reader-input']", Paths.get("Isbn.csv"));
+			waitForElement(6);
+			//page.setInputFiles("input#react-csv-reader-input",Paths.get("./src/test/resource/TestData/Isbn.csv"));
 		}
 		
 		public void verifyNotMatchedIsbnCount() throws Exception 
@@ -301,7 +258,6 @@ public class MyCollectionPage extends PlaywrightFactory{
 		
 		public void verifyMatchedIsbnCount() throws Exception
 		{
-			Thread.sleep(3000);
 			Map<String, String> testData = readJsonElement("CollectionData.json", "collectiondetails");
 		
 			boolean result = false;
@@ -316,27 +272,19 @@ public class MyCollectionPage extends PlaywrightFactory{
 		
 		}
 		
-		
-		///////
-		
 		public void selectAllBooks() throws InterruptedException
 		{
-			Thread.sleep(3000);
 			clickElement(SelectAll);
-			Thread.sleep(3000);
 		}
 		
-		//Add a book to Shelf
 		public void addToShelf() throws Exception
 		{
 			Map<String, String> testData = readJsonElement("ShelfData.json", "shelfdetails");
 			String Elementlist="//span[@class='ant-dropdown-menu-title-content']";
 			String shelftitleoption=testData.get("ShelfName");
 			selectDropdownByScrolling(AddToShelfDropdown,shelftitleoption,Elementlist);
-			Thread.sleep(4000);	
 		}
 		
-		// Verify Shelf created successfully
 		public void verifyShelfCreatedSuccessfully() throws Exception
 		{
 			Map<String, String> testData = readJsonElement("ShelfData.json", "shelfdetails");

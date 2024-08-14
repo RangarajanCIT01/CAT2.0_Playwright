@@ -20,7 +20,7 @@ import com.pages.LoginPage;
 import com.pages.MyCollectionPage;
 import com.pages.PurchasePage;
 import com.pages.ReportsPage;
-import com.pages.SaveSearchPage;
+import com.pages.SavedSearchPage;
 import com.pages.SearchPage;
 import com.pages.SettingsPage;
 import com.pages.Shelf;
@@ -42,7 +42,7 @@ public class BaseTest{
 	public PurchasePage purchase;
 	public SpotlightPage spotlight;
 	public ReportsPage report;
-	public SaveSearchPage savesearch;
+	public SavedSearchPage savesearch;
 	public ExtentSparkReporter extentSparkReporter; 
 	public ExtentReports extentReports; 
 	public ExtentTest extentTest; 
@@ -57,7 +57,7 @@ public class BaseTest{
 		playwrightFactory = new PlaywrightFactory();
 		
 		cartpage=new CartPage(page);
-		savesearch=new SaveSearchPage(page);
+		savesearch=new SavedSearchPage(page);
 		shelfpage=new Shelf(page);
 		collection=new MyCollectionPage(page);
 		settings=new SettingsPage(page);

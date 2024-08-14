@@ -10,11 +10,8 @@ import com.microsoft.playwright.Page;
 
 public class Shelf extends PlaywrightFactory{
 	
-	
-	// References
 	private Page page;
 	
-	// String Locators -Object Repository -OR
 	private String Shelves="//span[contains(text(),'Shelves')]";
 	private String newShelf="//button[@class='primary new-cart']";
 	private String manualShelf="//div[contains(text(),'Manual Shelf')]";
@@ -34,13 +31,11 @@ public class Shelf extends PlaywrightFactory{
 	private String shelfDeleteButton="//button[@class='primary confirm-button']";
 
 	
-	// Page Constructor
 	public Shelf(Page page)
 	{
 		this.page=page;
 	}
 		
-	// Page actions /methods
 	public void clickOnShelves() throws Exception 
 	{
 		clickElement(Shelves);
@@ -56,8 +51,6 @@ public class Shelf extends PlaywrightFactory{
 		clickElement(manualShelf);
 	}
 	
-	
-	//Enter Shelf Name
 	public void enterManualShelfName() throws Exception 
 	{	
 		Map<String, String> testData = readJsonElement("ShelfData.json", "shelfdetails");
@@ -72,14 +65,13 @@ public class Shelf extends PlaywrightFactory{
 		String Sdesc=testData.get("ShelfDescription");
 		
 		fillText(shelfDescription,Sdesc);
-		Thread.sleep(1000);
+		
 	}
 	
-	//Click Continue button
 	public void clickOnContinue() throws IOException, InterruptedException 
 	{
 		clickElement(clickContinue);
-		Thread.sleep(4000);
+		
 	}
 	
 	public boolean verifyShelfCreatedSuccessfully() throws Exception
@@ -96,7 +88,7 @@ public class Shelf extends PlaywrightFactory{
 	
 	public void clickOnShelf() throws Exception 
 	{
-		Thread.sleep(3000);
+		
 		Map<String, String> testData = readJsonElement("ShelfData.json", "shelfdetails");
 		String elementList="//div[@class='card-titel']//span";
 		String Sname=testData.get("ShelfName");
@@ -106,7 +98,7 @@ public class Shelf extends PlaywrightFactory{
 	
 	public boolean verifyShelfTitle() throws Exception
 	{
-		Thread.sleep(2000);
+		
 		Map<String, String> testData = readJsonElement("ShelfData.json", "shelfdetails");
 		String shelftitle=testData.get("ShelfName");
 		String Elementlist1="//div[@class='card-titel']";
@@ -117,7 +109,7 @@ public class Shelf extends PlaywrightFactory{
 	
 	public void clickOnDeleteShelf() throws Exception 
 	{
-		Thread.sleep(2000);
+		
 		Map<String, String> testData = readJsonElement("ShelfData.json", "shelfdetails");
 		String carttitle=testData.get("ShelfName");
 		String Elementlist1="//div[@class='card-titel']//span";
@@ -126,10 +118,9 @@ public class Shelf extends PlaywrightFactory{
 		deleteFromList(Elementlist1,Elementlist2,carttitle,shelfDeleteButton);
 	}
 	
-	// Validate the Title Count for Shelf
 	public void verifyShelfTitleCount() throws Exception
 	{
-		Thread.sleep(3000);
+		
 		Map<String, String> testData = readJsonElement("ShelfData.json", "shelfdetails");
 		String CartBookCountShelf=testData.get("bookTitleCountShelf");
 		
@@ -141,15 +132,10 @@ public class Shelf extends PlaywrightFactory{
 	public void selectBookCheckbox() throws Exception 
 	{
 		page.locator(bookCheckboxForPublish).first().dispatchEvent("click");		
-		Thread.sleep(1000);
-		
 	}
-	
-	//Click On Publish
 	public void clickPublish() throws Exception 
 	{
 		clickElement(publish);
-		Thread.sleep(3000);
 	}
 	
 	public boolean verifyShelfPublishedSuccessfully() throws Exception
@@ -163,10 +149,7 @@ public class Shelf extends PlaywrightFactory{
 		boolean val=verifyAssertMessage(expectedMessage,actualMessage);
 		return val;	
 	}
-	
-	
-	// Automated shelf
-	
+		
 	public void shelfTypeAutomated() throws Exception 
 	{
 		clickElement(automatedShelf);
@@ -178,7 +161,7 @@ public class Shelf extends PlaywrightFactory{
 		String Sname=testData.get("AutomatedShelfName");
 			
 		fillText(shelfName,Sname);
-		Thread.sleep(1000);
+		
 	}
 	
 	public void enterAutomatedShelfDescription() throws Exception 
@@ -187,7 +170,7 @@ public class Shelf extends PlaywrightFactory{
 		String Sdesc=testData.get("AutoShelfDescription");
 		
 		fillText(shelfDescription,Sdesc);
-		Thread.sleep(1000);
+		
 	}
 	
 	public void enterAuthor() throws Exception 
@@ -195,25 +178,24 @@ public class Shelf extends PlaywrightFactory{
 		Map<String, String> testData = readJsonElement("ShelfData.json", "shelfdetails");
 		String author=testData.get("Author");
 		fillText(BookAuthor,author);
-		Thread.sleep(2000);
+		
 	}
 	
 	public void publishedWithin() throws InterruptedException
 	{
 		selectDropdown(PublishedWithin,2);
-		Thread.sleep(4000);
+		
 	}
 	
 	public void bookFormats() throws InterruptedException
 	{
 		//SelectCheckbox(BookFormatopt);
-		Thread.sleep(1000);
+		
 	 }
 	
 	public void clickCreateShelfButton() throws InterruptedException 
 	{
 		clickElement(createShelf);
-		Thread.sleep(5000);
 	}
 	
 }

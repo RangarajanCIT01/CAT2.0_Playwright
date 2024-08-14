@@ -6,9 +6,9 @@ import java.util.Map;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.base.BaseTest5;
+import com.base.BaseTest;
 
-public class Cart_Test extends BaseTest5{
+public class Cart_Test extends BaseTest{
 	
 	@Test
 	public void verifyCreateNewCart() throws Exception
@@ -38,7 +38,6 @@ public class Cart_Test extends BaseTest5{
 		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "searchdetails");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();
-		
 		
 		//searchpage.editorDropdown(10);
 		searchpage.selectAll();
@@ -94,8 +93,6 @@ public class Cart_Test extends BaseTest5{
 		cartpage.enterSecondCartName();
 		cartpage.enterDescription();
 		cartpage.createCart();
-		//starting   
-		//cartpage.navigateCartPage();
 		cartpage.clickOnCartTitle();
 		cartpage.selectBookCheckbox();
 		cartpage.clickMoveBetweenCarts();
@@ -110,10 +107,6 @@ public class Cart_Test extends BaseTest5{
 		expectedData.add(testData.get("CartBookTitleCount"));	
 		Assert.assertEquals(expectedData, actualData);
 	}
-	//each class- 
-	//4 classes in 1 clas
-	//new cart-dynamic val
-	//delete created data
 	
 //	@Test(dependsOnMethods="verifyPurchaseCart")
 	public void verifyDeleteCart() throws Exception
