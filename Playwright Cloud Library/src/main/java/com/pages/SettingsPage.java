@@ -18,6 +18,7 @@ public class SettingsPage extends PlaywrightFactory {
 	private String EnterLibraryWebsite="//input[@name='LibraryWebsite']";
 	private String LanguageDropdown="//span[@class='ant-select-selection-item']";
 	private String LanguageElementList="//div[@class='ant-select-item-option-content']";
+	private String edtLanguage = "//h4[text()='Default Language']//following::button[text()='Edit'][1]";
 	
 	//PatronTab 
 	private String PatronTab="//div[@role='tab' and contains(text(),'Patron')]";
@@ -102,9 +103,9 @@ public class SettingsPage extends PlaywrightFactory {
 
 	}
 	
-	public void clickDefaultLanguage()
+	public void clickDefaultLanguage(String data) throws InterruptedException
 	{
-		page.locator(":nth-match(:text('Edit'), 4)").click();
+		fillText(edtLanguage,data);
 	}
 	
 	

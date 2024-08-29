@@ -1,15 +1,34 @@
 package TestCases;
 
+import java.util.Map;
+
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.base.BaseTest;
+import com.pages.MyCollectionPage;
+import com.pages.SearchPage;
 
 public class Settings_Test extends BaseTest{
+	
+	@BeforeClass
+	public void setupBefore() throws Exception {
+		
+		searchpage=new SearchPage(page);
+		searchpage.clickOnSearch();
+		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "searchdetails");
+		
+		searchpage.clickSearchButton();
+		searchpage.editorDropdown(testData.get("Book_PageSize"));	
+		searchpage.clseLftPnlIfExists();
+	}
 
 	
 	@Test
 	public void verifyLibrarySettings() throws Exception
-	{		
+	{				
+		Map<String, String> testData = playwrightFactory.readJsonElement("SettingsData.json", "settingdetails");
+		
 		settings.clickOnSettings();
 		settings.clickEditSupportEmail();
 		settings.enterSupportingEmail();
@@ -19,7 +38,7 @@ public class Settings_Test extends BaseTest{
 		settings.enterLibraryWebsite();
 		settings.clickOnSaveButton();
 		
-		settings.clickDefaultLanguage();
+		settings.clickDefaultLanguage(testData.get("Language"));
 		settings.enterDefaultLanguage();
 		settings.clickOnSaveButton();
 	}

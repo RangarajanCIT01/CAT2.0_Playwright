@@ -3,7 +3,7 @@
 <suite name="Suite">
 	<test name="Search Scenarios">
 		<classes>
-			<class name="TestCases.SavedSearch_Test" />
+			<class name="TestCases.Collection_AdvSearchTest" />
 		</classes>
 	</test>
 
