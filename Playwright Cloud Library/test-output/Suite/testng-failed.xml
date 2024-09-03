@@ -3,20 +3,32 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Search Scenarios(failed)">
     <classes>
-      <class name="TestCases.SavedSearch_Test">
+      <class name="TestCases.Collection_AdvSearchTest">
         <methods>
-          <include name="VerifyUpdateSearchTitles"/>
-          <include name="VerifySearchKeywordsVisibility"/>
-          <include name="setReport"/>
-          <include name="VerifydeleteSavedSearch"/>
+          <include name="VerifyColContentProvider"/>
+          <include name="VerifyColAuthor"/>
+          <include name="VerifyColPublisher"/>
+          <include name="VerifyColPricing"/>
           <include name="setup"/>
           <include name="addResult"/>
-          <include name="setupBefore"/>
-          <include name="VerifyCreateSavedSearchSingleTitle"/>
           <include name="afterSuiteMethod"/>
+          <include name="VerifyColCategoryAndSubject"/>
+          <include name="VerifyColHoldRatio"/>
+          <include name="VerifyColAudience"/>
+          <include name="VerifyColDateAddedToCAT"/>
+          <include name="setReport"/>
+          <include name="setupBefore"/>
+          <include name="VerifyColPPUTitles"/>
+          <include name="VerifyColDatePurchased"/>
+          <include name="VerifyColLanguage"/>
+          <include name="VerifyColTitle"/>
+          <include name="VerifyColSeries"/>
+          <include name="VerifyColPublishedWithin"/>
+          <include name="VerifyColNarrator"/>
+          <include name="VerifyColFormat"/>
           <include name="startReporter"/>
         </methods>
-      </class> <!-- TestCases.SavedSearch_Test -->
+      </class> <!-- TestCases.Collection_AdvSearchTest -->
     </classes>
   </test> <!-- Search Scenarios(failed) -->
 </suite> <!-- Failed suite [Suite] -->
