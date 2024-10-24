@@ -287,7 +287,7 @@ public class SavedSearchPage extends PlaywrightFactory{
 	public void addToCart() throws Exception
 	{
 		String Elementlist="//li[@class='ant-dropdown-menu-item']";
-		selectDropdownByScrolling(AddToCartDropdown,cartname,Elementlist);
+	//	selectDropdownByScrolling(AddToCartDropdown,cartname,Elementlist);
 			
 	}
 		

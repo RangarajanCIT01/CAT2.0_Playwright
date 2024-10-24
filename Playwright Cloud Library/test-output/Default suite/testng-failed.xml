@@ -3,19 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestCases.Settings_Test">
+      <class name="TestCases.SearchCombinations">
         <methods>
-          <include name="verifyLibraryStaffSettings"/>
           <include name="setReport"/>
-          <include name="verifyPatronSettings"/>
-          <include name="verifyLibrarySettings"/>
-          <include name="verifyParPerUse"/>
-          <include name="setup"/>
           <include name="addResult"/>
+          <include name="setup"/>
+          <include name="VerifyPreSaleFilterTitlesAndPublisher"/>
+          <include name="setupBefore"/>
           <include name="afterSuiteMethod"/>
-          <include name="startReporter"/>
+          <include name="closeBrowser"/>
         </methods>
-      </class> <!-- TestCases.Settings_Test -->
+      </class> <!-- TestCases.SearchCombinations -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

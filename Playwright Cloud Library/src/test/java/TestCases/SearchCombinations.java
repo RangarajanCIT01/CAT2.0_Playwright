@@ -1,5 +1,7 @@
 package TestCases;
 
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -12,7 +14,7 @@ import com.pages.MyCollectionPage;
 import com.pages.SearchPage;
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
-public class SearchAndCollectionTest extends BaseTest{
+public class SearchCombinations extends BaseTest{
 	
 	@BeforeClass
 	public void setupBefore() throws Exception {
@@ -29,9 +31,9 @@ public class SearchAndCollectionTest extends BaseTest{
 	}
 	
 	@Test
-	public void VerifyTitle() throws Exception
+	public void VerifyTitleAndAuthor() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "VerifyTitle");
+		Map<String, String> testData = playwrightFactory.readJsonElement("SearchCombinations.json", "VerifyTitleAndAuthor");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
@@ -40,12 +42,12 @@ public class SearchAndCollectionTest extends BaseTest{
 		extentTest.log(Status.INFO, "Entering Title Details");
 		
 		searchpage.enterBookTitle(testData.get("Book_Title"));
+		searchpage.enterBookAuthor(testData.get("Book_Author"));
 		searchpage.clickElement(searchpage.SearchButton);
 		searchpage.loadResult();
 		
 		searchpage.containsVerify(searchpage.AllElements, testData.get("Book_Title"));
-			
-		//assertThat(page.getByText(testData.get("Book_Title"))).isVisible();
+		searchpage.containsVerify(searchpage.AllElements, testData.get("Book_Author"));			
 		
 		extentTest.log(Status.INFO, "Verified the details of Title results");
 
@@ -54,9 +56,9 @@ public class SearchAndCollectionTest extends BaseTest{
 	}
 	
 	@Test
-	public void VerifyAuthor() throws Exception
+	public void VerifyAuthorAndProvider() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "VerifyAuthor");
+		Map<String, String> testData = playwrightFactory.readJsonElement("SearchCombinations.json", "VerifyAuthorAndProvider");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
@@ -65,12 +67,12 @@ public class SearchAndCollectionTest extends BaseTest{
 		extentTest.log(Status.INFO, "Entering Author Details");
 		
 		searchpage.enterBookAuthor(testData.get("Book_Author"));
+		searchpage.contentProviders(testData.get("Book_Provider"));
 		searchpage.clickElement(searchpage.SearchButton);
 		searchpage.loadResult();
-		
-		//assertThat(page.getByText(testData.get("Book_Author"))).isVisible();
-		
+				
 		searchpage.containsVerify(searchpage.AllElements, testData.get("Book_Author"));
+		searchpage.containsVerify(searchpage.AllElements, testData.get("Book_Provider"));
 		
 		extentTest.log(Status.INFO, "Verified the details of Author results");
 
@@ -79,9 +81,9 @@ public class SearchAndCollectionTest extends BaseTest{
 	}
 	
 	@Test
-	public void VerifySeries() throws Exception
+	public void VerifySeriesAndProvider() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "VerifySeries");
+		Map<String, String> testData = playwrightFactory.readJsonElement("SearchCombinations.json", "VerifySeriesAndProvider");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
@@ -90,13 +92,14 @@ public class SearchAndCollectionTest extends BaseTest{
 		extentTest.log(Status.INFO, "Entering Series Details");
 		
 		searchpage.enterBookSeries(testData.get("Book_Series"));
+		searchpage.waitForElement(2);
+		searchpage.contentProviders(testData.get("Book_Provider"));
 		searchpage.clickElement(searchpage.SearchButton);
 		searchpage.loadResult();
 		
 		searchpage.containsVerify(searchpage.AllElements, testData.get("Book_Series"));
+		searchpage.containsVerify(searchpage.AllElements, testData.get("Book_Provider"));
 		
-		//assertThat(page.getByText(testData.get("Book_Series"))).isVisible();
-			
 		extentTest.log(Status.INFO, "Verified the details of Series results");
 
 		searchpage.clseLftPnlIfExists();
@@ -104,9 +107,9 @@ public class SearchAndCollectionTest extends BaseTest{
 	}
 	
 	@Test
-	public void VerifyNarrator() throws Exception
+	public void VerifyNarratorAndModel() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "VerifyNarrator");
+		Map<String, String> testData = playwrightFactory.readJsonElement("SearchCombinations.json", "VerifyNarratorAndModel");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
@@ -119,19 +122,17 @@ public class SearchAndCollectionTest extends BaseTest{
 		searchpage.loadResult();
 		
 		searchpage.containsVerify(searchpage.AllElements, testData.get("Book_Narrator"));
-		
-		//assertThat(page.getByText(testData.get("Book_Narrator"))).isVisible();
+		searchpage.containsVerify(searchpage.AllElements, testData.get("Book_Model"));
 		
 		extentTest.log(Status.INFO, "Verified the details of Narrator results");
 
 		searchpage.clseLftPnlIfExists();
-		
 	}
 	
 	@Test
-	public void VerifyPreSaleFilterTitles() throws Exception
+	public void VerifyPreSaleFilterTitlesAndPublisher() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "VerifyPreSaleFilterTitles");
+		Map<String, String> testData = playwrightFactory.readJsonElement("SearchCombinations.json", "VerifyPreSaleFilterTitlesAndPublisher");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
@@ -147,12 +148,15 @@ public class SearchAndCollectionTest extends BaseTest{
 		searchpage.clickElement(searchpage.Back);
 		
 		searchpage.enterBookTitle(testData.get("IncludePreSale_Title"));
+		searchpage.publisher(testData.get("Book_Publisher"));
 		searchpage.preSaleIncludeTitles(testData.get("IncludePreSale"));
 		searchpage.clickElement(searchpage.SearchButton);
 		searchpage.loadResult();
 		searchpage.containsVerify(searchpage.AllElements, testData.get("IncludePreSale_Title"));
-		searchpage.clickElement(searchpage.Back);
+		searchpage.containsVerify(searchpage.AllElements, testData.get("Book_Publisher"));
+		searchpage.clickElement(searchpage.Back);		
 		
+		searchpage.clickClearButton();
 		searchpage.enterBookTitle(testData.get("ExcludePreSale_Title"));
 		searchpage.preSaleExcludeTitles(testData.get("ExcludePreSale"));
 		searchpage.clickElement(searchpage.SearchButton);
@@ -166,9 +170,9 @@ public class SearchAndCollectionTest extends BaseTest{
 	}
 	
 	@Test
-	public void VerifyHoldRatio() throws Exception
+	public void VerifyHoldRatioAndSubject() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "VerifyHoldRatio");
+		Map<String, String> testData = playwrightFactory.readJsonElement("SearchCombinations.json", "VerifyHoldRatioAndSubject");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
@@ -177,21 +181,23 @@ public class SearchAndCollectionTest extends BaseTest{
 		extentTest.log(Status.INFO, "Enter Hold Ratio Details");
 		
 		searchpage.enterBookHoldRatio(testData.get("Book_HoldRatio"));
+		searchpage.catergoryAndSubject(testData.get("Book_Category"));
 		searchpage.clickElement(searchpage.SearchButton);
 		searchpage.loadResult();
 		
 		searchpage.containsVerify(searchpage.AllElements, testData.get("Book_Title"));
+		searchpage.containsVerify(searchpage.AllElements, testData.get("Book_Subject"));
 		
-		//assertThat(page.getByText(testData.get("Book_Title"))).isVisible();
+		extentTest.log(Status.INFO, "Verified the details of Title, Author and Publisher results");
 		
 		searchpage.clseLftPnlIfExists();
 		
 	}
 	
 	@Test
-	public void VerifyPublisher() throws Exception
+	public void VerifyTitleAuthorAndPublisher() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "VerifyPublisher");
+		Map<String, String> testData = playwrightFactory.readJsonElement("SearchCombinations.json", "VerifyTitleAuthorAndPublisher");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
@@ -205,18 +211,20 @@ public class SearchAndCollectionTest extends BaseTest{
 		searchpage.clickElement(searchpage.SearchButton);
 		searchpage.loadResult();
 		
+		searchpage.containsVerify(searchpage.AllElements, testData.get("Book_Title"));
+		searchpage.containsVerify(searchpage.AllElements, testData.get("Book_Author"));
 		searchpage.containsVerify(searchpage.AllElements, testData.get("Book_Publisher"));
 		
-		extentTest.log(Status.INFO, "Verified the details of Publisher results");
+		extentTest.log(Status.INFO, "Verified the details of Title, Author and Publisher results");
 
 		searchpage.clseLftPnlIfExists();
 		
 	}
 	
 	@Test
-	public void VerifyContentProvider() throws Exception
+	public void VerifyNarratorAndEdition() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "VerifyContentProvider");
+		Map<String, String> testData = playwrightFactory.readJsonElement("SearchCombinations.json", "VerifyNarratorAndEdition");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
@@ -225,114 +233,83 @@ public class SearchAndCollectionTest extends BaseTest{
 		extentTest.log(Status.INFO, "Enter Content Provider Details");
 		
 		searchpage.enterBookTitle(testData.get("Book_Title"));
-		searchpage.contentProviders(testData.get("Book_ContentProvider"));
+		searchpage.enterBookAuthor(testData.get("Book_Author"));
+		searchpage.enterBookNarrator(testData.get("Book_Narrator"));
+
 		searchpage.clickElement(searchpage.SearchButton);
 		searchpage.loadResult();
 		
-		searchpage.containsVerify(searchpage.AllElements, testData.get("Book_ContentProvider"));
+		searchpage.containsVerify(searchpage.AllElements, testData.get("Book_Edition"));
 		
-		extentTest.log(Status.INFO, "Verified the details of Content Provider results");
+		extentTest.log(Status.INFO, "Verified the details of Book Edition results");
 
 		searchpage.clseLftPnlIfExists();
 		
 	}
 	
 	@Test
-	public void VerifyFormat() throws Exception
+	public void VerifyStreetDateAndLastCirculated() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "VerifyFormat");
+		Map<String, String> testData = playwrightFactory.readJsonElement("SearchCombinations.json", "VerifyStreetDateAndLastCirculated");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
 		searchpage.clseLftPnlIfExists();
 		searchpage.navigateToCartAndSearchPage();
-		extentTest.log(Status.INFO, "Selecting Format Details");
-				
-		searchpage.enterBookTitle(testData.get("Book_MP3Title"));
-		searchpage.uncheckEPUBAndPDF();
-		searchpage.clickElement(searchpage.SearchButton);
-		searchpage.loadResult();
-		searchpage.containsVerify(searchpage.AllElements, testData.get("Format_MP3"));
-		
-		searchpage.clickElement(searchpage.Back);
-		searchpage.uncheckEPUBAndMP3();
-		searchpage.enterBookTitle(testData.get("Book_PDFTitle"));
-		searchpage.clickElement(searchpage.SearchButton);
-		searchpage.loadResult();
-		searchpage.containsVerify(searchpage.AllElements, testData.get("Format_PDF"));
-		
-		searchpage.clickElement(searchpage.Back);
-		searchpage.uncheckPDFAndMP3();
-		searchpage.enterBookTitle(testData.get("Book_EPUBTitle"));
-		searchpage.clickElement(searchpage.SearchButton);
-		searchpage.loadResult();
-		searchpage.containsVerify(searchpage.AllElements, testData.get("Format_EPUB"));
-		
-		extentTest.log(Status.INFO, "Verified the details of Author results");
-
-		searchpage.clseLftPnlIfExists();
-	}
-	
-	@Test
-	public void VerifyCategoryAndSubject() throws Exception
-	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "VerifyCategoryAndSubject");
-		ArrayList<Object> actualData = new ArrayList<>();
-		ArrayList<Object> expectedData = new ArrayList<>();		
-	
-		searchpage.clseLftPnlIfExists();
-		searchpage.navigateToCartAndSearchPage();
-		extentTest.log(Status.INFO, "Select Category and Audience Details");
+		extentTest.log(Status.INFO, "Enter Content Provider Details");
 		
 		searchpage.enterBookTitle(testData.get("Book_Title"));
-		searchpage.catergoryAndSubject(testData.get("CategoryAndSubject"));
-		searchpage.clickElement(searchpage.SearchButton);
-		searchpage.loadResult();
-		
-		searchpage.containsVerify(searchpage.AllElements, testData.get("Verify_CategoryAndSub"));		
-		
-		extentTest.log(Status.INFO, "Verified the details of Author results");
-
-		searchpage.clseLftPnlIfExists();
-		
-	}
-	
-	@Test
-	public void VerifyAudience() throws Exception
-	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "VerifyAudience");
-		ArrayList<Object> actualData = new ArrayList<>();
-		ArrayList<Object> expectedData = new ArrayList<>();		
-	
-		searchpage.clseLftPnlIfExists();
-		searchpage.navigateToCartAndSearchPage();
-		extentTest.log(Status.INFO, "Entering Audience Details");
-		
-		searchpage.enterBookTitle(testData.get("Book_Title"));
-		searchpage.audience(testData.get("Book_Audience"));
-		searchpage.clickElement(searchpage.SearchButton);
-		searchpage.loadResult();
-		
-		searchpage.containsVerify(searchpage.AllElements, testData.get("Book_Audience"));
-		
-		//assertThat(page.getByText(testData.get("Book_Isbn"))).isVisible();
+		searchpage.enterBookAuthor(testData.get("Book_Author"));
 			
-		extentTest.log(Status.INFO, "Verified the details of Author results");
+		searchpage.clickElement(searchpage.SearchButton);
+		searchpage.loadResult();
+		
+		searchpage.containsVerify(searchpage.AllElements, testData.get("Book_StreetDate"));
+		searchpage.containsVerify(searchpage.AllElements, testData.get("Book_LastCirculated"));
+		
+		extentTest.log(Status.INFO, "Verified the details of Street Date and Last Circulated results");
+
+		searchpage.clseLftPnlIfExists();
+		
+	}
+		
+	@Test
+	public void VerifyAddedToCatAndLastPurchased() throws Exception
+	{		
+		Map<String, String> testData = playwrightFactory.readJsonElement("SearchCombinations.json", "VerifyAddedToCatAndLastPurchased");
+		ArrayList<Object> actualData = new ArrayList<>();
+		ArrayList<Object> expectedData = new ArrayList<>();		
+	
+		searchpage.clseLftPnlIfExists();
+		searchpage.navigateToCartAndSearchPage();
+		extentTest.log(Status.INFO, "Entering Title and Author Details");
+		
+		searchpage.enterBookTitle(testData.get("Book_Title"));
+		searchpage.enterBookAuthor(testData.get("Book_Author"));
+		searchpage.clickElement(searchpage.SearchButton);
+		searchpage.loadResult();
+		
+		searchpage.containsVerify(searchpage.AllElements, testData.get("Book_AddedToCAT"));
+		searchpage.containsVerify(searchpage.AllElements, testData.get("Book_LastPurchased"));
+			
+		extentTest.log(Status.INFO, "Verified the details of Added to CAT and Last Purchased results");
 
 		searchpage.clseLftPnlIfExists();  
 		
 	}
 	
+	/***** Work ***/
+	
 	@Test
-	public void VerifyPricing() throws Exception
+	public void VerifyPublishedDateAndAllLoans() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "VerifyPricing");
+		Map<String, String> testData = playwrightFactory.readJsonElement("SearchCombinations.json", "VerifyPublishedDateAndAllLoans");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
 		searchpage.clseLftPnlIfExists();
 		searchpage.navigateToCartAndSearchPage();
-		extentTest.log(Status.INFO, "Enter Min and Max pricing Details");
+		extentTest.log(Status.INFO, "Enter Published Date and  Details");
 		
 		searchpage.enterBookTitle(testData.get("Book_Title"));
 		searchpage.enterPrice(testData.get("Book_Min"), testData.get("Book_Max"));
@@ -429,7 +406,7 @@ public class SearchAndCollectionTest extends BaseTest{
 		
 	}
 	
-	@Test 
+	//@Test 
 	public void VerifyPPUTitles() throws Exception
 	{		
 		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "VerifyPPUTitles");
@@ -662,7 +639,7 @@ public class SearchAndCollectionTest extends BaseTest{
 		searchpage.uncheckEPUBAndMP3();
 		searchpage.enterBookTitle(testData.get("Book_PDFTitle"));
 		searchpage.clickElement(searchpage.SearchButton);
-		searchpage.waitForElement(5);
+		searchpage.waitForElement(10);
 		searchpage.loadResult();
 		searchpage.containsVerify(searchpage.AllElements, testData.get("Format_PDF"));
 		
@@ -670,7 +647,7 @@ public class SearchAndCollectionTest extends BaseTest{
 		searchpage.uncheckPDFAndMP3();
 		searchpage.enterBookTitle(testData.get("Book_EPUBTitle"));
 		searchpage.clickElement(searchpage.SearchButton);
-		searchpage.waitForElement(5);
+		searchpage.waitForElement(10);
 		searchpage.loadResult();
 		searchpage.containsVerify(searchpage.AllElements, testData.get("Format_EPUB"));		
 		
@@ -844,7 +821,7 @@ public class SearchAndCollectionTest extends BaseTest{
 	@Test
 	public void VerifyColLanguage() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("CollectionData.json", "VerifyLanguage");
+		Map<String, String> testData = playwrightFactory.readJsonElement("CollectionData.json", "VerifyColLanguage");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	

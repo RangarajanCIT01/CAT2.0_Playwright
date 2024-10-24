@@ -1,0 +1,2158 @@
+<html>
+<head>
+<title>TestNG:  Test</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Test</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>96/5/0</td>
+</tr><tr>
+<td>Started on:</td><td>Wed Oct 16 03:32:57 IST 2024</td>
+</tr>
+<tr><td>Total time:</td><td>2537 seconds (2537728 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='TestCases.Report_Test.validateReport()'><b>validateReport</b><br>Test class: TestCases.Report_Test</td>
+<td><div><pre>com.microsoft.playwright.TimeoutError: Error {
+  message=&apos;Timeout 30000ms exceeded.
+  name=&apos;TimeoutError
+  stack=&apos;TimeoutError: Timeout 30000ms exceeded.
+    at ProgressController.run (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\progress.js:78:26)
+    at Frame._callOnElementOnceMatches (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\frames.js:1418:23)
+    at Frame.textContent (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\frames.js:1058:17)
+    at FrameDispatcher.textContent (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\frameDispatcher.js:179:37)
+    at FrameDispatcher._handleCommand (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\dispatcher.js:365:39)
+}
+Call log:
+- waiting for locator(&quot;//div[@id=&apos;logindisplay&apos;]&quot;)
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.textContentImpl(FrameImpl.java:818)
+	at com.microsoft.playwright.impl.FrameImpl.lambda$textContent$38(FrameImpl.java:809)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.FrameImpl.textContent(FrameImpl.java:809)
+	at com.microsoft.playwright.impl.LocatorImpl.textContent(LocatorImpl.java:582)
+	at com.microsoft.playwright.Locator.textContent(Locator.java:5090)
+	at com.pages.ReportsPage.verifyOnReportTab(ReportsPage.java:42)
+	at TestCases.Report_Test.validateReport(Report_Test.java:15)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.microsoft.playwright.TimeoutError: Error {
+  message=&apos;Timeout 30000ms exceeded.
+  name=&apos;TimeoutError
+  stack=&apos;TimeoutError: Timeout 30000ms exceeded.
+    at ProgressController.run (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\progress.js:78:26)
+    at Frame._callOnElementOnceMatches (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\frames.js:1418:23)
+    at Frame.textContent (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\frames.js:1058:17)
+    at FrameDispatcher.textContent (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\frameDispatcher.js:179:37)
+    at FrameDispatcher._handleCommand (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\dispatcher.js:365:39)
+}
+Call log:
+- waiting for locator(&quot;//div[@id=&apos;logindisplay&apos;]&quot;)
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:254)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 39 more
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace749443480", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace749443480'><pre>com.microsoft.playwright.TimeoutError: Error {
+  message=&apos;Timeout 30000ms exceeded.
+  name=&apos;TimeoutError
+  stack=&apos;TimeoutError: Timeout 30000ms exceeded.
+    at ProgressController.run (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\progress.js:78:26)
+    at Frame._callOnElementOnceMatches (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\frames.js:1418:23)
+    at Frame.textContent (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\frames.js:1058:17)
+    at FrameDispatcher.textContent (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\frameDispatcher.js:179:37)
+    at FrameDispatcher._handleCommand (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\dispatcher.js:365:39)
+}
+Call log:
+- waiting for locator(&quot;//div[@id=&apos;logindisplay&apos;]&quot;)
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.textContentImpl(FrameImpl.java:818)
+	at com.microsoft.playwright.impl.FrameImpl.lambda$textContent$38(FrameImpl.java:809)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.FrameImpl.textContent(FrameImpl.java:809)
+	at com.microsoft.playwright.impl.LocatorImpl.textContent(LocatorImpl.java:582)
+	at com.microsoft.playwright.Locator.textContent(Locator.java:5090)
+	at com.pages.ReportsPage.verifyOnReportTab(ReportsPage.java:42)
+	at TestCases.Report_Test.validateReport(Report_Test.java:15)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: com.microsoft.playwright.TimeoutError: Error {
+  message=&apos;Timeout 30000ms exceeded.
+  name=&apos;TimeoutError
+  stack=&apos;TimeoutError: Timeout 30000ms exceeded.
+    at ProgressController.run (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\progress.js:78:26)
+    at Frame._callOnElementOnceMatches (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\frames.js:1418:23)
+    at Frame.textContent (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\frames.js:1058:17)
+    at FrameDispatcher.textContent (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\frameDispatcher.js:179:37)
+    at FrameDispatcher._handleCommand (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\dispatcher.js:365:39)
+}
+Call log:
+- waiting for locator(&quot;//div[@id=&apos;logindisplay&apos;]&quot;)
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:254)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 39 more
+</pre></div></td>
+<td>33</td>
+<td>TestCases.Report_Test@5aebe890</td></tr>
+<tr>
+<td title='TestCases.Settings_Test.verifyPayPerUse()'><b>verifyPayPerUse</b><br>Test class: TestCases.Settings_Test</td>
+<td><div><pre>com.microsoft.playwright.TimeoutError: Error {
+  message=&apos;Timeout 30000ms exceeded.
+  name=&apos;TimeoutError
+  stack=&apos;TimeoutError: Timeout 30000ms exceeded.
+    at ProgressController.run (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\progress.js:78:26)
+    at Frame.click (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\frames.js:996:23)
+    at FrameDispatcher.click (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\frameDispatcher.js:158:30)
+    at FrameDispatcher._handleCommand (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\dispatcher.js:365:39)
+}
+Call log:
+- waiting for locator(&quot;//span[@class=&apos;ant-select-selection-search&apos;]&quot;).first()
+-   locator resolved to &lt;span class=&quot;ant-select-selection-search&quot;&gt;…&lt;/span&gt;
+- attempting click action
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #1
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #2
+-   waiting 20ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #3
+-   waiting 100ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #4
+-   waiting 100ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #5
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #6
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #7
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #8
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #9
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #10
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #11
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #12
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #13
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #14
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #15
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #16
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #17
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #18
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #19
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #20
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #21
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #22
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #23
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #24
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #25
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #26
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #27
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #28
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #29
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #30
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #31
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #32
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #33
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #34
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #35
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #36
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #37
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #38
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #39
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #40
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #41
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #42
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #43
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #44
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #45
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #46
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #47
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #48
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #49
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #50
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #51
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #52
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #53
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #54
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #55
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #56
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #57
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #58
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #59
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #60
+-   waiting 500ms
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.clickImpl(FrameImpl.java:252)
+	at com.microsoft.playwright.impl.FrameImpl.lambda$click$8(FrameImpl.java:243)
+	at com.microsoft.playwright.impl.LoggingSupport.lambda$withLogging$0(LoggingSupport.java:36)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:35)
+	at com.microsoft.playwright.impl.FrameImpl.click(FrameImpl.java:243)
+	at com.microsoft.playwright.impl.LocatorImpl.click(LocatorImpl.java:156)
+	at com.microsoft.playwright.Locator.click(Locator.java:2387)
+	at com.pages.SettingsPage.selectBuyer(SettingsPage.java:279)
+	at TestCases.Settings_Test.verifyPayPerUse(Settings_Test.java:83)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.microsoft.playwright.TimeoutError: Error {
+  message=&apos;Timeout 30000ms exceeded.
+  name=&apos;TimeoutError
+  stack=&apos;TimeoutError: Timeout 30000ms exceeded.
+    at ProgressController.run (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\progress.js:78:26)
+    at Frame.click (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\frames.js:996:23)
+    at FrameDispatcher.click (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\frameDispatcher.js:158:30)
+    at FrameDispatcher._handleCommand (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\dispatcher.js:365:39)
+}
+Call log:
+- waiting for locator(&quot;//span[@class=&apos;ant-select-selection-search&apos;]&quot;).first()
+-   locator resolved to &lt;span class=&quot;ant-select-selection-search&quot;&gt;…&lt;/span&gt;
+- attempting click action
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #1
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #2
+-   waiting 20ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #3
+-   waiting 100ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #4
+-   waiting 100ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #5
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #6
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #7
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #8
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #9
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #10
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #11
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #12
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #13
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #14
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #15
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #16
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #17
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #18
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #19
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #20
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #21
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #22
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #23
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #24
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #25
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #26
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #27
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #28
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #29
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #30
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #31
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #32
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #33
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #34
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #35
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #36
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #37
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #38
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #39
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #40
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #41
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #42
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #43
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #44
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #45
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #46
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #47
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #48
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #49
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #50
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #51
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #52
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #53
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #54
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #55
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #56
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #57
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #58
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #59
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #60
+-   waiting 500ms
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:254)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 41 more
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1324514662", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1324514662'><pre>com.microsoft.playwright.TimeoutError: Error {
+  message=&apos;Timeout 30000ms exceeded.
+  name=&apos;TimeoutError
+  stack=&apos;TimeoutError: Timeout 30000ms exceeded.
+    at ProgressController.run (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\progress.js:78:26)
+    at Frame.click (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\frames.js:996:23)
+    at FrameDispatcher.click (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\frameDispatcher.js:158:30)
+    at FrameDispatcher._handleCommand (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\dispatcher.js:365:39)
+}
+Call log:
+- waiting for locator(&quot;//span[@class=&apos;ant-select-selection-search&apos;]&quot;).first()
+-   locator resolved to &lt;span class=&quot;ant-select-selection-search&quot;&gt;…&lt;/span&gt;
+- attempting click action
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #1
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #2
+-   waiting 20ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #3
+-   waiting 100ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #4
+-   waiting 100ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #5
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #6
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #7
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #8
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #9
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #10
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #11
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #12
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #13
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #14
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #15
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #16
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #17
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #18
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #19
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #20
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #21
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #22
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #23
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #24
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #25
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #26
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #27
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #28
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #29
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #30
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #31
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #32
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #33
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #34
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #35
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #36
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #37
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #38
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #39
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #40
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #41
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #42
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #43
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #44
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #45
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #46
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #47
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #48
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #49
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #50
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #51
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #52
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #53
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #54
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #55
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #56
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #57
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #58
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #59
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #60
+-   waiting 500ms
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.clickImpl(FrameImpl.java:252)
+	at com.microsoft.playwright.impl.FrameImpl.lambda$click$8(FrameImpl.java:243)
+	at com.microsoft.playwright.impl.LoggingSupport.lambda$withLogging$0(LoggingSupport.java:36)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:35)
+	at com.microsoft.playwright.impl.FrameImpl.click(FrameImpl.java:243)
+	at com.microsoft.playwright.impl.LocatorImpl.click(LocatorImpl.java:156)
+	at com.microsoft.playwright.Locator.click(Locator.java:2387)
+	at com.pages.SettingsPage.selectBuyer(SettingsPage.java:279)
+	at TestCases.Settings_Test.verifyPayPerUse(Settings_Test.java:83)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: com.microsoft.playwright.TimeoutError: Error {
+  message=&apos;Timeout 30000ms exceeded.
+  name=&apos;TimeoutError
+  stack=&apos;TimeoutError: Timeout 30000ms exceeded.
+    at ProgressController.run (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\progress.js:78:26)
+    at Frame.click (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\frames.js:996:23)
+    at FrameDispatcher.click (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\frameDispatcher.js:158:30)
+    at FrameDispatcher._handleCommand (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\dispatcher.js:365:39)
+}
+Call log:
+- waiting for locator(&quot;//span[@class=&apos;ant-select-selection-search&apos;]&quot;).first()
+-   locator resolved to &lt;span class=&quot;ant-select-selection-search&quot;&gt;…&lt;/span&gt;
+- attempting click action
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #1
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #2
+-   waiting 20ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #3
+-   waiting 100ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #4
+-   waiting 100ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #5
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #6
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #7
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #8
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #9
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #10
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #11
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #12
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #13
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #14
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #15
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #16
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #17
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #18
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #19
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #20
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #21
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #22
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #23
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #24
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #25
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #26
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #27
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #28
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #29
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #30
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #31
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #32
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #33
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #34
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #35
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #36
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #37
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #38
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #39
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #40
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #41
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #42
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #43
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #44
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #45
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #46
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #47
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #48
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #49
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #50
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #51
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #52
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #53
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #54
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #55
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #56
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #57
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #58
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #59
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #60
+-   waiting 500ms
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:254)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 41 more
+</pre></div></td>
+<td>49</td>
+<td>TestCases.Settings_Test@71e9ddb4</td></tr>
+<tr>
+<td title='TestCases.Purchase_Test.verifyPurchaseCart()'><b>verifyPurchaseCart</b><br>Test class: TestCases.Purchase_Test<br>Test method: Verify the total amount for Purchase cart and Purchase Selected, Remove selected from Cart</td>
+<td><div><pre>com.microsoft.playwright.TimeoutError: Error {
+  message=&apos;Timeout 30000ms exceeded.
+  name=&apos;TimeoutError
+  stack=&apos;TimeoutError: Timeout 30000ms exceeded.
+    at ProgressController.run (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\progress.js:78:26)
+    at Frame._callOnElementOnceMatches (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\frames.js:1418:23)
+    at Frame.textContent (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\frames.js:1058:17)
+    at FrameDispatcher.textContent (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\frameDispatcher.js:179:37)
+    at FrameDispatcher._handleCommand (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\dispatcher.js:365:39)
+}
+Call log:
+- waiting for locator(&quot;//div[@class=&apos;ant-col&apos;]//p[@class=&apos;footer-label&apos;]//b&quot;)
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.textContentImpl(FrameImpl.java:818)
+	at com.microsoft.playwright.impl.FrameImpl.lambda$textContent$38(FrameImpl.java:809)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.FrameImpl.textContent(FrameImpl.java:809)
+	at com.microsoft.playwright.impl.LocatorImpl.textContent(LocatorImpl.java:582)
+	at com.microsoft.playwright.Locator.textContent(Locator.java:5090)
+	at com.pages.CartPage.verifyTotalAmountPurchaseCart(CartPage.java:308)
+	at TestCases.Purchase_Test.verifyPurchaseCart(Purchase_Test.java:30)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.microsoft.playwright.TimeoutError: Error {
+  message=&apos;Timeout 30000ms exceeded.
+  name=&apos;TimeoutError
+  stack=&apos;TimeoutError: Timeout 30000ms exceeded.
+    at ProgressController.run (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\progress.js:78:26)
+    at Frame._callOnElementOnceMatches (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\frames.js:1418:23)
+    at Frame.textContent (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\frames.js:1058:17)
+    at FrameDispatcher.textContent (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\frameDispatcher.js:179:37)
+    at FrameDispatcher._handleCommand (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\dispatcher.js:365:39)
+}
+Call log:
+- waiting for locator(&quot;//div[@class=&apos;ant-col&apos;]//p[@class=&apos;footer-label&apos;]//b&quot;)
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:254)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 39 more
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace961859592", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace961859592'><pre>com.microsoft.playwright.TimeoutError: Error {
+  message=&apos;Timeout 30000ms exceeded.
+  name=&apos;TimeoutError
+  stack=&apos;TimeoutError: Timeout 30000ms exceeded.
+    at ProgressController.run (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\progress.js:78:26)
+    at Frame._callOnElementOnceMatches (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\frames.js:1418:23)
+    at Frame.textContent (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\frames.js:1058:17)
+    at FrameDispatcher.textContent (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\frameDispatcher.js:179:37)
+    at FrameDispatcher._handleCommand (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\dispatcher.js:365:39)
+}
+Call log:
+- waiting for locator(&quot;//div[@class=&apos;ant-col&apos;]//p[@class=&apos;footer-label&apos;]//b&quot;)
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.textContentImpl(FrameImpl.java:818)
+	at com.microsoft.playwright.impl.FrameImpl.lambda$textContent$38(FrameImpl.java:809)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.FrameImpl.textContent(FrameImpl.java:809)
+	at com.microsoft.playwright.impl.LocatorImpl.textContent(LocatorImpl.java:582)
+	at com.microsoft.playwright.Locator.textContent(Locator.java:5090)
+	at com.pages.CartPage.verifyTotalAmountPurchaseCart(CartPage.java:308)
+	at TestCases.Purchase_Test.verifyPurchaseCart(Purchase_Test.java:30)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: com.microsoft.playwright.TimeoutError: Error {
+  message=&apos;Timeout 30000ms exceeded.
+  name=&apos;TimeoutError
+  stack=&apos;TimeoutError: Timeout 30000ms exceeded.
+    at ProgressController.run (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\progress.js:78:26)
+    at Frame._callOnElementOnceMatches (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\frames.js:1418:23)
+    at Frame.textContent (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\frames.js:1058:17)
+    at FrameDispatcher.textContent (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\frameDispatcher.js:179:37)
+    at FrameDispatcher._handleCommand (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\dispatcher.js:365:39)
+}
+Call log:
+- waiting for locator(&quot;//div[@class=&apos;ant-col&apos;]//p[@class=&apos;footer-label&apos;]//b&quot;)
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:254)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 39 more
+</pre></div></td>
+<td>30</td>
+<td>TestCases.Purchase_Test@4961f6af</td></tr>
+<tr>
+<td title='TestCases.SearchAndCollectionTest.VerifyColDatePurchased()'><b>VerifyColDatePurchased</b><br>Test class: TestCases.SearchAndCollectionTest</td>
+<td><div><pre>com.microsoft.playwright.TimeoutError: Error {
+  message=&apos;Timeout 30000ms exceeded.
+  name=&apos;TimeoutError
+  stack=&apos;TimeoutError: Timeout 30000ms exceeded.
+    at ProgressController.run (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\progress.js:78:26)
+    at Frame._callOnElementOnceMatches (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\frames.js:1418:23)
+    at Frame.innerText (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\frames.js:1061:17)
+    at FrameDispatcher.innerText (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\frameDispatcher.js:186:32)
+    at FrameDispatcher._handleCommand (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\dispatcher.js:365:39)
+}
+Call log:
+- waiting for locator(&quot;//div[@class=&apos;ant-row book-details-container &apos;]&quot;)
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.innerTextImpl(FrameImpl.java:526)
+	at com.microsoft.playwright.impl.FrameImpl.lambda$innerText$22(FrameImpl.java:517)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.FrameImpl.innerText(FrameImpl.java:517)
+	at com.microsoft.playwright.impl.LocatorImpl.innerText(LocatorImpl.java:351)
+	at com.microsoft.playwright.Locator.innerText(Locator.java:3714)
+	at com.Factory.PlaywrightFactory.containsVerify(PlaywrightFactory.java:288)
+	at TestCases.SearchAndCollectionTest.VerifyColDatePurchased(SearchAndCollectionTest.java:840)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.microsoft.playwright.TimeoutError: Error {
+  message=&apos;Timeout 30000ms exceeded.
+  name=&apos;TimeoutError
+  stack=&apos;TimeoutError: Timeout 30000ms exceeded.
+    at ProgressController.run (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\progress.js:78:26)
+    at Frame._callOnElementOnceMatches (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\frames.js:1418:23)
+    at Frame.innerText (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\frames.js:1061:17)
+    at FrameDispatcher.innerText (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\frameDispatcher.js:186:32)
+    at FrameDispatcher._handleCommand (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\dispatcher.js:365:39)
+}
+Call log:
+- waiting for locator(&quot;//div[@class=&apos;ant-row book-details-container &apos;]&quot;)
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:254)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 39 more
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2111882926", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2111882926'><pre>com.microsoft.playwright.TimeoutError: Error {
+  message=&apos;Timeout 30000ms exceeded.
+  name=&apos;TimeoutError
+  stack=&apos;TimeoutError: Timeout 30000ms exceeded.
+    at ProgressController.run (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\progress.js:78:26)
+    at Frame._callOnElementOnceMatches (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\frames.js:1418:23)
+    at Frame.innerText (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\frames.js:1061:17)
+    at FrameDispatcher.innerText (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\frameDispatcher.js:186:32)
+    at FrameDispatcher._handleCommand (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\dispatcher.js:365:39)
+}
+Call log:
+- waiting for locator(&quot;//div[@class=&apos;ant-row book-details-container &apos;]&quot;)
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.innerTextImpl(FrameImpl.java:526)
+	at com.microsoft.playwright.impl.FrameImpl.lambda$innerText$22(FrameImpl.java:517)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.FrameImpl.innerText(FrameImpl.java:517)
+	at com.microsoft.playwright.impl.LocatorImpl.innerText(LocatorImpl.java:351)
+	at com.microsoft.playwright.Locator.innerText(Locator.java:3714)
+	at com.Factory.PlaywrightFactory.containsVerify(PlaywrightFactory.java:288)
+	at TestCases.SearchAndCollectionTest.VerifyColDatePurchased(SearchAndCollectionTest.java:840)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: com.microsoft.playwright.TimeoutError: Error {
+  message=&apos;Timeout 30000ms exceeded.
+  name=&apos;TimeoutError
+  stack=&apos;TimeoutError: Timeout 30000ms exceeded.
+    at ProgressController.run (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\progress.js:78:26)
+    at Frame._callOnElementOnceMatches (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\frames.js:1418:23)
+    at Frame.innerText (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\frames.js:1061:17)
+    at FrameDispatcher.innerText (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\frameDispatcher.js:186:32)
+    at FrameDispatcher._handleCommand (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\dispatcher.js:365:39)
+}
+Call log:
+- waiting for locator(&quot;//div[@class=&apos;ant-row book-details-container &apos;]&quot;)
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:254)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 39 more
+</pre></div></td>
+<td>48</td>
+<td>TestCases.SearchAndCollectionTest@75db5df9</td></tr>
+<tr>
+<td title='TestCases.Spotlight_Test.validateSpotlight()'><b>validateSpotlight</b><br>Test class: TestCases.Spotlight_Test</td>
+<td><div><pre>com.microsoft.playwright.TimeoutError: Error {
+  message=&apos;Timeout 30000ms exceeded.
+  name=&apos;TimeoutError
+  stack=&apos;TimeoutError: Timeout 30000ms exceeded.
+    at ProgressController.run (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\progress.js:78:26)
+    at Frame._callOnElementOnceMatches (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\frames.js:1418:23)
+    at Frame.textContent (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\frames.js:1058:17)
+    at FrameDispatcher.textContent (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\frameDispatcher.js:179:37)
+    at FrameDispatcher._handleCommand (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\dispatcher.js:365:39)
+}
+Call log:
+- waiting for locator(&quot;//span[contains(text(),&apos;Added successfully.&apos;)]&quot;)
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.textContentImpl(FrameImpl.java:818)
+	at com.microsoft.playwright.impl.FrameImpl.lambda$textContent$38(FrameImpl.java:809)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.FrameImpl.textContent(FrameImpl.java:809)
+	at com.microsoft.playwright.impl.LocatorImpl.textContent(LocatorImpl.java:582)
+	at com.microsoft.playwright.Locator.textContent(Locator.java:5090)
+	at com.pages.SpotlightPage.verifyAddToCartSuccessfully(SpotlightPage.java:53)
+	at TestCases.Spotlight_Test.validateSpotlight(Spotlight_Test.java:18)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.microsoft.playwright.TimeoutError: Error {
+  message=&apos;Timeout 30000ms exceeded.
+  name=&apos;TimeoutError
+  stack=&apos;TimeoutError: Timeout 30000ms exceeded.
+    at ProgressController.run (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\progress.js:78:26)
+    at Frame._callOnElementOnceMatches (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\frames.js:1418:23)
+    at Frame.textContent (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\frames.js:1058:17)
+    at FrameDispatcher.textContent (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\frameDispatcher.js:179:37)
+    at FrameDispatcher._handleCommand (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\dispatcher.js:365:39)
+}
+Call log:
+- waiting for locator(&quot;//span[contains(text(),&apos;Added successfully.&apos;)]&quot;)
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:254)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 39 more
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1636178473", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1636178473'><pre>com.microsoft.playwright.TimeoutError: Error {
+  message=&apos;Timeout 30000ms exceeded.
+  name=&apos;TimeoutError
+  stack=&apos;TimeoutError: Timeout 30000ms exceeded.
+    at ProgressController.run (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\progress.js:78:26)
+    at Frame._callOnElementOnceMatches (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\frames.js:1418:23)
+    at Frame.textContent (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\frames.js:1058:17)
+    at FrameDispatcher.textContent (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\frameDispatcher.js:179:37)
+    at FrameDispatcher._handleCommand (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\dispatcher.js:365:39)
+}
+Call log:
+- waiting for locator(&quot;//span[contains(text(),&apos;Added successfully.&apos;)]&quot;)
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.textContentImpl(FrameImpl.java:818)
+	at com.microsoft.playwright.impl.FrameImpl.lambda$textContent$38(FrameImpl.java:809)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.FrameImpl.textContent(FrameImpl.java:809)
+	at com.microsoft.playwright.impl.LocatorImpl.textContent(LocatorImpl.java:582)
+	at com.microsoft.playwright.Locator.textContent(Locator.java:5090)
+	at com.pages.SpotlightPage.verifyAddToCartSuccessfully(SpotlightPage.java:53)
+	at TestCases.Spotlight_Test.validateSpotlight(Spotlight_Test.java:18)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: com.microsoft.playwright.TimeoutError: Error {
+  message=&apos;Timeout 30000ms exceeded.
+  name=&apos;TimeoutError
+  stack=&apos;TimeoutError: Timeout 30000ms exceeded.
+    at ProgressController.run (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\progress.js:78:26)
+    at Frame._callOnElementOnceMatches (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\frames.js:1418:23)
+    at Frame.textContent (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\frames.js:1058:17)
+    at FrameDispatcher.textContent (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\frameDispatcher.js:179:37)
+    at FrameDispatcher._handleCommand (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\raja.k\AppData\Local\Temp\playwright-java-10789042774437666969\package\lib\server\dispatchers\dispatcher.js:365:39)
+}
+Call log:
+- waiting for locator(&quot;//span[contains(text(),&apos;Added successfully.&apos;)]&quot;)
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:254)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 39 more
+</pre></div></td>
+<td>42</td>
+<td>TestCases.Spotlight_Test@394df057</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='TestCases.SearchAndCollectionTest.VerifyColNarrator()'><b>VerifyColNarrator</b><br>Test class: TestCases.SearchAndCollectionTest</td>
+<td></td>
+<td>12</td>
+<td>TestCases.SearchAndCollectionTest@75db5df9</td></tr>
+<tr>
+<td title='TestCases.Search_AdvSearchTest.VerifyPublishedWithin()'><b>VerifyPublishedWithin</b><br>Test class: TestCases.Search_AdvSearchTest</td>
+<td></td>
+<td>20</td>
+<td>TestCases.Search_AdvSearchTest@4e50c791</td></tr>
+<tr>
+<td title='TestCases.SearchAndCollectionTest.VerifyDateAddedToCat()'><b>VerifyDateAddedToCat</b><br>Test class: TestCases.SearchAndCollectionTest</td>
+<td></td>
+<td>19</td>
+<td>TestCases.SearchAndCollectionTest@75db5df9</td></tr>
+<tr>
+<td title='TestCases.Search_AdvSearchTest.VerifyPricing()'><b>VerifyPricing</b><br>Test class: TestCases.Search_AdvSearchTest</td>
+<td></td>
+<td>17</td>
+<td>TestCases.Search_AdvSearchTest@4e50c791</td></tr>
+<tr>
+<td title='TestCases.SavedSearch_Test.VerifydeleteSavedSearch()'><b>VerifydeleteSavedSearch</b><br>Test class: TestCases.SavedSearch_Test</td>
+<td></td>
+<td>13</td>
+<td>TestCases.SavedSearch_Test@33c911a1</td></tr>
+<tr>
+<td title='TestCases.Search_AdvSearchTest.VerifyHoldRatio()'><b>VerifyHoldRatio</b><br>Test class: TestCases.Search_AdvSearchTest</td>
+<td></td>
+<td>11</td>
+<td>TestCases.Search_AdvSearchTest@4e50c791</td></tr>
+<tr>
+<td title='TestCases.Cart_Test.verifyMoveBetweenCarts()'><b>verifyMoveBetweenCarts</b><br>Test class: TestCases.Cart_Test</td>
+<td></td>
+<td>62</td>
+<td>TestCases.Cart_Test@1190200a</td></tr>
+<tr>
+<td title='TestCases.Cart_Test.verifyRemoveSelected()'><b>verifyRemoveSelected</b><br>Test class: TestCases.Cart_Test</td>
+<td></td>
+<td>44</td>
+<td>TestCases.Cart_Test@1190200a</td></tr>
+<tr>
+<td title='TestCases.SearchAndCollectionTest.VerifyLanguage()'><b>VerifyLanguage</b><br>Test class: TestCases.SearchAndCollectionTest</td>
+<td></td>
+<td>10</td>
+<td>TestCases.SearchAndCollectionTest@75db5df9</td></tr>
+<tr>
+<td title='TestCases.Collection_AdvSearchTest.VerifyColAuthor()'><b>VerifyColAuthor</b><br>Test class: TestCases.Collection_AdvSearchTest</td>
+<td></td>
+<td>16</td>
+<td>TestCases.Collection_AdvSearchTest@707194ba</td></tr>
+<tr>
+<td title='TestCases.Cart_Test.verifyCreateNewCart()'><b>verifyCreateNewCart</b><br>Test class: TestCases.Cart_Test</td>
+<td></td>
+<td>8</td>
+<td>TestCases.Cart_Test@1190200a</td></tr>
+<tr>
+<td title='TestCases.SearchLeftPanel_Test.verifyMultipleTitlesAdvSearch()'><b>verifyMultipleTitlesAdvSearch</b><br>Test class: TestCases.SearchLeftPanel_Test</td>
+<td></td>
+<td>23</td>
+<td>TestCases.SearchLeftPanel_Test@1e66f1f5</td></tr>
+<tr>
+<td title='TestCases.SearchLeftPanel_Test.VerifyNarratorSearch()'><b>VerifyNarratorSearch</b><br>Test class: TestCases.SearchLeftPanel_Test</td>
+<td></td>
+<td>27</td>
+<td>TestCases.SearchLeftPanel_Test@1e66f1f5</td></tr>
+<tr>
+<td title='TestCases.SearchLeftPanel_Test.verifyMultipleTitlesLeftPanel()'><b>verifyMultipleTitlesLeftPanel</b><br>Test class: TestCases.SearchLeftPanel_Test</td>
+<td></td>
+<td>37</td>
+<td>TestCases.SearchLeftPanel_Test@1e66f1f5</td></tr>
+<tr>
+<td title='TestCases.Collection_AdvSearchTest.VerifyColContentProvider()'><b>VerifyColContentProvider</b><br>Test class: TestCases.Collection_AdvSearchTest</td>
+<td></td>
+<td>17</td>
+<td>TestCases.Collection_AdvSearchTest@707194ba</td></tr>
+<tr>
+<td title='TestCases.SearchAndCollectionTest.VerifySeries()'><b>VerifySeries</b><br>Test class: TestCases.SearchAndCollectionTest</td>
+<td></td>
+<td>7</td>
+<td>TestCases.SearchAndCollectionTest@75db5df9</td></tr>
+<tr>
+<td title='TestCases.SearchLeftPanel_Test.verifySpecificTitleLeftPanel()'><b>verifySpecificTitleLeftPanel</b><br>Test class: TestCases.SearchLeftPanel_Test</td>
+<td></td>
+<td>41</td>
+<td>TestCases.SearchLeftPanel_Test@1e66f1f5</td></tr>
+<tr>
+<td title='TestCases.Search_AdvSearchTest.VerifyHiddenProviders()'><b>VerifyHiddenProviders</b><br>Test class: TestCases.Search_AdvSearchTest</td>
+<td></td>
+<td>48</td>
+<td>TestCases.Search_AdvSearchTest@4e50c791</td></tr>
+<tr>
+<td title='TestCases.SearchAndCollectionTest.VerifyColDateAddedToCAT()'><b>VerifyColDateAddedToCAT</b><br>Test class: TestCases.SearchAndCollectionTest</td>
+<td></td>
+<td>23</td>
+<td>TestCases.SearchAndCollectionTest@75db5df9</td></tr>
+<tr>
+<td title='TestCases.Settings_Test.verifyLibraryStaffSettings()'><b>verifyLibraryStaffSettings</b><br>Test class: TestCases.Settings_Test</td>
+<td></td>
+<td>11</td>
+<td>TestCases.Settings_Test@71e9ddb4</td></tr>
+<tr>
+<td title='TestCases.Search_ISBN.VerifySearchByMultipleIsbn()'><b>VerifySearchByMultipleIsbn</b><br>Test class: TestCases.Search_ISBN</td>
+<td></td>
+<td>12</td>
+<td>TestCases.Search_ISBN@17f7cd29</td></tr>
+<tr>
+<td title='TestCases.SavedSearch_Test.VerifyUpdateSearchTitles()'><b>VerifyUpdateSearchTitles</b><br>Test class: TestCases.SavedSearch_Test</td>
+<td></td>
+<td>7</td>
+<td>TestCases.SavedSearch_Test@33c911a1</td></tr>
+<tr>
+<td title='TestCases.Collection_AdvSearchTest.VerifyColPPUTitles()'><b>VerifyColPPUTitles</b><br>Test class: TestCases.Collection_AdvSearchTest</td>
+<td></td>
+<td>52</td>
+<td>TestCases.Collection_AdvSearchTest@707194ba</td></tr>
+<tr>
+<td title='TestCases.SearchLeftPanel_Test.verifySpecificTitleSearch()'><b>verifySpecificTitleSearch</b><br>Test class: TestCases.SearchLeftPanel_Test</td>
+<td></td>
+<td>24</td>
+<td>TestCases.SearchLeftPanel_Test@1e66f1f5</td></tr>
+<tr>
+<td title='TestCases.Search_AdvSearchTest.VerifyAuthor()'><b>VerifyAuthor</b><br>Test class: TestCases.Search_AdvSearchTest</td>
+<td></td>
+<td>13</td>
+<td>TestCases.Search_AdvSearchTest@4e50c791</td></tr>
+<tr>
+<td title='TestCases.SearchAndCollectionTest.VerifyColHoldRatio()'><b>VerifyColHoldRatio</b><br>Test class: TestCases.SearchAndCollectionTest</td>
+<td></td>
+<td>12</td>
+<td>TestCases.SearchAndCollectionTest@75db5df9</td></tr>
+<tr>
+<td title='TestCases.SearchAndCollectionTest.VerifyContentProvider()'><b>VerifyContentProvider</b><br>Test class: TestCases.SearchAndCollectionTest</td>
+<td></td>
+<td>9</td>
+<td>TestCases.SearchAndCollectionTest@75db5df9</td></tr>
+<tr>
+<td title='TestCases.Settings_Test.verifyPatronSettings()'><b>verifyPatronSettings</b><br>Test class: TestCases.Settings_Test</td>
+<td></td>
+<td>64</td>
+<td>TestCases.Settings_Test@71e9ddb4</td></tr>
+<tr>
+<td title='TestCases.Collection_AdvSearchTest.VerifyColLanguage()'><b>VerifyColLanguage</b><br>Test class: TestCases.Collection_AdvSearchTest</td>
+<td></td>
+<td>17</td>
+<td>TestCases.Collection_AdvSearchTest@707194ba</td></tr>
+<tr>
+<td title='TestCases.SearchAndCollectionTest.VerifyColTitle()'><b>VerifyColTitle</b><br>Test class: TestCases.SearchAndCollectionTest</td>
+<td></td>
+<td>12</td>
+<td>TestCases.SearchAndCollectionTest@75db5df9</td></tr>
+<tr>
+<td title='TestCases.SearchAndCollectionTest.VerifyColCategoryAndSubject()'><b>VerifyColCategoryAndSubject</b><br>Test class: TestCases.SearchAndCollectionTest</td>
+<td></td>
+<td>18</td>
+<td>TestCases.SearchAndCollectionTest@75db5df9</td></tr>
+<tr>
+<td title='TestCases.Collection_ISBN.VerifyColSearchByMultipleIsbn()'><b>VerifyColSearchByMultipleIsbn</b><br>Test class: TestCases.Collection_ISBN</td>
+<td></td>
+<td>14</td>
+<td>TestCases.Collection_ISBN@65d09a04</td></tr>
+<tr>
+<td title='TestCases.SearchAndCollectionTest.VerifyPricing()'><b>VerifyPricing</b><br>Test class: TestCases.SearchAndCollectionTest</td>
+<td></td>
+<td>12</td>
+<td>TestCases.SearchAndCollectionTest@75db5df9</td></tr>
+<tr>
+<td title='TestCases.SearchLeftPanel_Test.verifyKeywordFieldsDisabled()'><b>verifyKeywordFieldsDisabled</b><br>Test class: TestCases.SearchLeftPanel_Test</td>
+<td></td>
+<td>15</td>
+<td>TestCases.SearchLeftPanel_Test@1e66f1f5</td></tr>
+<tr>
+<td title='TestCases.SearchAndCollectionTest.VerifyColFormat()'><b>VerifyColFormat</b><br>Test class: TestCases.SearchAndCollectionTest</td>
+<td></td>
+<td>52</td>
+<td>TestCases.SearchAndCollectionTest@75db5df9</td></tr>
+<tr>
+<td title='TestCases.SearchAndCollectionTest.VerifyColPricing()'><b>VerifyColPricing</b><br>Test class: TestCases.SearchAndCollectionTest</td>
+<td></td>
+<td>14</td>
+<td>TestCases.SearchAndCollectionTest@75db5df9</td></tr>
+<tr>
+<td title='TestCases.Collection_AdvSearchTest.VerifyColHoldRatio()'><b>VerifyColHoldRatio</b><br>Test class: TestCases.Collection_AdvSearchTest</td>
+<td></td>
+<td>16</td>
+<td>TestCases.Collection_AdvSearchTest@707194ba</td></tr>
+<tr>
+<td title='TestCases.Search_AdvSearchTest.VerifyAudience()'><b>VerifyAudience</b><br>Test class: TestCases.Search_AdvSearchTest</td>
+<td></td>
+<td>24</td>
+<td>TestCases.Search_AdvSearchTest@4e50c791</td></tr>
+<tr>
+<td title='TestCases.Collection_AdvSearchTest.VerifyColSeries()'><b>VerifyColSeries</b><br>Test class: TestCases.Collection_AdvSearchTest</td>
+<td></td>
+<td>16</td>
+<td>TestCases.Collection_AdvSearchTest@707194ba</td></tr>
+<tr>
+<td title='TestCases.SearchAndCollectionTest.VerifyCategoryAndSubject()'><b>VerifyCategoryAndSubject</b><br>Test class: TestCases.SearchAndCollectionTest</td>
+<td></td>
+<td>10</td>
+<td>TestCases.SearchAndCollectionTest@75db5df9</td></tr>
+<tr>
+<td title='TestCases.Collection_AdvSearchTest.VerifyColDatePurchased()'><b>VerifyColDatePurchased</b><br>Test class: TestCases.Collection_AdvSearchTest</td>
+<td></td>
+<td>20</td>
+<td>TestCases.Collection_AdvSearchTest@707194ba</td></tr>
+<tr>
+<td title='TestCases.SearchAndCollectionTest.VerifyPublishedWithin()'><b>VerifyPublishedWithin</b><br>Test class: TestCases.SearchAndCollectionTest</td>
+<td></td>
+<td>15</td>
+<td>TestCases.SearchAndCollectionTest@75db5df9</td></tr>
+<tr>
+<td title='TestCases.SearchLeftPanel_Test.VerifyQuickSearchByTitle()'><b>VerifyQuickSearchByTitle</b><br>Test class: TestCases.SearchLeftPanel_Test</td>
+<td></td>
+<td>16</td>
+<td>TestCases.SearchLeftPanel_Test@1e66f1f5</td></tr>
+<tr>
+<td title='TestCases.Collection_AdvSearchTest.VerifyColTitle()'><b>VerifyColTitle</b><br>Test class: TestCases.Collection_AdvSearchTest</td>
+<td></td>
+<td>12</td>
+<td>TestCases.Collection_AdvSearchTest@707194ba</td></tr>
+<tr>
+<td title='TestCases.Search_AdvSearchTest.VerifyTitle()'><b>VerifyTitle</b><br>Test class: TestCases.Search_AdvSearchTest</td>
+<td></td>
+<td>14</td>
+<td>TestCases.Search_AdvSearchTest@4e50c791</td></tr>
+<tr>
+<td title='TestCases.Search_AdvSearchTest.VerifyPPUTitle()'><b>VerifyPPUTitle</b><br>Test class: TestCases.Search_AdvSearchTest</td>
+<td></td>
+<td>13</td>
+<td>TestCases.Search_AdvSearchTest@4e50c791</td></tr>
+<tr>
+<td title='TestCases.Collection_AdvSearchTest.VerifyColPublisher()'><b>VerifyColPublisher</b><br>Test class: TestCases.Collection_AdvSearchTest</td>
+<td></td>
+<td>19</td>
+<td>TestCases.Collection_AdvSearchTest@707194ba</td></tr>
+<tr>
+<td title='TestCases.SearchAndCollectionTest.VerifyColContentProvider()'><b>VerifyColContentProvider</b><br>Test class: TestCases.SearchAndCollectionTest</td>
+<td></td>
+<td>13</td>
+<td>TestCases.SearchAndCollectionTest@75db5df9</td></tr>
+<tr>
+<td title='TestCases.SearchLeftPanel_Test.VerifyQuickSearchByAuthor()'><b>VerifyQuickSearchByAuthor</b><br>Test class: TestCases.SearchLeftPanel_Test</td>
+<td></td>
+<td>15</td>
+<td>TestCases.SearchLeftPanel_Test@1e66f1f5</td></tr>
+<tr>
+<td title='TestCases.SearchAndCollectionTest.VerifyPublisher()'><b>VerifyPublisher</b><br>Test class: TestCases.SearchAndCollectionTest</td>
+<td></td>
+<td>10</td>
+<td>TestCases.SearchAndCollectionTest@75db5df9</td></tr>
+<tr>
+<td title='TestCases.Collection_AdvSearchTest.VerifyColNarrator()'><b>VerifyColNarrator</b><br>Test class: TestCases.Collection_AdvSearchTest</td>
+<td></td>
+<td>16</td>
+<td>TestCases.Collection_AdvSearchTest@707194ba</td></tr>
+<tr>
+<td title='TestCases.Search_AdvSearchTest.VerifyPreSaleFilterTitles()'><b>VerifyPreSaleFilterTitles</b><br>Test class: TestCases.Search_AdvSearchTest</td>
+<td></td>
+<td>41</td>
+<td>TestCases.Search_AdvSearchTest@4e50c791</td></tr>
+<tr>
+<td title='TestCases.Cart_Test.verifyDeleteNewCart()'><b>verifyDeleteNewCart</b><br>Test class: TestCases.Cart_Test</td>
+<td></td>
+<td>7</td>
+<td>TestCases.Cart_Test@1190200a</td></tr>
+<tr>
+<td title='TestCases.Collection_AdvSearchTest.VerifyColDateAddedToCAT()'><b>VerifyColDateAddedToCAT</b><br>Test class: TestCases.Collection_AdvSearchTest</td>
+<td></td>
+<td>28</td>
+<td>TestCases.Collection_AdvSearchTest@707194ba</td></tr>
+<tr>
+<td title='TestCases.Collection_AdvSearchTest.VerifyColAudience()'><b>VerifyColAudience</b><br>Test class: TestCases.Collection_AdvSearchTest</td>
+<td></td>
+<td>17</td>
+<td>TestCases.Collection_AdvSearchTest@707194ba</td></tr>
+<tr>
+<td title='TestCases.SearchAndCollectionTest.VerifyColPublisher()'><b>VerifyColPublisher</b><br>Test class: TestCases.SearchAndCollectionTest</td>
+<td></td>
+<td>16</td>
+<td>TestCases.SearchAndCollectionTest@75db5df9</td></tr>
+<tr>
+<td title='TestCases.Search_AdvSearchTest.VerifyLanguage()'><b>VerifyLanguage</b><br>Test class: TestCases.Search_AdvSearchTest</td>
+<td></td>
+<td>14</td>
+<td>TestCases.Search_AdvSearchTest@4e50c791</td></tr>
+<tr>
+<td title='TestCases.Search_AdvSearchTest.VerifyCategoryAndSubject()'><b>VerifyCategoryAndSubject</b><br>Test class: TestCases.Search_AdvSearchTest</td>
+<td></td>
+<td>15</td>
+<td>TestCases.Search_AdvSearchTest@4e50c791</td></tr>
+<tr>
+<td title='TestCases.Collection_ISBN.searchByUploadIsbn()'><b>searchByUploadIsbn</b><br>Test class: TestCases.Collection_ISBN</td>
+<td></td>
+<td>18</td>
+<td>TestCases.Collection_ISBN@65d09a04</td></tr>
+<tr>
+<td title='TestCases.Search_AdvSearchTest.VerifySeries()'><b>VerifySeries</b><br>Test class: TestCases.Search_AdvSearchTest</td>
+<td></td>
+<td>11</td>
+<td>TestCases.Search_AdvSearchTest@4e50c791</td></tr>
+<tr>
+<td title='TestCases.SearchAndCollectionTest.VerifyColAuthor()'><b>VerifyColAuthor</b><br>Test class: TestCases.SearchAndCollectionTest</td>
+<td></td>
+<td>12</td>
+<td>TestCases.SearchAndCollectionTest@75db5df9</td></tr>
+<tr>
+<td title='TestCases.SearchAndCollectionTest.VerifyColAudience()'><b>VerifyColAudience</b><br>Test class: TestCases.SearchAndCollectionTest</td>
+<td></td>
+<td>13</td>
+<td>TestCases.SearchAndCollectionTest@75db5df9</td></tr>
+<tr>
+<td title='TestCases.Purchase_Test.verifyPurchase()'><b>verifyPurchase</b><br>Test class: TestCases.Purchase_Test</td>
+<td></td>
+<td>6</td>
+<td>TestCases.Purchase_Test@4961f6af</td></tr>
+<tr>
+<td title='TestCases.Cart_Test.verifyCommunityCart()'><b>verifyCommunityCart</b><br>Test class: TestCases.Cart_Test</td>
+<td></td>
+<td>14</td>
+<td>TestCases.Cart_Test@1190200a</td></tr>
+<tr>
+<td title='TestCases.SearchAndCollectionTest.VerifyHoldRatio()'><b>VerifyHoldRatio</b><br>Test class: TestCases.SearchAndCollectionTest</td>
+<td></td>
+<td>6</td>
+<td>TestCases.SearchAndCollectionTest@75db5df9</td></tr>
+<tr>
+<td title='TestCases.Collection_AdvSearchTest.VerifyColPricing()'><b>VerifyColPricing</b><br>Test class: TestCases.Collection_AdvSearchTest</td>
+<td></td>
+<td>19</td>
+<td>TestCases.Collection_AdvSearchTest@707194ba</td></tr>
+<tr>
+<td title='TestCases.Cart_Test.AddToCart()'><b>AddToCart</b><br>Test class: TestCases.Cart_Test</td>
+<td></td>
+<td>17</td>
+<td>TestCases.Cart_Test@1190200a</td></tr>
+<tr>
+<td title='TestCases.Settings_Test.verifyLibrarySettings()'><b>verifyLibrarySettings</b><br>Test class: TestCases.Settings_Test</td>
+<td></td>
+<td>107</td>
+<td>TestCases.Settings_Test@71e9ddb4</td></tr>
+<tr>
+<td title='TestCases.SavedSearch_Test.VerifySearchKeywordsVisibility()'><b>VerifySearchKeywordsVisibility</b><br>Test class: TestCases.SavedSearch_Test</td>
+<td></td>
+<td>3</td>
+<td>TestCases.SavedSearch_Test@33c911a1</td></tr>
+<tr>
+<td title='TestCases.SearchAndCollectionTest.VerifyAuthor()'><b>VerifyAuthor</b><br>Test class: TestCases.SearchAndCollectionTest</td>
+<td></td>
+<td>9</td>
+<td>TestCases.SearchAndCollectionTest@75db5df9</td></tr>
+<tr>
+<td title='TestCases.Collection_AdvSearchTest.VerifyColCategoryAndSubject()'><b>VerifyColCategoryAndSubject</b><br>Test class: TestCases.Collection_AdvSearchTest</td>
+<td></td>
+<td>22</td>
+<td>TestCases.Collection_AdvSearchTest@707194ba</td></tr>
+<tr>
+<td title='TestCases.SearchLeftPanel_Test.VerifySeriesSearch()'><b>VerifySeriesSearch</b><br>Test class: TestCases.SearchLeftPanel_Test</td>
+<td></td>
+<td>24</td>
+<td>TestCases.SearchLeftPanel_Test@1e66f1f5</td></tr>
+<tr>
+<td title='TestCases.Collection_ISBN.VerifyColSearchByIsbn()'><b>VerifyColSearchByIsbn</b><br>Test class: TestCases.Collection_ISBN</td>
+<td></td>
+<td>14</td>
+<td>TestCases.Collection_ISBN@65d09a04</td></tr>
+<tr>
+<td title='TestCases.Search_AdvSearchTest.VerifyPublisher()'><b>VerifyPublisher</b><br>Test class: TestCases.Search_AdvSearchTest</td>
+<td></td>
+<td>14</td>
+<td>TestCases.Search_AdvSearchTest@4e50c791</td></tr>
+<tr>
+<td title='TestCases.Search_AdvSearchTest.VerifyDateAddedToCat()'><b>VerifyDateAddedToCat</b><br>Test class: TestCases.Search_AdvSearchTest</td>
+<td></td>
+<td>27</td>
+<td>TestCases.Search_AdvSearchTest@4e50c791</td></tr>
+<tr>
+<td title='TestCases.SearchAndCollectionTest.VerifyColSeries()'><b>VerifyColSeries</b><br>Test class: TestCases.SearchAndCollectionTest</td>
+<td></td>
+<td>12</td>
+<td>TestCases.SearchAndCollectionTest@75db5df9</td></tr>
+<tr>
+<td title='TestCases.SearchAndCollectionTest.VerifyTitle()'><b>VerifyTitle</b><br>Test class: TestCases.SearchAndCollectionTest</td>
+<td></td>
+<td>11</td>
+<td>TestCases.SearchAndCollectionTest@75db5df9</td></tr>
+<tr>
+<td title='TestCases.Collection_AdvSearchTest.VerifyColFormat()'><b>VerifyColFormat</b><br>Test class: TestCases.Collection_AdvSearchTest</td>
+<td></td>
+<td>57</td>
+<td>TestCases.Collection_AdvSearchTest@707194ba</td></tr>
+<tr>
+<td title='TestCases.Search_ISBN.VerifySearchByIsbn()'><b>VerifySearchByIsbn</b><br>Test class: TestCases.Search_ISBN</td>
+<td></td>
+<td>12</td>
+<td>TestCases.Search_ISBN@17f7cd29</td></tr>
+<tr>
+<td title='TestCases.Search_AdvSearchTest.VerifyFormat()'><b>VerifyFormat</b><br>Test class: TestCases.Search_AdvSearchTest</td>
+<td></td>
+<td>39</td>
+<td>TestCases.Search_AdvSearchTest@4e50c791</td></tr>
+<tr>
+<td title='TestCases.SearchAndCollectionTest.VerifyFormat()'><b>VerifyFormat</b><br>Test class: TestCases.SearchAndCollectionTest</td>
+<td></td>
+<td>29</td>
+<td>TestCases.SearchAndCollectionTest@75db5df9</td></tr>
+<tr>
+<td title='TestCases.Cart_Test.verifyAddToCart()'><b>verifyAddToCart</b><br>Test class: TestCases.Cart_Test</td>
+<td></td>
+<td>6</td>
+<td>TestCases.Cart_Test@1190200a</td></tr>
+<tr>
+<td title='TestCases.SearchLeftPanel_Test.VerifyQuickSearchByISBN()'><b>VerifyQuickSearchByISBN</b><br>Test class: TestCases.SearchLeftPanel_Test</td>
+<td></td>
+<td>11</td>
+<td>TestCases.SearchLeftPanel_Test@1e66f1f5</td></tr>
+<tr>
+<td title='TestCases.Collection_AdvSearchTest.VerifyColPublishedWithin()'><b>VerifyColPublishedWithin</b><br>Test class: TestCases.Collection_AdvSearchTest</td>
+<td></td>
+<td>22</td>
+<td>TestCases.Collection_AdvSearchTest@707194ba</td></tr>
+<tr>
+<td title='TestCases.SearchLeftPanel_Test.VerifyAuthorSearch()'><b>VerifyAuthorSearch</b><br>Test class: TestCases.SearchLeftPanel_Test</td>
+<td></td>
+<td>28</td>
+<td>TestCases.SearchLeftPanel_Test@1e66f1f5</td></tr>
+<tr>
+<td title='TestCases.Search_AdvSearchTest.VerifyContentProvider()'><b>VerifyContentProvider</b><br>Test class: TestCases.Search_AdvSearchTest</td>
+<td></td>
+<td>14</td>
+<td>TestCases.Search_AdvSearchTest@4e50c791</td></tr>
+<tr>
+<td title='TestCases.SearchAndCollectionTest.VerifyPreSaleFilterTitles()'><b>VerifyPreSaleFilterTitles</b><br>Test class: TestCases.SearchAndCollectionTest</td>
+<td></td>
+<td>31</td>
+<td>TestCases.SearchAndCollectionTest@75db5df9</td></tr>
+<tr>
+<td title='TestCases.Search_AdvSearchTest.VerifyNarrator()'><b>VerifyNarrator</b><br>Test class: TestCases.Search_AdvSearchTest</td>
+<td></td>
+<td>13</td>
+<td>TestCases.Search_AdvSearchTest@4e50c791</td></tr>
+<tr>
+<td title='TestCases.Cart_Test.verifyPrivateCart()'><b>verifyPrivateCart</b><br>Test class: TestCases.Cart_Test</td>
+<td></td>
+<td>15</td>
+<td>TestCases.Cart_Test@1190200a</td></tr>
+<tr>
+<td title='TestCases.SearchAndCollectionTest.VerifyAudience()'><b>VerifyAudience</b><br>Test class: TestCases.SearchAndCollectionTest</td>
+<td></td>
+<td>19</td>
+<td>TestCases.SearchAndCollectionTest@75db5df9</td></tr>
+<tr>
+<td title='TestCases.Search_AdvSearchTest.VerifyPreSaleTitle()'><b>VerifyPreSaleTitle</b><br>Test class: TestCases.Search_AdvSearchTest</td>
+<td></td>
+<td>17</td>
+<td>TestCases.Search_AdvSearchTest@4e50c791</td></tr>
+<tr>
+<td title='TestCases.SearchAndCollectionTest.VerifyColPPUTitles()'><b>VerifyColPPUTitles</b><br>Test class: TestCases.SearchAndCollectionTest</td>
+<td></td>
+<td>41</td>
+<td>TestCases.SearchAndCollectionTest@75db5df9</td></tr>
+<tr>
+<td title='TestCases.SavedSearch_Test.VerifyCreateSavedSearchSingleTitle()'><b>VerifyCreateSavedSearchSingleTitle</b><br>Test class: TestCases.SavedSearch_Test</td>
+<td></td>
+<td>29</td>
+<td>TestCases.SavedSearch_Test@33c911a1</td></tr>
+<tr>
+<td title='TestCases.SearchAndCollectionTest.VerifyColPublishedWithin()'><b>VerifyColPublishedWithin</b><br>Test class: TestCases.SearchAndCollectionTest</td>
+<td></td>
+<td>21</td>
+<td>TestCases.SearchAndCollectionTest@75db5df9</td></tr>
+<tr>
+<td title='TestCases.SearchAndCollectionTest.VerifyNarrator()'><b>VerifyNarrator</b><br>Test class: TestCases.SearchAndCollectionTest</td>
+<td></td>
+<td>8</td>
+<td>TestCases.SearchAndCollectionTest@75db5df9</td></tr>
+<tr>
+<td title='TestCases.SearchAndCollectionTest.VerifyColLanguage()'><b>VerifyColLanguage</b><br>Test class: TestCases.SearchAndCollectionTest</td>
+<td></td>
+<td>14</td>
+<td>TestCases.SearchAndCollectionTest@75db5df9</td></tr>
+</table><p>
+</body>
+</html>

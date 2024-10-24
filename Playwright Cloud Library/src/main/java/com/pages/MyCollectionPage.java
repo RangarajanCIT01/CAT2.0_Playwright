@@ -74,6 +74,7 @@ public class MyCollectionPage extends PlaywrightFactory{
 		// Enter Book Title 
 		public void enterBookTitle(String data) throws Exception 
 		{	
+			waitForElement(2);
 			fillText(Title,data);
 		}
 		
@@ -149,6 +150,7 @@ public class MyCollectionPage extends PlaywrightFactory{
 		{
 			clickElement(Publishers);
 			fillText(Publishers,data);
+			waitForElement(2);
 			page.keyboard().down("ArrowDown");
 			page.keyboard().press("Enter"); 	
 		}

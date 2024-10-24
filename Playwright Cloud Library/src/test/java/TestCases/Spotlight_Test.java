@@ -1,6 +1,7 @@
 package TestCases;
 
 import org.testng.annotations.Test;
+import org.testng.annotations.Test;
 
 import com.base.BaseTest;
 
@@ -16,7 +17,7 @@ public class Spotlight_Test extends BaseTest{
 		Thread.sleep(5000);
 		spotlight.verifyAddToCartSuccessfully();
 		
-		cartpage.navigateCartPage();
+		//cartpage.navigateCartPage();
 		cartpage.clickOnSpotlightCartTitle();
 		cartpage.verifySportLightCartTitleCount();
 	}

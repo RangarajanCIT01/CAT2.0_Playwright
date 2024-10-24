@@ -51,6 +51,7 @@ public class SearchPage extends PlaywrightFactory {
 	//public String AllElements = "//div[@class='ant-row book-details-container ']//p";
 	public String AllElements = "//div[@class='ant-row book-details-container ']";
 	public String AllMultipleElements = "//div[@class='ReactVirtualized__Grid ReactVirtualized__List scrollStyle']";
+	public String AllElementsSaved = "//div[@class='ReactVirtualized__Grid__innerScrollContainer']";
 	public String PricingMinAmount = "//*[@name='MinimumPriceAmount']";
 	public String PricingMaxAmount = "//*[@name='MaximumPriceAmount']";
 	public String Publishers = "//span[text()='Publishers']/..//input";
@@ -65,11 +66,10 @@ public class SearchPage extends PlaywrightFactory {
 	public String FormatText = "//div[@class='ant-row']//div[@class='ant-col ant-col-24']//div[@class='ant-card-body']//p[@class='card-title' and contains(text(),'Formats')]";
 	public String SearchButton = "//div[@class='ant-row ant-row-end search-top']//button[@class='primary']";
 	public String DatePurchased = "//p[text()='Dates and Languages']/following::span[1]";
-	public String DatePurchasedDateRange = "//span[text()='Custom Date Range']";
+	public String DateRange = "//span[text()='Custom Date Range']";
+	public String DatePurchasedDateRange = "//input[@placeholder='Custom Date Range']";
 	public String DatePurchasedStartDate= "//span[text()='Custom Date Range']/following::input[1]";
 	public String DatePurchasedEndDate = "//input[@placeholder='Custom Date Range']/following::input[1]";
-	
-	
 	
 	public String SearchButtonLftPnl = "//button[text()='SEARCH']";
 	public String titleList = "//span[@class='book-title']";
@@ -221,6 +221,7 @@ public class SearchPage extends PlaywrightFactory {
 	}
 
 	public void enterBookTitle(String data) throws Exception {
+		waitForElement(2);
 		fillText(TitleAdvSearch, data);
 	}
 
@@ -338,6 +339,7 @@ public class SearchPage extends PlaywrightFactory {
 	public void enterPrice(String min, String max) throws Exception {
 		fillText(PricingMinAmount, min);
 		fillText(PricingMaxAmount, max);
+		waitForElement(2);
 	}
 
 	public void publishedWithin() throws InterruptedException {
@@ -558,18 +560,11 @@ public class SearchPage extends PlaywrightFactory {
 		clickElement(SelectAll);
 	}
 
-	
-	public void addToCart() throws Exception {
-		// Map<String, String> testData = readJsonElement("CartData.json",
-		// "cartdetails");
-		String Elementlist = "//li[@class='ant-dropdown-menu-item']";
-		// String carttitleoption=testData.get("CartName");
-		selectDropdownByScrolling(AddToCartDropdown, cartname, Elementlist);
-	}
-
 	public boolean verifyAddToCartSuccessfully() throws Exception {
 		Map<String, String> testData = readJsonElement("SearchData.json", "searchdetails");
 		String actualMessage = testData.get("CartAddtoMessage");
+		
+		waitForElement(3);
 
 		Locator element1 = page.locator(cartAddedSuccessfully);
 		String expectedMessage = element1.textContent();

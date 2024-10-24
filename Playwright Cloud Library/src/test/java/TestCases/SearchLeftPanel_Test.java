@@ -1,5 +1,8 @@
 package TestCases;
 
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
+import org.testng.AssertJUnit;
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -47,7 +50,7 @@ public class SearchLeftPanel_Test extends BaseTest{
 		searchpage.loadResult();
 		actualData.add(searchpage.actualVerify(searchpage.TitleCount));
 		expectedData.add(testData.get("Book_TitleCount"));	
-		Assert.assertEquals(expectedData, actualData);
+		AssertJUnit.assertEquals(expectedData, actualData);
 		
 		extentTest.log(Status.INFO, "Verified the details of Author results");
 
@@ -72,7 +75,7 @@ public class SearchLeftPanel_Test extends BaseTest{
 		searchpage.loadResult();
 		actualData.add(searchpage.actualVerify(searchpage.TitleCount));
 		expectedData.add(testData.get("Book_TitleCount"));	
-		Assert.assertEquals(expectedData, actualData);
+		AssertJUnit.assertEquals(expectedData, actualData);
 		
 		extentTest.log(Status.INFO, "Titles Count has been Verified");
 		
@@ -195,7 +198,7 @@ public class SearchLeftPanel_Test extends BaseTest{
 		searchpage.loadResult();
 		actualData.add(searchpage.actualVerify(searchpage.TitleCount));
 		expectedData.add(testData.get("Book_TitleCount"));	
-		Assert.assertEquals(expectedData, actualData);
+		AssertJUnit.assertEquals(expectedData, actualData);
 		extentTest.log(Status.INFO, "Titles Count has been Verified");
 		
 		searchpage.clseLftPnlIfExists();
@@ -231,7 +234,7 @@ public class SearchLeftPanel_Test extends BaseTest{
 		searchpage.loadResult();
 		actualData.add(searchpage.actualVerify(searchpage.TitleCount));
 		expectedData.add(testData.get("Book_TitleCount"));	
-		Assert.assertEquals(expectedData, actualData);
+		AssertJUnit.assertEquals(expectedData, actualData);
 		extentTest.log(Status.INFO, "Titles Count has been Verified");
 		
 		searchpage.clseLftPnlIfExists();
@@ -257,7 +260,7 @@ public class SearchLeftPanel_Test extends BaseTest{
 		searchpage.loadResult();
 		actualData.add(searchpage.actualVerify(searchpage.TitleCount));
 		expectedData.add(testData.get("Book_TitleCount"));		
-		Assert.assertEquals(expectedData, actualData);
+		AssertJUnit.assertEquals(expectedData, actualData);
 	
 		searchpage.clickElement(searchpage.TitleCount);
 				
@@ -268,7 +271,7 @@ public class SearchLeftPanel_Test extends BaseTest{
 		searchpage.loadResult();	
 		actualData.add(searchpage.actualVerify(searchpage.TitleCount));
 		expectedData.add(testData.get("Book_TitleCount"));	
-		Assert.assertEquals(expectedData, actualData);
+		AssertJUnit.assertEquals(expectedData, actualData);
 		
 		searchpage.clickElement(searchpage.TitleCount);		
 		extentTest.log(Status.INFO, "Titles Count has been Verified");
@@ -294,7 +297,7 @@ public class SearchLeftPanel_Test extends BaseTest{
 		searchpage.loadResult();
 		actualData.add(searchpage.actualVerify(searchpage.TitleCount));
 		expectedData.add(testData.get("Book_TitleCount"));	
-		Assert.assertEquals(expectedData, actualData);
+		AssertJUnit.assertEquals(expectedData, actualData);
 				
 		searchpage.ClearButtonLftPnl();
 		searchpage.enterBookNarrator(testData.get("NarratorName"));
@@ -303,7 +306,7 @@ public class SearchLeftPanel_Test extends BaseTest{
 		searchpage.loadResult();
 		actualData.add(searchpage.actualVerify(searchpage.TitleCount));
 		expectedData.add(testData.get("Book_TitleCount"));	
-		Assert.assertEquals(expectedData, actualData);
+		AssertJUnit.assertEquals(expectedData, actualData);
 		extentTest.log(Status.INFO, "Titles Count has been Verified");
 		
 		searchpage.clseLftPnlIfExists();
@@ -327,7 +330,7 @@ public class SearchLeftPanel_Test extends BaseTest{
 		searchpage.loadResult();
 		actualData.add(searchpage.actualVerify(searchpage.TitleCount));
 		expectedData.add(testData.get("Book_TitleCount"));	
-		Assert.assertEquals(expectedData, actualData);
+		AssertJUnit.assertEquals(expectedData, actualData);
 				
 		searchpage.ClearButtonLftPnl();
 		searchpage.enterBookSeries(testData.get("SeriesName"));
@@ -336,7 +339,7 @@ public class SearchLeftPanel_Test extends BaseTest{
 		searchpage.loadResult();
 		actualData.add(searchpage.actualVerify(searchpage.TitleCount));
 		expectedData.add(testData.get("Book_TitleCount"));	
-		Assert.assertEquals(expectedData, actualData);
+		AssertJUnit.assertEquals(expectedData, actualData);
 		extentTest.log(Status.INFO, "Titles Count has been Verified");
 		
 		searchpage.clseLftPnlIfExists();

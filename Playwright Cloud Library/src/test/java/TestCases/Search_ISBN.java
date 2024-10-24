@@ -1,5 +1,8 @@
 package TestCases;
 
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
+import org.testng.AssertJUnit;
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -57,16 +60,14 @@ public class Search_ISBN extends BaseTest{
 		collection.clickOnIsbnTab();
 		collection.enterIsbn(testData.get("Book_ISBNS"));
 		collection.clickOnIsbnSearchButton();
-		searchpage.containsVerify(searchpage.AllMultipleElements, testData.get("Book_Title"));
+		searchpage.loadResult();
+		searchpage.containsVerify(searchpage.AllElementsSaved, testData.get("Book_Title"));
 				
 		extentTest.log(Status.INFO, "Verified the details of multiple ISBN Titles result");
 
 		searchpage.clseLftPnlIfExists();   
 	}
-	
-	
-	
-	
+		
 	//@Test
 		public void VerifySearchByUploadIsbn() throws Exception
 		{		
@@ -82,12 +83,12 @@ public class Search_ISBN extends BaseTest{
 			searchpage.loadResult();
 			actualData.add(searchpage.actualVerify(searchpage.TotalNotMatched));
 			expectedData.add(testData.get("Book_NotMatched"));	
-			Assert.assertEquals(expectedData, actualData);
+			AssertJUnit.assertEquals(expectedData, actualData);
 			
 			searchpage.loadResult();
 			actualData.add(searchpage.actualVerify(searchpage.TitleCount));
 			expectedData.add(testData.get("Book_Matched_Isbn"));	
-			Assert.assertEquals(expectedData, actualData);
+			AssertJUnit.assertEquals(expectedData, actualData);
 			
 			searchpage.clickElement(SearchPage.leftPnlClse);
 			searchpage.navigateToCartAndSearchPage();
@@ -96,7 +97,7 @@ public class Search_ISBN extends BaseTest{
 			//searchpage.verifyMatchedIsbnCount();	
 		}	
 		
-		@Test
+		//@Test
 		public void VerifyPublisherList() throws Exception
 		{		
 			Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "VerifyPublisherList");

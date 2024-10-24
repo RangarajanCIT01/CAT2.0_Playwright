@@ -57,17 +57,14 @@ import com.pages.SearchPage;
 public class PlaywrightFactory {
 
 	Playwright playwright;
-	Browser browser;
+	public Browser browser;
 	BrowserContext browserContext;
 	public static Page page;
 	Properties prop;
 
 	public static Logger log;
-	public static String cartname;
-	public static String cartname2;
 	protected LoginPage loginpage;
 	
-
 	public PlaywrightFactory() {
 
 	}
@@ -115,8 +112,8 @@ public class PlaywrightFactory {
 		loginpage.enterUserName(prop.getProperty("username"));
 		loginpage.enterPassword(prop.getProperty("password"));	
 		loginpage.clickLogin();
-
-		return page;
+		
+		return page;		
 	}
 
 	public Properties init_prop() throws FileNotFoundException {
@@ -140,11 +137,13 @@ public class PlaywrightFactory {
 	}
 
 	public void clickElement(String locator) {
+		
 		try {
 			page.locator(locator).click();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		waitForElement(1);
 	}
 	
 	public void PressTabKey(int n) {
@@ -156,6 +155,9 @@ public class PlaywrightFactory {
 	}
 
 	public String createRandomName() {
+		
+		String cartname;
+		String cartname2;
 		String name = "AddBooksCart";
 		Random random = new Random();
 		int randomNumber = random.nextInt(100);

@@ -1,0 +1,152 @@
+{
+	
+	"VerifyTitleAndAuthor": {
+		"Book_Title": "$1 Million for Life",
+		"Book_Author" : "Ormond, Ashley"
+	},
+	"VerifyAuthorAndProvider": {
+		"Book_Author": "Grice, Joe",
+		"Book_Provider" : "vearsa"
+	},
+	"VerifySeriesAndProvider": {
+		"Book_Series": "Tao Series",
+		"Book_Provider" : "rhpsus"
+	},
+	"VerifyNarratorAndModel": {
+		"Book_Narrator": "Bennett, Judy; Reichlin, Saul",
+		"Book_Model" : "Perpetual"
+	},
+	"VerifyPreSaleFilterTitlesAndPublisher": {
+		"OnlyPreSale_Title": "365 Days of Hoodoo",
+		"Only Include Pre-Sale Titles": "Only Include Pre-Sale Titles",
+		"IncludePreSale": "Include Pre-Sale Titles",
+		"IncludePreSale_Title": "101 Fascinating Canadian Film and TV Facts",
+		"Book_Publisher" : "Dundurn Press",
+		"ExcludePreSale": "Exclude Pre-Sale Titles",
+		"ExcludePreSale_Title": "Gold For Steel"
+	},
+	"VerifyHoldRatioAndSubject": {
+		"Book_HoldRatio": "1",
+		"Book_Category" : "Nonfiction",
+		"Book_Title": "Seamus Heaney: A Bibliography (1959-2003)",
+		"Book_Subject" : "NONFICTION : LITERARY CRITICISM"
+	},
+	"VerifyTitleAuthorAndPublisher": {
+		"Book_Title": "1 and 2 Timothy, Titus",
+		"Book_Author": "Liefeld, Walter L.",
+		"Book_Publisher": "Zondervan Academic"
+	},
+	
+	"VerifyNarratorAndEdition": {
+		"Book_Title": "Corpse",
+		"Book_Author": "Grafton",
+		"Book_Narrator": "Mary",
+		"Book_Edition": "UnabridgedEdition"
+	},
+	
+	"VerifyStreetDateAndLastCirculated": {
+		"Book_Title": "Cadmus and Hermione",
+		"Book_Author": "Quinault",
+		"Book_StreetDate" : "8/7/2013",
+		"Book_LastCirculated" : "2/17/2019"
+	},
+	
+	"VerifyAddedToCatAndLastPurchased": {
+		"Book_Title": "Too Much TV",
+		"Book_Author": "Moreta",
+		"Book_AddedToCAT" : "5/10/2016",
+		"Book_LastPurchased" : "11/12/2015"
+	},
+	
+	"VerifyContentProvider": {
+		"Book_Title": "Zoom in on Bridges",
+		"Book_ContentProvider": "enslow"
+	},
+	"VerifyAudience": {
+		"Book_Title": "9 from the Nine Worlds",
+		"Book_Isbn": "9781578263684",
+		"Book_Audience": "Juvenile"
+	},
+	"VerifyPricing": {
+		"Book_Title": "Your Quest For Spiritual Knowledge: 2012",
+		"Book_Min": "10",
+		"Book_Max": "12",
+		"Book_Price": "11.99"
+	},
+	"VerifyLanguage": {
+		"Book_Title": "Grmljavina unutarnjeg uma",
+		"Book_Language": "CROATIAN"
+	},
+	"VerifyCategoryAndSubject": {
+		"Book_Title": "10 Ways to Use Buckwheat (Recipe Book)",
+		"CategoryAndSubject": "NONFICTION",
+		"Verify_CategoryAndSub": "NONFICTION : COOKING"
+	},
+	"VerifyFormat": {
+		"Book_MP3Title": "100 citations de Socrate",
+		"Book_PDFTitle": "2000 Presidential Election eBook",
+		"Book_EPUBTitle": "Zucchini Cake and Zombies",
+		"Format_MP3": "MP3",
+		"Format_PDF": "PDF",
+		"Format_EPUB": "EPUB"
+	},
+	"VerifyPublishedWithin": {
+		"Book_Title": "50 Math Tricks That Will Change Your Life",
+		"Book_Author": "Zakowich, Tanya",
+		"Published_Date": "11/20/2023",
+		"Book_Publisher": "Page Street Publishing",
+		"Custom_Filter": "Published within 1 Year",
+		"Book_Language": "English",
+		"Book_Min": "55",
+		"Book_Max": "70"
+	},
+	"VerifyDateAddedToCat": {
+		"Book_Title": "A Grave Robbery",
+		"Book_Author": "Raybourn, Deanna",
+		"Book_Series": "A Veronica Speedwell Mystery",
+		"AddedToCAT_Date": "4/8/2024",
+		"Book_Publisher": "Berkley",
+		"Book_Provider": "penguinus",
+		"Custom_Filter": "Added within 1 Year",
+		"Book_Language": "English",
+		"Book_Min": "50",
+		"Book_Max": "60"
+	},
+	"VerifyPPUTitles": {
+		"Include_PPUTitles": "Include PPU Titles",
+		"Inlcude_PPUTitle": "Heat Seeker",
+		"Only_Include_PPU": "Search Only PPU titles",
+		"OnlyInclude_PPUTitle": "100 Quotes by Francis Bacon",
+		"Book_Language": "English",
+		"Exclude_PPU": "Exclude PPU Titles",
+		"Exclude_PPUTitle": "1 Way 2 C The World"
+	},
+	"VerifyPublisherList": {
+	},
+	"VerifySearchByIsbn" : {
+	"Book_ISBN": "9781982708702",
+	"Book_Title" : "100 Most Powerful Prayers for Hormones, The"
+	},
+	
+	"VerifySearchByMultipleIsbn" : {
+	"Book_ISBNS": "9781982707576, 9781467667883, 9781938093395",
+	"Book_Title" : "100 Nursery Rhymes"	
+	},
+	"VerifyPreSaleTitle" : {
+		"Book_Title": "7 Secrets of the Newborn",
+		"Book_Author": "M.D., Robert Hamilton",
+		"Book_Publisher" : "Macmillan Audio",
+		"PreSaleLabel" : "PRE SALE"
+	},
+	
+	"VerifyPPUTitle" : {
+		"Book_Title": "100 Quotes by Epictetus",
+		"Book_Author": "Epictetus",
+		"Book_Series": "Great Philosophers & Their Inspiring Thoughts",
+		"Book_Narrator": "Haigh, Katie",
+		"PPULabel" : "PPU "
+	},
+	
+	"VerifyHiddenProviders" : {
+	}
+}

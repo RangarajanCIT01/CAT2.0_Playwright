@@ -1,6 +1,8 @@
 package TestCases;
 
 
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -325,9 +327,8 @@ public class Collection_AdvSearchTest extends BaseTest{
 		searchpage.enterBookAuthor(testData.get("Book_Author"));
 		searchpage.languages(testData.get("Book_Language"));
 		searchpage.enterPrice(testData.get("Book_Min"),testData.get("Book_Max") );
-		searchpage.waitForElement(2);
 		searchpage.clickElement(searchpage.drpdwnColpublishedWithin);
-		searchpage.waitForElement(2);
+		
 		searchpage.selectDropdownSpecificSearchEquals(testData.get("Custom_Filter"), searchpage.publicationList);
 		searchpage.clickElement(searchpage.SearchButton);
 		searchpage.loadResult(); 
@@ -380,20 +381,20 @@ public class Collection_AdvSearchTest extends BaseTest{
 		collection.navigateToCartAndCollectionPage();
 		extentTest.log(Status.INFO, "Enter the title details");
 		
-		searchpage.waitForElement(5);
 		searchpage.enterBookTitle(testData.get("Book_Title"));
 		searchpage.enterBookAuthor(testData.get("Book_Author"));
-		searchpage.waitForElement(5);
 		searchpage.clickElement(searchpage.DatePurchased);
+		searchpage.clickElement(searchpage.DateRange);		
 		searchpage.clickElement(searchpage.DatePurchasedDateRange);
 		searchpage.fillText(searchpage.DatePurchasedStartDate, testData.get("StartDate"));
+		searchpage.PressTabKey(2);
 		searchpage.fillText(searchpage.DatePurchasedEndDate, testData.get("EndDate"));
 		searchpage.PressTabKey(2);
 	
 		searchpage.clickElement(searchpage.SearchButton);
 		searchpage.loadResult(); 
 	
-		searchpage.containsVerify(searchpage.AllElements, testData.get("AddedToCAT_Date"));
+		searchpage.containsVerify(searchpage.AllElements, testData.get("Last_Purchased"));
 		extentTest.log(Status.INFO, "Verified the details of Added to CAT Date");
 		searchpage.clseLftPnlIfExists();	
 	}

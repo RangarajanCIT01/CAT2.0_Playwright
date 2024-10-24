@@ -1,231 +1,299 @@
 package TestCases;
 
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
+import org.testng.AssertJUnit;
 import java.util.ArrayList;
 import java.util.Map;
 
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.base.BaseTest;
+import com.pages.CartPage;
+import com.pages.MyCollectionPage;
+import com.pages.SearchPage;
 
 public class Cart_Test extends BaseTest{
 	
-	@Test
+	@BeforeClass
+	public void setupBefore() throws Exception {
+		
+		cartpage = new CartPage(page);
+		searchpage = new SearchPage(page);
+		searchpage.clickOnSearch();
+		Map<String, String> testData = playwrightFactory.readJsonElement("CartData.json", "Editor");
+	
+		searchpage.clickSearchButton();
+		searchpage.editorDropdown(testData.get("Book_PageSize"));	
+		searchpage.clseLftPnlIfExists();
+	}	
+	
+	@Test (priority=1)
 	public void verifyCreateNewCart() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("CartData.json", "cartdetails");
+		Map<String, String> testData = playwrightFactory.readJsonElement("CartData.json", "verifyCreateNewCart");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();
 		
-		cartpage.navigateCartPage();
+		cartpage.navigateToCartPage();
 		cartpage.clickNewCart();
-		cartpage.enterCartName();
+		cartpage.enterCartName(testData.get("CartName"));
 		cartpage.enterDescription(testData.get("CartDesciption"));
 		cartpage.createCart();
-		//cartpage.verifyCartAddedSuccessfully();
-				
+					
 		actualData.add(page.locator(cartpage.cartAddedSuccessfully).textContent());
 		expectedData.add(testData.get("CartAdded"));
 				
-		Assert.assertEquals(expectedData, actualData);
+		AssertJUnit.assertEquals(expectedData, actualData);
 		
-		//test.log(Status.PASS, "Cart created successfully");
 	}
 		
-	@Test
+	@Test(priority=2)
 	public void AddToCart() throws Exception
 	{	
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "searchdetails");
+		Map<String, String> testData = playwrightFactory.readJsonElement("CartData.json", "AddToCart");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();
 		
-		//searchpage.editorDropdown(10);
+		searchpage.clickOnSearch();
+		searchpage.enterBookTitle(testData.get("Book_Title"));
+		searchpage.clickElement(searchpage.SearchButton);
 		searchpage.selectAll();
-		searchpage.addToCart();
+		searchpage.clickElement(cartpage.addToCartdrpdwn);
+		cartpage.addToCart();
 		searchpage.verifyAddToCartSuccessfully();
 		
 		actualData.add(page.locator(searchpage.cartAddedSuccessfully).textContent());
 		expectedData.add(testData.get("CartAddtoMessage"));	
-		Assert.assertEquals(expectedData, actualData);
+		AssertJUnit.assertEquals(expectedData, actualData);
 		
 	}
 	
-	@Test
+	@Test(priority=3)
 	public void verifyAddToCart() throws Exception
 	{	
-		Map<String, String> testData = playwrightFactory.readJsonElement("CartData.json", "cartdetails");
+		Map<String, String> testData = playwrightFactory.readJsonElement("CartData.json", "verifyAddToCart");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();
 		
-	//	test = extent.createTest("verifyAddToCart", "Verifying books are added to cart");
-		cartpage.clickOnBackButton();
-		cartpage.navigateCartPage();
-		cartpage.clickOnCartTitle();
-		cartpage.verifyCartTitleCount();
+		searchpage.clseLftPnlIfExists();
+		cartpage.navigateToCartPage();
+		cartpage.sltNewCart();
 		
+		cartpage.loadCartResult();
 		actualData.add(page.locator(cartpage.cartTitleCount).textContent());
 		expectedData.add(testData.get("CartBookTitleCount"));	
-		Assert.assertEquals(expectedData, actualData);
+		AssertJUnit.assertEquals(expectedData, actualData);
 		
 	}
 	
-	@Test(description="Verify the total amount for Purchase cart and Purchase Selected, Remove selected from Cart",dependsOnMethods="verifyAddToCart")
-	public void verifyPurchaseCart() throws Exception
+	@Test(priority=4)
+	public void verifyDeleteNewCart() throws Exception
 	{	
-		cartpage.navigateCartPage();
-		cartpage.clickOnCartTitle();
-		cartpage.verifyTotalAmountPurchaseCart();
-		cartpage.verifyTotalPurchaseSelected();
-		cartpage.verifyRemoveSelected();
+		Map<String, String> testData = playwrightFactory.readJsonElement("CartData.json", "verifyDeleteNewCart");
+		ArrayList<Object> actualData = new ArrayList<>();
+		ArrayList<Object> expectedData = new ArrayList<>();
+		
+		searchpage.clickElement(cartpage.bcklnkMyCarts);
+		cartpage.dltNewCart();
+		searchpage.clickElement(cartpage.btnDeleteCartPopup);
+		
+		actualData.add(page.locator(cartpage.dltCnfrm).textContent());
+		expectedData.add(testData.get("CartDeleteSuccessMessage"));	
+		AssertJUnit.assertEquals(expectedData, actualData);
+		
 	}
 	
-	@Test(description="Move books to new cart")
+	@Test(priority=5)
 	public void verifyMoveBetweenCarts() throws Exception
 	{	
 
-		Map<String, String> testData = playwrightFactory.readJsonElement("CartData.json", "cartdetails");
+		Map<String, String> testData = playwrightFactory.readJsonElement("CartData.json", "verifyMoveBetweenCarts");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();
 		
-		cartpage.clickOnBackButton();
-		cartpage.navigateCartPage();
+		cartpage.navigateToCartPage();
 		cartpage.clickNewCart();
-		cartpage.enterSecondCartName();
-		cartpage.enterDescription();
+		cartpage.enterCartName(testData.get("CartName"));
+		cartpage.enterDescription(testData.get("CartDesciption"));
 		cartpage.createCart();
-		cartpage.clickOnCartTitle();
-		cartpage.selectBookCheckbox();
-		cartpage.clickMoveBetweenCarts();
-		cartpage.clickOnContinue();
-		cartpage.verifyCartMovedSuccessfully();
+					
+		actualData.add(page.locator(cartpage.cartAddedSuccessfully).textContent());
+		expectedData.add(testData.get("CartAdded"));
 		
-		cartpage.moveBack();
-		cartpage.clickOnSecondCartTitle();
-		//cartpage.verifyCartTitleCount();
+		cartpage.clickNewCart();
+		cartpage.enterCartName(testData.get("CartName2"));
+		cartpage.enterDescription(testData.get("CartDesciption2"));
+		cartpage.createCart();
+					
+		actualData.add(page.locator(cartpage.cartAddedSuccessfully).textContent());
+		expectedData.add(testData.get("CartAdded"));
+		AssertJUnit.assertEquals(expectedData, actualData);
 		
+		searchpage.clickOnSearch();
+		searchpage.enterBookTitle(testData.get("Book_Title"));
+		searchpage.clickElement(searchpage.SearchButton);
+		searchpage.selectAll();
+		searchpage.clickElement(cartpage.addToCartdrpdwn);
+		cartpage.addToCart();
+		searchpage.verifyAddToCartSuccessfully();
+		
+		searchpage.clseLftPnlIfExists();
+		cartpage.navigateToCartPage();
+		cartpage.sltNewCart();
+		
+		cartpage.loadCartResult();
 		actualData.add(page.locator(cartpage.cartTitleCount).textContent());
 		expectedData.add(testData.get("CartBookTitleCount"));	
-		Assert.assertEquals(expectedData, actualData);
-	}
-	
-//	@Test(dependsOnMethods="verifyPurchaseCart")
-	public void verifyDeleteCart() throws Exception
-	{				
-		cartpage.navigateCartPage();
-		cartpage.clickOnCartTitle();
-		cartpage.clickOnDeleteCart();
+		AssertJUnit.assertEquals(expectedData, actualData);
+		
+		cartpage.selectBookCheckbox();
+		searchpage.clickElement(cartpage.lnkMveBtwCarts);
+		cartpage.mveToNewCart();
+		cartpage.clickOnContinue();
+		
+		actualData.add(page.locator(cartpage.MveSuccessMsg).textContent());
+		expectedData.add(testData.get("TitlesMovedMsg"));	
+		AssertJUnit.assertEquals(expectedData, actualData);
+			
+		searchpage.clickElement(cartpage.bcklnkMyCarts);
+		cartpage.dltNewCart();
+		searchpage.clickElement(cartpage.btnDeleteCartPopup);
+		
+		actualData.add(page.locator(cartpage.dltCnfrm).textContent());
+		expectedData.add(testData.get("CartDeleteSuccessMessage"));	
+		AssertJUnit.assertEquals(expectedData, actualData);
+		
+		cartpage.sltNewCart2();
+		cartpage.loadCartResult();
+		actualData.add(page.locator(cartpage.cartTitleCount).textContent());
+		expectedData.add(testData.get("CartBookTitleCount"));	
+		AssertJUnit.assertEquals(expectedData, actualData);
+		
+		searchpage.clickElement(cartpage.bcklnkMyCarts);		
+		cartpage.dltNewCart2();
+		searchpage.clickElement(cartpage.btnDeleteCartPopup);
+		
+		actualData.add(page.locator(cartpage.dltCnfrm).textContent());
+		expectedData.add(testData.get("CartDeleteSuccessMessage"));	
+		
+		AssertJUnit.assertEquals(expectedData, actualData);
+		
+		//searchpage.clickElement(cartpage.bcklnkMyCarts);
 		
 	}
 	
-	//Added the below 3 classes from AddtoCart Class
-	
-	/*public void verifySearch1() throws Exception
+	@Test(priority=6)
+	public void verifyRemoveSelected() throws Exception
 	{	
-		searchpage.clickOnSearch();
-		//searchpage.enterBookKeyword();
-		searchpage.enterBookTitle();
-		searchpage.enterBookAuthor();
-		searchpage.enterBookNarrator();
-		searchpage.enterBookSeries();
-		searchpage.preSaleTitles();
-		searchpage.enterBookHoldRatio();
-		searchpage.catergoryAndSubject();
-		searchpage.audience();
-		searchpage.enterPrice();
-		searchpage.publishedWithin();
-		searchpage.dateAddedToCloudLibrary();
-		searchpage.languages();
-		searchpage.publisher();
-		searchpage.contentProviders();
-		searchpage.bookFormats();
-		searchpage.bookFilters();
-		searchpage.clickSearchButton();
-		searchpage.verifybookSearchByTitleCount();
-		searchpage.verifyTitle();
-		
-	}
-	*/
-	
-	@Test
-	public void AddToCart1() throws Exception
-	{		
-		//searchpage.editorDropdown();
-		searchpage.selectAll();
-		searchpage.addToCart();
-		searchpage.verifyAddToCartSuccessfully();
-	}
-	
-	@Test
-	public void verifyAddToCart1() throws Exception
-	{		
-		cartpage.clickOnBackButton();
-		cartpage.navigateCartPage();
-		cartpage.clickOnCartTitle();
-		cartpage.verifyCartTitleCount();
-	}
-	
-	//Added the below class from the CreateCart class
-	@Test
-	public void verifyCreateNewCart1() throws Exception
-	{
-	
-		cartpage.navigateCartPage();
-		
-		boolean CartTitle=cartpage.verifyCartTitle();
-		
-		if(CartTitle==true)
-		{
-			cartpage.clickOnDeleteCart();
-			
-			cartpage.clickNewCart();
-			cartpage.enterCartName();
-			cartpage.enterDescription();
-			cartpage.createCart();
-			
-			boolean cartAdded=cartpage.verifyCartAddedSuccessfully();
-				if(cartAdded==true)
-				{
-					Assert.assertTrue(cartAdded);
-				}
-				else
-				{
-					Assert.assertTrue(cartAdded);
-				}
-		}
-		else
-		{
-			cartpage.clickNewCart();
-			cartpage.enterCartName();
-			cartpage.enterDescription();
-			cartpage.createCart();
-			
-			boolean cart1Added=cartpage.verifyCartAddedSuccessfully();
-				if(cart1Added==true)
-				{
-					Assert.assertTrue(cart1Added);
-				}
-				else
-				{
-					Assert.assertTrue(cart1Added);
-				}
-		}}
-	
-		//Added the below methods from MoveBetweenCart Class
-		
-		@Test(description="Move books to new cart")
-		public void verifyMoveBetweenCarts1() throws Exception
-		{	
-				
-			cartpage.navigateCartPage();
-			cartpage.clickOnCartTitle();
-			cartpage.selectBookCheckbox();
-			cartpage.clickMoveBetweenCarts();
-			cartpage.clickOnContinue();
-			cartpage.verifyCartMovedSuccessfully();
-			
-			cartpage.moveBack();
-			cartpage.clickOnSecondCartTitle();
-			cartpage.verifyCartTitleCount();
-		}
 
+		Map<String, String> testData = playwrightFactory.readJsonElement("CartData.json", "verifyRemoveSelected");
+		ArrayList<Object> actualData = new ArrayList<>();
+		ArrayList<Object> expectedData = new ArrayList<>();
+		
+		cartpage.navigateToCartPage();
+		cartpage.clickNewCart();
+		cartpage.enterCartName(testData.get("CartName"));
+		cartpage.enterDescription(testData.get("CartDesciption"));
+		cartpage.createCart();
+					
+		actualData.add(page.locator(cartpage.cartAddedSuccessfully).textContent());
+		expectedData.add(testData.get("CartAdded"));
+		
+		searchpage.clickOnSearch();
+		searchpage.enterBookTitle(testData.get("Book_Title"));
+		searchpage.clickElement(searchpage.SearchButton);
+		searchpage.selectAll();
+		searchpage.clickElement(cartpage.addToCartdrpdwn);
+		cartpage.addToCart();
+		searchpage.verifyAddToCartSuccessfully();
+		
+		searchpage.clseLftPnlIfExists();
+		cartpage.navigateToCartPage();
+		cartpage.sltNewCart();
+		
+		cartpage.loadCartResult();
+		actualData.add(page.locator(cartpage.cartTitleCount).textContent());
+		expectedData.add(testData.get("CartBookTitleCount"));	
+		AssertJUnit.assertEquals(expectedData, actualData);
+		
+		cartpage.selectBookCheckbox();
+		cartpage.clickElement(cartpage.btnRemoveSelected);
+		searchpage.waitForElement(3);
+		cartpage.clickElement(cartpage.btnYes);
+		
+		actualData.add(page.locator(cartpage.msgRemoved).textContent());
+		expectedData.add(testData.get("MsgRemoved"));	
+		AssertJUnit.assertEquals(expectedData, actualData);
+		
+		searchpage.clickElement(cartpage.bcklnkMyCarts);
+		cartpage.dltNewCart();
+		searchpage.clickElement(cartpage.btnDeleteCartPopup);
+		
+		actualData.add(page.locator(cartpage.dltCnfrm).textContent());
+		expectedData.add(testData.get("CartDeleteSuccessMessage"));	
+		AssertJUnit.assertEquals(expectedData, actualData);
+	}
+
+	@Test(priority=7)
+	public void verifyPrivateCart() throws Exception
+	{	
+
+		Map<String, String> testData = playwrightFactory.readJsonElement("CartData.json", "verifyPrivateCart");
+		ArrayList<Object> actualData = new ArrayList<>();
+		ArrayList<Object> expectedData = new ArrayList<>();
+		
+		cartpage.navigateToCartPage();
+		cartpage.clickNewCart();
+		cartpage.enterCartName(testData.get("CartName"));
+		cartpage.enterDescription(testData.get("CartDesciption"));
+		cartpage.clickElement(cartpage.chkbxPrevent);
+		cartpage.createCart();
+					
+		actualData.add(page.locator(cartpage.cartAddedSuccessfully).textContent());
+		expectedData.add(testData.get("CartAdded"));
+		AssertJUnit.assertEquals(expectedData, actualData);
+		
+		cartpage.vrfyPrivateCart();
+	
+		cartpage.dltNewCart();
+		searchpage.clickElement(cartpage.btnDeleteCartPopup);
+		
+		actualData.add(page.locator(cartpage.dltCnfrm).textContent());
+		expectedData.add(testData.get("CartDeleteSuccessMessage"));	
+		AssertJUnit.assertEquals(expectedData, actualData);
+		
+	}
+	
+	@Test(priority=8)
+	public void verifyCommunityCart() throws Exception
+	{	
+
+		Map<String, String> testData = playwrightFactory.readJsonElement("CartData.json", "verifyCommunityCart");
+		ArrayList<Object> actualData = new ArrayList<>();
+		ArrayList<Object> expectedData = new ArrayList<>();
+		
+		cartpage.navigateToCartPage();
+		cartpage.clickNewCart();
+		cartpage.enterCartName(testData.get("CartName"));
+		cartpage.enterDescription(testData.get("CartDesciption"));
+		cartpage.createCart();
+					
+		actualData.add(page.locator(cartpage.cartAddedSuccessfully).textContent());
+		expectedData.add(testData.get("CartAdded"));
+		AssertJUnit.assertEquals(expectedData, actualData);
+		
+		cartpage.vrfyCommunityCart();
+	
+		cartpage.dltNewCart();
+		searchpage.clickElement(cartpage.btnDeleteCartPopup);
+		
+		actualData.add(page.locator(cartpage.dltCnfrm).textContent());
+		expectedData.add(testData.get("CartDeleteSuccessMessage"));	
+		AssertJUnit.assertEquals(expectedData, actualData);
+		
+	}
+	
 }

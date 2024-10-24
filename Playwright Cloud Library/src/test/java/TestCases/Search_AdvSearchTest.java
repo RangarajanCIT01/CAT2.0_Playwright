@@ -1,5 +1,7 @@
 package TestCases;
 
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -426,7 +428,7 @@ public class Search_AdvSearchTest extends BaseTest{
 		
 	}
 	
-	@Test 
+	//@Test /****** Bug Logged - CL-9401 *****/ 
 	public void VerifyPPUTitles() throws Exception
 	{		
 		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "VerifyPPUTitles");

@@ -1,34 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Search Scenarios(failed)">
+  <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="TestCases.Collection_AdvSearchTest">
+      <class name="TestCases.SearchAndCollectionTest">
         <methods>
-          <include name="VerifyColContentProvider"/>
-          <include name="VerifyColAuthor"/>
-          <include name="VerifyColPublisher"/>
-          <include name="VerifyColPricing"/>
+          <include name="setReport"/>
+          <include name="VerifyColDatePurchased"/>
+          <include name="addResult"/>
+          <include name="setup"/>
+          <include name="setupBefore"/>
+          <include name="afterSuiteMethod"/>
+          <include name="closeBrowser"/>
+        </methods>
+      </class> <!-- TestCases.SearchAndCollectionTest -->
+      <class name="TestCases.Report_Test">
+        <methods>
+          <include name="setReport"/>
           <include name="setup"/>
           <include name="addResult"/>
           <include name="afterSuiteMethod"/>
-          <include name="VerifyColCategoryAndSubject"/>
-          <include name="VerifyColHoldRatio"/>
-          <include name="VerifyColAudience"/>
-          <include name="VerifyColDateAddedToCAT"/>
-          <include name="setReport"/>
-          <include name="setupBefore"/>
-          <include name="VerifyColPPUTitles"/>
-          <include name="VerifyColDatePurchased"/>
-          <include name="VerifyColLanguage"/>
-          <include name="VerifyColTitle"/>
-          <include name="VerifyColSeries"/>
-          <include name="VerifyColPublishedWithin"/>
-          <include name="VerifyColNarrator"/>
-          <include name="VerifyColFormat"/>
-          <include name="startReporter"/>
+          <include name="closeBrowser"/>
+          <include name="validateReport"/>
         </methods>
-      </class> <!-- TestCases.Collection_AdvSearchTest -->
+      </class> <!-- TestCases.Report_Test -->
+      <class name="TestCases.Purchase_Test">
+        <methods>
+          <include name="setReport"/>
+          <include name="verifyPurchaseCart"/>
+          <include name="addResult"/>
+          <include name="setup"/>
+          <include name="afterSuiteMethod"/>
+          <include name="closeBrowser"/>
+        </methods>
+      </class> <!-- TestCases.Purchase_Test -->
+      <class name="TestCases.Settings_Test">
+        <methods>
+          <include name="setupBefore"/>
+          <include name="verifyLibraryStaffSettings"/>
+          <include name="setReport"/>
+          <include name="verifyPatronSettings"/>
+          <include name="verifyLibrarySettings"/>
+          <include name="setup"/>
+          <include name="addResult"/>
+          <include name="verifyPayPerUse"/>
+          <include name="afterSuiteMethod"/>
+          <include name="closeBrowser"/>
+        </methods>
+      </class> <!-- TestCases.Settings_Test -->
+      <class name="TestCases.Spotlight_Test">
+        <methods>
+          <include name="setReport"/>
+          <include name="setup"/>
+          <include name="addResult"/>
+          <include name="validateSpotlight"/>
+          <include name="afterSuiteMethod"/>
+          <include name="closeBrowser"/>
+        </methods>
+      </class> <!-- TestCases.Spotlight_Test -->
     </classes>
-  </test> <!-- Search Scenarios(failed) -->
+  </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

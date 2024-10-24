@@ -12,7 +12,7 @@
 	
 	"VerifyColSearchByMultipleIsbn" : {
 	"Book_ISBNS": "9781467667883, 9781629210162, 9780060840761",
-	"Book_Title" : "100 Promise to My Baby"
+	"Book_TitleCount" : "1-3 of 3 Titles"
 	},	
 	
 	"searchByUploadIsbn" : 

@@ -1,5 +1,7 @@
 package TestCases;
 
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
 import java.util.Map;
 
 import org.testng.annotations.BeforeClass;
@@ -72,7 +74,7 @@ public class Settings_Test extends BaseTest{
 	}
 	
 	@Test(dependsOnMethods="verifyLibraryStaffSettings")
-	public void verifyParPerUse() throws Exception
+	public void verifyPayPerUse() throws Exception
 	{		
 		settings.clickOnPayPerUse();
 		settings.enterEbookMonthlyBudget();

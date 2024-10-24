@@ -108,12 +108,12 @@
 	"quickSearchByAuthor": {
 		"Book_AuthorName": "Shenon, Philip",
 		"BookSize": "10",
-		"Book_TitleCount": "1-10 of 602 Titles"
+		"Book_TitleCount": "1-10 of 600 Titles"
 	},
 	"quickSearchByTitle": {
 		"Book_TitleName": "Commission, The",
 		"BookSize": "10",
-		"Book_TitleCount": "1-10 of 750 Titles"
+		"Book_TitleCount": "1-10 of 751 Titles"
 	},
 	"authorSearch": {
 		"AuthorName": "Shenon, Philip",

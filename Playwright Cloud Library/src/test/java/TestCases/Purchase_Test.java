@@ -1,6 +1,7 @@
 package TestCases;
 
 import org.testng.annotations.Test;
+import org.testng.annotations.Test;
 
 import com.base.BaseTest;
 import com.pages.CartPage;
@@ -23,7 +24,7 @@ public class Purchase_Test extends BaseTest{
 	{	
 		cartpage=new CartPage(page);
 		
-		cartpage.navigateCartPage();
+		//cartpage.navigateCartPage();
 		cartpage.clickOnCartTitle();
 		
 		cartpage.verifyTotalAmountPurchaseCart();
