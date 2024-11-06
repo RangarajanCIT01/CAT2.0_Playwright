@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\raja.k\AppData\Local\Temp\testng-eclipse--603077040\testng-customsuite.xml</span>
+                    <span>C:\Users\raja.k\AppData\Local\Temp\testng-eclipse--1323781305\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -103,7 +103,7 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="TestCases.SearchCombinations" class="method navigator-link" hash-for-method="VerifyAllBookDetails">VerifyAllBookDetails</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="TestCases.Collection_AdvSearchTest" class="method navigator-link" hash-for-method="VerifyColTitle">VerifyColTitle</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -121,14 +121,14 @@
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">TestCases.SearchCombinations</span>
+              <span class="class-name">TestCases.Collection_AdvSearchTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="VerifyAllBookDetails">
-                  </a> <!-- VerifyAllBookDetails -->
-                  <span class="method-name">VerifyAllBookDetails</span>
+                  <a name="VerifyColTitle">
+                  </a> <!-- VerifyColTitle -->
+                  <span class="method-name">VerifyColTitle</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -136,7 +136,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\raja.k\AppData\Local\Temp\testng-eclipse--603077040\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\raja.k\AppData\Local\Temp\testng-eclipse--1323781305\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -145,11 +145,11 @@
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;TestCases.SearchCombinations&quot;&gt;
+      &lt;class name=&quot;TestCases.Collection_AdvSearchTest&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;VerifyAllBookDetails&quot;/&gt;
+          &lt;include name=&quot;VerifyColTitle&quot;/&gt;
         &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- TestCases.SearchCombinations --&gt;
+      &lt;/class&gt; &lt;!-- TestCases.Collection_AdvSearchTest --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -191,14 +191,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'VerifyAllBookDetails')
-data.setCell(0, 2, 'TestCases.SearchCombinations')
-data.setCell(0, 3, 17368);
+data.setCell(0, 1, 'VerifyColTitle')
+data.setCell(0, 2, 'TestCases.Collection_AdvSearchTest')
+data.setCell(0, 3, 12508);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 17 seconds</span>
+              <span class="suite-total-time">Total running time: 12 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -213,69 +213,41 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">29 ignored methods</span>
+            <span class="header-content">15 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
-              <span class="ignored-class-name">TestCases.SearchCombinations</span>
+              <span class="ignored-class-name">TestCases.Collection_AdvSearchTest</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">VerifyColContentProvider</span>
+                <span class="ignored-method-name">VerifyColHoldRatio</span>
                 <br/>
-                <span class="ignored-method-name">VerifyColPricing</span>
-                <br/>
-                <span class="ignored-method-name">VerifyTitleAndAuthor</span>
-                <br/>
-                <span class="ignored-method-name">VerifyColDatePurchased</span>
-                <br/>
-                <span class="ignored-method-name">VerifyColPublisher</span>
-                <br/>
-                <span class="ignored-method-name">VerifyColSeries</span>
+                <span class="ignored-method-name">VerifyColLanguage</span>
                 <br/>
                 <span class="ignored-method-name">VerifyColAuthor</span>
                 <br/>
                 <span class="ignored-method-name">VerifyColPPUTitles</span>
                 <br/>
-                <span class="ignored-method-name">VerifyColPublishedWithin</span>
+                <span class="ignored-method-name">VerifyColDateAddedToCAT</span>
                 <br/>
-                <span class="ignored-method-name">VerifyColHoldRatio</span>
+                <span class="ignored-method-name">VerifyColPublisher</span>
                 <br/>
-                <span class="ignored-method-name">VerifyHoldRatioAndSubject</span>
-                <br/>
-                <span class="ignored-method-name">VerifyColLanguage</span>
-                <br/>
-                <span class="ignored-method-name">VerifyPreSaleFilterTitlesAndPublisher</span>
-                <br/>
-                <span class="ignored-method-name">VerifyColTitle</span>
-                <br/>
-                <span class="ignored-method-name">VerifyColNarrator</span>
-                <br/>
-                <span class="ignored-method-name">VerifyColFormat</span>
-                <br/>
-                <span class="ignored-method-name">VerifyPublishedDateAndAllLoans</span>
-                <br/>
-                <span class="ignored-method-name">VerifyNarratorAndEdition</span>
-                <br/>
-                <span class="ignored-method-name">VerifyDateAddedToCat</span>
-                <br/>
-                <span class="ignored-method-name">VerifyStreetDateAndLastCirculated</span>
-                <br/>
-                <span class="ignored-method-name">VerifyColCategoryAndSubject</span>
-                <br/>
-                <span class="ignored-method-name">VerifyAuthorAndProvider</span>
-                <br/>
-                <span class="ignored-method-name">VerifyLanguage</span>
-                <br/>
-                <span class="ignored-method-name">VerifySeriesAndProvider</span>
-                <br/>
-                <span class="ignored-method-name">VerifyTitleAuthorAndPublisher</span>
-                <br/>
-                <span class="ignored-method-name">VerifyAddedToCatAndLastPurchased</span>
+                <span class="ignored-method-name">VerifyColContentProvider</span>
                 <br/>
                 <span class="ignored-method-name">VerifyColAudience</span>
                 <br/>
-                <span class="ignored-method-name">VerifyColDateAddedToCAT</span>
+                <span class="ignored-method-name">VerifyColPublishedWithin</span>
                 <br/>
-                <span class="ignored-method-name">VerifyNarratorAndModel</span>
+                <span class="ignored-method-name">VerifyColPricing</span>
+                <br/>
+                <span class="ignored-method-name">VerifyColDatePurchased</span>
+                <br/>
+                <span class="ignored-method-name">VerifyColSeries</span>
+                <br/>
+                <span class="ignored-method-name">VerifyColCategoryAndSubject</span>
+                <br/>
+                <span class="ignored-method-name">VerifyColFormat</span>
+                <br/>
+                <span class="ignored-method-name">VerifyColNarrator</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -287,34 +259,34 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">TestCases.SearchCombinations</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">TestCases.Collection_AdvSearchTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setup</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-class before">
                 <span class="method-name">setupBefore</span>
-                <span class="method-start">16519 ms</span>
+                <span class="method-start">43090 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
-                <span class="method-name">setReport([TestResult name={null} status=CREATED method=SearchCombinations.VerifyAllBookDetails()[pri:0, insta...)</span>
-                <span class="method-start">30254 ms</span>
+                <span class="method-name">setReport([TestResult name={null} status=CREATED method=Collection_AdvSearchTest.VerifyColTitle()[pri:0, insta...)</span>
+                <span class="method-start">58186 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">VerifyAllBookDetails</span>
-                <span class="method-start">30275 ms</span>
+                <span class="method-name">VerifyColTitle</span>
+                <span class="method-start">58201 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">addResult([TestResult name=VerifyAllBookDetails status=SUCCESS method=SearchCombinations.VerifyAllBookDetails(...)</span>
-                <span class="method-start">47653 ms</span>
+                <span class="method-name">addResult([TestResult name=VerifyColTitle status=SUCCESS method=Collection_AdvSearchTest.VerifyColTitle()[pri:...)</span>
+                <span class="method-start">70714 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">closeBrowser</span>
-                <span class="method-start">47653 ms</span>
+                <span class="method-start">70724 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-suite after">
                 <span class="method-name">afterSuiteMethod</span>
-                <span class="method-start">48585 ms</span>
+                <span class="method-start">71390 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

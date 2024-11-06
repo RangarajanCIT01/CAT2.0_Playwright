@@ -2,54 +2,54 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-10-29T19:23:36 IST" name="Default suite" finished-at="2024-10-29T19:24:24 IST" duration-ms="48519">
+  <suite started-at="2024-11-06T17:35:36 IST" name="Default suite" finished-at="2024-11-06T17:36:48 IST" duration-ms="71357">
     <groups>
     </groups>
-    <test started-at="2024-10-29T19:23:36 IST" name="Default test" finished-at="2024-10-29T19:24:24 IST" duration-ms="48519">
-      <class name="TestCases.SearchCombinations">
-        <test-method is-config="true" signature="setup()[pri:0, instance:TestCases.SearchCombinations@752325ad]" started-at="2024-10-29T19:23:36 IST" name="setup" finished-at="2024-10-29T19:23:52 IST" duration-ms="16519" status="PASS">
+    <test started-at="2024-11-06T17:35:36 IST" name="Default test" finished-at="2024-11-06T17:36:48 IST" duration-ms="71357">
+      <class name="TestCases.Collection_AdvSearchTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:TestCases.Collection_AdvSearchTest@2cd76f31]" started-at="2024-11-06T17:35:37 IST" name="setup" finished-at="2024-11-06T17:36:20 IST" duration-ms="43089" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setupBefore()[pri:0, instance:TestCases.SearchCombinations@752325ad]" started-at="2024-10-29T19:23:52 IST" name="setupBefore" finished-at="2024-10-29T19:24:06 IST" duration-ms="13718" status="PASS">
+        <test-method is-config="true" signature="setupBefore()[pri:0, instance:TestCases.Collection_AdvSearchTest@2cd76f31]" started-at="2024-11-06T17:36:20 IST" name="setupBefore" finished-at="2024-11-06T17:36:35 IST" duration-ms="15076" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupBefore -->
-        <test-method is-config="true" signature="setReport(org.testng.ITestResult)[pri:0, instance:TestCases.SearchCombinations@752325ad]" started-at="2024-10-29T19:24:06 IST" name="setReport" finished-at="2024-10-29T19:24:06 IST" duration-ms="21" status="PASS">
+        <test-method is-config="true" signature="setReport(org.testng.ITestResult)[pri:0, instance:TestCases.Collection_AdvSearchTest@2cd76f31]" started-at="2024-11-06T17:36:35 IST" name="setReport" finished-at="2024-11-06T17:36:35 IST" duration-ms="13" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name={null} status=CREATED method=SearchCombinations.VerifyAllBookDetails()[pri:0, instance:TestCases.SearchCombinations@752325ad] output={null}]]]>
+                <![CDATA[[TestResult name={null} status=CREATED method=Collection_AdvSearchTest.VerifyColTitle()[pri:0, instance:TestCases.Collection_AdvSearchTest@2cd76f31] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setReport -->
-        <test-method signature="VerifyAllBookDetails()[pri:0, instance:TestCases.SearchCombinations@752325ad]" started-at="2024-10-29T19:24:06 IST" name="VerifyAllBookDetails" finished-at="2024-10-29T19:24:23 IST" duration-ms="17368" status="PASS">
+        <test-method signature="VerifyColTitle()[pri:0, instance:TestCases.Collection_AdvSearchTest@2cd76f31]" started-at="2024-11-06T17:36:35 IST" name="VerifyColTitle" finished-at="2024-11-06T17:36:47 IST" duration-ms="12508" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- VerifyAllBookDetails -->
-        <test-method is-config="true" signature="addResult(org.testng.ITestResult)[pri:0, instance:TestCases.SearchCombinations@752325ad]" started-at="2024-10-29T19:24:23 IST" name="addResult" finished-at="2024-10-29T19:24:23 IST" duration-ms="0" status="PASS">
+        </test-method> <!-- VerifyColTitle -->
+        <test-method is-config="true" signature="addResult(org.testng.ITestResult)[pri:0, instance:TestCases.Collection_AdvSearchTest@2cd76f31]" started-at="2024-11-06T17:36:47 IST" name="addResult" finished-at="2024-11-06T17:36:47 IST" duration-ms="8" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=VerifyAllBookDetails status=SUCCESS method=SearchCombinations.VerifyAllBookDetails()[pri:0, instance:TestCases.SearchCombinations@752325ad] output={null}]]]>
+                <![CDATA[[TestResult name=VerifyColTitle status=SUCCESS method=Collection_AdvSearchTest.VerifyColTitle()[pri:0, instance:TestCases.Collection_AdvSearchTest@2cd76f31] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addResult -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:TestCases.SearchCombinations@752325ad]" started-at="2024-10-29T19:24:23 IST" name="closeBrowser" finished-at="2024-10-29T19:24:24 IST" duration-ms="837" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:TestCases.Collection_AdvSearchTest@2cd76f31]" started-at="2024-11-06T17:36:47 IST" name="closeBrowser" finished-at="2024-11-06T17:36:48 IST" duration-ms="602" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="afterSuiteMethod()[pri:0, instance:TestCases.SearchCombinations@752325ad]" started-at="2024-10-29T19:24:24 IST" name="afterSuiteMethod" finished-at="2024-10-29T19:24:25 IST" duration-ms="1167" status="PASS">
+        <test-method is-config="true" signature="afterSuiteMethod()[pri:0, instance:TestCases.Collection_AdvSearchTest@2cd76f31]" started-at="2024-11-06T17:36:48 IST" name="afterSuiteMethod" finished-at="2024-11-06T17:36:48 IST" duration-ms="456" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuiteMethod -->
-      </class> <!-- TestCases.SearchCombinations -->
+      </class> <!-- TestCases.Collection_AdvSearchTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
