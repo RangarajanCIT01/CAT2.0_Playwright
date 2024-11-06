@@ -8,7 +8,7 @@
           <include name="setReport"/>
           <include name="addResult"/>
           <include name="setup"/>
-          <include name="VerifyPreSaleFilterTitlesAndPublisher"/>
+          <include name="VerifyAllBookDetails"/>
           <include name="setupBefore"/>
           <include name="afterSuiteMethod"/>
           <include name="closeBrowser"/>

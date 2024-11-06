@@ -298,8 +298,6 @@ public class SearchCombinations extends BaseTest{
 		
 	}
 	
-	/***** Work ***/
-	
 	@Test
 	public void VerifyPublishedDateAndAllLoans() throws Exception
 	{		
@@ -309,43 +307,59 @@ public class SearchCombinations extends BaseTest{
 	
 		searchpage.clseLftPnlIfExists();
 		searchpage.navigateToCartAndSearchPage();
-		extentTest.log(Status.INFO, "Enter Published Date and  Details");
+		extentTest.log(Status.INFO, "Enter Published Date and All Loans Details");
 		
 		searchpage.enterBookTitle(testData.get("Book_Title"));
-		searchpage.enterPrice(testData.get("Book_Min"), testData.get("Book_Max"));
 		searchpage.clickElement(searchpage.SearchButton);
 		searchpage.loadResult();
 		
-		searchpage.containsVerify(searchpage.AllElements, testData.get("Book_Price"));
+		searchpage.containsVerify(searchpage.AllElements, testData.get("Book_Published Date"));
+		searchpage.containsVerify(searchpage.AllElements, testData.get("Book_AllLoans"));
 		
-		extentTest.log(Status.INFO, "Verified the details of Pricing result");
+		extentTest.log(Status.INFO, "Verified the details of Published Date and All Loans details");
 
 		searchpage.clseLftPnlIfExists();
 		
 	}
 	
 	@Test
-	public void VerifyPublishedWithin() throws Exception
+	public void VerifyAllBookDetails() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "VerifyPublishedWithin");
+		Map<String, String> testData = playwrightFactory.readJsonElement("SearchCombinations.json", "VerifyAllBookDetails");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
 		searchpage.clseLftPnlIfExists();
 		searchpage.navigateToCartAndSearchPage();
-		extentTest.log(Status.INFO, "Selecting Published Within Details");
+		extentTest.log(Status.INFO, "Verify with All book details");
 		
 		searchpage.enterBookTitle(testData.get("Book_Title"));
-		searchpage.enterBookAuthor(testData.get("Book_Author"));
-		searchpage.languages(testData.get("Book_Language"));
-		searchpage.publisher(testData.get("Book_Publisher"));
-		searchpage.enterPrice(testData.get("Book_Min"),testData.get("Book_Max") );
-		searchpage.clickElement(searchpage.drpdwnpublishedWithin);
-		searchpage.selectDropdownSpecificSearchEquals(testData.get("Custom_Filter"), searchpage.publicationList);
+		searchpage.enterBookNarrator(testData.get("Book_Narrator"));
 		searchpage.clickElement(searchpage.SearchButton);
 		searchpage.loadResult(); 
 	
-		searchpage.containsVerify(searchpage.AllElements, testData.get("Published_Date"));
+		searchpage.clickElement(searchpage.coverimg);		
+		searchpage.loadResult();
+		searchpage.containsVerify(searchpage.AllElementsDetailsPage, testData.get("Book_USGrade"));
+		searchpage.containsVerify(searchpage.AllElementsDetailsPage, testData.get("Book_Series"));
+		searchpage.containsVerify(searchpage.AllElementsDetailsPage, testData.get("Book_Author"));
+		searchpage.containsVerify(searchpage.AllElementsDetailsPage, testData.get("Book_Narrator"));
+		searchpage.containsVerify(searchpage.AllElementsDetailsPage, testData.get("Book_Category"));
+		searchpage.containsVerify(searchpage.AllElementsDetailsPage, testData.get("Book_Language"));
+		searchpage.containsVerify(searchpage.AllElementsDetailsPage, testData.get("Book_Format"));
+		searchpage.containsVerify(searchpage.AllElementsDetailsPage, testData.get("Book_Provider"));
+		searchpage.containsVerify(searchpage.AllElementsDetailsPage, testData.get("Book_Publisher"));
+		searchpage.containsVerify(searchpage.AllElementsDetailsPage, testData.get("Book_Edition"));
+		searchpage.containsVerify(searchpage.AllElementsDetailsPage, testData.get("Book_PublishedDate"));
+		searchpage.containsVerify(searchpage.AllElementsDetailsPage, testData.get("Book_StreetDate"));
+		searchpage.containsVerify(searchpage.AllElementsDetailsPage, testData.get("Book_AddedToCAT"));
+		searchpage.containsVerify(searchpage.AllElementsDetailsPage, testData.get("Book_Model"));
+		searchpage.containsVerify(searchpage.AllElementsDetailsPage, testData.get("Book_Duration"));
+		searchpage.containsVerify(searchpage.AllElementsDetailsPage, testData.get("Book_ISBN"));
+		searchpage.containsVerify(searchpage.AllElementsDetailsPage, testData.get("Book_LastPurchased"));
+		searchpage.containsVerify(searchpage.AllElementsDetailsPage, testData.get("Book_Audience"));
+		
+		searchpage.clickElement(searchpage.Back);
 		
 		extentTest.log(Status.INFO, "Verified the details of Published Date");
 

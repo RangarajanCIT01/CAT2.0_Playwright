@@ -58,6 +58,34 @@
 		"Book_LastPurchased" : "11/12/2015"
 	},
 	
+	"VerifyPublishedDateAndAllLoans": {
+		"Book_Title": "$10000 Gold",
+		"Book_Published Date": "4/1/2013",
+		"Book_AllLoans" : "4"
+	},
+	
+	"VerifyAllBookDetails":{
+		"Book_Title": "Is For Evidence",
+		"Book_USGrade" : "US Grade: 13 - 17",
+		"Book_Series" : "Kinsey Millhone Series",
+		"Book_Author" : "Grafton, Sue",
+		"Book_Narrator" : "Peiffer, Mary",
+		"Book_Category" : "FICTION : Mystery & Detective",
+		"Book_Language" : "ENGLISH",
+		"Book_Format" : "MP3",
+		"Book_Provider" : "findaway",
+		"Book_Publisher" : "Penguin Random House",
+		"Book_Edition" : "UnabridgedEdition",
+		"Book_PublishedDate" : "10/17/2005",
+		"Book_StreetDate" : "10/17/2005",
+		"Book_AddedToCAT" : "8/23/2015",
+		"Book_Model" : "Perpetual",
+		"Book_Duration" : "380 minutes",
+		"Book_ISBN" : "9780739330333",
+		"Book_LastPurchased" : "7/23/2024",
+		"Book_Audience" : "Adult"		
+	},
+	
 	"VerifyContentProvider": {
 		"Book_Title": "Zoom in on Bridges",
 		"Book_ContentProvider": "enslow"

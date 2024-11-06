@@ -50,6 +50,7 @@ public class SearchPage extends PlaywrightFactory {
 	public String AudienceList = "//div[@class='rc-virtual-list-holder']";
 	//public String AllElements = "//div[@class='ant-row book-details-container ']//p";
 	public String AllElements = "//div[@class='ant-row book-details-container ']";
+	public String AllElementsDetailsPage = "//button[text()='< Back']//following::div[5]";
 	public String AllMultipleElements = "//div[@class='ReactVirtualized__Grid ReactVirtualized__List scrollStyle']";
 	public String AllElementsSaved = "//div[@class='ReactVirtualized__Grid__innerScrollContainer']";
 	public String PricingMinAmount = "//*[@name='MinimumPriceAmount']";
@@ -71,6 +72,7 @@ public class SearchPage extends PlaywrightFactory {
 	public String DatePurchasedStartDate= "//span[text()='Custom Date Range']/following::input[1]";
 	public String DatePurchasedEndDate = "//input[@placeholder='Custom Date Range']/following::input[1]";
 	
+	public String coverimg = "//img[@class='cover']";
 	public String SearchButtonLftPnl = "//button[text()='SEARCH']";
 	public String titleList = "//span[@class='book-title']";
 	public String TitleCount = "//span[@class='title-count']";
@@ -648,9 +650,14 @@ public class SearchPage extends PlaywrightFactory {
 		return msg;
 	}
 	
-	public String getAllElements() {
-		String msg = page.locator(AllElements).textContent();
+	public String getAllElements(String All) {
+		String msg = page.locator(All).textContent();
 		System.out.println(msg);
+		return msg;
+	}
+	
+	public String getAllElement(String All) {
+		String msg = page.locator(All).textContent();
 		return msg;
 	}
 

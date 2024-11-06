@@ -2,50 +2,50 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-10-22T19:51:13 IST" name="Default suite" finished-at="2024-10-22T19:51:53 IST" duration-ms="39743">
+  <suite started-at="2024-10-29T19:23:36 IST" name="Default suite" finished-at="2024-10-29T19:24:24 IST" duration-ms="48519">
     <groups>
     </groups>
-    <test started-at="2024-10-22T19:51:13 IST" name="Default test" finished-at="2024-10-22T19:51:53 IST" duration-ms="39743">
+    <test started-at="2024-10-29T19:23:36 IST" name="Default test" finished-at="2024-10-29T19:24:24 IST" duration-ms="48519">
       <class name="TestCases.SearchCombinations">
-        <test-method is-config="true" signature="setup()[pri:0, instance:TestCases.SearchCombinations@279fedbd]" started-at="2024-10-22T19:51:13 IST" name="setup" finished-at="2024-10-22T19:51:29 IST" duration-ms="16036" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:TestCases.SearchCombinations@752325ad]" started-at="2024-10-29T19:23:36 IST" name="setup" finished-at="2024-10-29T19:23:52 IST" duration-ms="16519" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setupBefore()[pri:0, instance:TestCases.SearchCombinations@279fedbd]" started-at="2024-10-22T19:51:29 IST" name="setupBefore" finished-at="2024-10-22T19:51:42 IST" duration-ms="12891" status="PASS">
+        <test-method is-config="true" signature="setupBefore()[pri:0, instance:TestCases.SearchCombinations@752325ad]" started-at="2024-10-29T19:23:52 IST" name="setupBefore" finished-at="2024-10-29T19:24:06 IST" duration-ms="13718" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupBefore -->
-        <test-method is-config="true" signature="setReport(org.testng.ITestResult)[pri:0, instance:TestCases.SearchCombinations@279fedbd]" started-at="2024-10-22T19:51:42 IST" name="setReport" finished-at="2024-10-22T19:51:42 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="setReport(org.testng.ITestResult)[pri:0, instance:TestCases.SearchCombinations@752325ad]" started-at="2024-10-29T19:24:06 IST" name="setReport" finished-at="2024-10-29T19:24:06 IST" duration-ms="21" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name={null} status=CREATED method=SearchCombinations.VerifyAddedToCatAndLastPurchased()[pri:0, instance:TestCases.SearchCombinations@279fedbd] output={null}]]]>
+                <![CDATA[[TestResult name={null} status=CREATED method=SearchCombinations.VerifyAllBookDetails()[pri:0, instance:TestCases.SearchCombinations@752325ad] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setReport -->
-        <test-method signature="VerifyAddedToCatAndLastPurchased()[pri:0, instance:TestCases.SearchCombinations@279fedbd]" started-at="2024-10-22T19:51:42 IST" name="VerifyAddedToCatAndLastPurchased" finished-at="2024-10-22T19:51:52 IST" duration-ms="9994" status="PASS">
+        <test-method signature="VerifyAllBookDetails()[pri:0, instance:TestCases.SearchCombinations@752325ad]" started-at="2024-10-29T19:24:06 IST" name="VerifyAllBookDetails" finished-at="2024-10-29T19:24:23 IST" duration-ms="17368" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- VerifyAddedToCatAndLastPurchased -->
-        <test-method is-config="true" signature="addResult(org.testng.ITestResult)[pri:0, instance:TestCases.SearchCombinations@279fedbd]" started-at="2024-10-22T19:51:52 IST" name="addResult" finished-at="2024-10-22T19:51:52 IST" duration-ms="12" status="PASS">
+        </test-method> <!-- VerifyAllBookDetails -->
+        <test-method is-config="true" signature="addResult(org.testng.ITestResult)[pri:0, instance:TestCases.SearchCombinations@752325ad]" started-at="2024-10-29T19:24:23 IST" name="addResult" finished-at="2024-10-29T19:24:23 IST" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=VerifyAddedToCatAndLastPurchased status=SUCCESS method=SearchCombinations.VerifyAddedToCatAndLastPurchased()[pri:0, instance:TestCases.SearchCombinations@279fedbd] output={null}]]]>
+                <![CDATA[[TestResult name=VerifyAllBookDetails status=SUCCESS method=SearchCombinations.VerifyAllBookDetails()[pri:0, instance:TestCases.SearchCombinations@752325ad] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addResult -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:TestCases.SearchCombinations@279fedbd]" started-at="2024-10-22T19:51:52 IST" name="closeBrowser" finished-at="2024-10-22T19:51:53 IST" duration-ms="726" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:TestCases.SearchCombinations@752325ad]" started-at="2024-10-29T19:24:23 IST" name="closeBrowser" finished-at="2024-10-29T19:24:24 IST" duration-ms="837" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="afterSuiteMethod()[pri:0, instance:TestCases.SearchCombinations@279fedbd]" started-at="2024-10-22T19:51:53 IST" name="afterSuiteMethod" finished-at="2024-10-22T19:51:54 IST" duration-ms="962" status="PASS">
+        <test-method is-config="true" signature="afterSuiteMethod()[pri:0, instance:TestCases.SearchCombinations@752325ad]" started-at="2024-10-29T19:24:24 IST" name="afterSuiteMethod" finished-at="2024-10-29T19:24:25 IST" duration-ms="1167" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuiteMethod -->
