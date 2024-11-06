@@ -1,51 +1,215 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="0" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-11-06T17:35:36 IST" name="Default suite" finished-at="2024-11-06T17:36:48 IST" duration-ms="71357">
+  <suite started-at="2024-11-06T18:57:26 IST" name="Default suite" finished-at="2024-11-06T18:57:31 IST" duration-ms="5162">
     <groups>
     </groups>
-    <test started-at="2024-11-06T17:35:36 IST" name="Default test" finished-at="2024-11-06T17:36:48 IST" duration-ms="71357">
+    <test started-at="2024-11-06T18:57:26 IST" name="Default test" finished-at="2024-11-06T18:57:31 IST" duration-ms="5162">
       <class name="TestCases.Collection_AdvSearchTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:TestCases.Collection_AdvSearchTest@2cd76f31]" started-at="2024-11-06T17:35:37 IST" name="setup" finished-at="2024-11-06T17:36:20 IST" duration-ms="43089" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:TestCases.Collection_AdvSearchTest@2cd76f31]" started-at="2024-11-06T18:57:26 IST" name="setup" finished-at="2024-11-06T18:57:31 IST" duration-ms="5103" status="FAIL">
+          <exception class="com.microsoft.playwright.PlaywrightException">
+            <message>
+              <![CDATA[Error {
+  message='net::ERR_ABORTED; maybe frame was detached?
+  name='Error
+  stack='Error: net::ERR_ABORTED; maybe frame was detached?
+    at FrameManager.frameAbortedNavigation (C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\frames.js:216:14)
+    at FrameManager.requestFailed (C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\frames.js:276:12)
+    at CRNetworkManager._onLoadingFailed (C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\chromium\crNetworkManager.js:466:134)
+    at CRSession.emit (node:events:518:28)
+    at C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\chromium\crConnection.js:160:14
+}
+Call log:
+- navigating to "https://catqa.yourcloudlibrary.com/login", waiting until "load"
+]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.microsoft.playwright.PlaywrightException: Error {
+  message='net::ERR_ABORTED; maybe frame was detached?
+  name='Error
+  stack='Error: net::ERR_ABORTED; maybe frame was detached?
+    at FrameManager.frameAbortedNavigation (C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\frames.js:216:14)
+    at FrameManager.requestFailed (C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\frames.js:276:12)
+    at CRNetworkManager._onLoadingFailed (C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\chromium\crNetworkManager.js:466:134)
+    at CRSession.emit (node:events:518:28)
+    at C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\chromium\crConnection.js:160:14
+}
+Call log:
+- navigating to "https://catqa.yourcloudlibrary.com/login", waiting until "load"
+
+at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:54)
+at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+at com.microsoft.playwright.impl.FrameImpl.navigateImpl(FrameImpl.java:463)
+at com.microsoft.playwright.impl.PageImpl.lambda$navigate$46(PageImpl.java:870)
+at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+at com.microsoft.playwright.impl.PageImpl.navigate(PageImpl.java:870)
+at com.microsoft.playwright.impl.PageImpl.navigate(PageImpl.java:42)
+at com.microsoft.playwright.Page.navigate(Page.java:5354)
+at com.Factory.PlaywrightFactory.initBrowser(PlaywrightFactory.java:109)
+at com.base.BaseTest.setup(BaseTest.java:54)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:188)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: com.microsoft.playwright.impl.DriverException: Error {
+  message='net::ERR_ABORTED; maybe frame was detached?
+  name='Error
+  stack='Error: net::ERR_ABORTED; maybe frame was detached?
+    at FrameManager.frameAbortedNavigation (C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\frames.js:216:14)
+    at FrameManager.requestFailed (C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\frames.js:276:12)
+    at CRNetworkManager._onLoadingFailed (C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\chromium\crNetworkManager.js:466:134)
+    at CRSession.emit (node:events:518:28)
+    at C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\chromium\crConnection.js:160:14
+}
+Call log:
+- navigating to "https://catqa.yourcloudlibrary.com/login", waiting until "load"
+
+at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:259)
+at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+... 37 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.microsoft.playwright.PlaywrightException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setupBefore()[pri:0, instance:TestCases.Collection_AdvSearchTest@2cd76f31]" started-at="2024-11-06T17:36:20 IST" name="setupBefore" finished-at="2024-11-06T17:36:35 IST" duration-ms="15076" status="PASS">
+        <test-method is-config="true" signature="setupBefore()[pri:0, instance:TestCases.Collection_AdvSearchTest@2cd76f31]" started-at="2024-11-06T18:57:31 IST" name="setupBefore" finished-at="2024-11-06T18:57:31 IST" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupBefore -->
-        <test-method is-config="true" signature="setReport(org.testng.ITestResult)[pri:0, instance:TestCases.Collection_AdvSearchTest@2cd76f31]" started-at="2024-11-06T17:36:35 IST" name="setReport" finished-at="2024-11-06T17:36:35 IST" duration-ms="13" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name={null} status=CREATED method=Collection_AdvSearchTest.VerifyColTitle()[pri:0, instance:TestCases.Collection_AdvSearchTest@2cd76f31] output={null}]]]>
-              </value>
-            </param>
-          </params>
+        <test-method is-config="true" signature="setReport(org.testng.ITestResult)[pri:0, instance:TestCases.Collection_AdvSearchTest@2cd76f31]" started-at="2024-11-06T18:57:31 IST" name="setReport" finished-at="2024-11-06T18:57:31 IST" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setReport -->
-        <test-method signature="VerifyColTitle()[pri:0, instance:TestCases.Collection_AdvSearchTest@2cd76f31]" started-at="2024-11-06T17:36:35 IST" name="VerifyColTitle" finished-at="2024-11-06T17:36:47 IST" duration-ms="12508" status="PASS">
+        <test-method signature="VerifyColTitle()[pri:0, instance:TestCases.Collection_AdvSearchTest@2cd76f31]" started-at="2024-11-06T18:57:31 IST" name="VerifyColTitle" finished-at="2024-11-06T18:57:31 IST" duration-ms="0" status="SKIP">
+          <exception class="com.microsoft.playwright.PlaywrightException">
+            <message>
+              <![CDATA[Error {
+  message='net::ERR_ABORTED; maybe frame was detached?
+  name='Error
+  stack='Error: net::ERR_ABORTED; maybe frame was detached?
+    at FrameManager.frameAbortedNavigation (C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\frames.js:216:14)
+    at FrameManager.requestFailed (C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\frames.js:276:12)
+    at CRNetworkManager._onLoadingFailed (C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\chromium\crNetworkManager.js:466:134)
+    at CRSession.emit (node:events:518:28)
+    at C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\chromium\crConnection.js:160:14
+}
+Call log:
+- navigating to "https://catqa.yourcloudlibrary.com/login", waiting until "load"
+]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.microsoft.playwright.PlaywrightException: Error {
+  message='net::ERR_ABORTED; maybe frame was detached?
+  name='Error
+  stack='Error: net::ERR_ABORTED; maybe frame was detached?
+    at FrameManager.frameAbortedNavigation (C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\frames.js:216:14)
+    at FrameManager.requestFailed (C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\frames.js:276:12)
+    at CRNetworkManager._onLoadingFailed (C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\chromium\crNetworkManager.js:466:134)
+    at CRSession.emit (node:events:518:28)
+    at C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\chromium\crConnection.js:160:14
+}
+Call log:
+- navigating to "https://catqa.yourcloudlibrary.com/login", waiting until "load"
+
+at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:54)
+at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+at com.microsoft.playwright.impl.FrameImpl.navigateImpl(FrameImpl.java:463)
+at com.microsoft.playwright.impl.PageImpl.lambda$navigate$46(PageImpl.java:870)
+at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+at com.microsoft.playwright.impl.PageImpl.navigate(PageImpl.java:870)
+at com.microsoft.playwright.impl.PageImpl.navigate(PageImpl.java:42)
+at com.microsoft.playwright.Page.navigate(Page.java:5354)
+at com.Factory.PlaywrightFactory.initBrowser(PlaywrightFactory.java:109)
+at com.base.BaseTest.setup(BaseTest.java:54)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:188)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: com.microsoft.playwright.impl.DriverException: Error {
+  message='net::ERR_ABORTED; maybe frame was detached?
+  name='Error
+  stack='Error: net::ERR_ABORTED; maybe frame was detached?
+    at FrameManager.frameAbortedNavigation (C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\frames.js:216:14)
+    at FrameManager.requestFailed (C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\frames.js:276:12)
+    at CRNetworkManager._onLoadingFailed (C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\chromium\crNetworkManager.js:466:134)
+    at CRSession.emit (node:events:518:28)
+    at C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\chromium\crConnection.js:160:14
+}
+Call log:
+- navigating to "https://catqa.yourcloudlibrary.com/login", waiting until "load"
+
+at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:259)
+at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+... 37 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.microsoft.playwright.PlaywrightException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VerifyColTitle -->
-        <test-method is-config="true" signature="addResult(org.testng.ITestResult)[pri:0, instance:TestCases.Collection_AdvSearchTest@2cd76f31]" started-at="2024-11-06T17:36:47 IST" name="addResult" finished-at="2024-11-06T17:36:47 IST" duration-ms="8" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=VerifyColTitle status=SUCCESS method=Collection_AdvSearchTest.VerifyColTitle()[pri:0, instance:TestCases.Collection_AdvSearchTest@2cd76f31] output={null}]]]>
-              </value>
-            </param>
-          </params>
+        <test-method is-config="true" signature="addResult(org.testng.ITestResult)[pri:0, instance:TestCases.Collection_AdvSearchTest@2cd76f31]" started-at="2024-11-06T18:57:31 IST" name="addResult" finished-at="2024-11-06T18:57:31 IST" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addResult -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:TestCases.Collection_AdvSearchTest@2cd76f31]" started-at="2024-11-06T17:36:47 IST" name="closeBrowser" finished-at="2024-11-06T17:36:48 IST" duration-ms="602" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:TestCases.Collection_AdvSearchTest@2cd76f31]" started-at="2024-11-06T18:57:31 IST" name="closeBrowser" finished-at="2024-11-06T18:57:31 IST" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="afterSuiteMethod()[pri:0, instance:TestCases.Collection_AdvSearchTest@2cd76f31]" started-at="2024-11-06T17:36:48 IST" name="afterSuiteMethod" finished-at="2024-11-06T17:36:48 IST" duration-ms="456" status="PASS">
+        <test-method is-config="true" signature="afterSuiteMethod()[pri:0, instance:TestCases.Collection_AdvSearchTest@2cd76f31]" started-at="2024-11-06T18:57:31 IST" name="afterSuiteMethod" finished-at="2024-11-06T18:57:31 IST" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuiteMethod -->
