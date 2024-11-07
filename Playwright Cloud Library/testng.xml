@@ -7,7 +7,6 @@
       <class name="TestCases.SearchLeftPanel_Test"/>
       <class name="TestCases.Search_AdvSearchTest"/>
       <class name="TestCases.Settings_Test"/>
-      <class name="TestCases.Spotlight_Test"/>
       <class name="TestCases.Purchase_Test"/>
       <class name="TestCases.Report_Test"/>
       <class name="TestCases.Collection_ISBN"/>
