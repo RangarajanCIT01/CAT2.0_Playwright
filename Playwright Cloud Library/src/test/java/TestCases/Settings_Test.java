@@ -2,6 +2,8 @@ package TestCases;
 
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
 import java.util.Map;
 
 import org.testng.annotations.BeforeClass;

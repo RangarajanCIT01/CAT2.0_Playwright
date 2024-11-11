@@ -3,17 +3,18 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-     <class name="TestCases.Search_ISBN"/>
+      <class name="TestCases.Search_ISBN"/>
       <class name="TestCases.SearchLeftPanel_Test"/>
       <class name="TestCases.Search_AdvSearchTest"/>
       <class name="TestCases.Settings_Test"/>
-      <class name="TestCases.Purchase_Test"/>
+      <class name="TestCases.Spotlight_Test"/>
       <class name="TestCases.Report_Test"/>
+      <class name="TestCases.Purchase_Test"/>
+      <class name="TestCases.SearchCombinations"/>
       <class name="TestCases.Collection_ISBN"/>
       <class name="TestCases.SavedSearch_Test"/>
-      <class name="TestCases.SearchAndCollectionTest"/>
       <class name="TestCases.Collection_AdvSearchTest"/>
-      <class name="TestCases.Cart_Test"/>      
-     </classes>
+      <class name="TestCases.Cart_Test"/>
+    </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
