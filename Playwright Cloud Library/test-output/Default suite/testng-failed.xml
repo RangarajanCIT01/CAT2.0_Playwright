@@ -3,17 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestCases.Collection_AdvSearchTest">
+      <class name="Reports_CAT.ReportsTest">
         <methods>
           <include name="setReport"/>
-          <include name="setupBefore"/>
+          <include name="closeBrowser"/>
           <include name="setup"/>
           <include name="addResult"/>
-          <include name="VerifyColTitle"/>
+          <include name="verifyCreateNewCart"/>
+          <include name="setupBefore"/>
           <include name="afterSuiteMethod"/>
-          <include name="closeBrowser"/>
         </methods>
-      </class> <!-- TestCases.Collection_AdvSearchTest -->
+      </class> <!-- Reports_CAT.ReportsTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

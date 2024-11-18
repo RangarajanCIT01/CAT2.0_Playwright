@@ -25,6 +25,9 @@ import com.pages.SearchPage;
 import com.pages.SettingsPage;
 import com.pages.Shelf;
 import com.pages.SpotlightPage;
+
+import ReportsPages.QAReportsPage;
+
 import org.testng.annotations.*;
 
 public class BaseTest extends PlaywrightFactory{
@@ -46,6 +49,7 @@ public class BaseTest extends PlaywrightFactory{
 	public ExtentSparkReporter extentSparkReporter;
 	public ExtentReports extentReports;
 	public ExtentTest extentTest;
+	public QAReportsPage reportsPage;
 
 	@BeforeClass
 	public void setup() throws Exception {
@@ -65,6 +69,7 @@ public class BaseTest extends PlaywrightFactory{
 		spotlight = new SpotlightPage(page);
 		report = new ReportsPage(page);
 		loginpage = new LoginPage(page);
+		reportsPage = new QAReportsPage(page);
 
 		extentSparkReporter = new ExtentSparkReporter(System.getProperty("user.dir") + "//reports//extentReport.html");
 		extentReports = new ExtentReports();

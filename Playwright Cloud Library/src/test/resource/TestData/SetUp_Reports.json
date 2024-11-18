@@ -1,0 +1,11 @@
+{
+	
+	"verify_ReportTest": {
+		"URL" : "https://reportsqa.yourcloudlibrary.com/Account/Logon",
+		"UserName" : "uat15mn@yahoo.com",
+		"Password" : "3msuper#"
+	}
+}
+
+
+

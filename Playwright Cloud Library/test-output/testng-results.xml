@@ -2,42 +2,38 @@
 <testng-results ignored="0" total="1" passed="0" failed="0" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-11-06T18:57:26 IST" name="Default suite" finished-at="2024-11-06T18:57:31 IST" duration-ms="5162">
+  <suite started-at="2024-11-19T00:43:56 IST" name="Default suite" finished-at="2024-11-19T00:43:59 IST" duration-ms="3645">
     <groups>
     </groups>
-    <test started-at="2024-11-06T18:57:26 IST" name="Default test" finished-at="2024-11-06T18:57:31 IST" duration-ms="5162">
-      <class name="TestCases.Collection_AdvSearchTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:TestCases.Collection_AdvSearchTest@2cd76f31]" started-at="2024-11-06T18:57:26 IST" name="setup" finished-at="2024-11-06T18:57:31 IST" duration-ms="5103" status="FAIL">
+    <test started-at="2024-11-19T00:43:56 IST" name="Default test" finished-at="2024-11-19T00:43:59 IST" duration-ms="3645">
+      <class name="Reports_CAT.ReportsTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Reports_CAT.ReportsTest@2767e23c]" started-at="2024-11-19T00:43:56 IST" name="setup" finished-at="2024-11-19T00:43:59 IST" duration-ms="3592" status="FAIL">
           <exception class="com.microsoft.playwright.PlaywrightException">
             <message>
               <![CDATA[Error {
-  message='net::ERR_ABORTED; maybe frame was detached?
+  message='url: expected string, got undefined
   name='Error
-  stack='Error: net::ERR_ABORTED; maybe frame was detached?
-    at FrameManager.frameAbortedNavigation (C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\frames.js:216:14)
-    at FrameManager.requestFailed (C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\frames.js:276:12)
-    at CRNetworkManager._onLoadingFailed (C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\chromium\crNetworkManager.js:466:134)
-    at CRSession.emit (node:events:518:28)
-    at C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\chromium\crConnection.js:160:14
-}
-Call log:
-- navigating to "https://catqa.yourcloudlibrary.com/login", waiting until "load"
-]]>
+  stack='Error: url: expected string, got undefined
+    at tString (C:\Users\raja.k\AppData\Local\Temp\playwright-java-15084175266023432641\package\lib\protocol\validatorPrimitives.js:58:9)
+    at C:\Users\raja.k\AppData\Local\Temp\playwright-java-15084175266023432641\package\lib\protocol\validatorPrimitives.js:107:21
+    at DispatcherConnection.dispatch (C:\Users\raja.k\AppData\Local\Temp\playwright-java-15084175266023432641\package\lib\server\dispatchers\dispatcher.js:285:21)
+    at transport.onmessage (C:\Users\raja.k\AppData\Local\Temp\playwright-java-15084175266023432641\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\raja.k\AppData\Local\Temp\playwright-java-15084175266023432641\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:478:21)
+}]]>
             </message>
             <full-stacktrace>
               <![CDATA[com.microsoft.playwright.PlaywrightException: Error {
-  message='net::ERR_ABORTED; maybe frame was detached?
+  message='url: expected string, got undefined
   name='Error
-  stack='Error: net::ERR_ABORTED; maybe frame was detached?
-    at FrameManager.frameAbortedNavigation (C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\frames.js:216:14)
-    at FrameManager.requestFailed (C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\frames.js:276:12)
-    at CRNetworkManager._onLoadingFailed (C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\chromium\crNetworkManager.js:466:134)
-    at CRSession.emit (node:events:518:28)
-    at C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\chromium\crConnection.js:160:14
+  stack='Error: url: expected string, got undefined
+    at tString (C:\Users\raja.k\AppData\Local\Temp\playwright-java-15084175266023432641\package\lib\protocol\validatorPrimitives.js:58:9)
+    at C:\Users\raja.k\AppData\Local\Temp\playwright-java-15084175266023432641\package\lib\protocol\validatorPrimitives.js:107:21
+    at DispatcherConnection.dispatch (C:\Users\raja.k\AppData\Local\Temp\playwright-java-15084175266023432641\package\lib\server\dispatchers\dispatcher.js:285:21)
+    at transport.onmessage (C:\Users\raja.k\AppData\Local\Temp\playwright-java-15084175266023432641\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\raja.k\AppData\Local\Temp\playwright-java-15084175266023432641\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:478:21)
 }
-Call log:
-- navigating to "https://catqa.yourcloudlibrary.com/login", waiting until "load"
-
 at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:54)
 at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
 at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
@@ -49,8 +45,8 @@ at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
 at com.microsoft.playwright.impl.PageImpl.navigate(PageImpl.java:870)
 at com.microsoft.playwright.impl.PageImpl.navigate(PageImpl.java:42)
 at com.microsoft.playwright.Page.navigate(Page.java:5354)
-at com.Factory.PlaywrightFactory.initBrowser(PlaywrightFactory.java:109)
-at com.base.BaseTest.setup(BaseTest.java:54)
+at com.Factory.PlaywrightFactory.initBrowser2(PlaywrightFactory.java:159)
+at com.base.BaseTest3.setup(BaseTest3.java:59)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -78,18 +74,16 @@ at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 Caused by: com.microsoft.playwright.impl.DriverException: Error {
-  message='net::ERR_ABORTED; maybe frame was detached?
+  message='url: expected string, got undefined
   name='Error
-  stack='Error: net::ERR_ABORTED; maybe frame was detached?
-    at FrameManager.frameAbortedNavigation (C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\frames.js:216:14)
-    at FrameManager.requestFailed (C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\frames.js:276:12)
-    at CRNetworkManager._onLoadingFailed (C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\chromium\crNetworkManager.js:466:134)
-    at CRSession.emit (node:events:518:28)
-    at C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\chromium\crConnection.js:160:14
+  stack='Error: url: expected string, got undefined
+    at tString (C:\Users\raja.k\AppData\Local\Temp\playwright-java-15084175266023432641\package\lib\protocol\validatorPrimitives.js:58:9)
+    at C:\Users\raja.k\AppData\Local\Temp\playwright-java-15084175266023432641\package\lib\protocol\validatorPrimitives.js:107:21
+    at DispatcherConnection.dispatch (C:\Users\raja.k\AppData\Local\Temp\playwright-java-15084175266023432641\package\lib\server\dispatchers\dispatcher.js:285:21)
+    at transport.onmessage (C:\Users\raja.k\AppData\Local\Temp\playwright-java-15084175266023432641\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\raja.k\AppData\Local\Temp\playwright-java-15084175266023432641\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:478:21)
 }
-Call log:
-- navigating to "https://catqa.yourcloudlibrary.com/login", waiting until "load"
-
 at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:259)
 at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
 at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
@@ -100,45 +94,41 @@ at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setupBefore()[pri:0, instance:TestCases.Collection_AdvSearchTest@2cd76f31]" started-at="2024-11-06T18:57:31 IST" name="setupBefore" finished-at="2024-11-06T18:57:31 IST" duration-ms="0" status="SKIP">
+        <test-method is-config="true" signature="setupBefore()[pri:0, instance:Reports_CAT.ReportsTest@2767e23c]" started-at="2024-11-19T00:43:59 IST" name="setupBefore" finished-at="2024-11-19T00:43:59 IST" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupBefore -->
-        <test-method is-config="true" signature="setReport(org.testng.ITestResult)[pri:0, instance:TestCases.Collection_AdvSearchTest@2cd76f31]" started-at="2024-11-06T18:57:31 IST" name="setReport" finished-at="2024-11-06T18:57:31 IST" duration-ms="0" status="SKIP">
+        <test-method is-config="true" signature="setReport(org.testng.ITestResult)[pri:0, instance:Reports_CAT.ReportsTest@2767e23c]" started-at="2024-11-19T00:43:59 IST" name="setReport" finished-at="2024-11-19T00:43:59 IST" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setReport -->
-        <test-method signature="VerifyColTitle()[pri:0, instance:TestCases.Collection_AdvSearchTest@2cd76f31]" started-at="2024-11-06T18:57:31 IST" name="VerifyColTitle" finished-at="2024-11-06T18:57:31 IST" duration-ms="0" status="SKIP">
+        <test-method signature="verifyCreateNewCart()[pri:1, instance:Reports_CAT.ReportsTest@2767e23c]" started-at="2024-11-19T00:43:59 IST" name="verifyCreateNewCart" finished-at="2024-11-19T00:43:59 IST" duration-ms="0" status="SKIP">
           <exception class="com.microsoft.playwright.PlaywrightException">
             <message>
               <![CDATA[Error {
-  message='net::ERR_ABORTED; maybe frame was detached?
+  message='url: expected string, got undefined
   name='Error
-  stack='Error: net::ERR_ABORTED; maybe frame was detached?
-    at FrameManager.frameAbortedNavigation (C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\frames.js:216:14)
-    at FrameManager.requestFailed (C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\frames.js:276:12)
-    at CRNetworkManager._onLoadingFailed (C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\chromium\crNetworkManager.js:466:134)
-    at CRSession.emit (node:events:518:28)
-    at C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\chromium\crConnection.js:160:14
-}
-Call log:
-- navigating to "https://catqa.yourcloudlibrary.com/login", waiting until "load"
-]]>
+  stack='Error: url: expected string, got undefined
+    at tString (C:\Users\raja.k\AppData\Local\Temp\playwright-java-15084175266023432641\package\lib\protocol\validatorPrimitives.js:58:9)
+    at C:\Users\raja.k\AppData\Local\Temp\playwright-java-15084175266023432641\package\lib\protocol\validatorPrimitives.js:107:21
+    at DispatcherConnection.dispatch (C:\Users\raja.k\AppData\Local\Temp\playwright-java-15084175266023432641\package\lib\server\dispatchers\dispatcher.js:285:21)
+    at transport.onmessage (C:\Users\raja.k\AppData\Local\Temp\playwright-java-15084175266023432641\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\raja.k\AppData\Local\Temp\playwright-java-15084175266023432641\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:478:21)
+}]]>
             </message>
             <full-stacktrace>
               <![CDATA[com.microsoft.playwright.PlaywrightException: Error {
-  message='net::ERR_ABORTED; maybe frame was detached?
+  message='url: expected string, got undefined
   name='Error
-  stack='Error: net::ERR_ABORTED; maybe frame was detached?
-    at FrameManager.frameAbortedNavigation (C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\frames.js:216:14)
-    at FrameManager.requestFailed (C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\frames.js:276:12)
-    at CRNetworkManager._onLoadingFailed (C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\chromium\crNetworkManager.js:466:134)
-    at CRSession.emit (node:events:518:28)
-    at C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\chromium\crConnection.js:160:14
+  stack='Error: url: expected string, got undefined
+    at tString (C:\Users\raja.k\AppData\Local\Temp\playwright-java-15084175266023432641\package\lib\protocol\validatorPrimitives.js:58:9)
+    at C:\Users\raja.k\AppData\Local\Temp\playwright-java-15084175266023432641\package\lib\protocol\validatorPrimitives.js:107:21
+    at DispatcherConnection.dispatch (C:\Users\raja.k\AppData\Local\Temp\playwright-java-15084175266023432641\package\lib\server\dispatchers\dispatcher.js:285:21)
+    at transport.onmessage (C:\Users\raja.k\AppData\Local\Temp\playwright-java-15084175266023432641\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\raja.k\AppData\Local\Temp\playwright-java-15084175266023432641\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:478:21)
 }
-Call log:
-- navigating to "https://catqa.yourcloudlibrary.com/login", waiting until "load"
-
 at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:54)
 at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
 at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
@@ -150,8 +140,8 @@ at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
 at com.microsoft.playwright.impl.PageImpl.navigate(PageImpl.java:870)
 at com.microsoft.playwright.impl.PageImpl.navigate(PageImpl.java:42)
 at com.microsoft.playwright.Page.navigate(Page.java:5354)
-at com.Factory.PlaywrightFactory.initBrowser(PlaywrightFactory.java:109)
-at com.base.BaseTest.setup(BaseTest.java:54)
+at com.Factory.PlaywrightFactory.initBrowser2(PlaywrightFactory.java:159)
+at com.base.BaseTest3.setup(BaseTest3.java:59)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -179,18 +169,16 @@ at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 Caused by: com.microsoft.playwright.impl.DriverException: Error {
-  message='net::ERR_ABORTED; maybe frame was detached?
+  message='url: expected string, got undefined
   name='Error
-  stack='Error: net::ERR_ABORTED; maybe frame was detached?
-    at FrameManager.frameAbortedNavigation (C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\frames.js:216:14)
-    at FrameManager.requestFailed (C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\frames.js:276:12)
-    at CRNetworkManager._onLoadingFailed (C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\chromium\crNetworkManager.js:466:134)
-    at CRSession.emit (node:events:518:28)
-    at C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\chromium\crConnection.js:160:14
+  stack='Error: url: expected string, got undefined
+    at tString (C:\Users\raja.k\AppData\Local\Temp\playwright-java-15084175266023432641\package\lib\protocol\validatorPrimitives.js:58:9)
+    at C:\Users\raja.k\AppData\Local\Temp\playwright-java-15084175266023432641\package\lib\protocol\validatorPrimitives.js:107:21
+    at DispatcherConnection.dispatch (C:\Users\raja.k\AppData\Local\Temp\playwright-java-15084175266023432641\package\lib\server\dispatchers\dispatcher.js:285:21)
+    at transport.onmessage (C:\Users\raja.k\AppData\Local\Temp\playwright-java-15084175266023432641\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\raja.k\AppData\Local\Temp\playwright-java-15084175266023432641\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:478:21)
 }
-Call log:
-- navigating to "https://catqa.yourcloudlibrary.com/login", waiting until "load"
-
 at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:259)
 at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
 at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
@@ -200,20 +188,20 @@ at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
           </exception> <!-- com.microsoft.playwright.PlaywrightException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- VerifyColTitle -->
-        <test-method is-config="true" signature="addResult(org.testng.ITestResult)[pri:0, instance:TestCases.Collection_AdvSearchTest@2cd76f31]" started-at="2024-11-06T18:57:31 IST" name="addResult" finished-at="2024-11-06T18:57:31 IST" duration-ms="0" status="SKIP">
+        </test-method> <!-- verifyCreateNewCart -->
+        <test-method is-config="true" signature="addResult(org.testng.ITestResult)[pri:0, instance:Reports_CAT.ReportsTest@2767e23c]" started-at="2024-11-19T00:43:59 IST" name="addResult" finished-at="2024-11-19T00:43:59 IST" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addResult -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:TestCases.Collection_AdvSearchTest@2cd76f31]" started-at="2024-11-06T18:57:31 IST" name="closeBrowser" finished-at="2024-11-06T18:57:31 IST" duration-ms="0" status="SKIP">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:Reports_CAT.ReportsTest@2767e23c]" started-at="2024-11-19T00:43:59 IST" name="closeBrowser" finished-at="2024-11-19T00:43:59 IST" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="afterSuiteMethod()[pri:0, instance:TestCases.Collection_AdvSearchTest@2cd76f31]" started-at="2024-11-06T18:57:31 IST" name="afterSuiteMethod" finished-at="2024-11-06T18:57:31 IST" duration-ms="0" status="SKIP">
+        <test-method is-config="true" signature="afterSuiteMethod()[pri:0, instance:Reports_CAT.ReportsTest@2767e23c]" started-at="2024-11-19T00:44:00 IST" name="afterSuiteMethod" finished-at="2024-11-19T00:44:00 IST" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuiteMethod -->
-      </class> <!-- TestCases.Collection_AdvSearchTest -->
+      </class> <!-- Reports_CAT.ReportsTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

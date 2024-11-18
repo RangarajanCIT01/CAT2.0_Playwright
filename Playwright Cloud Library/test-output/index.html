@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\raja.k\AppData\Local\Temp\testng-eclipse--1369008249\testng-customsuite.xml</span>
+                    <span>C:\Users\raja.k\AppData\Local\Temp\testng-eclipse-984779531\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -103,7 +103,7 @@
                     <div class="method-list-content skipped suite-Default_suite">
                       <span>
                         <img src="skipped.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="TestCases.Collection_AdvSearchTest" class="method navigator-link" hash-for-method="VerifyColTitle">VerifyColTitle</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="Reports_CAT.ReportsTest" class="method navigator-link" hash-for-method="verifyCreateNewCart">verifyCreateNewCart</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content skipped suite-Default_suite -->
@@ -121,27 +121,25 @@
           <div class="suite-Default_suite-class-skipped">
             <div class="main-panel-header rounded-window-top">
               <img src="skipped.png"/>
-              <span class="class-name">TestCases.Collection_AdvSearchTest</span>
+              <span class="class-name">Reports_CAT.ReportsTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="VerifyColTitle">
-                  </a> <!-- VerifyColTitle -->
-                  <span class="method-name">VerifyColTitle</span>
+                  <a name="verifyCreateNewCart">
+                  </a> <!-- verifyCreateNewCart -->
+                  <span class="method-name">verifyCreateNewCart</span>
                   <div class="stack-trace">com.microsoft.playwright.PlaywrightException: Error {
-  message=&apos;net::ERR_ABORTED; maybe frame was detached?
+  message=&apos;url: expected string, got undefined
   name=&apos;Error
-  stack=&apos;Error: net::ERR_ABORTED; maybe frame was detached?
-    at FrameManager.frameAbortedNavigation (C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\frames.js:216:14)
-    at FrameManager.requestFailed (C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\frames.js:276:12)
-    at CRNetworkManager._onLoadingFailed (C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\chromium\crNetworkManager.js:466:134)
-    at CRSession.emit (node:events:518:28)
-    at C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\chromium\crConnection.js:160:14
+  stack=&apos;Error: url: expected string, got undefined
+    at tString (C:\Users\raja.k\AppData\Local\Temp\playwright-java-15084175266023432641\package\lib\protocol\validatorPrimitives.js:58:9)
+    at C:\Users\raja.k\AppData\Local\Temp\playwright-java-15084175266023432641\package\lib\protocol\validatorPrimitives.js:107:21
+    at DispatcherConnection.dispatch (C:\Users\raja.k\AppData\Local\Temp\playwright-java-15084175266023432641\package\lib\server\dispatchers\dispatcher.js:285:21)
+    at transport.onmessage (C:\Users\raja.k\AppData\Local\Temp\playwright-java-15084175266023432641\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\raja.k\AppData\Local\Temp\playwright-java-15084175266023432641\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:478:21)
 }
-Call log:
-- navigating to &quot;https://catqa.yourcloudlibrary.com/login&quot;, waiting until &quot;load&quot;
-
 	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:54)
 	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
 	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
@@ -153,8 +151,8 @@ Call log:
 	at com.microsoft.playwright.impl.PageImpl.navigate(PageImpl.java:870)
 	at com.microsoft.playwright.impl.PageImpl.navigate(PageImpl.java:42)
 	at com.microsoft.playwright.Page.navigate(Page.java:5354)
-	at com.Factory.PlaywrightFactory.initBrowser(PlaywrightFactory.java:109)
-	at com.base.BaseTest.setup(BaseTest.java:54)
+	at com.Factory.PlaywrightFactory.initBrowser2(PlaywrightFactory.java:159)
+	at com.base.BaseTest3.setup(BaseTest3.java:59)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -182,18 +180,16 @@ Call log:
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 Caused by: com.microsoft.playwright.impl.DriverException: Error {
-  message=&apos;net::ERR_ABORTED; maybe frame was detached?
+  message=&apos;url: expected string, got undefined
   name=&apos;Error
-  stack=&apos;Error: net::ERR_ABORTED; maybe frame was detached?
-    at FrameManager.frameAbortedNavigation (C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\frames.js:216:14)
-    at FrameManager.requestFailed (C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\frames.js:276:12)
-    at CRNetworkManager._onLoadingFailed (C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\chromium\crNetworkManager.js:466:134)
-    at CRSession.emit (node:events:518:28)
-    at C:\Users\raja.k\AppData\Local\Temp\playwright-java-8051698273843588973\package\lib\server\chromium\crConnection.js:160:14
+  stack=&apos;Error: url: expected string, got undefined
+    at tString (C:\Users\raja.k\AppData\Local\Temp\playwright-java-15084175266023432641\package\lib\protocol\validatorPrimitives.js:58:9)
+    at C:\Users\raja.k\AppData\Local\Temp\playwright-java-15084175266023432641\package\lib\protocol\validatorPrimitives.js:107:21
+    at DispatcherConnection.dispatch (C:\Users\raja.k\AppData\Local\Temp\playwright-java-15084175266023432641\package\lib\server\dispatchers\dispatcher.js:285:21)
+    at transport.onmessage (C:\Users\raja.k\AppData\Local\Temp\playwright-java-15084175266023432641\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\raja.k\AppData\Local\Temp\playwright-java-15084175266023432641\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:478:21)
 }
-Call log:
-- navigating to &quot;https://catqa.yourcloudlibrary.com/login&quot;, waiting until &quot;load&quot;
-
 	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:259)
 	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
 	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
@@ -207,7 +203,7 @@ Call log:
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\raja.k\AppData\Local\Temp\testng-eclipse--1369008249\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\raja.k\AppData\Local\Temp\testng-eclipse-984779531\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -216,11 +212,7 @@ Call log:
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;TestCases.Collection_AdvSearchTest&quot;&gt;
-        &lt;methods&gt;
-          &lt;include name=&quot;VerifyColTitle&quot;/&gt;
-        &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- TestCases.Collection_AdvSearchTest --&gt;
+      &lt;class name=&quot;Reports_CAT.ReportsTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -262,8 +254,8 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'VerifyColTitle')
-data.setCell(0, 2, 'TestCases.Collection_AdvSearchTest')
+data.setCell(0, 1, 'verifyCreateNewCart')
+data.setCell(0, 2, 'Reports_CAT.ReportsTest')
 data.setCell(0, 3, 0);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
@@ -284,44 +276,9 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">15 ignored methods</span>
+            <span class="header-content">0 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">TestCases.Collection_AdvSearchTest</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">VerifyColHoldRatio</span>
-                <br/>
-                <span class="ignored-method-name">VerifyColLanguage</span>
-                <br/>
-                <span class="ignored-method-name">VerifyColAuthor</span>
-                <br/>
-                <span class="ignored-method-name">VerifyColPPUTitles</span>
-                <br/>
-                <span class="ignored-method-name">VerifyColDateAddedToCAT</span>
-                <br/>
-                <span class="ignored-method-name">VerifyColPublisher</span>
-                <br/>
-                <span class="ignored-method-name">VerifyColContentProvider</span>
-                <br/>
-                <span class="ignored-method-name">VerifyColAudience</span>
-                <br/>
-                <span class="ignored-method-name">VerifyColPublishedWithin</span>
-                <br/>
-                <span class="ignored-method-name">VerifyColPricing</span>
-                <br/>
-                <span class="ignored-method-name">VerifyColDatePurchased</span>
-                <br/>
-                <span class="ignored-method-name">VerifyColSeries</span>
-                <br/>
-                <span class="ignored-method-name">VerifyColCategoryAndSubject</span>
-                <br/>
-                <span class="ignored-method-name">VerifyColFormat</span>
-                <br/>
-                <span class="ignored-method-name">VerifyColNarrator</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Default_suite" class="panel">
@@ -330,7 +287,7 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">TestCases.Collection_AdvSearchTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">Reports_CAT.ReportsTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <img src="failed.png">
                 </img>
