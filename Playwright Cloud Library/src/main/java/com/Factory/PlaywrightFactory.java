@@ -54,7 +54,6 @@ import com.microsoft.playwright.options.WaitForSelectorState;
 import com.pages.LoginPage;
 import com.pages.SearchPage;
 
-import ReportsPages.QAReportsPage;
 
 public class PlaywrightFactory {
 
@@ -65,7 +64,7 @@ public class PlaywrightFactory {
 	public Properties prop;
 	public static Logger log;
 	protected LoginPage loginpage;
-	public QAReportsPage reportsPage;
+
 	
 	public PlaywrightFactory() {
 
@@ -73,7 +72,7 @@ public class PlaywrightFactory {
 
 	public Page initBrowser(Properties prop) throws Exception {
 		loginpage = new LoginPage(page);
-		reportsPage = new QAReportsPage(page);
+
 		
 		String browserName = prop.getProperty("browser").trim();
 
@@ -119,52 +118,7 @@ public class PlaywrightFactory {
 		return page;		
 	}
 	
-	public Page initBrowser2(Properties prop) throws Exception {
-		
-		
-		String browserName = prop.getProperty("browser").trim();
 
-		playwright = Playwright.create();
-		ArrayList<String> arguments = new ArrayList<>();
-		arguments.add("--start-maximized");
-
-		switch (browserName.toLowerCase()) {
-		case "chrome":
-			browser = playwright.chromium()
-					.launch(new LaunchOptions().setChannel("chrome").setHeadless(false).setArgs(arguments));
-			browserContext = browser.newContext(new Browser.NewContextOptions().setViewportSize(null));
-			break;
-
-		case "firefox":
-			browser = playwright.firefox().launch(new BrowserType.LaunchOptions().setHeadless(false));
-			break;
-
-		case "safari":
-			browser = playwright.webkit().launch(new BrowserType.LaunchOptions().setHeadless(false));
-			break;
-
-		default:
-			break;
-		}
-
-		// browserContext=browser.newContext(new
-		// Browser.NewContextOptions().setViewportSize(1255,625));
-
-		browserContext.tracing()
-				.start(new Tracing.StartOptions().setScreenshots(true).setSnapshots(true).setSources(true));
-		browserContext.clearCookies();
-
-		page = browserContext.newPage();
-
-		page.navigate(prop.getProperty("URL"));
-		Thread.sleep(4000);
-		page.waitForLoadState();
-		reportsPage.enterUserName(prop.getProperty("username"));
-		reportsPage.enterPassword(prop.getProperty("password"));	
-		reportsPage.clickLogin();
-		
-		return page;		
-	}
 
 	public Properties init_prop() throws FileNotFoundException {
 		log = Logger.getLogger(PlaywrightFactory.class);
