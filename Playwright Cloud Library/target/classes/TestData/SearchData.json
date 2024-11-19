@@ -1,0 +1,274 @@
+{
+	"searchdetails": {
+		"Book_Keyword": "",
+		"Book_Title": "Corpse",
+		"Book_Author": "Grafton, Sue",
+		"Book_Narrator": "Peiffer, Mary",
+		"Book_Series": "Kinsey Millhone Series",
+		"Book_Ratio": "0",
+		"Book_Presales": "Include Pre-Sale Titles",
+		"Book_MinAmount": "59",
+		"Book_MaxAmount": "60",
+		"Book_Publisher": "Penguin Random House",
+		"Book_ContentProvider": "findaway",
+		"Book_Format": "EPUB",
+		"Book_SpecificISBN": "9780739330029",
+		"Book_Audience": "Adult and Not Categorized",
+		"Book_Language": "English",
+		"Book_Category": "",
+		"Book_TitleCount": "1-10 of 10 Titles",
+		"Book_PageSize": "10",
+		"Book_SortBy": "Title",
+		"Back_Btn": "< Back",
+		"CartAddtoMessage": "Added successfully.",
+		"Book_TitleOption": ""
+	},
+	"verifySpecificTitleSearch": {
+		"Book_Title": "D Is for Deadbeat",
+		"Book_Author": "Grafton, Sue",
+		"Book_Narrator": "Peiffer, Mary",
+		"Book_Series": "Kinsey Millhone Series",
+		"Book_MinAmount": "50",
+		"Book_MaxAmount": "52",
+		"Book_Publisher": "Penguin Random House",
+		"Book_ContentProvider": "findaway",
+		"Book_Format": "MP3",
+		"Book_SpecificISBN": "9780739330326",
+		"Book_Audience": "Adult and Not Categorized",
+		"Book_Language": "English"
+	},
+	"verifyAdvanceSearch": {
+		"Book_Keyword": "",
+		"Book_Title": "Harry",
+		"Book_Author": "Kline, Suzy",
+		"Book_Narrator": "",
+		"Book_Series": "Horrible Harry",
+		"Book_HoldRatio": "0",
+		"Book_Presales": "",
+		"Book_MinAmount": "2",
+		"Book_MaxAmount": "10",
+		"Book_Publisher": "",
+		"Book_ContentProvider": "penguinus",
+		"Book_Format": "MP3",
+		"Book_Audience": "Juvenile",
+		"Book_Language": "English",
+		"Book_Category": "",
+		"Book_TitleCount": "1-10 of 15 Titles"
+	},
+	"verifyMultipleTitlesAdvSearch": {
+		"Book_Keyword": "",
+		"Book_Title": "Harry",
+		"Book_Author": "Kline, Suzy",
+		"Book_Narrator": "",
+		"Book_Series": "Horrible Harry",
+		"Book_HoldRatio": "0",
+		"Book_Presales": "",
+		"Book_MinAmount": "2",
+		"Book_MaxAmount": "10",
+		"Book_Publisher": "",
+		"Book_ContentProvider": "penguinus",
+		"Book_Format": "MP3",
+		"Book_Audience": "Juvenile",
+		"Book_Language": "English",
+		"Book_Category": "",
+		"Book_TitleCount": "1-10 of 15 Titles"
+	},
+	"verifyMultipleTitlesLeftPanel": {
+		"Book_Keyword": "",
+		"Book_Title": "Harry",
+		"Book_Author": "Kline, Suzy",
+		"Book_Narrator": "",
+		"Book_Series": "Horrible Harry",
+		"Book_HoldRatio": "0",
+		"Book_Presales": "",
+		"Book_MinAmount": "2",
+		"Book_MaxAmount": "10",
+		"Book_Publisher": "",
+		"Book_ContentProvider": "penguinus",
+		"Book_Format": "MP3",
+		"Book_Audience": "Juvenile",
+		"Book_Language": "English",
+		"Book_Category": "",
+		"Book_TitleCount": "1-10 of 15 Titles"
+	},
+	"verifySort": {
+		"Book_SortBy": "Title"
+	},
+	"searchByIsbn": {
+		"Book_SearchISBN": "9781478956655",
+		"Book_Isbn": "9781478956655",
+		"Book_TitleCount_Isbn": "1-1 of 1 Titles"
+	},
+	"quickSearchByISBN": {
+		"Book_SearchISBN": "9781478956655",
+		"Book_Isbn": "9781478956655",
+		"Book_Title": "Harry",
+		"Book_TitleCount": "1-1 of 1 Titles"
+	},
+	"quickSearchByAuthor": {
+		"Book_AuthorName": "Shenon, Philip",
+		"BookSize": "10",
+		"Book_TitleCount": "1-10 of 600 Titles"
+	},
+	"quickSearchByTitle": {
+		"Book_TitleName": "Commission, The",
+		"BookSize": "10",
+		"Book_TitleCount": "1-10 of 751 Titles"
+	},
+	"authorSearch": {
+		"AuthorName": "Shenon, Philip",
+		"BookSize": "10",
+		"Book_TitleCount": "1-4 of 4 Titles"
+	},
+	"narratorSearch": {
+		"NarratorName": "Peiffer, Mary",
+		"BookSize": "10",
+		"Book_TitleCount": "1-10 of 16 Titles"
+	},
+	"seriesSearch": {
+		"SeriesName": "Kinsey Millhone Series",
+		"BookSize": "10",
+		"Book_TitleCount": "1-10 of 34 Titles"
+	},
+	"verifyKeywordFieldsDisabled": {
+		"Book_Keyword": "Harry"
+	},
+	"saveSearch": {
+		"Book_Title": "Earth",
+		"Book_UpdatedTitle": "You can save the earth",
+		"Book_Audience": "Adult and Not Categorized",
+		"Book_MinAmount": "5",
+		"Book_MaxAmount": "6",
+		"Book_ContentProvider": "rhpsus",
+		"Book_SearchName": "FirstSave",
+		"Book_TitleCount": "1-3 of 3 Titles",
+		"Book_UpdatedTitleCount": "1-1 of 1 Titles",
+		"Book_SearchDesc": "Search details for book named Harry",
+		"Book_SavedSearchMessage": "Search Saved Successfully",
+		"Book_SavedSearch": "376257 TEST"
+	},
+	"searchByUploadIsbn": {
+		"Book_NotMatched": "Total not matched: 1",
+		"Book_Matched_Isbn": "1-4 of 4 Titles"
+	},
+	"VerifyTitle": {
+		"Book_Title": "$1 Million for Life"
+	},
+	"VerifyAuthor": {
+		"Book_Author": "Grice, Joe"
+	},
+	"VerifySeries": {
+		"Book_Series": "Tao Series"
+	},
+	"VerifyNarrator": {
+		"Book_Narrator": "Bennett, Judy; Reichlin, Saul"
+	},
+	"VerifyPreSaleFilterTitles": {
+		"OnlyPreSale_Title": "365 Days of Hoodoo",
+		"Only Include Pre-Sale Titles": "Only Include Pre-Sale Titles",
+		"IncludePreSale": "Include Pre-Sale Titles",
+		"IncludePreSale_Title": "101 Fascinating Canadian Film and TV Facts",
+		"ExcludePreSale": "Exclude Pre-Sale Titles",
+		"ExcludePreSale_Title": "Gold For Steel"
+	},
+	"VerifyHoldRatio": {
+		"Book_HoldRatio": "1",
+		"Book_Title": "Seamus Heaney: A Bibliography (1959-2003)"
+	},
+	"VerifyPublisher": {
+		"Book_Title": "1 and 2 Timothy, Titus",
+		"Book_Author": "Liefeld, Walter L.",
+		"Book_Publisher": "Zondervan Academic"
+	},
+	"VerifyContentProvider": {
+		"Book_Title": "Zoom in on Bridges",
+		"Book_ContentProvider": "enslow"
+	},
+	"VerifyAudience": {
+		"Book_Title": "9 from the Nine Worlds",
+		"Book_Isbn": "9781578263684",
+		"Book_Audience": "Juvenile"
+	},
+	"VerifyPricing": {
+		"Book_Title": "Your Quest For Spiritual Knowledge: 2012",
+		"Book_Min": "10",
+		"Book_Max": "12",
+		"Book_Price": "11.99"
+	},
+	"VerifyLanguage": {
+		"Book_Title": "Grmljavina unutarnjeg uma",
+		"Book_Language": "CROATIAN"
+	},
+	"VerifyCategoryAndSubject": {
+		"Book_Title": "10 Ways to Use Buckwheat (Recipe Book)",
+		"CategoryAndSubject": "NONFICTION",
+		"Verify_CategoryAndSub": "NONFICTION : COOKING"
+	},
+	"VerifyFormat": {
+		"Book_MP3Title": "100 citations de Socrate",
+		"Book_PDFTitle": "2000 Presidential Election eBook",
+		"Book_EPUBTitle": "Zucchini Cake and Zombies",
+		"Format_MP3": "MP3",
+		"Format_PDF": "PDF",
+		"Format_EPUB": "EPUB"
+	},
+	"VerifyPublishedWithin": {
+		"Book_Title": "50 Math Tricks That Will Change Your Life",
+		"Book_Author": "Zakowich, Tanya",
+		"Published_Date": "11/20/2023",
+		"Book_Publisher": "Page Street Publishing",
+		"Custom_Filter": "Published within 1 Year",
+		"Book_Language": "English",
+		"Book_Min": "55",
+		"Book_Max": "70"
+	},
+	"VerifyDateAddedToCat": {
+		"Book_Title": "A Grave Robbery",
+		"Book_Author": "Raybourn, Deanna",
+		"Book_Series": "A Veronica Speedwell Mystery",
+		"AddedToCAT_Date": "4/8/2024",
+		"Book_Publisher": "Berkley",
+		"Book_Provider": "penguinus",
+		"Custom_Filter": "Added within 1 Year",
+		"Book_Language": "English",
+		"Book_Min": "50",
+		"Book_Max": "60"
+	},
+	"VerifyPPUTitles": {
+		"Include_PPUTitles": "Include PPU Titles",
+		"Inlcude_PPUTitle": "Heat Seeker",
+		"Only_Include_PPU": "Search Only PPU titles",
+		"OnlyInclude_PPUTitle": "100 Quotes by Francis Bacon",
+		"Book_Language": "English",
+		"Exclude_PPU": "Exclude PPU Titles",
+		"Exclude_PPUTitle": "1 Way 2 C The World"
+	},
+	"VerifyPublisherList": {
+	},
+	"VerifySearchByIsbn" : {
+	"Book_ISBN": "9781982708702",
+	"Book_Title" : "100 Most Powerful Prayers for Hormones, The"
+	},
+	
+	"VerifySearchByMultipleIsbn" : {
+	"Book_ISBNS": "9781982707576, 9781467667883, 9781938093395",
+	"Book_Title" : "100 Nursery Rhymes"	
+	},
+	"VerifyPreSaleTitle" : {
+		"Book_Title": "7 Secrets of the Newborn",
+		"Book_Author": "M.D., Robert Hamilton",
+		"Book_Publisher" : "Macmillan Audio",
+		"PreSaleLabel" : "PRE SALE"
+	},
+	
+	"VerifyPPUTitle" : {
+		"Book_Title": "100 Quotes by Epictetus",
+		"Book_Author": "Epictetus",
+		"Book_Series": "Great Philosophers & Their Inspiring Thoughts",
+		"Book_Narrator": "Haigh, Katie",
+		"PPULabel" : "PPU "
+	},
+	
+	"VerifyHiddenProviders" : {
+	}
+}
