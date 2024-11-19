@@ -194,5 +194,9 @@
 				</plugin>
 			</plugins>
 		</pluginManagement>
+		<build>
+			<defaultGoal>install</defaultGoal>
+
+		</build>
 	</build>
 </project>
