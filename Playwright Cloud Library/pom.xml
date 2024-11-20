@@ -88,8 +88,8 @@
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
-			<version>7.0.0</version>
-			<scope>compile</scope>
+			<version>7.4.0</version>
+			
 		</dependency>
 
 		<!--
