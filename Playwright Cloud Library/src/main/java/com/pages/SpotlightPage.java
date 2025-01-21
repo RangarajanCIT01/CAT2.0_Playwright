@@ -8,45 +8,63 @@ import com.microsoft.playwright.Page;
 
 public class SpotlightPage extends PlaywrightFactory{
 	
-	private Page page;
+	public Page page;
+	public SearchPage searchpage = new SearchPage(page);
 	
-	private String Spotlight="//div[contains(text(),'Spotlight')]";
-	private String Featured="//li[@class='featureList ' and contains(text(),'Adult NonFiction Top New Releases 6/5/2023 - 6/11/2023')]";
-	private String AddToCartDropdown="//button[@class='cart-tomain-dropdown']";
-	private String cartAddedSuccessfully="//span[contains(text(),'Added successfully.')]";
-	private String Toggle="//button[@role='switch']";
+	public String menuSpotlight="//div[contains(text(),'Spotlight')]";
+	public String Featured="//li[@class='featureList ' and contains(text(),'Adult NonFiction Top New Releases 6/5/2023 - 6/11/2023')]";
+	public String AddToCartDropdown="//button[@class='cart-tomain-dropdown']";
+	public String cartAddedSuccessfully="//span[contains(text(),'Added successfully.')]";
+	public String Toggle="//button[@role='switch']";
+	public String lnkViewAll="//span[text()='View All']";
+	public String SelectAll = "//button[@class='secondary']";
+	public String addToCartdrpdwn = "//button[@class='cart-tomain-dropdown ']";
+	public String createCartButton = "//button[@class='primary']";
+	
 	
 	public SpotlightPage(Page page)
 	{
 		this.page=page;
 	}
-	
-	public void clickOnSpotlight() throws Exception 
-	{
-		clickElement(Spotlight);
+
+	public void createCart() throws Exception {
+		searchpage.waitForElement(2);
+		waitForVisibilityOf(createCartButton);
+		clickElement(createCartButton);
 	}
-	
-	public void clickOnFeature() throws Exception 
-	{
-		clickElement(Featured);
+
+	public void clickCart() throws Exception {
+		Map<String, String> testData = readJsonElement("Spotlight.json", "AddToCart");
+		String newCartName = testData.get("CartName");
+		String newCart = "//span[text()='" + newCartName + " ']";
+		clickElement(newCart);
 	}
-	
-	public void clickOnToggle() throws Exception 
-	{
-		clickElement(Toggle);
+
+	public void addToCart() throws Exception {
+		Map<String, String> testData = readJsonElement("Spotlight.json", "AddToCart");
+		String newCartName = testData.get("CartName");
+		String newCart = "//p[text()='" + newCartName + "']";
+		clickElement(newCart);
 	}
-	
-	public void addToCart() throws Exception
-	{
-		Map<String, String> testData = readJsonElement("SpotlightData.json", "spotlightdetails");
-		String Elementlist="//li[@class='ant-dropdown-menu-item']";
-		String carttitleoption=testData.get("CartName");
-		selectDropdownByScrolling(AddToCartDropdown,carttitleoption,Elementlist);
+
+	public void sltNewCart() throws Exception {
+		Map<String, String> testData = readJsonElement("Spotlight.json", "AddToCart");
+		String newCartName = testData.get("CartName");
+		String newCart = "//span[text()='" + newCartName + "']";
+		clickElement(newCart);
+	}
+
+	public void dltNewCart() throws Exception {
+		
+		Map<String, String> testData = readJsonElement("Spotlight.json", "verifyDeleteNewCart");
+		String newCartName = testData.get("CartName");
+		String newCart = "//span[text()='" + newCartName + "']/following::img[@alt='deleteIcon'][1]";
+		clickElement(newCart);
 	}
 	
 	public boolean verifyAddToCartSuccessfully() throws Exception
 	{
-		Map<String, String> testData = readJsonElement("SpotlightData.json", "spotlightdetails");
+		Map<String, String> testData = readJsonElement("Spotlight.json", "spotlightdetails");
 		String actualMessage=testData.get("CartAddtoMessage");
 
 		Locator element1 = page.locator(cartAddedSuccessfully);

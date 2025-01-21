@@ -1,10 +1,8 @@
 package TestCases;
 
 import org.testng.annotations.Test;
-import org.testng.annotations.Test;
-import org.testng.annotations.Test;
 
-import com.base.BaseTest;
+import BaseClass.BaseTest;
 
 public class Report_Test extends BaseTest{
 

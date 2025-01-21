@@ -3,20 +3,13 @@ package TestCases;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
 import org.testng.AssertJUnit;
-import org.testng.annotations.Test;
-import org.testng.annotations.BeforeClass;
-import org.testng.AssertJUnit;
 import java.util.ArrayList;
 import java.util.Map;
 
-import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
-
-import com.base.BaseTest;
 import com.pages.CartPage;
-import com.pages.MyCollectionPage;
 import com.pages.SearchPage;
+
+import BaseClass.BaseTest;
 
 public class Cart_Test extends BaseTest{
 	
@@ -53,6 +46,7 @@ public class Cart_Test extends BaseTest{
 		
 	}
 		
+	
 	@Test(priority=2)
 	public void AddToCart() throws Exception
 	{	

@@ -3,18 +3,26 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="TestCases.Search_ISBN"/>
       <class name="TestCases.SearchLeftPanel_Test"/>
-      <class name="TestCases.Search_AdvSearchTest"/>
+      <class name="TestCases.ColISBN_Test"/>
+      <class name="TestCases.ReportsTest_QA"/>
       <class name="TestCases.Settings_Test"/>
+      <class name="TestCases.SingleSignOn"/>
       <class name="TestCases.Spotlight_Test"/>
-      <class name="TestCases.Report_Test"/>
-      <class name="TestCases.Purchase_Test"/>
       <class name="TestCases.SearchCombinations"/>
-      <class name="TestCases.Collection_ISBN"/>
-      <class name="TestCases.SavedSearch_Test"/>
-      <class name="TestCases.Collection_AdvSearchTest"/>
+      <class name="TestCases.Support_Test"/>
       <class name="TestCases.Cart_Test"/>
+      <class name="TestCases.Shelves_Test"/>
+      <class name="TestCases.CuratedLists_Test"/>
+      <class name="TestCases.CartAutoCarts_Test"/>
+      <class name="TestCases.Messages_Test"/>
+      <class name="TestCases.Purchase_Test"/>
+      <class name="TestCases.Report_Test"/>
+      <class name="TestCases.ColAdvSearch_Test"/>
+      <class name="TestCases.SearchAdv_Test"/>
+      <class name="TestCases.SavedSearch_Test"/>
+      <class name="TestCases.Resources_Test"/>
+      <class name="TestCases.SearchISBN_Test"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

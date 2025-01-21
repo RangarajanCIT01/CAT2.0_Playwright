@@ -3,24 +3,13 @@ package TestCases;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
 import org.testng.AssertJUnit;
-import org.testng.annotations.Test;
-import org.testng.annotations.BeforeClass;
-import org.testng.AssertJUnit;
 import java.util.ArrayList;
 import java.util.Map;
 
-import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
-
-import com.Factory.PlaywrightFactory;
 import com.aventstack.extentreports.Status;
-import com.base.BaseTest;
-import com.microsoft.playwright.Locator;
-import com.microsoft.playwright.options.AriaRole;
 import com.pages.SearchPage;
-import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
+
+import BaseClass.BaseTest;
 
 
 
@@ -88,11 +77,7 @@ public class SearchLeftPanel_Test extends BaseTest{
 	
 	@Test
 	public void VerifyQuickSearchByISBN() throws Exception
-	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "quickSearchByISBN");
-		ArrayList<Object> actualData = new ArrayList<>();
-		ArrayList<Object> expectedData = new ArrayList<>();		
-	
+	{			
 		searchpage.clseLftPnlIfExists();
 		searchpage.navigateToCartAndSearchPage();
 		
@@ -110,8 +95,6 @@ public class SearchLeftPanel_Test extends BaseTest{
 	public void verifySpecificTitleSearch() throws Exception
 	{		
 		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "verifySpecificTitleSearch");
-		ArrayList<Object> actualData = new ArrayList<>();
-		ArrayList<Object> expectedData = new ArrayList<>();
 
 		searchpage.clseLftPnlIfExists();
 		searchpage.navigateToCartAndSearchPage();
@@ -143,8 +126,6 @@ public class SearchLeftPanel_Test extends BaseTest{
 	public void verifySpecificTitleLeftPanel() throws Exception
 	{		
 		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "searchdetails");
-		ArrayList<Object> actualData = new ArrayList<>();
-		ArrayList<Object> expectedData = new ArrayList<>();
 		
 		searchpage.clseLftPnlIfExists();
 		searchpage.navigateToCartAndSearchPage();
@@ -351,9 +332,7 @@ public class SearchLeftPanel_Test extends BaseTest{
 	@Test
 	public void verifyKeywordFieldsDisabled() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "verifyKeywordFieldsDisabled");
-		ArrayList<Object> actualData = new ArrayList<>();
-		ArrayList<Object> expectedData = new ArrayList<>();		
+		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "verifyKeywordFieldsDisabled");	
 	
 		searchpage.clseLftPnlIfExists();
 		searchpage.navigateToCartAndSearchPage();

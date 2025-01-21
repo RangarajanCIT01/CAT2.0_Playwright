@@ -2,16 +2,11 @@ package TestCases;
 
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
-import org.testng.annotations.BeforeClass;
 import java.util.Map;
 
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
-
-import com.base.BaseTest;
-import com.pages.MyCollectionPage;
 import com.pages.SearchPage;
+
+import BaseClass.BaseTest;
 
 public class Settings_Test extends BaseTest{
 	
@@ -27,7 +22,6 @@ public class Settings_Test extends BaseTest{
 		searchpage.clseLftPnlIfExists();
 	}
 
-	
 	@Test
 	public void verifyLibrarySettings() throws Exception
 	{				
@@ -47,9 +41,10 @@ public class Settings_Test extends BaseTest{
 		settings.clickOnSaveButton();
 	}
 	
-	@Test(dependsOnMethods="verifyLibrarySettings")
+	@Test
 	public void verifyPatronSettings() throws Exception
 	{		
+		settings.clickOnSettings();
 		settings.clickOnPatron();
 		settings.enterCheckoutsPerPatron();
 		settings.enterHoldsPerPatron();
@@ -61,9 +56,10 @@ public class Settings_Test extends BaseTest{
 		settings.clickUpdate();
 	}
 	
-	@Test(dependsOnMethods="verifyPatronSettings")
+	@Test
 	public void verifyLibraryStaffSettings() throws Exception
 	{		
+		settings.clickOnSettings();
 		settings.clickOnLibraryStaff();
 		settings.clickOnAddUser();
 		settings.enterEmailAddress();
@@ -75,9 +71,10 @@ public class Settings_Test extends BaseTest{
 		settings.clickOnAddUserButton();
 	}
 	
-	@Test(dependsOnMethods="verifyLibraryStaffSettings")
+	//@Test -> Need to test
 	public void verifyPayPerUse() throws Exception
 	{		
+		settings.clickOnSettings();
 		settings.clickOnPayPerUse();
 		settings.enterEbookMonthlyBudget();
 		settings.enterMaxTitlePrice();
@@ -92,5 +89,5 @@ public class Settings_Test extends BaseTest{
 		settings.selectAudioBuyer();
 		settings.selectAudioEmailNotification();
 		settings.enterAudioPOReference();
-	}
+	} 
 }

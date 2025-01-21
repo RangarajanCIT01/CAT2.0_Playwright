@@ -1,14 +1,26 @@
 {
-	"shelfdetails":{
-		"ShelfName":"Shelf24",
-		"AutomatedShelfName":"My Automated Shelf",
-		"AutoShelfDescription":"This is My Automated Shelf of books.",
-		"ShelfDescription":"This is MyShelf of books.",
-		"bookTitleCountShelf":"1 Titles",
-		"ShelfAdded":"Shelf Created Successfully",
-		"ShelfEdited":"Shelf edited successfully",
-		"ShelfDeleted":"Shelf removed successfully",
-		"AddToShelf":"Added successfully.",
-		"Author":"Lu, Marie"
+	"ManualShelf": {
+		"ManualShelfName": "My Manual Shelf",
+		"ManualShelfDescription": "This is My Manual Shelf of books.",
+		"ShelfAdded": "Shelf Created Successfully",
+		"ShelfEdited": "Shelf edited successfully",
+		"ShelfDeleted": "Shelf removed successfully",
+		"AddToShelf": "Added successfully.",
+		"LblManual": "MANUAL",
+		"lblLive": "LIVE",
+		"LblDraft": "DRAFT",
+		"Book_Title": "Gold"
+	},
+	"AutomatedShelf": {
+		"AutomatedShelfName": "My Automated Shelf",
+		"AutoShelfDescription": "This is My Automated Shelf of books.",
+		"ShelfAdded": "Shelf Created Successfully",
+		"ShelfEdited": "Shelf edited successfully",
+		"ShelfDeleted": "Shelf removed successfully",
+		"AddToShelf": "Added successfully.",
+		"Book_Language" : "English",
+		"LblAutomated": "AUTOMATED",
+		"lblLive": "LIVE",
+		"LblDraft": "DRAFT"
 	}
 }

@@ -1,0 +1,8 @@
+{
+	"Messages": {
+		"Subject": "First Message",
+		"Message": "This is Test Message",
+		"CreatedMessage" : "Message Sent successfully",
+		"DeleteMessage" : "Message Deleted successfully"		
+	}
+}

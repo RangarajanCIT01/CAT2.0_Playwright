@@ -1,0 +1,119 @@
+{
+	"verify_ReportTest": {
+		"UserName": "uat01mn@yahoo.com",
+		"Password": "3msuper#"
+	},
+	"verify_CirculationSummary": {
+		"StartDate": "01/01/2023",
+		"EndDate": "12/31/2023",
+		"TextContProvider": "Content Provider",
+		"TotalItems": "Page 1 of 19 (380 items)"
+	},
+	"verify_PurchaseHistory": {
+		"StartDate": "01/01/2023",
+		"EndDate": "12/31/2023",
+		"TextLibrary": "Library",
+		"TotalItems": "Page 1 of 68 (1356 items)"
+	},
+	
+	"verify_ContentExpiration": {
+		"TextLibraryName": "Library Name"
+	},
+	
+	"verify_LibraryCurrentStock": {
+		"TextLibrary": "Library"
+	},
+	
+	"verify_PPUActivity": {
+		"StartDate": "01/01/2023",
+		"EndDate": "12/31/2023",
+		"TextPatron": "Patron",
+		"TotalItems": "Page 1 of 20 (400 items)"
+	},
+	"verify_PPUTitles": {
+		"StartDate": "01/01/2023",
+		"EndDate": "12/31/2023",
+		"TextTitle": "Title",
+		"TotalItems": "Page 1 of 3338 (66755 items)"
+	},
+	"verify_HoldRatio": {
+		"TextTitle": "Title"
+	},
+	"verify_PatronUtilization": {
+		"StartDate": "01/01/2023",
+		"EndDate": "12/31/2023",
+		"TextPatron": "Patron",
+		"TotalItems": "Page 1 of 4 (76 items)"
+	},
+	
+	"verify_SuggestionsList": {
+		"StartDate": "01/01/2023",
+		"EndDate": "12/31/2023",
+		"TextTitle": "Title",
+		"TotalItems": "Page 1 of 1 (13 items)"
+	},
+	"verify_TopCirculating": {
+		"StartDate": "01/01/2023",
+		"EndDate": "12/31/2023",
+		"TextTitle": "Title",
+		"TotalItems": "Page 1 of 50 (1000 items)",
+		"Country": "10"
+	},
+	
+	"verify_TopPurchased": {
+		"StartDate": "01/01/2023",
+		"EndDate": "12/31/2023",
+		"TextTitle": "Title",
+		"TotalItems": "Page 1 of 50 (1000 items)",
+		"Country": "10"
+	},
+	
+	"verify_ConsortiaPatronActivity": {
+		"StartDate": "01/01/2023",
+		"EndDate": "12/31/2023",
+		"TextPatLibName": "Patron Library Name",
+		"TotalItems": "Page 1 of 20 (395 items)"
+	},
+	
+	"verify_ConsortiaContentActivity": {
+		"StartDate": "01/01/2023",
+		"EndDate": "12/31/2023",
+		"TextPatLibName": "Patron Library Name",
+		"TotalItems": "Page 1 of 19 (378 items)"
+	},
+	
+	"verify_ConsortiaGroupPatronActivity": {
+		"TextPatLibName": "Patron Library Name"
+	},
+	
+	"verify_ConsortiaGroupContentActivity": {
+		"StartDate": "01/01/2023",
+		"EndDate": "12/31/2023",
+		"TextTitle": "Title",
+		"TotalItems": "Page 1 of 21 (405 items)"
+	},
+	
+	"verify_LibrarySalesSummary": {
+		"StartDate": "01/01/2023",
+		"EndDate": "12/31/2023",
+		"TextLibID": "Library Id",
+		"TotalItems": "Page 1 of 1 (2 items)"
+	},
+	
+	"verify_LibraryReports": {
+		"TextUAT": "Files In UATLibrary"
+	},
+	
+	"verify_MARCRequest": {
+		"TextMARCReports": "MARC Request",
+		"TextLibrary": "Library"
+	},
+	
+	"verify_CollectionHQ": {
+		"TextAuthor": "author"
+	}
+	
+	
+	
+	
+}

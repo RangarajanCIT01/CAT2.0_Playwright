@@ -1,0 +1,23 @@
+{
+	"Editor": {
+		"Book_PageSize": "10"
+	},
+	"verifyCreateNewCart": {
+		"MaxCopies": "5",
+		"SpendingLimit": "5",
+		"PORef": "AutoTest",
+		"CartAdded": "Cart created successfully.",
+		"CartStructure": "Multiple Cart",
+		"AutoCartManager": "Balachandar Krishnamurthy",
+		"EmailNotification" : "Balachandar Krishnamurthy",
+		"OneCart" : "Create one cart for all autocart rules",
+		"MultipleCart" : "Create multiple carts per one rule"
+	},
+	
+	"AudioBooksCart" : {
+	"CartName" : "AddBooks_Cart1",
+	"Book_Title" : "Science",
+	"CartAddtoMessage": "Added successfully."
+	}
+	
+}

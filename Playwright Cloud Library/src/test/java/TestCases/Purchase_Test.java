@@ -1,11 +1,9 @@
 package TestCases;
 
 import org.testng.annotations.Test;
-import org.testng.annotations.Test;
-import org.testng.annotations.Test;
-
-import com.base.BaseTest;
 import com.pages.CartPage;
+
+import BaseClass.BaseTest;
 
 public class Purchase_Test extends BaseTest{
 	
@@ -16,7 +14,6 @@ public class Purchase_Test extends BaseTest{
 		purchase.clickOnPurchases();
 		purchase.selectRecent();
 		purchase.selectBuyers();
-		
 	}
 	
 

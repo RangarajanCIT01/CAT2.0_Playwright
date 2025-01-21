@@ -19,7 +19,7 @@ public class CartPage extends PlaywrightFactory {
 	public static ExtentTest test;
 	public static ExtentReports extent;
 	static ExtentTest logger;
-	protected SearchPage searchpage = new SearchPage(page);
+	public SearchPage searchpage = new SearchPage(page);
 
 	public String newCart = "//button[@class='primary new-cart']";
 	public String cartName = "//input[@id='cartName']";
@@ -60,7 +60,63 @@ public class CartPage extends PlaywrightFactory {
 	public String btnYes = "//button[text()='Yes']";
 	public String chkbxPrevent = "//div[text()='Prevent others from making changes']/preceding::span[2]";
 	public String txtPrivateCart = "//span[text()='ACart1908']/following::span[6]";
+
+	/******** AUTO CARTS **************/
+
+	public String mnuAutoCart = "//div[text()='Auto Carts']";
+	public String tabEBooks = "//div[text()='ebooks']";
+	//public String cartStructure = "//label[text()='Cart structure']/following::input[1]";
+	public String cartStructure = "//label[text()='Cart structure']/following::div[@class='ant-select-selector'][1]";
 	
+	
+	public String cartStructureOneCart = "//label[text()='Cart structure']/following::div[1]";
+	public String cartStructure1Cart = "//span[text()='Create one cart for all autocart rules']";
+	
+	public String cartStructureMultipleCart = "//span[text()='Create multiple carts per one rule']";
+	public String eBookOneCart = "//div[text()='ebooks']/following::span[text()='Create one cart for all autocart rules'][1]";
+	
+	public String cartStructureLists = "//div[@class='rc-virtual-list-holder-inner']";
+	public String cartStructureLists2 = "//div[@class='ant-select-item ant-select-item-option options ant-select-item-option-active ant-select-item-option-selected']";
+	
+	
+	public String autoCartManagerSelection = "//label[text()='Cart structure']/following::input[@type='search'][2]";
+	//public String autoCartManager = "//label[text()='Autocart Manager']/following::div[1]";
+	public String autoCartManagerList = "//div[@class='rc-virtual-list-holder-inner']";
+	//public String autoCartManagersList = "//div[@class='ant-select-dropdown dropdown ant-select-dropdown-placement-bottomLeft ']";
+	
+	public String emailNotification = "//label[text()='Email Notification']/following::div[1]";
+	public String emailNotificationLists = "//*[@id='scroll_scroll']/div[1]/form/div/div[1]/div[3]/div[2]/div/div/div[2]/div/div/div/div[2]/div[1]/div/div";
+	
+	public String maxCopiesOwned = "//input[@type='number']";
+	public String eBookAutoPurchase = "//div[text()='ebooks']/following::span[text()='Auto Purchase'][1]";
+	public String eBookAutoCartSpendingLimit = "//input[@name='CartSpending']";
+	public String eBookAutoCartPoRef = "//input[@name='autoCartPurchase']";
+	public String eBookAutoCartManualPurchase = "//div[text()='ebooks']/following::span[text()='Manual Purchase'][1]";
+	public String btnSaveCarts = "//button[text()='Save']";
+	
+	public String eBookHoldsEditRules = "//span[text()='Holds']/following::u[1]";
+	public String eBookSuggestionsEditRules = "//span[text()='Holds']/following::u[2]";
+	public String eBookContentExpirationEditRules = "//span[text()='Holds']/following::u[3]";
+	public String eBookHoldAutoCartToggle = "//div[text()='Hold']/following::p[1]/following::button[1]";
+	public String eBookHoldRatioLimit = "//div[text()='Hold']/following::span[text()='Hold Ratio Limit'][1]/following::div[1]";
+
+	public String eBookSuggestionsTab = "//div[text()='Suggestions']";
+	public String eBookSuggestionsCartToggle = "//*[@id='rc-tabs-12-panel-3']/div/div[1]/div[2]/button";
+	public String eBookNoOfSuggestions = "//*[@id='rc-tabs-16-panel-3']/div/div[2]/div/div[2]/div[2]/div/div[2]/input";
+	public String eBookSuggestionsDuration = "//*[@id='rc-tabs-16-panel-3']/div/div[2]/div/div[3]/div/div/div/div[1]/span[2]";
+	public String eBookSuggestion1Year = "//span[text()='1 Year']";
+	public String eBookSuggestionPreSale = "//*[@id=\"rc-tabs-16-panel-3\"]/div/div[2]/div/div[4]/div[2]/button";
+
+	public String eBookContentExpirationTab = "//div[text()='//div[text()='Content Expiration']']";
+	public String eBookCntExpAutoCartToggle = "//*[@id='rc-tabs-16-panel-2']/div/div[1]/div[2]/button";
+	public String eBookCntExpAutoCartMinChk = "//*[@id='rc-tabs-16-panel-2']/div/div[2]/div/div[2]/div[2]/div/div[2]/input";
+
+	public String btnSave = "//*[@id='rc-tabs-16-panel-2']/div/div[3]/div[2]/button";
+	public String btnSaveAutoCarts = "//button[text()='Save']";
+	
+	public String btnSaveCartSt = "//*[@id='rc-tabs-0-panel-3']/div[2]/button";
+	
+	public String tabAudioBooks = "//div[text()='AudioBooks']";
 
 	public CartPage(Page page) {
 		this.page = page;
@@ -78,7 +134,7 @@ public class CartPage extends PlaywrightFactory {
 		waitForVisibilityOf(searchpage.Search);
 		clickElement(searchpage.Search);
 	}
-	
+
 	public void loadCartResult() {
 		waitForVisibilityOfHidden(cartPageLoadingSpinner);
 		untilDomContentLoads();
@@ -116,70 +172,70 @@ public class CartPage extends PlaywrightFactory {
 	public void addToCart() throws Exception {
 		Map<String, String> testData = readJsonElement("CartData.json", "AddToCart");
 		String newCartName = testData.get("CartName");
-		String newCart = "//p[text()='"+newCartName+"']";
+		String newCart = "//p[text()='" + newCartName + "']";
 		clickElement(newCart);
 	}
-	
+
 	public void sltNewCart() throws Exception {
 		Map<String, String> testData = readJsonElement("CartData.json", "AddToCart");
 		String newCartName = testData.get("CartName");
-		String newCart = "//span[text()='"+ newCartName+ "']";
+		String newCart = "//span[text()='" + newCartName + "']";
 		clickElement(newCart);
 	}
-	
+
 	public void sltNewCart2() throws Exception {
 		Map<String, String> testData = readJsonElement("CartData.json", "verifyMoveBetweenCarts");
 		String newCartName = testData.get("CartName2");
-		String newCart = "//span[text()='"+ newCartName+ "']";
+		String newCart = "//span[text()='" + newCartName + "']";
 		clickElement(newCart);
 	}
-	
+
 	public void dltNewCart() throws Exception {
 		searchpage.waitForElement(3);
 		Map<String, String> testData = readJsonElement("CartData.json", "verifyDeleteNewCart");
 		String newCartName = testData.get("CartName");
-		String newCart = "//span[text()='"+ newCartName+"']/following::img[@alt='deleteIcon'][1]";
+		String newCart = "//span[text()='" + newCartName + "']/following::img[@alt='deleteIcon'][1]";
 		clickElement(newCart);
 	}
-	
+
 	public void dltNewCart2() throws Exception {
 		searchpage.waitForElement(3);
 		Map<String, String> testData = readJsonElement("CartData.json", "verifyMoveBetweenCarts");
 		String newCartName = testData.get("CartName2");
-		String newCart = "//span[text()='"+ newCartName+"']/following::img[@alt='deleteIcon'][1]";
+		String newCart = "//span[text()='" + newCartName + "']/following::img[@alt='deleteIcon'][1]";
 		clickElement(newCart);
 	}
-	
+
 	public void mveToNewCart() throws Exception {
 		Map<String, String> testData = readJsonElement("CartData.json", "verifyMoveBetweenCarts");
 		String newCartName = testData.get("CartName2");
-		String newCart = "//p[text()='"+ newCartName +"']";		
+		String newCart = "//p[text()='" + newCartName + "']";
 		clickElement(newCart);
 	}
-	
+
 	public void vrfyPrivateCart() throws Exception {
 		Map<String, String> testData = readJsonElement("CartData.json", "verifyPrivateCart");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();
 		String newCartName = testData.get("CartName");
-		String privateCart = page.locator("//span[text()='"+ newCartName+ "']/following::span[6]").textContent();
+		String privateCart = page.locator("//span[text()='" + newCartName + "']/following::span[6]").textContent();
 		String pc = privateCart.toString();
-		
+
 		actualData.add(pc);
-		expectedData.add(testData.get("TextPrivateCart"));	
+		expectedData.add(testData.get("TextPrivateCart"));
 		Assert.assertEquals(expectedData, actualData);
 	}
-	
+
 	public void vrfyCommunityCart() throws Exception {
 		Map<String, String> testData = readJsonElement("CartData.json", "verifyCommunityCart");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();
 		String newCartName = testData.get("CartName");
-		String privateCart = page.locator("//span[text()='"+ newCartName+ "']/following::span[6]").textContent();
+		String privateCart = page.locator("//span[text()='" + newCartName + "']/following::span[6]").textContent();
 		String pc = privateCart.toString();
-		
+
 		actualData.add(pc);
-		expectedData.add(testData.get("TextCommunityCart"));	
+		expectedData.add(testData.get("TextCommunityCart"));
 		Assert.assertEquals(expectedData, actualData);
 	}
 
@@ -211,7 +267,8 @@ public class CartPage extends PlaywrightFactory {
 	}
 
 	public void clickOnDeleteCart() throws Exception {
-		//deleteFromList(cartTitleList, cartDeleteButtonList, cartname, cartDeleteButton);
+		// deleteFromList(cartTitleList, cartDeleteButtonList, cartname,
+		// cartDeleteButton);
 	}
 
 	public boolean verifyCartDeletedSuccessfully() throws Exception {
@@ -229,14 +286,14 @@ public class CartPage extends PlaywrightFactory {
 
 	public void clickOnCartTitle() throws Exception {
 		String Titlelist = "//span[@class='cart-title']";
-		//clickFromList(Titlelist, cartname);
+		// clickFromList(Titlelist, cartname);
 	}
 
 	public void clickOnSecondCartTitle() throws Exception {
 
 		String Titlelist = "//span[@class='cart-title']";
 
-		//clickFromList(Titlelist, cartname2);
+		// clickFromList(Titlelist, cartname2);
 	}
 
 	public void clickOnSpotlightCartTitle() throws Exception {
@@ -282,7 +339,6 @@ public class CartPage extends PlaywrightFactory {
 		page.locator(bookCheckbox).first().dispatchEvent("click");
 
 	}
-
 
 	public void clickOnContinue() throws Exception {
 		clickElement(clickContinue);
@@ -338,6 +394,28 @@ public class CartPage extends PlaywrightFactory {
 		page.locator(removeSelected).first().click();
 		page.locator(yesButton).first().click();
 		clickElement(closePurchaseSelected);
+	}
+
+	public void verifySelectCart(String value) throws Exception {
+		if (value.equals("One Cart")) {
+			clickElement(cartStructureOneCart);
+		} else {
+			clickElement(cartStructureMultipleCart);
+		}
+	}
+
+	public void SelectCartStructure(String value) throws Exception {
+		Map<String, String> testData = searchpage.readJsonElement("AutoCart.json", "verifyCreateNewCart");
+
+		String onecart = page.locator(cartStructureOneCart).textContent();
+		String multiplecart = page.locator(cartStructureMultipleCart).textContent();
+
+		if (value.equals("One Cart")) {
+			clickElement(eBookOneCart);
+		} else {
+			clickElement(cartStructureMultipleCart);
+		}
+
 	}
 
 }

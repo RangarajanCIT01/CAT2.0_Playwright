@@ -1,0 +1,33 @@
+{
+	"Editor": {
+		"Book_PageSize": "10"
+	},
+	"verifyCreateNewCart": {
+		"CartName": "AddBooks_Cart1",
+		"CartDesciption": "This is AddBooks Cart.",
+		"SuccessMessage": "CartAdded",
+		"CartAdded": "Cart created successfully."
+	},
+	
+	"AddToCart" : {
+	"CartName" : "AddBooks_Cart1",
+	"Book_Title" : "Science",
+	"CartAddtoMessage": "Added successfully."
+	},
+	
+	"verifyTitlesInCart" : {
+	"CartBookTitleCount" : "1-10 of 10 Titles"
+	},
+	
+	"verifyDeleteNewCart" : {
+	"CartDeleteSuccessMessage" : "Cart deleted successfully.",
+	"CartName": "AddBooks_Cart1"
+	},
+	
+	"spotlightdetails":{
+		"CartName":"AdultsNonFiction",
+		"CartAddtoMessage":"Added successfully.",
+		"CartBookTitleCount":"1-6 of 6 Titles"	
+		}
+	
+}

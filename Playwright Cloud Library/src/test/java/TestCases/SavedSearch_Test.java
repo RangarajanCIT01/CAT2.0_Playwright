@@ -3,19 +3,13 @@ package TestCases;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
 import org.testng.AssertJUnit;
-import org.testng.annotations.Test;
-import org.testng.annotations.BeforeClass;
-import org.testng.AssertJUnit;
 import java.util.ArrayList;
 import java.util.Map;
 
-import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
-
 import com.aventstack.extentreports.Status;
-import com.base.BaseTest;
 import com.pages.SearchPage;
+
+import BaseClass.BaseTest;
 
 public class SavedSearch_Test extends BaseTest {
 

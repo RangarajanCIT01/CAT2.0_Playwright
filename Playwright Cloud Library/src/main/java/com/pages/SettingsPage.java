@@ -8,51 +8,49 @@ import com.microsoft.playwright.Page;
 public class SettingsPage extends PlaywrightFactory {
 	
 	// References
-	private Page page;
+	public Page page;
 		
 	// String Locators -Object Repository -OR
-	private String Settings="//span[@class='settingsBtn']";
-	private String SupportEmailEdit="//button[@class='primary mark-ready-button']";
-	private String EnterSupportEmail="//input[@name='SupportEmail']";
-	private String SaveButton="//button[@class='primary confirm-button']";
-	private String EnterLibraryWebsite="//input[@name='LibraryWebsite']";
-	private String LanguageDropdown="//span[@class='ant-select-selection-item']";
-	private String LanguageElementList="//div[@class='ant-select-item-option-content']";
-	private String edtLanguage = "//h4[text()='Default Language']//following::button[text()='Edit'][1]";
+	public String Settings="//span[@class='settingsBtn']";
+	public String SupportEmailEdit="//button[@class='primary mark-ready-button']";
+	public String EnterSupportEmail="//input[@name='SupportEmail']";
+	public String SaveButton="//button[@class='primary confirm-button']";
+	public String EnterLibraryWebsite="//input[@name='LibraryWebsite']";
+	public String LanguageDropdown="//span[@class='ant-select-selection-item']";
+	public String LanguageElementList="//div[@class='ant-select-item-option-content']";
+	public String edtLanguage = "//h4[text()='Default Language']//following::button[text()='Edit'][1]";
 	
 	//PatronTab 
-	private String PatronTab="//div[@role='tab' and contains(text(),'Patron')]";
-	private String CheckoutsPerPatron="//input[@name='MaxLoanedDocuments']";
-	private String HoldsPerPatron="//input[@name='MaxHeldDocuments']";
-	private String MonthlySuggestions="//input[@name='MaxPatronWishes']";
-	private String HoldQueueReservations="//input[@name='MaxHoldTimeDuration']";
-	private String DefaultLoanPeriod="//input[@name='MaxLoanTimeDuration']";
-	private String Update="//button[@class='primary confirm-button']";
-	private String NoButton="//button[@class='smallRed confirm-button']";
-
+	public String PatronTab="//div[@role='tab' and contains(text(),'Patron')]";
+	public String CheckoutsPerPatron="//input[@name='MaxLoanedDocuments']";
+	public String HoldsPerPatron="//input[@name='MaxHeldDocuments']";
+	public String MonthlySuggestions="//input[@name='MaxPatronWishes']";
+	public String HoldQueueReservations="//input[@name='MaxHoldTimeDuration']";
+	public String DefaultLoanPeriod="//input[@name='MaxLoanTimeDuration']";
+	public String Update="//button[@class='primary confirm-button']";
+	public String NoButton="//button[@class='smallRed confirm-button']";
 
 	//LibraryStaff
-	private String LibraryStaff="//div[contains(text(),'Library Staff')]";
-	private String AddUser="//button[@class='secondary cancel-button']";
-	private String EmailAddress="//input[@name='EmailAddress']";
-	private String FirstName="//input[@name='FirstName']";
-	private String LastName="//input[@name='LastName']";
-	private String LibraryManager="//span[@class='ant-checkbox']//input[@id='IsLibraryAdmin']";
-	private String ShelfManager="//span[@class='ant-checkbox']//input[@id='IsShelfAdmin']";
-	private String UserStatus="//span[@class='ant-radio']//input[@value='2']";
-	private String AddUserButton="//button[@class='primary confirm-button']";
+	public String LibraryStaff="//div[contains(text(),'Library Staff')]";
+	public String AddUser="//button[@class='secondary cancel-button']";
+	public String EmailAddress="//input[@name='EmailAddress']";
+	public String FirstName="//input[@name='FirstName']";
+	public String LastName="//input[@name='LastName']";
+	public String LibraryManager="//span[@class='ant-checkbox']//input[@id='IsLibraryAdmin']";
+	public String ShelfManager="//span[@class='ant-checkbox']//input[@id='IsShelfAdmin']";
+	public String UserStatus="//span[@class='ant-radio']//input[@value='2']";
+	public String AddUserButton="//button[@class='primary confirm-button']";
 	
 	// Pay per Use- Ebook
-	
-	private String PayPerUseTab="//div[contains(text(),'Pay Per Use')]";
-	private String MonthlyBudget="//input[@name='SpendingLimit']"; // first
-	private String MaxTitlePrice="//input[@name='MaxTitlePriceAllowed']"; //first
-	private String MaxPatronLimit="//input[@name='MaxPatronLimit']";
-	private String BuyerDropdown="//span[@class='ant-select-selection-search']";
-	private String BuyerList="//div[@class='ant-select-item-option-content']";
-	private String EmailNotificationDropdown="//div[@class='ant-select-selection-overflow']";
-	private String EmailList="//div[@class='ant-select-item-option-content']";
-	private String POReference="//input[@name='PORefNumber']";
+	public String PayPerUseTab="//div[contains(text(),'Pay Per Use')]";
+	public String MonthlyBudget="//input[@name='SpendingLimit']"; // first
+	public String MaxTitlePrice="//input[@name='MaxTitlePriceAllowed']"; //first
+	public String MaxPatronLimit="//input[@name='MaxPatronLimit']";
+	public String BuyerDropdown="//span[@class='ant-select-selection-search']";
+	public String BuyerList="//div[@class='ant-select-item-option-content']";
+	public String EmailNotificationDropdown="//div[@class='ant-select-selection-overflow']";
+	public String EmailList="//div[@class='ant-select-item-option-content']";
+	public String POReference="//input[@name='PORefNumber']";
 	
 	public SettingsPage(Page page)
 	{
@@ -249,7 +247,7 @@ public class SettingsPage extends PlaywrightFactory {
 		Map<String, String> testData = readJsonElement("SettingsData.json", "settingdetails");
 		String monthly_budget=testData.get("Ebook_MonthlyBudget");
 		
-		page.locator(MonthlyBudget).first().fill(monthly_budget);
+		page.locator(MonthlyBudget).fill(monthly_budget);
 		
 	}
 	
@@ -258,7 +256,7 @@ public class SettingsPage extends PlaywrightFactory {
 		Map<String, String> testData = readJsonElement("SettingsData.json", "settingdetails");
 		String max_titleprice=testData.get("Ebook_MaxTitlePrice");
 		
-		page.locator(MaxTitlePrice).first().fill(max_titleprice);
+		page.locator(MaxTitlePrice).fill(max_titleprice);
 		
 	}
 	
@@ -267,7 +265,7 @@ public class SettingsPage extends PlaywrightFactory {
 		Map<String, String> testData = readJsonElement("SettingsData.json", "settingdetails");
 		String max_patronlimit=testData.get("Ebook_MaxPatronLimit");
 		
-		page.locator(MaxPatronLimit).first().fill(max_patronlimit);
+		page.locator(MaxPatronLimit).fill(max_patronlimit);
 		
 	}
 	
@@ -276,7 +274,7 @@ public class SettingsPage extends PlaywrightFactory {
 		Map<String, String> testData = readJsonElement("SettingsData.json", "settingdetails");
 		String max_patronlimit=testData.get("Ebook_MaxPatronLimit");
 		
-		page.locator(BuyerDropdown).first().click();
+		page.locator(BuyerDropdown).click();
 
 		selectDropdownByScrollingCustom(max_patronlimit,BuyerList);
 		
@@ -287,7 +285,7 @@ public class SettingsPage extends PlaywrightFactory {
 		Map<String, String> testData = readJsonElement("SettingsData.json", "settingdetails");
 		String email=testData.get("Ebook_EmailNotification");
 		
-		page.locator(EmailNotificationDropdown).first().click();
+		page.locator(EmailNotificationDropdown).click();
 		
 		selectDropdownByScrollingCustom(email,EmailList);
 		
@@ -298,7 +296,7 @@ public class SettingsPage extends PlaywrightFactory {
 		Map<String, String> testData = readJsonElement("SettingsData.json", "settingdetails");
 		String reference=testData.get("Ebook_POReference");
 		
-		page.locator(POReference).first().fill(reference);
+		page.locator(POReference).fill(reference);
 		
 	}
 	
@@ -307,7 +305,7 @@ public class SettingsPage extends PlaywrightFactory {
 		Map<String, String> testData = readJsonElement("SettingsData.json", "settingdetails");
 		String monthly_budget=testData.get("Audio_MonthlyBudget");
 		
-		page.locator(MonthlyBudget).nth(-1).fill(monthly_budget);
+		page.locator(MonthlyBudget).fill(monthly_budget);
 		
 	}
 	
@@ -316,7 +314,7 @@ public class SettingsPage extends PlaywrightFactory {
 		Map<String, String> testData = readJsonElement("SettingsData.json", "settingdetails");
 		String max_titleprice=testData.get("Audio_MaxTitlePrice");
 		
-		page.locator(MaxTitlePrice).nth(-1).fill(max_titleprice);
+		page.locator(MaxTitlePrice).fill(max_titleprice);
 		
 	}
 	
@@ -325,7 +323,7 @@ public class SettingsPage extends PlaywrightFactory {
 		Map<String, String> testData = readJsonElement("SettingsData.json", "settingdetails");
 		String max_patronlimit=testData.get("Audio_MaxPatronLimit");
 		
-		page.locator(MaxPatronLimit).nth(-1).fill(max_patronlimit);
+		page.locator(MaxPatronLimit).fill(max_patronlimit);
 		
 	}
 	
@@ -334,7 +332,7 @@ public class SettingsPage extends PlaywrightFactory {
 		Map<String, String> testData = readJsonElement("SettingsData.json", "settingdetails");
 		String max_patronlimit=testData.get("Audio_MaxPatronLimit");
 		
-		page.locator(BuyerDropdown).nth(-1).click();
+		page.locator(BuyerDropdown).click();
 
 		selectDropdownByScrollingCustom(max_patronlimit,BuyerList);
 		
@@ -345,7 +343,7 @@ public class SettingsPage extends PlaywrightFactory {
 		Map<String, String> testData = readJsonElement("SettingsData.json", "settingdetails");
 		String email=testData.get("Audio_EmailNotification");
 		
-		page.locator(EmailNotificationDropdown).nth(-1).click();
+		page.locator(EmailNotificationDropdown).click();
 		
 		selectDropdownByScrollingCustom(email,EmailList);
 		
@@ -356,7 +354,7 @@ public class SettingsPage extends PlaywrightFactory {
 		Map<String, String> testData = readJsonElement("SettingsData.json", "settingdetails");
 		String reference=testData.get("Audio_POReference");
 		
-		page.locator(POReference).nth(-1).fill(reference);
+		page.locator(POReference).fill(reference);
 		
 	}
 }

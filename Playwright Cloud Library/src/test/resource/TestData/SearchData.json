@@ -108,17 +108,17 @@
 	"quickSearchByAuthor": {
 		"Book_AuthorName": "Shenon, Philip",
 		"BookSize": "10",
-		"Book_TitleCount": "1-10 of 600 Titles"
+		"Book_TitleCount": "1-10 of 609 Titles"
 	},
 	"quickSearchByTitle": {
 		"Book_TitleName": "Commission, The",
 		"BookSize": "10",
-		"Book_TitleCount": "1-10 of 751 Titles"
+		"Book_TitleCount": "1-10 of 757 Titles"
 	},
 	"authorSearch": {
 		"AuthorName": "Shenon, Philip",
 		"BookSize": "10",
-		"Book_TitleCount": "1-4 of 4 Titles"
+		"Book_TitleCount": "1-5 of 5 Titles"
 	},
 	"narratorSearch": {
 		"NarratorName": "Peiffer, Mary",
@@ -173,7 +173,8 @@
 	},
 	"VerifyHoldRatio": {
 		"Book_HoldRatio": "1",
-		"Book_Title": "Seamus Heaney: A Bibliography (1959-2003)"
+		"Book_Title": "Seamus Heaney: A Bibliography (1959-2003)",
+		"Book_Author" : "Brandes, Rand"
 	},
 	"VerifyPublisher": {
 		"Book_Title": "1 and 2 Timothy, Titus",

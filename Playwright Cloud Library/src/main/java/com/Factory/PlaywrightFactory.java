@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -23,6 +24,9 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
 import org.apache.logging.log4j.LogManager;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 //import org.testng.log4testng.Logger;
 //import org.openqa.selenium.JavascriptExecutor;
 //import org.openqa.selenium.WebElement;
@@ -55,7 +59,6 @@ import com.microsoft.playwright.options.WaitForSelectorState;
 import com.pages.LoginPage;
 import com.pages.SearchPage;
 
-
 public class PlaywrightFactory {
 
 	public Playwright playwright;
@@ -66,21 +69,59 @@ public class PlaywrightFactory {
 	public static Logger log;
 	protected LoginPage loginpage;
 
-	
 	public PlaywrightFactory() {
 
-	}
-	
-	@BeforeSuite
-	public void test()
-	{
-		System.out.println("Test");
 	}
 
 	public Page initBrowser(Properties prop) throws Exception {
 		loginpage = new LoginPage(page);
 
-		
+		String browserName = prop.getProperty("browser").trim();
+
+		playwright = Playwright.create();
+		ArrayList<String> arguments = new ArrayList<>();
+		arguments.add("--start-maximized");
+
+		switch (browserName.toLowerCase()) {
+		case "chrome":
+			browser = playwright.chromium()
+					.launch(new LaunchOptions().setChannel("chrome").setHeadless(false).setArgs(arguments));
+			browserContext = browser.newContext(new Browser.NewContextOptions().setViewportSize(null));
+			break;
+
+		case "firefox":
+			browser = playwright.firefox().launch(new BrowserType.LaunchOptions().setHeadless(false));
+			break;
+
+		case "safari":
+			browser = playwright.webkit().launch(new BrowserType.LaunchOptions().setHeadless(false));
+			break;
+
+		default:
+			break;
+		}
+
+		// browserContext=browser.newContext(new
+		// Browser.NewContextOptions().setViewportSize(1255,625));
+
+		browserContext.storageState(new BrowserContext.StorageStateOptions().setPath(Paths.get("applogin.json")));
+
+		page = browserContext.newPage();
+
+		page.navigate(prop.getProperty("url"));
+
+		Thread.sleep(4000);
+		page.waitForLoadState();
+		loginpage.enterUserName(prop.getProperty("username"));
+		loginpage.enterPassword(prop.getProperty("password"));
+		loginpage.clickLogin();
+
+		return page;
+	}
+
+	public Page initBrowserReportsQA(Properties prop) throws Exception {
+		loginpage = new LoginPage(page);
+
 		String browserName = prop.getProperty("browser").trim();
 
 		playwright = Playwright.create();
@@ -115,17 +156,15 @@ public class PlaywrightFactory {
 
 		page = browserContext.newPage();
 
-		page.navigate(prop.getProperty("url"));
+		page.navigate(prop.getProperty("Reportsurl"));
 		Thread.sleep(4000);
 		page.waitForLoadState();
 		loginpage.enterUserName(prop.getProperty("username"));
-		loginpage.enterPassword(prop.getProperty("password"));	
+		loginpage.enterPassword(prop.getProperty("password"));
 		loginpage.clickLogin();
-		
-		return page;		
-	}
-	
 
+		return page;
+	}
 
 	public Properties init_prop() throws FileNotFoundException {
 		log = Logger.getLogger(PlaywrightFactory.class);
@@ -146,29 +185,9 @@ public class PlaywrightFactory {
 
 		return prop;
 	}
-	
-	public Properties init_prop2() throws FileNotFoundException {
-		log = Logger.getLogger(PlaywrightFactory.class);
-		// Logger log = LogManager.getLogger(TestLog4J2.class.getName());
-		// log = LogManager.getLogger(PlaywrightFactory.class);
-		// log = LogManager.getLogger(TestLog4J2.class.getName());
-
-		PropertyConfigurator.configure("./src/test/resource/config/log4j.properties");
-
-		FileInputStream ip = new FileInputStream("./src/test/resource/config/config2.properties");
-
-		prop = new Properties();
-		try {
-			prop.load(ip);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-		return prop;
-	}
 
 	public void clickElement(String locator) {
-		
+
 		try {
 			page.locator(locator).click();
 		} catch (Exception e) {
@@ -176,19 +195,17 @@ public class PlaywrightFactory {
 		}
 		waitForElement(1);
 	}
-	
+
 	public void PressTabKey(int n) {
-		
-		for(int i=0; i<=n; i++) {
-		 page.keyboard().press("Tab");
+
+		for (int i = 0; i <= n; i++) {
+			page.keyboard().press("Tab");
 		}
-		
 	}
 
 	public String createRandomName() {
-		
+
 		String cartname;
-		String cartname2;
 		String name = "AddBooksCart";
 		Random random = new Random();
 		int randomNumber = random.nextInt(100);
@@ -200,6 +217,15 @@ public class PlaywrightFactory {
 
 	public void fillText(String locator, String text) throws InterruptedException {
 		try {
+			page.locator(locator).fill(text);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void clearAndfillText(String locator, String text) throws InterruptedException {
+		try {
+			page.locator(locator).clear();
 			page.locator(locator).fill(text);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -290,9 +316,9 @@ public class PlaywrightFactory {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public String clickFromListContains(String elementList1, String title) throws InterruptedException {
-		
+
 		try {
 			String loc;
 			Locator elements = page.locator(elementList1);
@@ -308,29 +334,29 @@ public class PlaywrightFactory {
 		}
 		String loc = null;
 		return loc;
-	
+
 	}
-	
+
 	public boolean containsVerify(String value, String exp) {
 		String loc = page.locator(value).innerText();
-		
+
 		boolean flag = loc.contains(exp);
-	
+
 		if (!flag) {
 			Assert.fail();
-			}
-		return flag;  
+		}
+		return flag;
 	}
-	
+
 	public boolean containsVerifyIgnoreCase(String value, String exp) {
 		String loc = page.locator(value).innerText();
-		
+
 		boolean flag = loc.equalsIgnoreCase(exp);
-	
+
 		if (!flag) {
 			Assert.fail();
-			}
-		return flag;  
+		}
+		return flag;
 	}
 
 	public void navigateBackToSearch(String elementList) throws InterruptedException {
@@ -401,14 +427,14 @@ public class PlaywrightFactory {
 	}
 
 	/******** USE THE BELOW 3 *****/
-	
+
 	public void selectDropdownByScrolling(String Element, String option, String elementList)
 			throws InterruptedException {
 
 		try {
 
 			page.locator(Element).click();
-			
+
 			Locator elementlist = page.locator(elementList);
 
 			for (int i = 0; i < elementlist.count(); i++) {
@@ -422,12 +448,26 @@ public class PlaywrightFactory {
 		}
 	}
 
-	public void selectDropdownSpecificSearch(String option, String elementList)
-			throws InterruptedException {
+	public void selectDropdownSpecificSearch(String option, String elementList) throws InterruptedException {
 		try {
 			Locator elementlist = page.locator(elementList);
 			for (int i = 0; i < elementlist.count(); i++) {
 				if (elementlist.nth(i).textContent().contains(option)) {
+					elementlist.nth(i).click();
+					break;
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void selectDropdownSpecificSearchEquals(String option, String elementList) throws InterruptedException {
+		try {
+			Locator elementlist = page.locator(elementList);
+
+			for (int i = 0; i < elementlist.count(); i++) {
+				if (elementlist.nth(i).textContent().equals(option)) {
 					elementlist.nth(i).click();
 					break;
 				}
@@ -437,12 +477,10 @@ public class PlaywrightFactory {
 		}
 	}
 	
-	public void selectDropdownSpecificSearchEquals(String option, String elementList)
-			throws InterruptedException {
+	public void selectDropdownSpecificSearchEqual(String option, String elementList) throws InterruptedException {
 		try {
 			Locator elementlist = page.locator(elementList);
-			
-			
+
 			for (int i = 0; i < elementlist.count(); i++) {
 				if (elementlist.nth(i).textContent().equals(option)) {
 					elementlist.nth(i).click();
@@ -495,14 +533,15 @@ public class PlaywrightFactory {
 		}
 	}
 
-	/*public static returnText(String data) {
-		
-		Locator listEle = page.locator(data);
-
-        List<String> allTextContents = listEle.allTextContents();
-
-        return 
-	}*/
+	/*
+	 * public static returnText(String data) {
+	 * 
+	 * Locator listEle = page.locator(data);
+	 * 
+	 * List<String> allTextContents = listEle.allTextContents();
+	 * 
+	 * return }
+	 */
 
 	public static void selectDropdownForOtherElements(String Element, String option, String elementList) {
 		try {
@@ -527,14 +566,14 @@ public class PlaywrightFactory {
 		}
 	}
 
-	public  void selectDropdownByScrollingCustom(String option, String elementList) {
+	public void selectDropdownByScrollingCustom(String option, String elementList) {
 		try {
-		
+
 			Locator elementlist = page.locator(elementList);
 
 			for (int i = 0; i < elementlist.count(); i++) {
 				if (elementlist.nth(i).textContent().contains(option)) {
-					
+
 					elementlist.nth(i).click();
 					break;
 				}
@@ -543,10 +582,8 @@ public class PlaywrightFactory {
 			e.printStackTrace();
 		}
 	}
-	
-	
-	
-	public  void selectdrpdwnByScrollingCustomEquals(String option, String elementList) {
+
+	public void selectdrpdwnByScrollingCustomEquals(String option, String elementList) {
 		try {
 			Locator elementlist = page.locator(elementList);
 			for (int i = 0; i < elementlist.count(); i++) {
@@ -599,7 +636,7 @@ public class PlaywrightFactory {
 		}
 		return result;
 	}
-	
+
 	public boolean verifyTitleFromListContains(String elementList1, String title) throws InterruptedException {
 		Thread.sleep(1000);
 		Locator elements = page.locator(elementList1);
@@ -648,9 +685,9 @@ public class PlaywrightFactory {
 		}
 		boolean result = false;
 		return result;
-		
+
 	}
-	
+
 	public static String compare2(String elementList, String data, String elementList2) {
 
 		Locator locator = page.locator(elementList).locator(elementList2);
@@ -665,14 +702,12 @@ public class PlaywrightFactory {
 		}
 		String result = "";
 		return result;
-		
-		
+
 	}
 
 	public void clickIfExists() {
 		Locator leftPnlCls = page.locator(SearchPage.leftPnlClse);
 		if (leftPnlCls.isVisible()) {
-
 			leftPnlCls.click();
 
 		} else {
@@ -718,6 +753,13 @@ public class PlaywrightFactory {
 		}
 
 		return testDataMap;
+	}
+
+	public void loadCartResult() {
+		String LoadingSpinner = "//div[text()='Loading...']";
+		waitForVisibilityOfHidden(LoadingSpinner);
+		untilDomContentLoads();
+		untilDefaultLoadStateCompletes();
 	}
 
 }

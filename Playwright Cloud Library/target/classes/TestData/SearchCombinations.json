@@ -29,7 +29,8 @@
 		"Book_HoldRatio": "1",
 		"Book_Category" : "Nonfiction",
 		"Book_Title": "Seamus Heaney: A Bibliography (1959-2003)",
-		"Book_Subject" : "NONFICTION : LITERARY CRITICISM"
+		"Book_Subject" : "NONFICTION : LITERARY CRITICISM",
+		"Book_Author" : "Brandes, Rand"
 	},
 	"VerifyTitleAuthorAndPublisher": {
 		"Book_Title": "1 and 2 Timothy, Titus",

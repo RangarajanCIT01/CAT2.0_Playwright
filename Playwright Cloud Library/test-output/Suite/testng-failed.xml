@@ -3,61 +3,28 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="TestCases.SearchAndCollectionTest">
+      <class name="TestCases.Support_Test">
         <methods>
           <include name="setReport"/>
-          <include name="VerifyColDatePurchased"/>
           <include name="addResult"/>
           <include name="setup"/>
-          <include name="setupBefore"/>
+          <include name="Verify_Support"/>
+          <include name="test"/>
           <include name="afterSuiteMethod"/>
           <include name="closeBrowser"/>
         </methods>
-      </class> <!-- TestCases.SearchAndCollectionTest -->
-      <class name="TestCases.Report_Test">
+      </class> <!-- TestCases.Support_Test -->
+      <class name="TestCases.Resources_Test">
         <methods>
           <include name="setReport"/>
-          <include name="setup"/>
-          <include name="addResult"/>
-          <include name="afterSuiteMethod"/>
-          <include name="closeBrowser"/>
-          <include name="validateReport"/>
-        </methods>
-      </class> <!-- TestCases.Report_Test -->
-      <class name="TestCases.Purchase_Test">
-        <methods>
-          <include name="setReport"/>
-          <include name="verifyPurchaseCart"/>
           <include name="addResult"/>
           <include name="setup"/>
+          <include name="test"/>
           <include name="afterSuiteMethod"/>
+          <include name="Verify_Resources"/>
           <include name="closeBrowser"/>
         </methods>
-      </class> <!-- TestCases.Purchase_Test -->
-      <class name="TestCases.Settings_Test">
-        <methods>
-          <include name="setupBefore"/>
-          <include name="verifyLibraryStaffSettings"/>
-          <include name="setReport"/>
-          <include name="verifyPatronSettings"/>
-          <include name="verifyLibrarySettings"/>
-          <include name="setup"/>
-          <include name="addResult"/>
-          <include name="verifyPayPerUse"/>
-          <include name="afterSuiteMethod"/>
-          <include name="closeBrowser"/>
-        </methods>
-      </class> <!-- TestCases.Settings_Test -->
-      <class name="TestCases.Spotlight_Test">
-        <methods>
-          <include name="setReport"/>
-          <include name="setup"/>
-          <include name="addResult"/>
-          <include name="validateSpotlight"/>
-          <include name="afterSuiteMethod"/>
-          <include name="closeBrowser"/>
-        </methods>
-      </class> <!-- TestCases.Spotlight_Test -->
+      </class> <!-- TestCases.Resources_Test -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
