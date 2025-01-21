@@ -31,8 +31,7 @@ public class SearchCombinations extends BaseTest{
 	public void VerifyTitleAndAuthor() throws Exception
 	{		
 		Map<String, String> testData = playwrightFactory.readJsonElement("SearchCombinations.json", "VerifyTitleAndAuthor");
-		ArrayList<Object> actualData = new ArrayList<>();
-		ArrayList<Object> expectedData = new ArrayList<>();		
+		
 	
 		searchpage.clseLftPnlIfExists();
 		searchpage.navigateToCartAndSearchPage();
