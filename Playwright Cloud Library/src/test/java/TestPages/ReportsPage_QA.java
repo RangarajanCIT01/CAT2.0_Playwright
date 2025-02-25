@@ -2,9 +2,9 @@ package TestPages;
 
 import com.microsoft.playwright.Page;
 
-import BaseClass.PlaywrightFactory;
+import BaseClass.BaseTest;
 
-public class ReportsPage_QA extends PlaywrightFactory {
+public class ReportsPage_QA extends BaseTest {
 
 	public ReportsPage_QA(Page page) {
 		this.page = page;

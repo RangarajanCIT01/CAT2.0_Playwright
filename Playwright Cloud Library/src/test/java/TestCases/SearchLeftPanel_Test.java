@@ -8,19 +8,19 @@ import java.util.Map;
 
 import com.aventstack.extentreports.Status;
 
-import BaseClass.BaseTest;
+import BaseClass.PlaywrightFactory;
 import TestPages.SearchPage;
 
 
 
-public class SearchLeftPanel_Test extends BaseTest{
+public class SearchLeftPanel_Test extends PlaywrightFactory{
 	
 	@BeforeClass
 	public void setupBefore() throws Exception {
 		
 		searchpage=new SearchPage(page);
 		searchpage.clickOnSearch();
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "searchdetails");
+		Map<String, String> testData = baseTest.readJsonElement("SearchData.json", "searchdetails");
 	
 		searchpage.clickSearchButton();
 		searchpage.editorDropdown(testData.get("Book_PageSize"));	
@@ -30,7 +30,7 @@ public class SearchLeftPanel_Test extends BaseTest{
 	@Test
 	public void VerifyQuickSearchByAuthor() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "quickSearchByAuthor");
+		Map<String, String> testData = baseTest.readJsonElement("SearchData.json", "quickSearchByAuthor");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
@@ -53,7 +53,7 @@ public class SearchLeftPanel_Test extends BaseTest{
 	@Test
 	public void VerifyQuickSearchByTitle() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "quickSearchByTitle");
+		Map<String, String> testData = baseTest.readJsonElement("SearchData.json", "quickSearchByTitle");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
@@ -94,7 +94,7 @@ public class SearchLeftPanel_Test extends BaseTest{
 	@Test 
 	public void verifySpecificTitleSearch() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "verifySpecificTitleSearch");
+		Map<String, String> testData = baseTest.readJsonElement("SearchData.json", "verifySpecificTitleSearch");
 
 		searchpage.clseLftPnlIfExists();
 		searchpage.navigateToCartAndSearchPage();
@@ -125,7 +125,7 @@ public class SearchLeftPanel_Test extends BaseTest{
 	@Test
 	public void verifySpecificTitleLeftPanel() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "searchdetails");
+		Map<String, String> testData = baseTest.readJsonElement("SearchData.json", "searchdetails");
 		
 		searchpage.clseLftPnlIfExists();
 		searchpage.navigateToCartAndSearchPage();
@@ -157,7 +157,7 @@ public class SearchLeftPanel_Test extends BaseTest{
 	@Test
 	public void verifyMultipleTitlesAdvSearch() throws Exception
 	{	
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "verifyMultipleTitlesAdvSearch");
+		Map<String, String> testData = baseTest.readJsonElement("SearchData.json", "verifyMultipleTitlesAdvSearch");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();
 		
@@ -191,7 +191,7 @@ public class SearchLeftPanel_Test extends BaseTest{
 	@Test
 	public void verifyMultipleTitlesLeftPanel() throws Exception
 	{	
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "verifyMultipleTitlesLeftPanel");
+		Map<String, String> testData = baseTest.readJsonElement("SearchData.json", "verifyMultipleTitlesLeftPanel");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();
 			
@@ -228,7 +228,7 @@ public class SearchLeftPanel_Test extends BaseTest{
 	@Test
 	public void VerifyAuthorSearch() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "authorSearch");
+		Map<String, String> testData = baseTest.readJsonElement("SearchData.json", "authorSearch");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 
@@ -267,7 +267,7 @@ public class SearchLeftPanel_Test extends BaseTest{
 	@Test
 	public void VerifyNarratorSearch() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "narratorSearch");
+		Map<String, String> testData = baseTest.readJsonElement("SearchData.json", "narratorSearch");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
@@ -299,7 +299,7 @@ public class SearchLeftPanel_Test extends BaseTest{
 	@Test
 	public void VerifySeriesSearch() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "seriesSearch");
+		Map<String, String> testData = baseTest.readJsonElement("SearchData.json", "seriesSearch");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
@@ -332,7 +332,7 @@ public class SearchLeftPanel_Test extends BaseTest{
 	@Test
 	public void verifyKeywordFieldsDisabled() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "verifyKeywordFieldsDisabled");	
+		Map<String, String> testData = baseTest.readJsonElement("SearchData.json", "verifyKeywordFieldsDisabled");	
 	
 		searchpage.clseLftPnlIfExists();
 		searchpage.navigateToCartAndSearchPage();
@@ -354,7 +354,7 @@ public class SearchLeftPanel_Test extends BaseTest{
 	//@Test
 	public void verifySort() throws Exception
 		{
-			Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "verifySort");
+			Map<String, String> testData = baseTest.readJsonElement("SearchData.json", "verifySort");
 			
 			searchpage.selectSortByOption(testData.get("Book_SortBy"));
 			searchpage.verifySort();

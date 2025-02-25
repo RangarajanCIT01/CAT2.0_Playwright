@@ -8,17 +8,17 @@ import java.util.Map;
 
 import com.aventstack.extentreports.Status;
 
-import BaseClass.BaseTest;
+import BaseClass.PlaywrightFactory;
 import TestPages.MyCollectionPage;
 
-public class ColISBN_Test extends BaseTest {
+public class ColISBN_Test extends PlaywrightFactory {
 
 	@BeforeClass
 	public void setupBefore() throws Exception {
 
 		
 		collection.clickOnMyCollection();
-		Map<String, String> testData = playwrightFactory.readJsonElement("CollectionData.json", "Setup");
+		Map<String, String> testData = baseTest.readJsonElement("CollectionData.json", "Setup");
 
 		searchpage.clickSearchButton();
 		searchpage.editorDropdown(testData.get("Book_PageSize"));
@@ -27,7 +27,7 @@ public class ColISBN_Test extends BaseTest {
 
 	@Test
 	public void VerifyColSearchByIsbn() throws Exception {
-		Map<String, String> testData = playwrightFactory.readJsonElement("CollectionData.json",
+		Map<String, String> testData = baseTest.readJsonElement("CollectionData.json",
 				"VerifyColSearchByIsbn");
 
 		searchpage.clseLftPnlIfExists();
@@ -46,7 +46,7 @@ public class ColISBN_Test extends BaseTest {
 
 	@Test
 	public void VerifyColSearchByMultipleIsbn() throws Exception {
-		Map<String, String> testData = playwrightFactory.readJsonElement("CollectionData.json",
+		Map<String, String> testData = baseTest.readJsonElement("CollectionData.json",
 				"VerifyColSearchByMultipleIsbn");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();
@@ -71,7 +71,7 @@ public class ColISBN_Test extends BaseTest {
 
 	@Test
 	public void searchByUploadIsbn() throws Exception {
-		Map<String, String> testData = playwrightFactory.readJsonElement("CollectionData.json", "searchByUploadIsbn");
+		Map<String, String> testData = baseTest.readJsonElement("CollectionData.json", "searchByUploadIsbn");
 
 		searchpage.clseLftPnlIfExists();
 		collection.navigateToCartAndCollectionPage();

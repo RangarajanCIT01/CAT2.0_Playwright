@@ -5,9 +5,9 @@ import java.util.Map;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 
-import BaseClass.PlaywrightFactory;
+import BaseClass.BaseTest;
 
-public class SpotlightPage extends PlaywrightFactory{
+public class SpotlightPage extends BaseTest{
 	
 	public Page page;
 	public SearchPage searchpage = new SearchPage(page);

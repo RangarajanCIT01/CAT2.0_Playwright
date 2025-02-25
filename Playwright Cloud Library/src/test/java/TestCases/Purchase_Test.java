@@ -2,10 +2,10 @@ package TestCases;
 
 import org.testng.annotations.Test;
 
-import BaseClass.BaseTest;
+import BaseClass.PlaywrightFactory;
 import TestPages.CartPage;
 
-public class Purchase_Test extends BaseTest{
+public class Purchase_Test extends PlaywrightFactory{
 	
 	
 	@Test()

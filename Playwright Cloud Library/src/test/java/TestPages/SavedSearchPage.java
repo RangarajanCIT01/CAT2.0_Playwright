@@ -9,9 +9,9 @@ import org.testng.Assert;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 
-import BaseClass.PlaywrightFactory;
+import BaseClass.BaseTest;
 
-public class SavedSearchPage extends PlaywrightFactory{
+public class SavedSearchPage extends BaseTest{
 
 	private Page page;
 

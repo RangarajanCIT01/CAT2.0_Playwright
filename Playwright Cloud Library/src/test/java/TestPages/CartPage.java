@@ -12,9 +12,9 @@ import com.aventstack.extentreports.Status;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 
-import BaseClass.PlaywrightFactory;
+import BaseClass.BaseTest;
 
-public class CartPage extends PlaywrightFactory {
+public class CartPage extends BaseTest {
 
 	public Page page;
 	public static ExtentTest test;

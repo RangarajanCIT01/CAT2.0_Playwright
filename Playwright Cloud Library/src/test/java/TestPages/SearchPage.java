@@ -22,13 +22,13 @@ import com.microsoft.playwright.FileChooser;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Locator.ScrollIntoViewIfNeededOptions;
 
-import BaseClass.PlaywrightFactory;
+import BaseClass.BaseTest;
 
 import com.microsoft.playwright.Page;
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 import static org.testng.Assert.assertTrue;
 
-public class SearchPage extends PlaywrightFactory {
+public class SearchPage extends BaseTest {
 
 	public Page page;
 

@@ -5,11 +5,11 @@ import org.testng.annotations.BeforeClass;
 import java.util.ArrayList;
 import java.util.Map;
 
-import BaseClass.BaseTest;
+import BaseClass.PlaywrightFactory;
 import TestPages.CartPage;
 import TestPages.SearchPage;
 
-public class CartAutoCarts_Test extends BaseTest{
+public class CartAutoCarts_Test extends PlaywrightFactory{
 	
 	@BeforeClass
 	public void setupBefore() throws Exception {
@@ -23,7 +23,7 @@ public class CartAutoCarts_Test extends BaseTest{
 	@Test (priority=1)
 	public void verifyCreateNewCart() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("AutoCart.json", "verifyCreateNewCart");
+		Map<String, String> testData = baseTest.readJsonElement("AutoCart.json", "verifyCreateNewCart");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();
 		

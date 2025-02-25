@@ -10,9 +10,9 @@ import org.testng.AssertJUnit;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 
-import BaseClass.PlaywrightFactory;
+import BaseClass.BaseTest;
 
-public class PatronsPage extends PlaywrightFactory {
+public class PatronsPage extends BaseTest {
 
 	public Page page;
 

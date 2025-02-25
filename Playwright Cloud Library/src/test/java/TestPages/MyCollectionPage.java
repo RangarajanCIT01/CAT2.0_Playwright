@@ -9,9 +9,9 @@ import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.WaitForSelectorState;
 
-import BaseClass.PlaywrightFactory;
+import BaseClass.BaseTest;
 
-public class MyCollectionPage extends PlaywrightFactory{
+public class MyCollectionPage extends BaseTest{
 
 		private Page page;
 	

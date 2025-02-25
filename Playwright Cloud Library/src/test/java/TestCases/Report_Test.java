@@ -2,9 +2,9 @@ package TestCases;
 
 import org.testng.annotations.Test;
 
-import BaseClass.BaseTest;
+import BaseClass.PlaywrightFactory;
 
-public class Report_Test extends BaseTest{
+public class Report_Test extends PlaywrightFactory{
 
 	
 	@Test

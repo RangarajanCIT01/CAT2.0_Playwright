@@ -4,11 +4,11 @@ import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
 import java.util.Map;
 
-import BaseClass.BaseTest;
+import BaseClass.PlaywrightFactory;
 import TestPages.MyCollectionPage;
 import TestPages.SearchPage;
 
-public class Shelves_Test extends BaseTest {
+public class Shelves_Test extends PlaywrightFactory {
 
 	@BeforeClass
 	public void setupBefore() throws Exception {
@@ -17,7 +17,7 @@ public class Shelves_Test extends BaseTest {
 		searchpage = new SearchPage(page);
 		shelves = new Shelves_Test();
 		searchpage.clickOnSearch();
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "searchdetails");
+		Map<String, String> testData = baseTest.readJsonElement("SearchData.json", "searchdetails");
 	
 		searchpage.clickSearchButton();
 		searchpage.editorDropdown(testData.get("Book_PageSize"));	
@@ -39,7 +39,7 @@ public class Shelves_Test extends BaseTest {
 	@Test(priority = 2)
 	public void verifyAddToShelf() throws Exception {
 		
-		Map<String, String> testData = playwrightFactory.readJsonElement("ShelfData.json", "ManualShelf");
+		Map<String, String> testData = baseTest.readJsonElement("ShelfData.json", "ManualShelf");
 		String data = testData.get("ManualShelfName");
 		String selectShelf = "//span[text()='"+ data +"']";
 		
@@ -61,7 +61,7 @@ public class Shelves_Test extends BaseTest {
 	
 	@Test(priority = 3)
 	public void verifyPublishStatus() throws Exception {
-		Map<String, String> testData = playwrightFactory.readJsonElement("ShelfData.json", "ManualShelf");
+		Map<String, String> testData = baseTest.readJsonElement("ShelfData.json", "ManualShelf");
 		String data = testData.get("ManualShelfName");
 		String selectShelf = "//span[text()='"+ data +"']";
 		shelfpage.clickOnShelves();
@@ -97,7 +97,7 @@ public class Shelves_Test extends BaseTest {
 	@Test(priority = 6)
 	public void AutomatedShelf_AddData() throws Exception {
 		
-		Map<String, String> testData = playwrightFactory.readJsonElement("ShelfData.json", "AutomatedShelf");
+		Map<String, String> testData = baseTest.readJsonElement("ShelfData.json", "AutomatedShelf");
 		String data = testData.get("AutomatedShelfName");
 		String selectShelf = "//span[text()='"+ data +"']";
 		
@@ -110,7 +110,7 @@ public class Shelves_Test extends BaseTest {
 	
 	@Test(priority = 7)
 	public void verifyAutoPublishStatus() throws Exception {
-		Map<String, String> testData = playwrightFactory.readJsonElement("ShelfData.json", "AutomatedShelf");
+		Map<String, String> testData = baseTest.readJsonElement("ShelfData.json", "AutomatedShelf");
 		String data = testData.get("AutomatedShelfName");
 		String selectShelf = "//span[text()='"+ data +"']";
 		shelfpage.clickElement(shelfpage.btnPublish);

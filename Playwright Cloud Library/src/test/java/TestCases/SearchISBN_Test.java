@@ -8,11 +8,11 @@ import java.util.Map;
 
 import com.aventstack.extentreports.Status;
 
-import BaseClass.BaseTest;
+import BaseClass.PlaywrightFactory;
 import TestPages.MyCollectionPage;
 import TestPages.SearchPage;
 
-public class SearchISBN_Test extends BaseTest{
+public class SearchISBN_Test extends PlaywrightFactory{
 	
 	@BeforeClass
 	public void setupBefore() throws Exception {
@@ -20,7 +20,7 @@ public class SearchISBN_Test extends BaseTest{
 		searchpage=new SearchPage(page);
 		collection=new MyCollectionPage(page);
 		searchpage.clickOnSearch();
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "searchdetails");
+		Map<String, String> testData = baseTest.readJsonElement("SearchData.json", "searchdetails");
 	
 		searchpage.clickSearchButton();
 		searchpage.editorDropdown(testData.get("Book_PageSize"));	
@@ -30,7 +30,7 @@ public class SearchISBN_Test extends BaseTest{
 	@Test
 	public void VerifySearchByIsbn() throws Exception
 	{
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "VerifySearchByIsbn");
+		Map<String, String> testData = baseTest.readJsonElement("SearchData.json", "VerifySearchByIsbn");
 		
 		searchpage.clseLftPnlIfExists();
 		searchpage.navigateToCartAndSearchPage();
@@ -49,7 +49,7 @@ public class SearchISBN_Test extends BaseTest{
 	@Test
 	public void VerifySearchByMultipleIsbn() throws Exception
 	{
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "VerifySearchByMultipleIsbn");
+		Map<String, String> testData = baseTest.readJsonElement("SearchData.json", "VerifySearchByMultipleIsbn");
 		
 		searchpage.clseLftPnlIfExists();
 		searchpage.navigateToCartAndSearchPage();
@@ -69,7 +69,7 @@ public class SearchISBN_Test extends BaseTest{
 	//@Test
 		public void VerifySearchByUploadIsbn() throws Exception
 		{		
-			Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "searchByUploadIsbn");
+			Map<String, String> testData = baseTest.readJsonElement("SearchData.json", "searchByUploadIsbn");
 			ArrayList<Object> actualData = new ArrayList<>();
 			ArrayList<Object> expectedData = new ArrayList<>();
 			

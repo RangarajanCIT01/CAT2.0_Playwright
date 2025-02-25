@@ -7,11 +7,11 @@ import org.testng.AssertJUnit;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import BaseClass.BaseTest;
+import BaseClass.PlaywrightFactory;
 import TestPages.CartPage;
 import TestPages.SearchPage;
 
-public class CuratedLists_Test extends BaseTest{
+public class CuratedLists_Test extends PlaywrightFactory{
 	
 	@BeforeClass
 	public void setupBefore() throws Exception {
@@ -19,7 +19,7 @@ public class CuratedLists_Test extends BaseTest{
 		cartpage = new CartPage(page);
 		searchpage = new SearchPage(page);
 		searchpage.clickOnSearch();
-		Map<String, String> testData = playwrightFactory.readJsonElement("CuratedLists.json", "Editor");
+		Map<String, String> testData = baseTest.readJsonElement("CuratedLists.json", "Editor");
 	
 		searchpage.clickSearchButton();
 		searchpage.editorDropdown(testData.get("Book_PageSize"));	
@@ -29,7 +29,7 @@ public class CuratedLists_Test extends BaseTest{
 	@Test (priority=1)
 	public void verifyCreateNewCart() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("CuratedLists.json", "verifyCreateNewCart");
+		Map<String, String> testData = baseTest.readJsonElement("CuratedLists.json", "verifyCreateNewCart");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();
 		
@@ -49,7 +49,7 @@ public class CuratedLists_Test extends BaseTest{
 	@Test(priority=2)
 	public void AddToCart() throws Exception
 	{	
-		Map<String, String> testData = playwrightFactory.readJsonElement("CuratedLists.json", "AddToCart");
+		Map<String, String> testData = baseTest.readJsonElement("CuratedLists.json", "AddToCart");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();
 		
@@ -69,7 +69,7 @@ public class CuratedLists_Test extends BaseTest{
 	@Test(priority=3)
 	public void verifyTitlesInCart() throws Exception
 	{	
-		Map<String, String> testData = playwrightFactory.readJsonElement("CuratedLists.json", "verifyTitlesInCart");
+		Map<String, String> testData = baseTest.readJsonElement("CuratedLists.json", "verifyTitlesInCart");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();
 		
@@ -86,7 +86,7 @@ public class CuratedLists_Test extends BaseTest{
 	@Test(priority=4)
 	public void verifyDeleteNewCart() throws Exception
 	{	
-		Map<String, String> testData = playwrightFactory.readJsonElement("CuratedLists.json", "verifyDeleteNewCart");
+		Map<String, String> testData = baseTest.readJsonElement("CuratedLists.json", "verifyDeleteNewCart");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();
 		

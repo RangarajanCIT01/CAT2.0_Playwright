@@ -3,9 +3,9 @@ package TestPages;
 
 import com.microsoft.playwright.Page;
 
-import BaseClass.PlaywrightFactory;
+import BaseClass.BaseTest;
 
-public class LoginPage extends PlaywrightFactory{
+public class LoginPage extends BaseTest{
 	
 	private Page page;
 	private String username="//input[@name='email']";

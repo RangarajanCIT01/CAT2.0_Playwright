@@ -4,17 +4,17 @@ import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
 import java.util.Map;
 
-import BaseClass.BaseTest;
+import BaseClass.PlaywrightFactory;
 import TestPages.SearchPage;
 
-public class Settings_Test extends BaseTest{
+public class Settings_Test extends PlaywrightFactory{
 	
 	@BeforeClass
 	public void setupBefore() throws Exception {
 		
 		searchpage=new SearchPage(page);
 		searchpage.clickOnSearch();
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "searchdetails");
+		Map<String, String> testData = baseTest.readJsonElement("SearchData.json", "searchdetails");
 		
 		searchpage.clickSearchButton();
 		searchpage.editorDropdown(testData.get("Book_PageSize"));	
@@ -24,7 +24,7 @@ public class Settings_Test extends BaseTest{
 	@Test
 	public void verifyLibrarySettings() throws Exception
 	{				
-		Map<String, String> testData = playwrightFactory.readJsonElement("SettingsData.json", "settingdetails");
+		Map<String, String> testData = baseTest.readJsonElement("SettingsData.json", "settingdetails");
 		
 		settings.clickOnSettings();
 		settings.clickEditSupportEmail();

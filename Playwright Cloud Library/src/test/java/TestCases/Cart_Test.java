@@ -6,11 +6,11 @@ import org.testng.AssertJUnit;
 import java.util.ArrayList;
 import java.util.Map;
 
-import BaseClass.BaseTest;
+import BaseClass.PlaywrightFactory;
 import TestPages.CartPage;
 import TestPages.SearchPage;
 
-public class Cart_Test extends BaseTest{
+public class Cart_Test extends PlaywrightFactory{
 	
 	@BeforeClass
 	public void setupBefore() throws Exception {
@@ -18,7 +18,7 @@ public class Cart_Test extends BaseTest{
 		cartpage = new CartPage(page);
 		searchpage = new SearchPage(page);
 		searchpage.clickOnSearch();
-		Map<String, String> testData = playwrightFactory.readJsonElement("CartData.json", "Editor");
+		Map<String, String> testData = baseTest.readJsonElement("CartData.json", "Editor");
 	
 		searchpage.clickSearchButton();
 		searchpage.editorDropdown(testData.get("Book_PageSize"));	
@@ -28,7 +28,7 @@ public class Cart_Test extends BaseTest{
 	@Test (priority=1)
 	public void verifyCreateNewCart() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("CartData.json", "verifyCreateNewCart");
+		Map<String, String> testData = baseTest.readJsonElement("CartData.json", "verifyCreateNewCart");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();
 		
@@ -49,7 +49,7 @@ public class Cart_Test extends BaseTest{
 	@Test(priority=2)
 	public void AddToCart() throws Exception
 	{	
-		Map<String, String> testData = playwrightFactory.readJsonElement("CartData.json", "AddToCart");
+		Map<String, String> testData = baseTest.readJsonElement("CartData.json", "AddToCart");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();
 		
@@ -70,7 +70,7 @@ public class Cart_Test extends BaseTest{
 	@Test(priority=3)
 	public void verifyAddToCart() throws Exception
 	{	
-		Map<String, String> testData = playwrightFactory.readJsonElement("CartData.json", "verifyAddToCart");
+		Map<String, String> testData = baseTest.readJsonElement("CartData.json", "verifyAddToCart");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();
 		
@@ -88,7 +88,7 @@ public class Cart_Test extends BaseTest{
 	@Test(priority=4)
 	public void verifyDeleteNewCart() throws Exception
 	{	
-		Map<String, String> testData = playwrightFactory.readJsonElement("CartData.json", "verifyDeleteNewCart");
+		Map<String, String> testData = baseTest.readJsonElement("CartData.json", "verifyDeleteNewCart");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();
 		
@@ -106,7 +106,7 @@ public class Cart_Test extends BaseTest{
 	public void verifyMoveBetweenCarts() throws Exception
 	{	
 
-		Map<String, String> testData = playwrightFactory.readJsonElement("CartData.json", "verifyMoveBetweenCarts");
+		Map<String, String> testData = baseTest.readJsonElement("CartData.json", "verifyMoveBetweenCarts");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();
 		
@@ -185,7 +185,7 @@ public class Cart_Test extends BaseTest{
 	public void verifyRemoveSelected() throws Exception
 	{	
 
-		Map<String, String> testData = playwrightFactory.readJsonElement("CartData.json", "verifyRemoveSelected");
+		Map<String, String> testData = baseTest.readJsonElement("CartData.json", "verifyRemoveSelected");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();
 		
@@ -237,7 +237,7 @@ public class Cart_Test extends BaseTest{
 	public void verifyPrivateCart() throws Exception
 	{	
 
-		Map<String, String> testData = playwrightFactory.readJsonElement("CartData.json", "verifyPrivateCart");
+		Map<String, String> testData = baseTest.readJsonElement("CartData.json", "verifyPrivateCart");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();
 		
@@ -267,7 +267,7 @@ public class Cart_Test extends BaseTest{
 	public void verifyCommunityCart() throws Exception
 	{	
 
-		Map<String, String> testData = playwrightFactory.readJsonElement("CartData.json", "verifyCommunityCart");
+		Map<String, String> testData = baseTest.readJsonElement("CartData.json", "verifyCommunityCart");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();
 		

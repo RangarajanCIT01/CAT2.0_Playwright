@@ -4,9 +4,9 @@ import java.util.Map;
 
 import com.microsoft.playwright.Page;
 
-import BaseClass.PlaywrightFactory;
+import BaseClass.BaseTest;
 
-public class PurchasePage extends PlaywrightFactory{
+public class PurchasePage extends BaseTest{
 	
 	private Page page;
 	

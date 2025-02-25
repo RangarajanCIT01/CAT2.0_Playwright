@@ -8,17 +8,17 @@ import java.util.Map;
 
 import com.aventstack.extentreports.Status;
 
-import BaseClass.BaseTest;
+import BaseClass.PlaywrightFactory;
 import TestPages.SearchPage;
 
-public class SavedSearch_Test extends BaseTest {
+public class SavedSearch_Test extends PlaywrightFactory {
 
 	@BeforeClass
 	public void setupBefore() throws Exception {
 
 		searchpage = new SearchPage(page);
 		searchpage.clickOnSearch();
-		Map<String, String> testData = playwrightFactory.readJsonElement("SavedSearch.json", "setupBefore");
+		Map<String, String> testData = baseTest.readJsonElement("SavedSearch.json", "setupBefore");
 
 		searchpage.clickSearchButton();
 		searchpage.editorDropdown(testData.get("Book_PageSize"));
@@ -28,7 +28,7 @@ public class SavedSearch_Test extends BaseTest {
 	@Test(priority = 1)
 	public void VerifyCreateSavedSearchSingleTitle() throws Exception {
 
-		Map<String, String> testData = playwrightFactory.readJsonElement("SavedSearch.json",
+		Map<String, String> testData = baseTest.readJsonElement("SavedSearch.json",
 				"VerifyCreateSavedSearchSingleTitle");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();
@@ -83,7 +83,7 @@ public class SavedSearch_Test extends BaseTest {
 
 	@Test(priority = 3)
 	public void VerifyUpdateSearchTitles() throws Exception {
-		Map<String, String> testData = playwrightFactory.readJsonElement("SavedSearch.json",
+		Map<String, String> testData = baseTest.readJsonElement("SavedSearch.json",
 				"VerifyUpdateSearchTitles");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();
@@ -121,7 +121,7 @@ public class SavedSearch_Test extends BaseTest {
 	//@Test(priority = 5) Need to work
 	public void VerifyFormatDrpdwns() throws Exception {
 
-		Map<String, String> testData = playwrightFactory.readJsonElement("SavedSearch.json", "VerifyFormatDrpdwns");
+		Map<String, String> testData = baseTest.readJsonElement("SavedSearch.json", "VerifyFormatDrpdwns");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();
 		

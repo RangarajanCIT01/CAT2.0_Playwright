@@ -5,9 +5,9 @@ import org.testng.annotations.Test;
 
 import com.microsoft.playwright.Page;
 
-import BaseClass.BaseTest;
+import BaseClass.PlaywrightFactory;
 
-public class Resources_Test extends BaseTest {
+public class Resources_Test extends PlaywrightFactory {
 
 	public String mnuResources = "//span[text()='Resources']";
 	public String acptcookies = "//button[@id='onetrust-accept-btn-handler']";

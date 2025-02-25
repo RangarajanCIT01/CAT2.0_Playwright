@@ -8,11 +8,11 @@ import java.util.Map;
 
 import com.aventstack.extentreports.Status;
 
-import BaseClass.BaseTest;
+import BaseClass.PlaywrightFactory;
 import TestPages.MyCollectionPage;
 import TestPages.SearchPage;
 
-public class ColAdvSearch_Test extends BaseTest{
+public class ColAdvSearch_Test extends PlaywrightFactory{
 
 	@BeforeClass
 	public void setupBefore() throws Exception {
@@ -20,7 +20,7 @@ public class ColAdvSearch_Test extends BaseTest{
 		collection=new MyCollectionPage(page);
 		searchpage = new SearchPage(page);
 		collection.clickOnMyCollection();
-		Map<String, String> testData = playwrightFactory.readJsonElement("CollectionData.json", "collectionDetails");
+		Map<String, String> testData = baseTest.readJsonElement("CollectionData.json", "collectionDetails");
 	
 		searchpage.clickSearchButton();
 		searchpage.editorDropdown(testData.get("Book_PageSize"));	
@@ -30,7 +30,7 @@ public class ColAdvSearch_Test extends BaseTest{
 	@Test
 	public void VerifyColTitle() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("CollectionData.json", "VerifyColTitle");
+		Map<String, String> testData = baseTest.readJsonElement("CollectionData.json", "VerifyColTitle");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
@@ -55,7 +55,7 @@ public class ColAdvSearch_Test extends BaseTest{
 	@Test
 	public void VerifyColAuthor() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("CollectionData.json", "VerifyColAuthor");
+		Map<String, String> testData = baseTest.readJsonElement("CollectionData.json", "VerifyColAuthor");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
@@ -79,7 +79,7 @@ public class ColAdvSearch_Test extends BaseTest{
 	@Test
 	public void VerifyColSeries() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("CollectionData.json", "VerifyColSeries");
+		Map<String, String> testData = baseTest.readJsonElement("CollectionData.json", "VerifyColSeries");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
@@ -105,7 +105,7 @@ public class ColAdvSearch_Test extends BaseTest{
 	@Test
 	public void VerifyColNarrator() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("CollectionData.json", "VerifyColNarrator");
+		Map<String, String> testData = baseTest.readJsonElement("CollectionData.json", "VerifyColNarrator");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
@@ -131,7 +131,7 @@ public class ColAdvSearch_Test extends BaseTest{
 	@Test
 	public void VerifyColHoldRatio() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("CollectionData.json", "VerifyColHoldRatio");
+		Map<String, String> testData = baseTest.readJsonElement("CollectionData.json", "VerifyColHoldRatio");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
@@ -153,7 +153,7 @@ public class ColAdvSearch_Test extends BaseTest{
 	@Test
 	public void VerifyColPublisher() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("CollectionData.json", "VerifyColPublisher");
+		Map<String, String> testData = baseTest.readJsonElement("CollectionData.json", "VerifyColPublisher");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
@@ -177,7 +177,7 @@ public class ColAdvSearch_Test extends BaseTest{
 	@Test
 	public void VerifyColContentProvider() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("CollectionData.json", "VerifyColContentProvider");
+		Map<String, String> testData = baseTest.readJsonElement("CollectionData.json", "VerifyColContentProvider");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
@@ -201,7 +201,7 @@ public class ColAdvSearch_Test extends BaseTest{
 	@Test
 	public void VerifyColFormat() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("CollectionData.json", "VerifyColFormat");
+		Map<String, String> testData = baseTest.readJsonElement("CollectionData.json", "VerifyColFormat");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
@@ -241,7 +241,7 @@ public class ColAdvSearch_Test extends BaseTest{
 	@Test
 	public void VerifyColCategoryAndSubject() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("CollectionData.json", "VerifyColCategoryAndSubject");
+		Map<String, String> testData = baseTest.readJsonElement("CollectionData.json", "VerifyColCategoryAndSubject");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
@@ -265,7 +265,7 @@ public class ColAdvSearch_Test extends BaseTest{
 	@Test
 	public void VerifyColAudience() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("CollectionData.json", "VerifyColAudience");
+		Map<String, String> testData = baseTest.readJsonElement("CollectionData.json", "VerifyColAudience");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
@@ -289,7 +289,7 @@ public class ColAdvSearch_Test extends BaseTest{
 	@Test
 	public void VerifyColPricing() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("CollectionData.json", "VerifyColPricing");
+		Map<String, String> testData = baseTest.readJsonElement("CollectionData.json", "VerifyColPricing");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
@@ -313,7 +313,7 @@ public class ColAdvSearch_Test extends BaseTest{
 	@Test
 	public void VerifyColPublishedWithin() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("CollectionData.json", "VerifyColPublishedWithin");
+		Map<String, String> testData = baseTest.readJsonElement("CollectionData.json", "VerifyColPublishedWithin");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
@@ -342,7 +342,7 @@ public class ColAdvSearch_Test extends BaseTest{
 	@Test
 	public void VerifyColDateAddedToCAT() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("CollectionData.json", "VerifyColDateAddedToCAT");
+		Map<String, String> testData = baseTest.readJsonElement("CollectionData.json", "VerifyColDateAddedToCAT");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
@@ -371,7 +371,7 @@ public class ColAdvSearch_Test extends BaseTest{
 	@Test
 	public void VerifyColDatePurchased() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("CollectionData.json", "VerifyColDatePurchased");
+		Map<String, String> testData = baseTest.readJsonElement("CollectionData.json", "VerifyColDatePurchased");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
@@ -401,7 +401,7 @@ public class ColAdvSearch_Test extends BaseTest{
 	@Test
 	public void VerifyColLanguage() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("CollectionData.json", "VerifyColLanguage");
+		Map<String, String> testData = baseTest.readJsonElement("CollectionData.json", "VerifyColLanguage");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
@@ -425,7 +425,7 @@ public class ColAdvSearch_Test extends BaseTest{
 	@Test
 	public void VerifyColPPUTitles() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("CollectionData.json", "VerifyColPPUTitles");
+		Map<String, String> testData = baseTest.readJsonElement("CollectionData.json", "VerifyColPPUTitles");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	

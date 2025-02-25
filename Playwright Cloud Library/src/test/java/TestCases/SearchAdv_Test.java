@@ -7,17 +7,17 @@ import java.util.Map;
 
 import com.aventstack.extentreports.Status;
 
-import BaseClass.BaseTest;
+import BaseClass.PlaywrightFactory;
 import TestPages.SearchPage;
 
-public class SearchAdv_Test extends BaseTest{
+public class SearchAdv_Test extends PlaywrightFactory{
 	
 	@BeforeClass
 	public void setupBefore() throws Exception {
 		
 		searchpage=new SearchPage(page);
 		searchpage.clickOnSearch();
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "searchdetails");
+		Map<String, String> testData = baseTest.readJsonElement("SearchData.json", "searchdetails");
 	
 		searchpage.clickSearchButton();
 		searchpage.editorDropdown(testData.get("Book_PageSize"));	
@@ -27,7 +27,7 @@ public class SearchAdv_Test extends BaseTest{
 	@Test
 	public void VerifyTitle() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "VerifyTitle");
+		Map<String, String> testData = baseTest.readJsonElement("SearchData.json", "VerifyTitle");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
@@ -52,7 +52,7 @@ public class SearchAdv_Test extends BaseTest{
 	@Test
 	public void VerifyAuthor() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "VerifyAuthor");
+		Map<String, String> testData = baseTest.readJsonElement("SearchData.json", "VerifyAuthor");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
@@ -77,7 +77,7 @@ public class SearchAdv_Test extends BaseTest{
 	@Test
 	public void VerifySeries() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "VerifySeries");
+		Map<String, String> testData = baseTest.readJsonElement("SearchData.json", "VerifySeries");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
@@ -102,7 +102,7 @@ public class SearchAdv_Test extends BaseTest{
 	@Test
 	public void VerifyNarrator() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "VerifyNarrator");
+		Map<String, String> testData = baseTest.readJsonElement("SearchData.json", "VerifyNarrator");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
@@ -127,7 +127,7 @@ public class SearchAdv_Test extends BaseTest{
 	@Test
 	public void VerifyPreSaleFilterTitles() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "VerifyPreSaleFilterTitles");
+		Map<String, String> testData = baseTest.readJsonElement("SearchData.json", "VerifyPreSaleFilterTitles");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
@@ -164,7 +164,7 @@ public class SearchAdv_Test extends BaseTest{
 	@Test
 	public void VerifyHoldRatio() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "VerifyHoldRatio");
+		Map<String, String> testData = baseTest.readJsonElement("SearchData.json", "VerifyHoldRatio");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
@@ -188,7 +188,7 @@ public class SearchAdv_Test extends BaseTest{
 	@Test
 	public void VerifyPublisher() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "VerifyPublisher");
+		Map<String, String> testData = baseTest.readJsonElement("SearchData.json", "VerifyPublisher");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
@@ -213,7 +213,7 @@ public class SearchAdv_Test extends BaseTest{
 	@Test
 	public void VerifyContentProvider() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "VerifyContentProvider");
+		Map<String, String> testData = baseTest.readJsonElement("SearchData.json", "VerifyContentProvider");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
@@ -237,7 +237,7 @@ public class SearchAdv_Test extends BaseTest{
 	@Test
 	public void VerifyFormat() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "VerifyFormat");
+		Map<String, String> testData = baseTest.readJsonElement("SearchData.json", "VerifyFormat");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
@@ -273,7 +273,7 @@ public class SearchAdv_Test extends BaseTest{
 	@Test
 	public void VerifyCategoryAndSubject() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "VerifyCategoryAndSubject");
+		Map<String, String> testData = baseTest.readJsonElement("SearchData.json", "VerifyCategoryAndSubject");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
@@ -297,7 +297,7 @@ public class SearchAdv_Test extends BaseTest{
 	@Test
 	public void VerifyAudience() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "VerifyAudience");
+		Map<String, String> testData = baseTest.readJsonElement("SearchData.json", "VerifyAudience");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
@@ -323,7 +323,7 @@ public class SearchAdv_Test extends BaseTest{
 	@Test
 	public void VerifyPricing() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "VerifyPricing");
+		Map<String, String> testData = baseTest.readJsonElement("SearchData.json", "VerifyPricing");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
@@ -347,7 +347,7 @@ public class SearchAdv_Test extends BaseTest{
 	//@Test - Need to test
 	public void VerifyPublishedWithin() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "VerifyPublishedWithin");
+		Map<String, String> testData = baseTest.readJsonElement("SearchData.json", "VerifyPublishedWithin");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
@@ -376,7 +376,7 @@ public class SearchAdv_Test extends BaseTest{
 	@Test
 	public void VerifyDateAddedToCat() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "VerifyDateAddedToCat");
+		Map<String, String> testData = baseTest.readJsonElement("SearchData.json", "VerifyDateAddedToCat");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
@@ -405,7 +405,7 @@ public class SearchAdv_Test extends BaseTest{
 	@Test
 	public void VerifyLanguage() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "VerifyLanguage");
+		Map<String, String> testData = baseTest.readJsonElement("SearchData.json", "VerifyLanguage");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
@@ -429,7 +429,7 @@ public class SearchAdv_Test extends BaseTest{
 	//@Test /****** Bug Logged - CL-9401 *****/ 
 	public void VerifyPPUTitles() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "VerifyPPUTitles");
+		Map<String, String> testData = baseTest.readJsonElement("SearchData.json", "VerifyPPUTitles");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
@@ -468,7 +468,7 @@ public class SearchAdv_Test extends BaseTest{
 	@Test
 	public void VerifyPreSaleTitle() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "VerifyPreSaleTitle");
+		Map<String, String> testData = baseTest.readJsonElement("SearchData.json", "VerifyPreSaleTitle");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
@@ -492,7 +492,7 @@ public class SearchAdv_Test extends BaseTest{
 	@Test
 	public void VerifyPPUTitle() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "VerifyPPUTitle");
+		Map<String, String> testData = baseTest.readJsonElement("SearchData.json", "VerifyPPUTitle");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	
@@ -518,7 +518,7 @@ public class SearchAdv_Test extends BaseTest{
 	@Test
 	public void VerifyHiddenProviders() throws Exception
 	{		
-		Map<String, String> testData = playwrightFactory.readJsonElement("SearchData.json", "VerifyHiddenProviders");
+		Map<String, String> testData = baseTest.readJsonElement("SearchData.json", "VerifyHiddenProviders");
 		ArrayList<Object> actualData = new ArrayList<>();
 		ArrayList<Object> expectedData = new ArrayList<>();		
 	

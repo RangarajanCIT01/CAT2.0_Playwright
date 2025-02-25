@@ -5,9 +5,9 @@ import java.util.Map;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 
-import BaseClass.PlaywrightFactory;
+import BaseClass.BaseTest;
 
-public class CuratedListsPage extends PlaywrightFactory{
+public class CuratedListsPage extends BaseTest{
 	
 	public Page page;
 	public SearchPage searchpage = new SearchPage(page);

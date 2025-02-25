@@ -3,9 +3,9 @@ package TestCases;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import BaseClass.BaseTest;
+import BaseClass.PlaywrightFactory;
 
-public class Support_Test extends BaseTest {
+public class Support_Test extends PlaywrightFactory {
 
 	public String mnuSupport = "//span[text()='Support']";
 	public String lnkClickHere = "//a[text()='CLICK HERE']";
