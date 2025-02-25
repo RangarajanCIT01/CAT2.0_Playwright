@@ -1,4 +1,4 @@
-package com.pages;
+package TestPages;
 
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -6,9 +6,10 @@ import java.util.List;
 import java.util.Map;
 import org.testng.Assert;
 
-import com.Factory.PlaywrightFactory;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
+
+import PlaywrightFactory.PlaywrightFactory;
 
 public class SavedSearchPage extends PlaywrightFactory{
 

@@ -1,10 +1,11 @@
-package com.pages;
+package TestPages;
 
 import java.util.Map;
 
-import com.Factory.PlaywrightFactory;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
+
+import PlaywrightFactory.PlaywrightFactory;
 
 public class CuratedListsPage extends PlaywrightFactory{
 	

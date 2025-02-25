@@ -1,13 +1,15 @@
-package com.pages;
+package TestPages;
 
 
 import java.nio.file.Paths;
 import java.util.Map;
 import org.testng.Assert;
-import com.Factory.PlaywrightFactory;
+
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.WaitForSelectorState;
+
+import PlaywrightFactory.PlaywrightFactory;
 
 public class MyCollectionPage extends PlaywrightFactory{
 

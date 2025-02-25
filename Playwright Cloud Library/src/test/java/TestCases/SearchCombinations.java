@@ -6,10 +6,10 @@ import java.util.ArrayList;
 import java.util.Map;
 
 import com.aventstack.extentreports.Status;
-import com.pages.MyCollectionPage;
-import com.pages.SearchPage;
 
 import BaseClass.BaseTest;
+import TestPages.MyCollectionPage;
+import TestPages.SearchPage;
 
 public class SearchCombinations extends BaseTest{
 	

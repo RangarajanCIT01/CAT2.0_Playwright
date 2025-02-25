@@ -1,4 +1,4 @@
-package com.pages;
+package TestPages;
 
 import java.io.File;
 import java.io.FileReader;
@@ -14,7 +14,6 @@ import java.util.Map.Entry;
 
 import org.testng.Assert;
 
-import com.Factory.PlaywrightFactory;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -22,6 +21,9 @@ import com.microsoft.playwright.ElementHandle;
 import com.microsoft.playwright.FileChooser;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Locator.ScrollIntoViewIfNeededOptions;
+
+import PlaywrightFactory.PlaywrightFactory;
+
 import com.microsoft.playwright.Page;
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 import static org.testng.Assert.assertTrue;

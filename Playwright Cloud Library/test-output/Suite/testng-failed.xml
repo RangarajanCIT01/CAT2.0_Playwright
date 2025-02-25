@@ -3,28 +3,26 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="TestCases.Support_Test">
-        <methods>
-          <include name="setReport"/>
-          <include name="addResult"/>
-          <include name="setup"/>
-          <include name="Verify_Support"/>
-          <include name="test"/>
-          <include name="afterSuiteMethod"/>
-          <include name="closeBrowser"/>
-        </methods>
-      </class> <!-- TestCases.Support_Test -->
       <class name="TestCases.Resources_Test">
         <methods>
-          <include name="setReport"/>
           <include name="addResult"/>
+          <include name="setReport"/>
           <include name="setup"/>
-          <include name="test"/>
-          <include name="afterSuiteMethod"/>
-          <include name="Verify_Resources"/>
           <include name="closeBrowser"/>
+          <include name="Verify_Resources"/>
+          <include name="afterSuiteMethod"/>
         </methods>
       </class> <!-- TestCases.Resources_Test -->
+      <class name="TestCases.Support_Test">
+        <methods>
+          <include name="addResult"/>
+          <include name="setReport"/>
+          <include name="setup"/>
+          <include name="Verify_Support"/>
+          <include name="closeBrowser"/>
+          <include name="afterSuiteMethod"/>
+        </methods>
+      </class> <!-- TestCases.Support_Test -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -1,4 +1,4 @@
-package com.pages;
+package TestPages;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -7,9 +7,10 @@ import java.util.Map;
 import org.testng.Assert;
 import org.testng.AssertJUnit;
 
-import com.Factory.PlaywrightFactory;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
+
+import PlaywrightFactory.PlaywrightFactory;
 
 public class PatronsPage extends PlaywrightFactory {
 

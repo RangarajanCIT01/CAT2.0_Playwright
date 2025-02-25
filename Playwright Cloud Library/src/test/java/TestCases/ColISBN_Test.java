@@ -7,9 +7,9 @@ import java.util.ArrayList;
 import java.util.Map;
 
 import com.aventstack.extentreports.Status;
-import com.pages.MyCollectionPage;
 
 import BaseClass.BaseTest;
+import TestPages.MyCollectionPage;
 
 public class ColISBN_Test extends BaseTest {
 

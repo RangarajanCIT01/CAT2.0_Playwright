@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.Map;
 
 import com.aventstack.extentreports.Status;
-import com.pages.SearchPage;
 
 import BaseClass.BaseTest;
+import TestPages.SearchPage;
 
 public class SearchAdv_Test extends BaseTest{
 	

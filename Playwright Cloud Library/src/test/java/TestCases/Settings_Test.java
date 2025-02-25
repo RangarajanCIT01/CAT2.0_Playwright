@@ -4,9 +4,8 @@ import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
 import java.util.Map;
 
-import com.pages.SearchPage;
-
 import BaseClass.BaseTest;
+import TestPages.SearchPage;
 
 public class Settings_Test extends BaseTest{
 	

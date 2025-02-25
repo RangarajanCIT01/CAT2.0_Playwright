@@ -1,8 +1,9 @@
-package com.pages;
+package TestPages;
 
 
-import com.Factory.PlaywrightFactory;
 import com.microsoft.playwright.Page;
+
+import PlaywrightFactory.PlaywrightFactory;
 
 public class LoginPage extends PlaywrightFactory{
 	

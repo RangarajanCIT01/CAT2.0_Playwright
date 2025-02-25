@@ -29,7 +29,7 @@ public class TestExtentReports {
 		
 		extent = new ExtentReports();
 		extent.attachReporter(htmlReporter);
-		extent.setSystemInfo("Automation Tester", "Rangarajan");
+		extent.setSystemInfo("Automation Tester", "Rangarajans");
 		extent.setSystemInfo("Build No", "2.92.33.1");
 		extent.setSystemInfo("Organization", "OCLC");
 		

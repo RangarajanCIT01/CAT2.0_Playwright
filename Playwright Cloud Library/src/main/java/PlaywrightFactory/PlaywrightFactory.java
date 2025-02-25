@@ -1,4 +1,4 @@
-package com.Factory;
+package PlaywrightFactory;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -56,8 +56,9 @@ import com.microsoft.playwright.Tracing;
 import com.microsoft.playwright.options.AriaRole;
 import com.microsoft.playwright.options.LoadState;
 import com.microsoft.playwright.options.WaitForSelectorState;
-import com.pages.LoginPage;
-import com.pages.SearchPage;
+
+import TestPages.LoginPage;
+import TestPages.SearchPage;
 
 public class PlaywrightFactory {
 
@@ -110,8 +111,7 @@ public class PlaywrightFactory {
 
 		page.navigate(prop.getProperty("url"));
 
-		Thread.sleep(4000);
-		page.waitForLoadState();
+		waitTime(4);
 		loginpage.enterUserName(prop.getProperty("username"));
 		loginpage.enterPassword(prop.getProperty("password"));
 		loginpage.clickLogin();
@@ -259,6 +259,10 @@ public class PlaywrightFactory {
 
 	public void keyType(String key) {
 		page.keyboard().type(key);
+	}
+	
+	public void waitTime(int num) throws InterruptedException {
+		Thread.sleep(num * 1000);
 	}
 
 	public void waitForVisibilityOf(String locator) {

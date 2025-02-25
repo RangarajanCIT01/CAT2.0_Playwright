@@ -1,13 +1,14 @@
-package com.pages;
+package TestPages;
 
 import java.util.Map;
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
 import org.testng.Assert;
 
-import com.Factory.PlaywrightFactory;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
+
+import PlaywrightFactory.PlaywrightFactory;
 
 public class ReportsPage extends PlaywrightFactory{
 	

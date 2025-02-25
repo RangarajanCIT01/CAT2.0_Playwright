@@ -1,9 +1,9 @@
 package TestCases;
 
 import org.testng.annotations.Test;
-import com.pages.CartPage;
 
 import BaseClass.BaseTest;
+import TestPages.CartPage;
 
 public class Purchase_Test extends BaseTest{
 	
