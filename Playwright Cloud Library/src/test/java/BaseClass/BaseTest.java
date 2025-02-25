@@ -15,7 +15,7 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.Page;
 
-import PlaywrightFactory.PlaywrightFactory;
+import BaseClass.PlaywrightFactory;
 import TestCases.Shelves_Test;
 import TestPages.CartPage;
 import TestPages.CuratedListsPage;

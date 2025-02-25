@@ -10,7 +10,7 @@ import org.testng.AssertJUnit;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 
-import PlaywrightFactory.PlaywrightFactory;
+import BaseClass.PlaywrightFactory;
 
 public class MessagesPage extends PlaywrightFactory {
 

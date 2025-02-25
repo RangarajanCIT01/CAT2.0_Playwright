@@ -5,7 +5,7 @@ import java.util.Map;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 
-import PlaywrightFactory.PlaywrightFactory;
+import BaseClass.PlaywrightFactory;
 
 public class CuratedListsPage extends PlaywrightFactory{
 	

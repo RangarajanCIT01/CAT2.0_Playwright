@@ -1,4 +1,4 @@
-package PlaywrightFactory;
+package BaseClass;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -60,7 +60,7 @@ import com.microsoft.playwright.options.WaitForSelectorState;
 import TestPages.LoginPage;
 import TestPages.SearchPage;
 
-public class PlaywrightFactory2{
+public class PlaywrightFactory{
 
 	public Playwright playwright;
 	public Browser browser;
@@ -70,7 +70,7 @@ public class PlaywrightFactory2{
 	public static Logger log;
 	protected LoginPage loginpage;
 
-	public PlaywrightFactory2() {
+	public PlaywrightFactory() {
 
 	}
 
@@ -167,7 +167,7 @@ public class PlaywrightFactory2{
 	}
 
 	public Properties init_prop() throws FileNotFoundException {
-		log = Logger.getLogger(PlaywrightFactory2.class);
+		log = Logger.getLogger(PlaywrightFactory.class);
 		// Logger log = LogManager.getLogger(TestLog4J2.class.getName());
 		// log = LogManager.getLogger(PlaywrightFactory.class);
 		// log = LogManager.getLogger(TestLog4J2.class.getName());
