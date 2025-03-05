@@ -1,0 +1,35 @@
+{
+
+	"Setup" : {
+	  "Book_PageSize" : "10"
+	}, 
+	
+	"VerifyNotForSaleTitle" : {
+	"Book_Label": "NOT FOR SALE",
+	"Book_Title" : "30 Silly Songs"
+	},
+	
+	"VerifyNotForSaleTitleDetailsPage" : {
+	"Book_Label": "NOT FOR SALE",
+	"Book_Title" : "30 Silly Songs"
+	},
+	
+	"VerifyNotForSaleShelves" : {
+	"Book_Label": "NOT FOR SALE",
+	"Book_Title" : "30 Silly Songs",
+	"ManualShelfName": "My Manual Shelf"
+	},
+	
+	"VerifyNotForSaleTitleSearch" : {
+	"NoResultsFound" : "No results found.",
+	"Book_Title" : "30 Silly Songs"
+	},
+	
+	"VerifyNotForSaleTitleQuickSearch" : {
+	"NoResultsFound" : "No results found.",
+	"Book_ISBN" : "9781518962554"
+	}
+	
+	
+	
+}

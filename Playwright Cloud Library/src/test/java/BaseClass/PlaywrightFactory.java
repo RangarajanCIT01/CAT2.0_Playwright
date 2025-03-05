@@ -22,6 +22,7 @@ import TestPages.CuratedListsPage;
 import TestPages.LoginPage;
 import TestPages.MessagesPage;
 import TestPages.MyCollectionPage;
+import TestPages.NotForSalePage;
 import TestPages.PatronsPage;
 import TestPages.PurchasePage;
 import TestPages.ReportsPage;
@@ -59,6 +60,7 @@ public class PlaywrightFactory extends BaseTest{
 	public MessagesPage message;
 	public PatronsPage patronsPage;
 	public CuratedListsPage curatedList;
+	public NotForSalePage notForSale;
 	
 	@BeforeClass
 	public void setup() throws Exception {
@@ -83,7 +85,8 @@ public class PlaywrightFactory extends BaseTest{
 		shelves = new Shelves_Test();
 		message = new MessagesPage(page);
 		patronsPage = new PatronsPage(page);
-		curatedList = new CuratedListsPage(page);		
+		curatedList = new CuratedListsPage(page);
+		notForSale = new NotForSalePage(page);
 
 		extentSparkReporter = new ExtentSparkReporter(System.getProperty("user.dir") + "//reports//extentReport.html");
 		extentReports = new ExtentReports();

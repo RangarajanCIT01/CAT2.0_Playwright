@@ -3,17 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestCases.SearchCombinations">
+      <class name="TestCases.Col_NotForSale">
         <methods>
-          <include name="addResult"/>
-          <include name="setReport"/>
-          <include name="setup"/>
           <include name="closeBrowser"/>
-          <include name="setupBefore"/>
-          <include name="VerifyTitleAndAuthor"/>
           <include name="afterSuiteMethod"/>
+          <include name="VerifyNotForSaleTitleSearch"/>
+          <include name="setupBefore"/>
+          <include name="setup"/>
+          <include name="setReport"/>
+          <include name="addResult"/>
         </methods>
-      </class> <!-- TestCases.SearchCombinations -->
+      </class> <!-- TestCases.Col_NotForSale -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

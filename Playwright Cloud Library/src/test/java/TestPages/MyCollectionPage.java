@@ -13,41 +13,41 @@ import BaseClass.BaseTest;
 
 public class MyCollectionPage extends BaseTest{
 
-		private Page page;
+		public Page page;
 	
-		private String MyCollection="//span[contains(text(),'My Collection')]";
-		private String cart = "//span[contains(text(),'Carts')]";
-		private String Keyword="//*[@name='keyword']";
-		private String Title="//input[@placeholder='Title']";
-		private String Author="//input[@name='AuthorSearch']";
-		private String Narrator="//*[@name='Narrator']";
-		private String Series="//*[@name='series']";
-		private String HoldRatio="//*[@id='HoldRatio']";
-		private String Category="//span[text()='Category and Subjects']/..//input";
-		private String Audience="//span[text()='All Audiences']/..//input";
-		private String PricingMinAmount="//*[@name='MinimumPriceAmount']";
-		private String PricingMaxAmount="//*[@name='MaximumPriceAmount']";
-		private String Publishers="//span[text()='Publishers']/..//input";
-		private String ContentProviders="//span[text()='Content Providers']/..//input";
-		private String DatePurchased="//div[@class='searchByDatePurchase'][1]//div[@class='ant-select-selector']";
-		private String PublishedWithin="//div[@class='searchbyDateSelect'][1]//div[@class='ant-select-selector']";
-		private String DateAdded="//div[@class='searchbyDateSelect'][2]//div[@class='ant-select-selector']";
-		private String Languages="//span[text()='Language(s)']/..//input";
-		private String FormatsList="//span[@class='ant-checkbox ant-checkbox-checked']//input[@name='3']";
-		//private String FormatsList2="//span[@class='ant-checkbox ant-checkbox-checked']//input[@name='2']";
-		private String Filter="//span[@class='ant-select-selection-item']";
-		private String ReferenceNumber="//*[@name='poReferenceNumber']";
-		private String FormatText="//div[@class='ant-row']//div[@class='ant-col ant-col-24']//div[@class='ant-card-body']//p[@class='card-title' and contains(text(),'Formats')]";
-		private String SearchButton="//div[@class='ant-row ant-row-end search-top']//button[@class='primary']";
-		private String TitleCount="//span[@class='title-count']";
-		private String IsbnTab="//div[@role='tab' and contains(text(),'ISBN')]";
-		private String IsbnList="//textarea[@name='isbn-list']";
-		private String IsbnSearchButton="//button[@id='isbn-search-btn']";
-		private String Back="//button[@class='back-button']";
-		private String TotalNotMatched="//span[@class='total_not_matched']";
-		private String SelectAll="//button[@class='secondary']";
-		private String AddToShelfDropdown="//button[@class='cart-tomain-dropdown ']//img[contains(@src,'/static/media/downIcon.b7f4ea24.svg')]";
-		private String addToShelfSuccessfully="//span[contains(text(),'Added successfully.')]";
+		public String MyCollection="//span[contains(text(),'My Collection')]";
+		public String cart = "//span[contains(text(),'Carts')]";
+		public String Keyword="//*[@name='keyword']";
+		public String Title="//input[@placeholder='Title']";
+		public String Author="//input[@name='AuthorSearch']";
+		public String Narrator="//*[@name='Narrator']";
+		public String Series="//*[@name='series']";
+		public String HoldRatio="//*[@id='HoldRatio']";
+		public String Category="//span[text()='Category and Subjects']/..//input";
+		public String Audience="//span[text()='All Audiences']/..//input";
+		public String PricingMinAmount="//*[@name='MinimumPriceAmount']";
+		public String PricingMaxAmount="//*[@name='MaximumPriceAmount']";
+		public String Publishers="//span[text()='Publishers']/..//input";
+		public String ContentProviders="//span[text()='Content Providers']/..//input";
+		public String DatePurchased="//div[@class='searchByDatePurchase'][1]//div[@class='ant-select-selector']";
+		public String PublishedWithin="//div[@class='searchbyDateSelect'][1]//div[@class='ant-select-selector']";
+		public String DateAdded="//div[@class='searchbyDateSelect'][2]//div[@class='ant-select-selector']";
+		public String Languages="//span[text()='Language(s)']/..//input";
+		public String FormatsList="//span[@class='ant-checkbox ant-checkbox-checked']//input[@name='3']";
+		//public String FormatsList2="//span[@class='ant-checkbox ant-checkbox-checked']//input[@name='2']";
+		public String Filter="//span[@class='ant-select-selection-item']";
+		public String ReferenceNumber="//*[@name='poReferenceNumber']";
+		public String FormatText="//div[@class='ant-row']//div[@class='ant-col ant-col-24']//div[@class='ant-card-body']//p[@class='card-title' and contains(text(),'Formats')]";
+		public String SearchButton="//div[@class='ant-row ant-row-end search-top']//button[@class='primary']";
+		public String TitleCount="//span[@class='title-count']";
+		public String IsbnTab="//div[@role='tab' and contains(text(),'ISBN')]";
+		public String IsbnList="//textarea[@name='isbn-list']";
+		public String IsbnSearchButton="//button[@id='isbn-search-btn']";
+		public String Back="//button[@class='back-button']";
+		public String TotalNotMatched="//span[@class='total_not_matched']";
+		public String SelectAll="//button[@class='secondary']";
+		public String AddToShelfDropdown="//button[@class='cart-tomain-dropdown ']//img[contains(@src,'/static/media/downIcon.b7f4ea24.svg')]";
+		public String addToShelfSuccessfully="//span[contains(text(),'Added successfully.')]";
 
 		public MyCollectionPage(Page page)
 		{

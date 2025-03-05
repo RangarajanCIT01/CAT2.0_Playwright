@@ -52,6 +52,7 @@ public class SearchPage extends BaseTest {
 	public String AudienceList = "//div[@class='rc-virtual-list-holder']";
 	//public String AllElements = "//div[@class='ant-row book-details-container ']//p";
 	public String AllElements = "//div[@class='ant-row book-details-container ']";
+	public String AllDetailsPage = "//div[@class='ant-row title-container']";
 	public String AllElementsDetailsPage = "//button[text()='< Back']//following::div[5]";
 	public String AllMultipleElements = "//div[@class='ReactVirtualized__Grid ReactVirtualized__List scrollStyle']";
 	public String AllElementsSaved = "//div[@class='ReactVirtualized__Grid__innerScrollContainer']";
@@ -73,6 +74,7 @@ public class SearchPage extends BaseTest {
 	public String DatePurchasedDateRange = "//input[@placeholder='Custom Date Range']";
 	public String DatePurchasedStartDate= "//span[text()='Custom Date Range']/following::input[1]";
 	public String DatePurchasedEndDate = "//input[@placeholder='Custom Date Range']/following::input[1]";
+	public String txtfldquickSearch = "//input[@class='search searchPlaceholder']";
 	
 	public String coverimg = "//img[@class='cover']";
 	public String SearchButtonLftPnl = "//button[text()='SEARCH']";
@@ -159,6 +161,7 @@ public class SearchPage extends BaseTest {
 	public String publisherdrpdwnList = "//div[@class='ant-select-tree-list']"; 
 	public String lstContentProvider = "//div[@class='ant-select-dropdown ant-tree-select-dropdown ant-select-dropdown-placement-bottomLeft ']";
 	public String lastContentProvider = "//span[text()='Young Test ']";
+	public String noResultsFound = "//div[text()='No results found.']";
 	
 	public SearchPage(Page page) {
 		this.page = page;
@@ -634,8 +637,7 @@ public class SearchPage extends BaseTest {
 	public void clseLftPnlIfExists() throws InterruptedException {
 	
 		Locator leftPnlCls = page.locator(SearchPage.leftPnlClse);
-		if( leftPnlCls.isVisible()) {
-		
+		if(leftPnlCls.isVisible()) {
 			leftPnlCls.click();
 		} else{
 			System.out.println("");
