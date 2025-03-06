@@ -15,27 +15,14 @@ import java.util.Map.Entry;
 import java.util.Properties;
 import java.util.Random;
 
-import java.util.regex.Pattern;
-
-import javax.print.attribute.SetOfIntegerSyntax;
-
-import java.util.Map.Entry;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
-import org.apache.logging.log4j.LogManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 //import org.testng.log4testng.Logger;
 //import org.openqa.selenium.JavascriptExecutor;
 //import org.openqa.selenium.WebElement;
 //import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
-import org.testng.annotations.BeforeSuite;
-
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
 //import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 //import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.google.gson.JsonElement;
@@ -47,18 +34,15 @@ import com.microsoft.playwright.BrowserType;
 import com.microsoft.playwright.BrowserType.LaunchOptions;
 import com.microsoft.playwright.ElementHandle;
 
-import baseClass.TestLog4J2;
 
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 import com.microsoft.playwright.Tracing;
-import com.microsoft.playwright.options.AriaRole;
 import com.microsoft.playwright.options.LoadState;
 import com.microsoft.playwright.options.WaitForSelectorState;
 
 import TestPages.LoginPage;
-import TestPages.NotForSalePage;
 import TestPages.SearchPage;
 
 public class BaseTest{
